@@ -1,0 +1,47 @@
+---
+latitude: 40.750613
+longitude: -73.977095
+map_zoom: 12
+name: Oceans Edge Key West
+email: info@oceansedgekeywest.com
+phone_number: 123-123-1234
+address:
+  street1: 5950 Peninsular Avenue
+  state: FL
+  city: Key West
+  zip_code: '33040'
+default_currency: USD
+default_timezone: America/New_York
+_hotel_id: RAHUL
+_portal_id: Rahul
+__EDITABLE_FIELDS__:
+  name:
+    required: true
+  logo:
+    type: image
+  email:
+    type: string
+  phone:
+    type: string
+  default_currency:
+    required: true
+  address:
+    type: complex
+    fields:
+      street1:
+        type: string
+      state:
+        type: string
+      city:
+        type: string
+      zip_code:
+        type: string
+  google_location:
+    type: location
+  map_zoom:
+    type: integer
+  latitude:
+    type: float
+  longitude:
+    type: float
+phone: '3058098204'
