@@ -10,22 +10,29 @@
 //    $gray-900: #212529 !default;
 //
 //    // colors
-//    $primary: #007bff !default;
-//    $secondary: $gray-600;
-//    $black: #16141a;
-//    $white: #fff;
+$primary: #025172 !default;
+$secondary: #6fd4e4 !default;
+$s2: #a9e5ef !default;
+$tertiary: #f3f3ef !default;
+$t2: #dad7cb !default;
+$quartenary: #02747a !default;
+$black: #000 !default;
+$white: #fff !default;
 //
-//    $green: #28a745 !default;
+$green: #008670 !default;
 //    $cyan: #17a2b8 !default;
 //    $yellow: #ffc107 !default;
-//    $red: #dc3545 !default;
+$red: #be0808 !default;
 //
 //    $success: $green !default;
 //    $info: $cyan !default;
 //    $warning: $yellow !default;
 //    $danger: $red !default;
 //    $light: $gray-100 !default;
-//    $dark: $gray-800 !default;
+$light: $white !default;
+$medium: #6f6f6f !default;
+$dark: #434343 !default;
+$overlay: rgba(0, 0, 0, .9) !default;
 //
 //    $theme-colors: () !default;
 //    $theme-colors: map-merge(
@@ -66,11 +73,26 @@
 //    $link-hover-color: $primary;
 //    $link-hover-decoration: underline !default;
 //
-//    // Fonts
-//    $family-primary: "Open Sans", sans-serif;
-//    $family-secondary: "Playfair Display", serif;
-//    $family-terciary: "Roboto", sans-serif;
-//
+// Fonts
+$family-primary: 'Code Pro W01 Regular';
+$family-primary-light: 'Code Pro W01 Light';
+$family-primary-bold: 'Code Pro W01 Bold';
+$family-primary-black: 'Code Pro W01 Black';
+$family-primary-lowercase: 'Code Pro W01 Lowercase';
+$family-primary-light-lowercase: 'Code Pro W01 Light Lowercase';
+$family-primary-bold-lowercase: 'Code Pro W01 Bold Lowercase';
+$family-primary-black-lowercase: 'Code Pro W01 Black Lowercase';
+
+$family-secondary: 'AdobeGaramondW01-Regula';
+$family-secondary-italic: 'Adobe Garamond W01 It';
+$family-secondary-semi-bold: 'Adobe Garamond W01 SmBd';
+$family-secondary-semi-bold-italic: 'AdobeGaramondW01-SmBdIt';
+$family-secondary-bold: 'Adobe Garamond W01 Bd';
+$family-secondary-bold-italic: 'AdobeGaramondW01-BdIt'
+
+$family-arrows: 'ITC Officina Disp Arrows W05';
+$family-bullets: 'ITC Officina Disp Bullets W05'
+
 //    $base-font-color: $base-text-color;
 //    $base-body-font: $family-primary;
 //    $base-font-size: 1rem; //1rem = 16px
@@ -88,15 +110,15 @@
 //    $font-weight-bold: 700 !default;
 //    $font-weight-bolder: bolder !default;
 //
-//    $display1-size: 6rem !default;
-//    $display2-size: 5.5rem !default;
-//    $display3-size: 4.5rem !default;
-//    $display4-size: 3.5rem !default;
-//
-//    $display1-weight: 300 !default;
-//    $display2-weight: 300 !default;
-//    $display3-weight: 300 !default;
-//    $display4-weight: 300 !default;
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
 //    $display-line-height: $header-line-height !default;
 //
 //    $lead-font-size: ($base-font-size * 1.25) !default;
