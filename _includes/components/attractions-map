@@ -1,0 +1,123 @@
+{% comment %}
+
+TODO: Custom icon for primary
+
+Options for leaflet-map__map:
+data-custom-icons="true" //Use a div icon with a class name that can be styled
+data-auto-fit-bounds="true" // Set to false if the map should not reposition based on which items are displayed
+data-tile-style - options are
+  light_all,
+  dark_all,
+  light_nolabels,
+  light_only_labels,
+  dark_nolabels,
+  dark_only_labels,
+  rastertiles/voyager,
+  rastertiles/voyager_nolabels,
+  rastertiles/voyager_only_labels,
+  rastertiles/voyager_labels_under
+
+{% endcomment %}
+
+
+{% assign attractions = attractions | default: site.data._models.attractions %}
+{% if attractions %}
+{% assign all_categories = "" %}
+{% assign all_category_icons = "" %}
+<div class="leaflet-map align-items-center">
+  <div class="leaflet-map__locations">
+    <!-- location object for the hotel //-->
+    <div class="location location--main" data-latitude="{{site.data.hotel_settings.latitude}}" data-longitude="{{site.data.hotel_settings.longitude}}">
+      <div class="location-text">
+        <div class="location-label">{{site.data.hotel_settings.name}}</div>
+        <div class="location-address">{% include components/hotel-address %}</div>
+      </div>
+      <div class="location-popup">
+        <div class="location-popup__row align-items-center">
+          <div class="location-popup__image">
+            <img src="https://res.cloudinary.com/traveltripperweb/raw/upload/v1566984286/nygzascztfmfr6oijt04.svg" alt="{{site.data.hotel_settings.name}}">
+          </div>
+          <div class="location-popup__text">
+            {% assign locationDirectionUrl = site.data.hotel_settings.get_directions %}
+            <span class="location-popup__name">{{site.data.hotel_settings.name}}</span>
+            <a class="location-popup__directions" href="{{locationDirectionUrl}}" target="_blank" title="Get Directions"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% for attraction in attractions %}
+    {% assign locationUrl = attraction.website_url | default: attraction.location.google_place.website | default: attraction.location.google_place.url %}
+    {% assign locationDirectionUrl = attraction.location.google_place.url %}
+    {% assign locationAddress = attraction.location.google_place.adr_address %}
+    <div class="location" data-latitude="{{attraction.location.latitude}}" data-longitude="{{attraction.location.longitude}}" data-website-url="{{attraction.website_url}}">
+      <div class="location-popup">
+        <div class="location-popup__row align-items-center">
+          <div class="location-popup__image">
+            <img src="{{attraction.image.url}}" alt="{{attraction.name}}">
+          </div>
+          <div class="location-popup__text">
+            <a class="location-popup__name" href="{{locationUrl}}">{{attraction.name}}</a>
+            <a class="location-popup__directions" target="_blank" href="{{locationDirectionUrl}}" title="Get Directions"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-text">
+        <div class="location-label" data-select-location="true"></div>
+        <div class="location-sub-title">{{ attraction.sub_title }}</div>
+        <div class="location-categories">
+          {% for c in attraction.category[0].name %}
+          <div class="location-category">{{ c }}</div>
+          {% endfor %}
+        </div>
+        <div class="location-description">{{ attraction.description }}</div>
+        <div class="location-address">{{ locationAddress }}</div>
+      </div>
+
+      <div class="location-image">
+        {{ include componens/image image=attraction.image }}
+      </div>
+      {% for category in attraction.category[0].name %}
+        {% if all_categories != "" %}
+          {% assign all_categories = all_categories | append: ":::" %}
+        {% endif %}
+        {% assign all_categories = all_categories | append: category %}
+      {% endfor %}
+
+      {% for categoryIcon in attraction.category[0].icon.url %}
+        {% if all_category_icons != "" %}
+          {% assign all_category_icons = all_category_icons | append: ":::" %}
+        {% endif %}
+        {% assign all_category_icons = all_category_icons | append: categoryIcon %}
+      {% endfor %}
+
+
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="leaflet-map__categories">
+    {% assign category_list = all_categories | split: ":::" %}
+    {% assign category_list = category_list | uniq %}
+
+    {% assign category_icons_list = all_category_icons | split: ":::" %}
+    {% assign category_icons_list = category_icons_list | uniq %}
+
+
+    <ul>
+      <li class="map-attraction-category-item active" data-select-category="__ALL__">{% t 'attractions.categories.all' %}</li>
+      {% for category in category_list %}
+        <li class="map-attraction-category-item" data-select-category="{{ category }}">
+          <span class="category-icon">
+            <img src="{{category_icons_list[forloop.index0]}}" alt="{{ category }}">
+          </span>
+          {{ category }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="leaflet-map__map" data-latitude="{{site.data.hotel_settings.latitude}}" data-longitude="{{site.data.hotel_settings.longitude}}" data-zoom="{{site.data.hotel_settings.map_zoom}}" data-custom-icons="true" data-min-zoom="10" data-auto-fit-bounds="true" data-tile-style="rastertiles/light_all">
+  </div>
+</div>
+{% endif %}

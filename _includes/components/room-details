@@ -1,0 +1,240 @@
+{% assign sync = include.sync_content %}
+
+{% assign room_detail = page.data %}
+
+<section class="hero pagebanner roompagebanner" style="background-image: url('{{ room_detail.images[0].url_large }}');" ttweb-component="Room" data-tt-selected-room="{{room.reztrip_room_id}}" {% if sync %}ttweb-room-component="RoomImageList"{% endif %} data-has-mask>
+  <div class="mask no-pattern"></div>
+  <div class="hero__title">
+    <h1 class="h1" tabindex="0" {% if sync %} ttweb-room-component="RoomName" {% endif %}>{{ room_detail.name }}</h1>
+  </div>
+  <div class="hero__body">
+    <p class="overline light" tabindex="0">Tonight's Rate</p>
+    <div class="c-room__availability" ttweb-room-component="ScarcityMessage"></div>
+    <div class="c-room__rate" ttweb-room-component="CrossOutRateContainer" data-tt-show-error="true">Check Availability</div>
+  </div>
+</section>
+
+<div>
+  <section class="room-details">
+    <div class="room-details__container">
+      <div class="room-details__row">
+        <div class="room-details__content" ttweb-component="Room" data-tt-selected-room="{{room.reztrip_room_id}}">
+          <div class="room-details__content__inner">
+            <h2 class="h4">EASY, BREEZY AND EFFORTLESSLY COOL</h2>
+            <p class="p1" {% if sync %}ttweb-room-component="RoomDescription"{% endif %} tabindex="0">
+              {{ room_detail.description }}
+            </p>
+          </div>
+          <div class="c-room__select">
+            <div data-tt-class-name="btn" ttweb-room-component="BookingButton">
+              Book Room
+            </div>
+          </div>
+        </div>
+        <div class="room-details__offer">
+          <div class="room-details__offer__content" data-tt-rate-code="{{offer.reztrip_offer_id}}" ttweb-component="Offer">
+            {% assign offers = site.data._models.offers | sor: 'order' %}
+            {% for offer in offers | limit: 1 %}
+              <h2 class="h4 line light" {% if sync %}ttweb-offer-component="OfferTitle"{% endif %}>{{ offer.name }}</h2>
+              <p {% if sync %}ttweb-offer-component="OfferShortDescription"{% endif %}>Add breakfast for just $5 extra per person</p>
+              <a href="" class="btn btn--primary btn--primary--light" data-tt-class-name="btn btn--primary btn--primary--light" ttweb-offer-component="OfferBookingButton">Book Offer</a>
+              <a href="{{ offer.id | permalink: model_dir: 'offers' }}" class="btn btn--secondary btn--secondary--light ml-2 ml-md-4">View Offer</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="room-amenities">
+    <div class="room-amenities__container">
+      <div class="room-amenities__row">
+        <div class="room-amenities__image">
+          <div class="room-amenities__slider" id="roomsCarousel">
+            {% assign sync = true %}
+            <div ttweb-component="Room" data-tt-selected-room="{{room.reztrip_room_id}}">
+              <div class="room-amenities__slider__image objectfit" {% if sync %}ttweb-room-component="RoomImageList"{% endif %}>
+                {% include components/image image=pic max_width=800 %}
+              </div>
+              <div class="room-amenities__slider__content">
+                <p class="overline light" {% if sync %}ttweb-room-component="RoomName"{% endif %}>{{ room.name }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <a id="roomsSliderPrev" href="javascript:void(0);" class="prev-slide">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            <a id="roomsSliderNext" href="javascript:void(0);" class="next-slide">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="room-amenities__content">
+          <div class="room-amenities__content__inner">
+            <h3 class="h5">Room Amenities</h3>
+            <ul class="room-amenities__list"  {% if sync %}ttweb-room-component="RoomAmenities"{% endif %}>
+              <li>{{ room.name }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% assign roomname = room.name | downcase %}
+{% if roomname contains "suite" %}
+  <!-- Alternative Suites Carousel -->
+  <section class="alternative-rooms">
+    {% assign rooms = site.data._models.rooms | sort:"order" %}
+    <div class="suites-listing">
+      <div class="c-room-list">
+        <div class="c-room-list__items">
+          <div class="alternative-rooms__intro">
+            <h3 class="h4 light line">Alternative Suite options</h3>
+            <div class="alternative-rooms__intro__right">
+              <a href="/rooms/" class="btn btn--secondary btn--secondary--light">View All Suites</a>
+              <div class="slider-controls">
+                <a id="moreSuitesSliderPrev" href="javascript:void(0);" class="prev-slide">
+                  <i class="fas fa-chevron-left"></i>
+                </a>
+                <a id="moreSuitesSliderNext" href="javascript:void(0);" class="next-slide">
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="moreSuitesCarousel">
+            {% for room in rooms %}
+            {% include components/suite sync_content=page.sync_room_content %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <!-- Alternative Rooms Carousel -->
+  <section class="alternative-rooms">
+    {% assign rooms = site.data._models.rooms | sort:"order" %}
+    <div class="rooms-listing">
+      <div class="c-room-list">
+        <div class="c-room-list__items">
+          <div class="alternative-rooms__intro">
+            <h3 class="h4 light line">Alternative room options</h3>
+            <div class="alternative-rooms__intro__right">
+              <a href="/rooms/" class="btn btn--secondary btn--secondary--light">View All Rooms</a>
+              <div class="slider-controls">
+                <a id="moreRoomsSliderPrev" href="javascript:void(0);" class="prev-slide">
+                  <i class="fas fa-chevron-left"></i>
+                </a>
+                <a id="moreRoomsSliderNext" href="javascript:void(0);" class="next-slide">
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="moreRoomsCarousel">
+            {% for room in rooms %}
+            {% include components/room sync_content=page.sync_room_content %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+
+<section class="c-1-col common-cta mb-64" style="background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1568358095/ohp70rhxqbitllswxaxb.jpg');" data-has-mask="">
+  <div class="mask" style="background-color: #000000; opacity: .4;"></div>
+  <div class="row c-1-col__row">
+    <div class="col ">
+      <div class="col-html-content">
+        <p class="h2">OWN YOUR OWN PIECE OF PARADISE</p>
+        <a class="btn btn--primary btn--primary--light" href="/rooms/">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="room-content" ttweb-component="Room" data-tt-selected-room="{{room.reztrip_room_id}}">
+  <section class="room-title">
+    <h1 class="h1 light text-left" tabindex="0" {% if sync %}ttweb-room-component="RoomName"{% endif %}>{{ room.name }}</h1>
+
+    <div class="c-room__rate" ttweb-room-component="CrossOutRateContainer" data-tt-show-error="true"></div>
+
+    <div data-tt-class-name="btn" ttweb-room-component="BookingButton">Book Now</div>
+  </section>
+
+  <section class="rooms-details">
+    <div class="c-room">
+      <div class="c-room__text-group">
+        <h2 class="overline h-line" tabindex="0">Room Details</h2>
+        <div class="h2 mb-0" tabindex="0">About This Suite</div>
+        <div class="c-room__availability" ttweb-room-component="ScarcityMessage" data-tt-max-rooms-available="500"></div>
+        <div class="c-room__info mt-3">
+          {% assign bed_type = room.bed_types[0].name %}
+          {% if bed_type %}
+            <div class="c-room__size c-room__info__item" tabindex="0">
+              <img src="//res.cloudinary.com/traveltripperweb/raw/upload/v1565257807/vkruile4hcod8dreyiya.svg" alt="Bed Type"><span>{{ bed_type }}</span>
+            </div>
+          {% endif %}
+          {% if room.size %}
+            <div class="c-room__info__item" tabindex="0">
+              <img src="//res.cloudinary.com/traveltripperweb/raw/upload/v1565257808/zce9smqvdqo51mg6ytdd.svg" alt="Room Size"><span>{{ room.size }}</span>
+            </div>
+          {% endif %}
+          {% if room.guest_size_max and room.guest_size_max > 0 %}
+            <div class="c-room__guest-size-max c-room__info__item" tabindex="0">
+              <img src="//res.cloudinary.com/traveltripperweb/raw/upload/v1565257808/rtp8ujyrcq2r4ajm7qax.svg" alt="Max Guests"><span {% if sync %}ttweb-room-component="RoomGuestSizeMax"{% endif %}>{{ room.guest_size_max }}</span>
+            </div>
+          {% endif %}
+          {% if room.room_category == "Accessible Rooms" %}
+          <div class="c-room__ada-compliant c-room__info__item" tabindex="0">
+            <img src="//res.cloudinary.com/traveltripperweb/raw/upload/v1565257807/dxmtryceytpvclu3c63q.svg" alt="ADA options available"><span>ADA</span> Options Available
+          </div>
+          {% endif %}
+        </div>
+        <div class="c-room__description p1" {% if sync %}ttweb-room-component="RoomDescription"{% endif %} tabindex="0">
+          {{ room.description }}
+        </div>
+      </div>
+      <div class="c-room__image-group" data-reztrip-offer-id="{{room.featured_offer.reztrip_offer_id}}">
+        <div class="c-room__featured-image" {% if sync %}ttweb-room-component="RoomPrimaryImage"{% endif %}>
+          {% if room.featured_offer %}
+          <img src="{{ room.featured_offer.image.url_large }}" alt="{{ room.featured_offer.image.alt }}" />
+          <div class="c-room__related-offer">
+            <div class="overline light" tabindex="0">Related Offer</div>
+            <div class="h4 light"><a href="{{ room.featured_offer.id | permalink: model_dir: 'offers'}}">{{ room.featured_offer.name }}</a></div>
+            <a class="arrow-btn arrow-btn--light" href="/offers/">View All <span class="fas fa-chevron-right"></span></a>
+          </div>
+          {% else %}
+          <img src="{{ room.images[0].url_medium }}" alt="{{ room.name }}">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="room-amenities">
+    <div class="room-amenities__row">
+      <div class="room-amenities__image">
+        <img src="//res.cloudinary.com/traveltripperweb/image/upload/v1558351696/r20dk7njzscj8mpacwa4.jpg" alt="OTHER FEATURES & AMENITIES">
+      </div>
+      <div class="room-amenities__content">
+        <div class="room-amenities__content__inner">
+          <h2 class="h4" tabindex="0">OTHER FEATURES & AMENITIES</h2>
+          <ul class="room-amenities__list">
+            {% for amenity in room.amenities %}
+              <li tabindex="0">{{ amenity.name }}</li>
+            {% endfor %}
+          </ul>
+          <div data-tt-class-name="btn" ttweb-room-component="BookingButton">Book Now</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div> -->

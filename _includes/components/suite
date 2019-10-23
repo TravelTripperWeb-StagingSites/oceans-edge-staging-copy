@@ -1,0 +1,49 @@
+{% comment %}
+
+  Name:
+
+      Room with live rate
+
+  Description:
+
+      Display content from a room model with live-rates from reztrip
+
+  Usage:
+
+      Pass provider and video id through the include to render on page.
+          {% assign room = *RoomModelInstance* %}
+      eg. {% include components/room sync_content=true %}
+
+      The below example includes all available offer-component types.
+
+  TODO: Add microdata?
+
+{% endcomment %}
+
+{% assign sync = include.sync_content %}
+
+
+<div class="c-room" ttweb-component="Room" data-tt-selected-room="{{room.reztrip_room_id}}">
+  <div class="c-room__image-group">
+    <div class="c-room__featured-image" {% if sync %}ttweb-room-component="RoomPrimaryImage"{% endif %}>
+      {% assign featured_image = room.images[0] | default: room.images[0] %}
+      {% include components/image image=featured_image max_width=800 %}
+    </div>
+  </div>
+  <div class="c-room__text-group">
+    <div class="c-room__text-group__wrap">
+      <h3 class="c-room__name h3 line">
+        <a href="{{ room.id | permalink: model_dir: 'rooms' }}" {% if sync %}ttweb-room-component="RoomName"{% endif %}>{{ room.name }}</a>
+      </h3>
+      <div class="c-room__availability" ttweb-room-component="ScarcityMessage"></div>
+      <div class="c-room__tonight">Tonight's Rate</div>
+      <div class="c-room__rate" ttweb-room-component="CrossOutRateContainer" data-tt-show-error="true"></div>
+      <div class="c-room__select">
+        <div data-tt-class-name="btn" ttweb-room-component="BookingButton">
+          Book Suite
+        </div>
+        <a href="{{ room.id | permalink: model_dir: 'rooms' | downcase }}" class="btn btn--secondary btn--secondary--light ml-2 ml-md-3">View Suite</a>
+      </div>
+    </div>
+  </div>
+</div>

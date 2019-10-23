@@ -32,7 +32,7 @@ $red: #be0808 !default;
 $light: $white !default;
 $medium: #6f6f6f !default;
 $dark: #434343 !default;
-$overlay: rgba(0, 0, 0, .9) !default;
+$overlay: rgba(1, 36, 51, .3) !default;
 //
 //    $theme-colors: () !default;
 //    $theme-colors: map-merge(
@@ -90,12 +90,11 @@ $family-secondary-semi-bold-italic: 'AdobeGaramondW01-SmBdIt';
 $family-secondary-bold: 'Adobe Garamond W01 Bd';
 $family-secondary-bold-italic: 'AdobeGaramondW01-BdIt';
 
-$family-arrows: 'ITC Officina Disp Arrows W05';
-$family-bullets: 'ITC Officina Disp Bullets W05';
+// $family-arrows: 'ITC Officina Disp Arrows W05';
+// $family-bullets: 'ITC Officina Disp Bullets W05';
 
 //    $base-font-color: $base-text-color;
 //    $base-body-font: $family-primary;
-//    $base-font-size: 1rem; //1rem = 16px
 //    $base-line-height: 1.5;
 //    $font-size-lg: ($base-font-size * 1.25) !default;
 //    $font-size-sm: ($base-font-size * 0.875) !default;
@@ -110,15 +109,24 @@ $family-bullets: 'ITC Officina Disp Bullets W05';
 //    $font-weight-bold: 700 !default;
 //    $font-weight-bolder: bolder !default;
 //
-$display1-size: 6rem !default;
-$display2-size: 5.5rem !default;
-$display3-size: 4.5rem !default;
-$display4-size: 3.5rem !default;
 
-$display1-weight: 300 !default;
-$display2-weight: 300 !default;
-$display3-weight: 300 !default;
-$display4-weight: 300 !default;
+$base-font-size: 1rem; //1rem = 16px
+$display1-size: 3rem !default; //48px
+$display2-size: 2.5rem !default; //40px
+$display3-size: 2.25rem !default; //36px
+$display4-size: 2rem !default; //32px
+$display5-size: 1.5rem !default; //24px
+$display6-size: 1.25rem !default; //20px
+$display7-size: 1.125rem !default; //18px
+$display8-size: .875rem !default; //14px
+$display9-size: .75rem !default; //12px
+$display10-size: .625rem !default; //10px
+
+// $display1-weight: 300 !default;
+// $display2-weight: 300 !default;
+// $display3-weight: 300 !default;
+// $display4-weight: 300 !default;
+
 //    $display-line-height: $header-line-height !default;
 //
 //    $lead-font-size: ($base-font-size * 1.25) !default;

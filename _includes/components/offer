@@ -1,0 +1,36 @@
+{% assign sync = include.sync_content %}
+{% comment %}
+<div class="c-offer-item" data-tt-rate-code="{{offer.reztrip_offer_id}}" ttweb-component="Offer">
+  <div class="c-offer-item__inner">
+    <div class="c-offer-item__image" {% if sync %}ttweb-offer-component="OfferImage"{% endif %}>
+      {% include components/image image=offer.image max_width=600 %}
+    </div>
+    <div class="c-offer-item__content d-flex flex-column text-center">
+      <h2 class="c-offer-item__name h5" tabindex="0">
+        <a href="{{ offer.id | permalink: model_dir: 'offers' }}" {% if sync %}ttweb-offer-component="OfferTitle"{% endif %}>{{ offer.name }}</a>
+      </h2>
+      <p class="c-offer-item__short-description" tabindex="0"><span {% if sync %}ttweb-offer-component="OfferShortDescription"{% endif %}>{{ offer.short_description }}</span></p>
+      <a class="btn btn--border-btn mt-auto" href="{{ offer.id | permalink: model_dir: 'offers' }}"><span>View Offer</span></a>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+
+<div class="c-offer-item mb-64" data-tt-rate-code="{{offer.reztrip_offer_id}}" ttweb-component="Offer">
+  <div class="c-offer-item__inner align-items-center">
+    <div class="c-offer-item__content">
+      <div class="c-offer-item__content__inner">
+        <p class="overline">Save 25%</p>
+        <p class="c-offer-item__name h3" tabindex="0">
+          <a href="{{ offer.id | permalink: model_dir: 'offers' }}" {% if sync %}ttweb-offer-component="OfferTitle"{% endif %}>{{ offer.name }}</a>
+        </p>
+        <p class="c-offer-item__short-description p1" tabindex="0"><span {% if sync %}ttweb-offer-component="OfferShortDescription"{% endif %}>{{ offer.short_description }}</span></p>
+        <a data-tt-class-name="btn btn--primary" ttweb-offer-component="OfferBookingButton">Book Offer</a>
+        <a class="btn btn--secondary" href="{{ offer.id | permalink: model_dir: 'offers' }}"><span>View Offer</span></a>
+      </div>
+    </div>
+    <div class="c-offer-item__image">
+      {% include components/image image=offer.image max_width=1200 %}
+    </div>
+  </div>
+</div>

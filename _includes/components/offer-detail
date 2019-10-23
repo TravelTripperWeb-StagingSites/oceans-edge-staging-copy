@@ -1,0 +1,71 @@
+{% assign sync = include.sync_content %}
+
+<div class="c-offer-detail" data-tt-rate-code="{{offer.reztrip_offer_id}}" ttweb-component="Offer">
+  <div class="c-offer-detail__row">
+    <div class="c-offer-detail__text-group">
+      <div class="content-block">
+        <p class="overline">25% Off</p>
+        <h1 class="h3"><span {% if sync %}ttweb-offer-component="OfferTitle"{% endif %}>{{ offer.name }}</span></h1>
+        <div tabindex="0">
+          <p class="p1" {% if sync %}ttweb-offer-component="OfferShortDescription"{% endif %}>{{ offer.short_description }}</p>
+        </div>
+        <div tabindex="0">
+          <p class="p1" {% if sync %}ttweb-offer-component="OfferDescription"{% endif %}>{{ offer.description }}</p>
+        </div>
+        <div class="btn btn--primary" data-tt-class-name="btn btn--primary" ttweb-offer-component="OfferBookingButton">Book Now</div>
+      </div>
+    </div>
+    <div class="c-offer-detail__image-group" {% if sync %}ttweb-offer-component="OfferImage"{% endif %}>
+      {% include components/image image=offer.image max_width=1200 %}
+    </div>
+  </div>
+</div>
+
+{% assign currentOffer = offer.name %}
+
+<div class="more-details">
+  <div class="more-details__inner">
+    <div class="more-details__row">
+      <div class="more-details__left">
+        <p class="p1">Need assistance? Our dedicated reservations team is available around the clock.</p>
+        <a class="btn btn--secondary" href="/contact/">Contact Us</a>
+      </div>
+      <div class="more-details__right">
+        <p class="overline">Terms & Conditions</p>
+        <p tabindex="0" class="p1" {% if sync %}ttweb-offer-component="OfferPolicyDescription"{% endif %}>{{ offer.policy_description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="alternative-offers">
+  {% assign offers = site.data._models.offers | sort:"order" %}
+  <div class="offers-listing">
+    <div class="c-offer-list">
+      <div class="c-offer-list__items">
+        <div class="alternative-offers__intro">
+          <h3 class="h4 light line">Alternative Offer options</h3>
+          <div class="alternative-offers__intro__right">
+            <a href="/offers/" class="btn btn--secondary btn--secondary--light">View all Offers</a>
+            <div class="slider-controls">
+              <a id="moreOffersSliderPrev" href="javascript:void(0);" class="prev-slide">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+              <a id="moreOffersSliderNext" href="javascript:void(0);" class="next-slide">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="alternative-offers__slider">
+          <div id="moreOffersCarousel">
+            {% for offer in offers %}
+            {% if currentOffer != offer.name %}
+            {% include components/offer sync_content=page.sync_offer_content %}
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
