@@ -221,11 +221,12 @@ mega:
       label_localized:
         en: Webcam
       items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/blogs.html
-    label_localized:
-      en: Blog
+    - folder: false
+      url_localized: ''
+      page_id: _pages/blogs.html
+      label_localized:
+        en: Blog
+      items: 
 featured:
   depth: 2
   name: Featured Menu
