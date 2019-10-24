@@ -24,3 +24,18 @@
     border-radius: 15px;
   }
 }
+
+.navbar {
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.nav {
+    &__group {
+      @include make-row;
+      margin: 0;
+
+    }
+  }
+}
