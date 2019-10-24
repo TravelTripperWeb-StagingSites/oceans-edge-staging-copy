@@ -127,10 +127,6 @@ mega:
       label_localized:
         en: Happenings
       items: 
-    expanded: false
-  - folder: true
-    label_localized:
-      en: Dining
 featured:
   depth: 2
   name: Featured Menu
