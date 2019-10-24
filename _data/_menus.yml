@@ -70,6 +70,12 @@ mega:
       label_localized:
         en: All Rooms & Suites
       items: 
+  - folder: false
+    url_localized:
+      en: "/stay/#guestrooms"
+    page_id: _pages/rooms.html
+    label_localized:
+      en: Guestrooms
 featured:
   depth: 2
   name: Featured Menu
