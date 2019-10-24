@@ -279,9 +279,6 @@ footer:
   depth: 2
   name: Footer Menu
   items:
-  - page_id: _pages/food-and-drink.html
-    label: Food & Drink
-    url: "/food-and-drink/"
   - folder: false
     url_localized: ''
     page_id: _pages/privacy.html
