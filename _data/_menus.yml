@@ -10,8 +10,7 @@ mega:
 featured:
   depth: 2
   name: Featured Menu
-  items:
-  - page_id: _pages/contact.html
+  items: 
 footer:
   depth: 2
   name: Footer Menu
