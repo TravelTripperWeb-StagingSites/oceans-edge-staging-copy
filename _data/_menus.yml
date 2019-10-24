@@ -98,7 +98,7 @@ mega:
       label_localized:
         en: Accessible Rooms
       items: 
-    expanded: true
+    expanded: false
   - folder: true
     label_localized:
       en: Experiences
@@ -109,6 +109,11 @@ mega:
       label_localized:
         en: Overview
       items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/activities.html
+    label_localized:
+      en: Activities
 featured:
   depth: 2
   name: Featured Menu
