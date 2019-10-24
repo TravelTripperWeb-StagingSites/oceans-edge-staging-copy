@@ -131,6 +131,11 @@ mega:
   - folder: true
     label_localized:
       en: Dining
+  - folder: false
+    url_localized: ''
+    page_id: _pages/yellofin-bar-grill.html
+    label_localized:
+      en: Yellowfin Bar & Grill
 featured:
   depth: 2
   name: Featured Menu
