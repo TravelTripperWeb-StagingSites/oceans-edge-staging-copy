@@ -42,6 +42,9 @@ mega:
     page_id: _pages/amenities.html
     label_localized:
       en: Amenities
+  - folder: true
+    label_localized:
+      en: Resort
 featured:
   depth: 2
   name: Featured Menu
