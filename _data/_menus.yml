@@ -77,12 +77,13 @@ mega:
       label_localized:
         en: Guestrooms
       items: 
-  - folder: false
-    url_localized:
-      en: "/stay/#1-bedrooms/"
-    page_id: _pages/rooms.html
-    label_localized:
-      en: 1 Bedrooms
+    - folder: false
+      url_localized:
+        en: "/stay/#1-bedrooms/"
+      page_id: _pages/rooms.html
+      label_localized:
+        en: 1 Bedrooms
+      items: 
 featured:
   depth: 2
   name: Featured Menu
