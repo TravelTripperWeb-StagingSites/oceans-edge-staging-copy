@@ -59,6 +59,12 @@ mega:
       label_localized:
         en: Resort Map
       items: 
+    expanded: true
+  - folder: false
+    url_localized: ''
+    page_id: _pages/rooms.html
+    label_localized:
+      en: Stay
 featured:
   depth: 2
   name: Featured Menu
