@@ -44,6 +44,11 @@ featured:
     page_id: _pages/gallery.html
     label_localized:
       en: Gallery
+  - folder: false
+    url_localized: ''
+    page_id: _pages/webcam.html
+    label_localized:
+      en: Live Webcam
 footer:
   depth: 2
   name: Footer Menu
