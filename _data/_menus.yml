@@ -40,13 +40,13 @@ mega:
   - folder: true
     label_localized:
       en: Resort
-    items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/resort.html
-    label_localized:
-      en: Overview
-    items: 
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/resort.html
+      label_localized:
+        en: Overview
+      items: 
   - folder: false
     url_localized: ''
     page_id: _pages/amenities.html
@@ -58,6 +58,7 @@ mega:
       en: "#"
     label_localized:
       en: Resort Map
+    items: 
 featured:
   depth: 2
   name: Featured Menu
