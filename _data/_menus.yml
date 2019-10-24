@@ -6,8 +6,7 @@ main:
 mega:
   depth: 2
   name: Mega Menu
-  items:
-  - page_id: _pages/contact.html
+  items: 
 featured:
   depth: 2
   name: Featured Menu
