@@ -18,6 +18,11 @@ main:
     page_id: _pages/offers.html
     label_localized:
       en: Offers
+  - folder: false
+    url_localized: ''
+    page_id: _pages/experiences.html
+    label_localized:
+      en: Experiences
 mega:
   depth: 2
   name: Mega Menu
