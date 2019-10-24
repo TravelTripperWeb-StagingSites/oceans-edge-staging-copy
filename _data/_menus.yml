@@ -196,12 +196,13 @@ mega:
       label_localized:
         en: Weddings
       items: 
-  - folder: false
-    url_localized:
-      en: "/groups#meetings-events"
-    page_id: _pages/groups.html
-    label_localized:
-      en: Meetings & Events
+    - folder: false
+      url_localized:
+        en: "/groups#meetings-events"
+      page_id: _pages/groups.html
+      label_localized:
+        en: Meetings & Events
+      items: 
 featured:
   depth: 2
   name: Featured Menu
