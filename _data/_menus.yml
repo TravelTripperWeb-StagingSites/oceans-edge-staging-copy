@@ -48,6 +48,11 @@ mega:
     label_localized:
       en: Amenities
     items: 
+  - folder: false
+    url_localized:
+      en: "#"
+    label_localized:
+      en: Resort Map
 featured:
   depth: 2
   name: Featured Menu
