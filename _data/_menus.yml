@@ -32,15 +32,15 @@ mega:
   depth: 2
   name: Mega Menu
   items:
+  - folder: true
+    label_localized:
+      en: Resort
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/amenities.html
     label_localized:
       en: Amenities
-    items: 
-  - folder: true
-    label_localized:
-      en: Resort
     items: 
   - folder: false
     url_localized: ''
