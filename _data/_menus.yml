@@ -2,20 +2,35 @@
 main:
   depth: 2
   name: Main Menu
-  items: 
+  items:
+    - page_id: _pages/food-and-drink.html
+      label: Food & Drink
+      url: /food-and-drink/
 mega:
   depth: 2
   name: Mega Menu
-  items: 
+  items:
+    - page_id: _pages/food-and-drink.html
+      label: Food & Drink
+      url: /food-and-drink/
 featured:
   depth: 2
   name: Featured Menu
-  items: 
+  items:
+    - page_id: _pages/food-and-drink.html
+      label: Food & Drink
+      url: /food-and-drink/
 footer:
   depth: 2
   name: Footer Menu
-  items: 
+  items:
+    - page_id: _pages/food-and-drink.html
+      label: Food & Drink
+      url: /food-and-drink/
 mobile:
   depth: 2
   name: Mobile Sticky Menu
-  items: 
+  items:
+    - page_id: _pages/food-and-drink.html
+      label: Food & Drink
+      url: /food-and-drink/
