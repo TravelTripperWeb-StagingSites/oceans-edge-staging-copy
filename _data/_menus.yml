@@ -19,5 +19,4 @@ mobile:
   depth: 2
   name: Mobile Sticky Menu
   items:
-  - page_id: _pages/gallery.html
   - page_id: _pages/contact.html
