@@ -121,11 +121,12 @@ mega:
       label_localized:
         en: Adventures
       items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/happenings.html
-    label_localized:
-      en: Happenings
+    - folder: false
+      url_localized: ''
+      page_id: _pages/happenings.html
+      label_localized:
+        en: Happenings
+      items: 
 featured:
   depth: 2
   name: Featured Menu
