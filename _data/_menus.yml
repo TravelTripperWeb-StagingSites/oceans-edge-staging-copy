@@ -231,6 +231,11 @@ mega:
   - folder: true
     label_localized:
       en: Connect
+  - folder: false
+    url_localized:
+      en: 'mailto: 8779350862'
+    label_localized:
+      en: 'Res: 877 935 0862'
 featured:
   depth: 2
   name: Featured Menu
