@@ -60,6 +60,9 @@ mega:
         en: Resort Map
       items: 
     expanded: true
+  - folder: true
+    label_localized:
+      en: Stay
 featured:
   depth: 2
   name: Featured Menu
