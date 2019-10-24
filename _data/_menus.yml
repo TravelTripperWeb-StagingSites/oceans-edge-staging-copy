@@ -308,3 +308,8 @@ mobile:
     page_id: _pages/rooms.html
     label_localized:
       en: Stay
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
