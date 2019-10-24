@@ -284,6 +284,11 @@ footer:
     page_id: _pages/privacy.html
     label_localized:
       en: Privacy Policy
+  - folder: false
+    url_localized: ''
+    page_id: _pages/sitemap.html
+    label_localized:
+      en: Site Map
 mobile:
   depth: 2
   name: Mobile Sticky Menu
