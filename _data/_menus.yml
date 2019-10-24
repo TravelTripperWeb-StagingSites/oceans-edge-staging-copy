@@ -250,6 +250,7 @@ mega:
       label_localized:
         en: Email us
       items: 
+    expanded: false
 featured:
   depth: 2
   name: Featured Menu
@@ -281,6 +282,11 @@ footer:
   - page_id: _pages/food-and-drink.html
     label: Food & Drink
     url: "/food-and-drink/"
+  - folder: false
+    url_localized: ''
+    page_id: _pages/privacy.html
+    label_localized:
+      en: Privacy Policy
 mobile:
   depth: 2
   name: Mobile Sticky Menu
