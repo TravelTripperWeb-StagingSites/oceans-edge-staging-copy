@@ -42,12 +42,12 @@ mega:
       label_localized:
         en: Overview
       items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/amenities.html
-    label_localized:
-      en: Amenities
-    items: 
+    - folder: false
+      url_localized: ''
+      page_id: _pages/amenities.html
+      label_localized:
+        en: Amenities
+      items: 
   - folder: false
     url_localized:
       en: "#"
