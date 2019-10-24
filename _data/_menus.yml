@@ -109,11 +109,12 @@ mega:
       label_localized:
         en: Overview
       items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/activities.html
-    label_localized:
-      en: Activities
+    - folder: false
+      url_localized: ''
+      page_id: _pages/activities.html
+      label_localized:
+        en: Activities
+      items: 
 featured:
   depth: 2
   name: Featured Menu
