@@ -156,6 +156,10 @@ mega:
       label_localized:
         en: In-room Dining
       items: 
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Marnina
 featured:
   depth: 2
   name: Featured Menu
