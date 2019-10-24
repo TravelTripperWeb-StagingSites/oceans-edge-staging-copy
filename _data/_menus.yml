@@ -144,6 +144,11 @@ mega:
       label_localized:
         en: Yellowfin Bar & Grill
       items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/ocean-edge-cafe.html
+    label_localized:
+      en: Oceans Edge Cafe
 featured:
   depth: 2
   name: Featured Menu
