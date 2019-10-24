@@ -98,6 +98,7 @@ mega:
       label_localized:
         en: Accessible Rooms
       items: 
+    expanded: true
   - folder: true
     label_localized:
       en: Experiences
