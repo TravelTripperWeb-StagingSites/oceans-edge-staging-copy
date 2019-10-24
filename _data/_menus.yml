@@ -313,3 +313,8 @@ mobile:
     page_id: _pages/offers.html
     label_localized:
       en: Offers
+  - folder: false
+    url_localized:
+      en: 'tel: 8779350862'
+    label_localized:
+      en: Call Us
