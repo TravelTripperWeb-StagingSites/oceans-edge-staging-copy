@@ -53,6 +53,9 @@ mega:
       en: "#"
     label_localized:
       en: Resort Map
+  - folder: true
+    label_localized:
+      en: Resort
 featured:
   depth: 2
   name: Featured Menu
