@@ -14,8 +14,7 @@ featured:
 footer:
   depth: 2
   name: Footer Menu
-  items:
-  - page_id: _pages/contact.html
+  items: 
 mobile:
   depth: 2
   name: Mobile Sticky Menu
