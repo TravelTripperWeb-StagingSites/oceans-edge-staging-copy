@@ -182,6 +182,11 @@ mega:
   - folder: true
     label_localized:
       en: Groups
+  - folder: false
+    url_localized: ''
+    page_id: _pages/groups.html
+    label_localized:
+      en: Overview
 featured:
   depth: 2
   name: Featured Menu
