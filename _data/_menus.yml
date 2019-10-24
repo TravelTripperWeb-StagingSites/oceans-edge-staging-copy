@@ -189,12 +189,13 @@ mega:
       label_localized:
         en: Overview
       items: 
-  - folder: false
-    url_localized:
-      en: "/groups#weddings"
-    page_id: _pages/groups.html
-    label_localized:
-      en: Weddings
+    - folder: false
+      url_localized:
+        en: "/groups#weddings"
+      page_id: _pages/groups.html
+      label_localized:
+        en: Weddings
+      items: 
 featured:
   depth: 2
   name: Featured Menu
