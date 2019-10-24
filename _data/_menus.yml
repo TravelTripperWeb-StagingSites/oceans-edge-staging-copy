@@ -15,7 +15,6 @@ footer:
   depth: 2
   name: Footer Menu
   items:
-  - page_id: _pages/gallery.html
   - page_id: _pages/contact.html
 mobile:
   depth: 2
