@@ -5,29 +5,34 @@ main:
   items:
   - folder: false
     url_localized: ''
-    page_id: _pages/resort.html
-    label_localized:
-      en: Resort
-  - folder: false
-    url_localized: ''
     label_localized:
       en: Stay
     page_id: _pages/rooms.html
+    items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/resort.html
+    label_localized:
+      en: Resort
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html
     label_localized:
       en: Offers
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/experiences.html
     label_localized:
       en: Experiences
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/dining.html
     label_localized:
       en: Dining
+    items: 
 mega:
   depth: 2
   name: Mega Menu
@@ -35,25 +40,24 @@ mega:
   - folder: true
     label_localized:
       en: Resort
-    items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/resort.html
-      label_localized:
-        en: Overview
-      items: 
-    - folder: false
-      url_localized: ''
-      page_id: _pages/amenities.html
-      label_localized:
-        en: Amenities
-      items: 
-    - folder: false
-      url_localized:
-        en: "#"
-      label_localized:
-        en: Resort Map
-      items: 
+    items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/resort.html
+    label_localized:
+      en: Overview
+    items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/amenities.html
+    label_localized:
+      en: Amenities
+    items: 
+  - folder: false
+    url_localized:
+      en: "#"
+    label_localized:
+      en: Resort Map
 featured:
   depth: 2
   name: Featured Menu
