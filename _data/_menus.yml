@@ -13,6 +13,11 @@ main:
     label_localized:
       en: Stay
     page_id: _pages/rooms.html
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
 mega:
   depth: 2
   name: Mega Menu
