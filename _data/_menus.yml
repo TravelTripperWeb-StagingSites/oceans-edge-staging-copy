@@ -5,15 +5,15 @@ main:
   items:
   - folder: false
     url_localized: ''
-    label_localized:
-      en: Stay
-    page_id: _pages/rooms.html
-    items: 
-  - folder: false
-    url_localized: ''
     page_id: _pages/resort.html
     label_localized:
       en: Resort
+    items: 
+  - folder: false
+    url_localized: ''
+    label_localized:
+      en: Stay
+    page_id: _pages/rooms.html
     items: 
   - folder: false
     url_localized: ''
