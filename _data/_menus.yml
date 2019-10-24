@@ -98,6 +98,9 @@ mega:
       label_localized:
         en: Accessible Rooms
       items: 
+  - folder: true
+    label_localized:
+      en: Experiences
 featured:
   depth: 2
   name: Featured Menu
