@@ -38,15 +38,15 @@ mega:
     items: 
   - folder: false
     url_localized: ''
-    page_id: _pages/amenities.html
-    label_localized:
-      en: Amenities
-    items: 
-  - folder: false
-    url_localized: ''
     page_id: _pages/resort.html
     label_localized:
       en: Overview
+    items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/amenities.html
+    label_localized:
+      en: Amenities
     items: 
 featured:
   depth: 2
