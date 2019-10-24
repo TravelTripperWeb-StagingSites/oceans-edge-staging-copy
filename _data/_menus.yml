@@ -303,3 +303,8 @@ mobile:
     page_id: _pages/resort.html
     label_localized:
       en: Resort
+  - folder: false
+    url_localized: ''
+    page_id: _pages/rooms.html
+    label_localized:
+      en: Stay
