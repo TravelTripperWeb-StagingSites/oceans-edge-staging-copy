@@ -160,6 +160,11 @@ mega:
   - folder: true
     label_localized:
       en: Marnina
+  - folder: false
+    url_localized: ''
+    page_id: _pages/marina.html
+    label_localized:
+      en: Overview
 featured:
   depth: 2
   name: Featured Menu
