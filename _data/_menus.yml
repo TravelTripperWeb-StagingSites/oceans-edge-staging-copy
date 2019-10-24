@@ -215,6 +215,11 @@ mega:
       label_localized:
         en: Gallery
       items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/webcam.html
+    label_localized:
+      en: Webcam
 featured:
   depth: 2
   name: Featured Menu
