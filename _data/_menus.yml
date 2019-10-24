@@ -23,6 +23,11 @@ main:
     page_id: _pages/experiences.html
     label_localized:
       en: Experiences
+  - folder: false
+    url_localized: ''
+    page_id: _pages/dining.html
+    label_localized:
+      en: Dining
 mega:
   depth: 2
   name: Mega Menu
