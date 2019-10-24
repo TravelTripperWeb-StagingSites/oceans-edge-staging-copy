@@ -115,6 +115,11 @@ mega:
       label_localized:
         en: Activities
       items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/adventures.html
+    label_localized:
+      en: Adventures
 featured:
   depth: 2
   name: Featured Menu
