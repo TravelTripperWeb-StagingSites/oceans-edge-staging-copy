@@ -63,6 +63,11 @@ mega:
   - folder: true
     label_localized:
       en: Stay
+  - folder: false
+    url_localized: ''
+    page_id: _pages/rooms.html
+    label_localized:
+      en: All Rooms & Suites
 featured:
   depth: 2
   name: Featured Menu
