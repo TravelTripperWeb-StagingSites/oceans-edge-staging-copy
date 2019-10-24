@@ -3,7 +3,6 @@ main:
   depth: 2
   name: Main Menu
   items:
-  - page_id: _pages/gallery.html
   - page_id: _pages/contact.html
 mega:
   depth: 2
