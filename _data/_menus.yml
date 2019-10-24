@@ -2,8 +2,7 @@
 main:
   depth: 2
   name: Main Menu
-  items:
-  - page_id: _pages/contact.html
+  items: 
 mega:
   depth: 2
   name: Mega Menu
