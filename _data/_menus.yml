@@ -3,34 +3,39 @@ main:
   depth: 2
   name: Main Menu
   items:
-    - page_id: _pages/food-and-drink.html
-      label: Food & Drink
-      url: /food-and-drink/
+  - page_id: _pages/food-and-drink.html
+    label: Food & Drink
+    url: "/food-and-drink/"
+  - folder: false
+    url_localized: ''
+    page_id: _pages/resort.html
+    label_localized:
+      en: Resort
 mega:
   depth: 2
   name: Mega Menu
   items:
-    - page_id: _pages/food-and-drink.html
-      label: Food & Drink
-      url: /food-and-drink/
+  - page_id: _pages/food-and-drink.html
+    label: Food & Drink
+    url: "/food-and-drink/"
 featured:
   depth: 2
   name: Featured Menu
   items:
-    - page_id: _pages/food-and-drink.html
-      label: Food & Drink
-      url: /food-and-drink/
+  - page_id: _pages/food-and-drink.html
+    label: Food & Drink
+    url: "/food-and-drink/"
 footer:
   depth: 2
   name: Footer Menu
   items:
-    - page_id: _pages/food-and-drink.html
-      label: Food & Drink
-      url: /food-and-drink/
+  - page_id: _pages/food-and-drink.html
+    label: Food & Drink
+    url: "/food-and-drink/"
 mobile:
   depth: 2
   name: Mobile Sticky Menu
   items:
-    - page_id: _pages/food-and-drink.html
-      label: Food & Drink
-      url: /food-and-drink/
+  - page_id: _pages/food-and-drink.html
+    label: Food & Drink
+    url: "/food-and-drink/"
