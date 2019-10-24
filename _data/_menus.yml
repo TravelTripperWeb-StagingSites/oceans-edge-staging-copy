@@ -150,11 +150,12 @@ mega:
       label_localized:
         en: Oceans Edge Cafe
       items: 
-  - folder: false
-    url_localized: ''
-    page_id: _pages/in-room-dining.html
-    label_localized:
-      en: In-room Dining
+    - folder: false
+      url_localized: ''
+      page_id: _pages/in-room-dining.html
+      label_localized:
+        en: In-room Dining
+      items: 
 featured:
   depth: 2
   name: Featured Menu
