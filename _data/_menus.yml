@@ -101,6 +101,11 @@ mega:
   - folder: true
     label_localized:
       en: Experiences
+  - folder: false
+    url_localized: ''
+    page_id: _pages/experiences.html
+    label_localized:
+      en: Overview
 featured:
   depth: 2
   name: Featured Menu
