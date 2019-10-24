@@ -91,6 +91,12 @@ mega:
       label_localized:
         en: 2 Bedrooms
       items: 
+  - folder: false
+    url_localized:
+      en: "/stay/#accessible-rooms"
+    page_id: _pages/rooms.html
+    label_localized:
+      en: Accessible Rooms
 featured:
   depth: 2
   name: Featured Menu
