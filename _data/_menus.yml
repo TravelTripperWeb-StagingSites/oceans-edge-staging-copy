@@ -54,6 +54,11 @@ featured:
     page_id: _pages/marina.html
     label_localized:
       en: The Marina
+  - folder: false
+    url_localized: ''
+    page_id: _pages/groups.html
+    label_localized:
+      en: Groups
 footer:
   depth: 2
   name: Footer Menu
