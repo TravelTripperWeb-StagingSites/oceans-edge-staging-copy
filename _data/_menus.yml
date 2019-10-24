@@ -36,7 +36,7 @@ mega:
     url_localized: ''
     page_id: _pages/resort.html
     label_localized:
-      en: Resort
+      en: Overview
   - folder: false
     url_localized: ''
     page_id: _pages/amenities.html
