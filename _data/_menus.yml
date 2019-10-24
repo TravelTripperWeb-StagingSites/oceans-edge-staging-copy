@@ -86,10 +86,10 @@ mega:
       items: 
     - folder: false
       url_localized:
-        en: "/stay/2-bedrooms"
+        en: 'tel: 8779350862'
       page_id: _pages/rooms.html
       label_localized:
-        en: 2 Bedrooms
+        en: 'Res: 877 935 0862'
       items: 
     - folder: false
       url_localized:
