@@ -25,7 +25,7 @@
         <div class="nav__items">
           <div class="nav__featured">
             <ul class="nav align-items-center text-uppercase justify-content-end pr-2">
-              {% assign items = site.data._menus.main.items %}
+              {% assign items = site.data._menus.featured.items %}
               {% include nav/nav-item-list.html items=items %}
             </ul>
           </div>
@@ -40,7 +40,7 @@
               </a></li>
             </ul>
             <ul class="nav--device" navMenu>
-              {% assign items = site.data._menus.main.items %}
+              {% assign items = site.data._menus.mega.items %}
               {% include nav/nav-item-list.html items=items %}
             </ul>
             <div class="flex-shrink-0">
