@@ -173,6 +173,11 @@ mega:
       label_localized:
         en: Services
       items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/fishing-records-charters.html
+    label_localized:
+      en: Fishing Records & Charters
 featured:
   depth: 2
   name: Featured Menu
