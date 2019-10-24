@@ -238,11 +238,17 @@ mega:
       label_localized:
         en: 'Res: 877 935 0862'
       items: 
+    - folder: false
+      url_localized:
+        en: "#"
+      label_localized:
+        en: Have us call you
+      items: 
   - folder: false
     url_localized:
       en: "#"
     label_localized:
-      en: Have us call you
+      en: Email us
 featured:
   depth: 2
   name: Featured Menu
