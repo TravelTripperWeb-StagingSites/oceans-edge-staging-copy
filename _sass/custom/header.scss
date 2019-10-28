@@ -1,3 +1,4 @@
+
 .skip-main {
   position: absolute;
   top: auto;
@@ -26,16 +27,302 @@
 }
 
 .navbar {
-  &__group {
-    display: flex;
-    flex-direction: column;
+  padding: 0;
+
+  .container-fluid {
+    display: block;
+    border-top: solid 1px $t2;
+    border-bottom: solid 1px $t2;
   }
 
-  &.nav {
-    &__group {
-      @include make-row;
-      margin: 0;
+  &.is-fixed-top {
+    height: 152px;
 
+    &+.main {
+      padding-top: 152px;
+    }
+  }
+
+  &__burger {
+    width: auto;
+    height: auto;
+    background: transparent;
+    @include transition(all .3s);
+
+    &:after {
+      margin-left: 10px;
+      font-family: $oceansedge-font-family;
+      font-size: $display6-size;
+      content: $icon-menu-icon-default;
+      //Better Font Rendering
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    &.is-active {
+      &:after {
+        font-family: $oceansedge-font-family;
+        content: $icon-menu-icon-close;
+      }
+    }
+  }
+
+  .nav--device {
+    top: 149px;
+    right: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    padding: 0;
+    font-family: $family-primary-lc;
+    font-size: $display8-size;
+    line-height: $base-font-size;
+    letter-spacing: .5px;
+
+    li {
+      padding-bottom: 0;
+    }
+
+    ul {
+      @include make-row;
+      max-width: 58.33333%;
+      margin: 0 auto;
+      padding: 0;
+
+      .has-subnav {
+        @include make-col-ready;
+        @include make-col(3);
+        padding-top: 40px;
+        list-style: none;
+
+        span {
+          font-family: $family-primary-bold-lc;
+          font-size: $base-font-size;
+          color: $primary !important;
+
+          &:after {
+            display: block;
+            width: 100%;
+            height: 1px;
+            margin: 10px 0;
+            content: '';
+            background: $t2;
+          }
+        }
+
+        .nav__link {
+          margin: 0;
+          color: $medium;
+
+          &:hover {
+            color: $primary;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .subnav {
+        max-width: 100%;
+        margin: 0;
+
+        .nav__item {
+          width: 100%;
+          margin-bottom: 7px;
+          white-space: normal;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .nav__link {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.nav--active {
+    .nav__link {
+      color: $medium;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .nav--device {
+      display: flex !important;
+    }
+  }
+
+  .wrapper {
+    @include make-row;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    @include make-col-ready;
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      @include make-col(2.5);
+      text-align: right;
+    }
+
+    img {
+      width: 100%;
+      height: auto !important;
+    }
+  }
+
+  &__group {
+    @include make-col-ready;
+    position: inherit;
+    @include media-breakpoint-up(sm) {
+      @include make-col(7);
+    }
+
+  }
+
+  &__booking {
+    @include make-col-ready;
+    @include media-breakpoint-up(sm) {
+      @include make-col(2.5);
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__offer {
+    //Top Banner Offer here
+  }
+
+  .nav__items {
+
+  }
+  .nav__featured {
+    @include make-row;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      @include make-col-ready;
+      @include make-col(4);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      list-style: none;
+      border-top: solid 1px $t2;
+      border-left: solid 1px $t2;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 11px 0;
+        font-family: $family-primary-lc;
+        font-size: $display10-size;
+        color: $medium;
+        text-decoration: none;
+        @include transition(all .3s);
+
+        &:after {
+          position: relative;
+          margin-left: 10px;
+          font-family: $oceansedge-font-family;
+          font-size: $display9-size;
+          color: $medium;
+          //Better Font Rendering
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          @include transition(all .3s);
+        }
+
+        &:hover {
+          text-decoration: none;
+          background: $tertiary;
+        }
+      }
+
+      &:first-child {
+        @include make-col(2);
+        a {
+          &:after {
+            content: $icon-gallery-icon;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          &:after {
+            content: $icon-webcam;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          &:after {
+            font-size: $display7-size;
+            content: $icon-marina-icon;
+          }
+        }
+      }
+
+      &:last-child {
+        @include make-col(2);
+        border-right: solid 1px $t2;
+        a {
+          &:after {
+            content: $icon-groups-icon;
+          }
+        }
+      }
+
+    }
+  }
+  .nav__main {
+    @include make-row;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      @include make-col-ready;
+      @include make-col(2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      text-align: center;
+      list-style: none;
+      border-top: solid 1px $t2;
+      border-left: solid 1px $t2;
+
+      &:last-child {
+        border-right: solid 1px $t2;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 12px 0;
+        font-family: $family-primary-lc;
+        font-size: $display9-size;
+        color: $medium;
+        text-decoration: none;
+        @include transition(all .3s);
+
+        &:hover {
+          text-decoration: none;
+          background: $tertiary;
+        }
+      }
     }
   }
 }

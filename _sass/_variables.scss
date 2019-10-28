@@ -78,10 +78,10 @@ $family-primary: 'Code Pro W01 Regular';
 $family-primary-light: 'Code Pro W01 Light';
 $family-primary-bold: 'Code Pro W01 Bold';
 $family-primary-black: 'Code Pro W01 Black';
-$family-primary-lowercase: 'Code Pro W01 Lowercase';
-$family-primary-light-lowercase: 'Code Pro W01 Light Lowercase';
-$family-primary-bold-lowercase: 'Code Pro W01 Bold Lowercase';
-$family-primary-black-lowercase: 'Code Pro W01 Black Lowercase';
+$family-primary-lc: 'Code Pro W01 Lowercase';
+$family-primary-light-lc: 'Code Pro W01 Light Lowercase';
+$family-primary-bold-lc: 'Code Pro W01 Bold Lowercase';
+$family-primary-black-lc: 'Code Pro W01 Black Lowercase';
 
 $family-secondary: 'AdobeGaramondW01-Regula';
 $family-secondary-italic: 'Adobe Garamond W01 It';
@@ -89,6 +89,20 @@ $family-secondary-semi-bold: 'Adobe Garamond W01 SmBd';
 $family-secondary-semi-bold-italic: 'AdobeGaramondW01-SmBdIt';
 $family-secondary-bold: 'Adobe Garamond W01 Bd';
 $family-secondary-bold-italic: 'AdobeGaramondW01-BdIt';
+
+$oceansedge-font-family: 'oceansedge' !default;
+$oceansedge-font-path: 'font' !default;
+$icon-calendar: '\e900';
+$icon-call-icon: '\e901';
+$icon-gallery-icon: '\e902';
+$icon-groups-icon: '\e903';
+$icon-marina-icon: '\e904';
+$icon-offers-icon: '\e905';
+$icon-resort-icon: '\e906';
+$icon-stay-icon: '\e907';
+$icon-webcam: '\e908';
+$icon-menu-icon-close: '\e909';
+$icon-menu-icon-default: '\e90a';
 
 // $family-arrows: 'ITC Officina Disp Arrows W05';
 // $family-bullets: 'ITC Officina Disp Bullets W05';

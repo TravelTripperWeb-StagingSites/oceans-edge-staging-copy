@@ -10,9 +10,9 @@ body, p {
 }
 
 .cp-lc {
-  font-family: $family-primary-lowercase;
+  font-family: $family-primary-lc;
   p, a {
-    font-family: $family-primary-lowercase;
+    font-family: $family-primary-lc;
   }
 }
 
@@ -55,7 +55,7 @@ body, p {
 }
 
 .h4 {
-  font-family: $family-primary-lowercase;
+  font-family: $family-primary-lc;
   font-size: $display6-size;
   line-height: $display5-size;
   color: $primary;
@@ -68,7 +68,7 @@ body, p {
 }
 
 .h5 {
-  font-family: $family-primary-lowercase;
+  font-family: $family-primary-lc;
   font-size: $base-font-size;
   line-height: $display5-size;
   color: $primary;

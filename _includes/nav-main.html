@@ -2,57 +2,47 @@
   note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
 {% endcomment %}
 <nav class="navbar is-fixed-top nav--main" id="js-navbar--main">
-  <div class="container-fluid p-0 flex-nowrap">
-    <a class="nav__link navbar-brand" href="/">
-      <span class="nav__logo"
-        data-live-edit-settings='hotel_settings'
-        data-live-edit-settings-field='logo'
-        data-live-editable-type='image'
-      >
-        {% if site.data.hotel_settings.logo and site.data.hotel_settings.logo.url and site.data.hotel_settings.logo.url != '' %}
-          {% assign logo_url = site.data.hotel_settings.logo.url_xsmall | default: site.data.hotel_settings.logo.url %}
-          <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo.alt | default: 'Logo' }}" />
-        {% else %}
-          <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
-        {% endif %}
-      </span>
-    </a>
-    <div class="navbar__group">
-      <div class="navbar__offer">
-        <p>Offer Here</p>
-      </div>
-      <div class="nav__group">
+  <div class="container-fluid">
+    <div class="wrapper">
+      <a class="nav__link navbar-brand" href="/">
+        <span class="nav__logo"
+          data-live-edit-settings='hotel_settings'
+          data-live-edit-settings-field='logo'
+          data-live-editable-type='image'
+        >
+          {% if site.data.hotel_settings.logo and site.data.hotel_settings.logo.url and site.data.hotel_settings.logo.url != '' %}
+            {% assign logo_url = site.data.hotel_settings.logo.url_xsmall | default: site.data.hotel_settings.logo.url %}
+            <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo.alt | default: 'Logo' }}" />
+          {% else %}
+            <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
+          {% endif %}
+        </span>
+      </a>
+      <div class="navbar__group">
+        <div class="navbar__offer">
+          <p>Offer Here</p>
+        </div>
         <div class="nav__items">
-          <div class="nav__featured">
-            <ul class="nav align-items-center text-uppercase justify-content-end pr-2">
-              {% assign items = site.data._menus.featured.items %}
-              {% include nav/nav-item-list.html items=items %}
-            </ul>
-          </div>
-          <div class="nav__main">
-            <ul class="nav align-items-center text-uppercase justify-content-end pr-2">
-              {% assign items = site.data._menus.main.items %}
-              {% include nav/nav-item-list.html items=items %}
-              <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger mr-2">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a></li>
-            </ul>
-            <ul class="nav--device" navMenu>
+          <ul class="nav__featured">
+            {% assign items = site.data._menus.featured.items %}
+            {% include nav/nav-item-list.html items=items %}
+          </ul>
+          <ul class="nav__main">
+            {% assign items = site.data._menus.main.items %}
+            {% include nav/nav-item-list.html items=items %}
+            <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">Menu</a></li>
+          </ul>
+          <div class="nav--device">
+            <ul navMenu>
               {% assign items = site.data._menus.mega.items %}
               {% include nav/nav-item-list.html items=items %}
             </ul>
-            <div class="flex-shrink-0">
-              {% include components/booking-widget-button %}
-            </div>
           </div>
         </div>
-        <div class="nav__booking">
-
-        </div>
+      </div>
+      <div class="navbar__booking">
+        {% include components/booking-widget-button %}
       </div>
     </div>
-
   </div>
 </nav>
