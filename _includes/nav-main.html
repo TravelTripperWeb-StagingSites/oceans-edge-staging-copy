@@ -18,30 +18,36 @@
           {% endif %}
         </span>
       </a>
+      <div class="navbar__booking d-block d-lg-none">
+        {% include components/booking-widget-mobile-button %}
+      </div>
       <div class="navbar__group">
-        <div class="navbar__offer">
-          <p>Offer Here</p>
+        <div class="navbar__offer d-none d-lg-block">
+          <p>Exclusive Member Benefits Offer: <span>Save up to 25%</span> <a class="btn btn--tertiary-s2" href="#">find out more</a></p>
         </div>
-        <div class="nav__items">
-          <ul class="nav__featured">
-            {% assign items = site.data._menus.featured.items %}
-            {% include nav/nav-item-list.html items=items %}
-          </ul>
-          <ul class="nav__main">
-            {% assign items = site.data._menus.main.items %}
-            {% include nav/nav-item-list.html items=items %}
-            <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">Menu</a></li>
-          </ul>
-          <div class="nav--device">
-            <ul navMenu>
-              {% assign items = site.data._menus.mega.items %}
+        <div class="navbar__group__wrap d-none d-lg-flex">
+          <div class="nav__items">
+            <ul class="nav__featured">
+              {% assign items = site.data._menus.featured.items %}
               {% include nav/nav-item-list.html items=items %}
             </ul>
+            <ul class="nav__main">
+              {% assign items = site.data._menus.main.items %}
+              {% include nav/nav-item-list.html items=items %}
+              <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">Menu</a></li>
+            </ul>
+            <div class="nav--device">
+              <ul navMenu>
+                {% assign items = site.data._menus.mega.items %}
+                {% include nav/nav-item-list.html items=items %}
+              </ul>
+            </div>
+          </div>
+          <div class="navbar__booking">
+            <a class="tel" href="tel:877-935-0862">(877) 935-0862</a>
+            {% include components/booking-widget-button %}
           </div>
         </div>
-      </div>
-      <div class="navbar__booking">
-        {% include components/booking-widget-button %}
       </div>
     </div>
   </div>

@@ -1,0 +1,3 @@
+<div ttweb-component="BookingWidgetButton">
+   <a href="https://{{site.data.hotel_settings._portal_id}}.reztrip.com/" target="_NEW" role="button" class="btn btn--book">book</a>
+</div>

@@ -1,3 +1,34 @@
-<div class="copyright m-2">
-  &copy; {{ "now" | date: "%Y" }}
-</div>
+<section class="footer__wrapper">
+  {% include forms/jotform/newsletter.html %}
+  <div class="footer__detail">
+    <div class="footer__logo">
+      <span
+        data-live-edit-settings='hotel_settings'
+        data-live-edit-settings-field='logo-footer'
+        data-live-editable-type='image'
+      >
+        {% if site.data.hotel_settings.logo-footer and site.data.hotel_settings.logo-footer.url and site.data.hotel_settings.logo-footer.url != '' %}
+          {% assign logo_url = site.data.hotel_settings.logo-footer.url_xsmall | default: site.data.hotel_settings.logo-footer.url %}
+          <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo-footer.alt | default: 'Logo Footer' }}" />
+        {% else %}
+          <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
+        {% endif %}
+      </span>
+    </div>
+    <div class="footer__contact">
+      <p>A - {{site.data.hotel_settings.address.street1}} {{site.data.hotel_settings.address.city}} {{site.data.hotel_settings.address.state}} {{site.data.hotel_settings.address.zipcode}}</p>
+      <p>T - <a href="tel:{{site.data.hotel_settings.phone_number}}">{{site.data.hotel_settings.phone_number}}</a></p>
+    </div>
+    <div class="footer__reservations">
+      <p>R - <a href="tel:{{site.data.hotel_settings.reservation}}">{{site.data.hotel_settings.reservation}}</a></p>
+      <p>E - <a href="mailto:{{site.data.hotel_settings.email}}">{{site.data.hotel_settings.email}}</a></p>
+    </div>
+    <div class="footer__nav">
+      {% assign items = site.data._menus.footer.items %}
+      {% include nav/nav-item-list.html items=items %}
+    </div>
+  </div>
+  <div class="copyrights">
+
+  </div>
+</section>
