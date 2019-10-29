@@ -104,3 +104,9 @@ body, p {
 .dark {
   color: $dark !important;
 }
+
+.w-md-auto {
+  @include media-breakpoint-up(md) {
+    width: auto !important;
+  }
+}

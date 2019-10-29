@@ -1,10 +1,39 @@
 .footer {
   position: relative;
+  display: inline-block;
   width: 100%;
 
+  @include media-breakpoint-up(md) {
+    background-position: top left;
+    background-size: contain;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 384px;
+    content: '';
+    background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572333374/uazr5tckqpbh62nbb46c.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    opacity: .2;
+
+    @include media-breakpoint-up(lg) {
+      height: 296px;
+    }
+  }
+
+
   &__wrapper {
+    position: relative;
+    z-index: 1;
     max-width: 1224px;
-    margin: 16px auto;
+    margin: 50px auto 0;
   }
 
   &__detail {
@@ -188,11 +217,21 @@
   }
 
   &__signup {
-    max-width: 1103px;
+    max-width: 340px;
     margin: 50px auto;
 
+    @include media-breakpoint-up(lg) {
+      max-width: 1103px;
+    }
+
     .overline {
-      margin: 0 25px 10px;
+      margin: 0 auto 20px;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 25px 10px;
+        text-align: left;
+      }
 
       span {
         font-family: $family-secondary-bold-italic;
@@ -212,31 +251,94 @@
 
       .form-control {
         max-width: 288px;
-        margin: 0 12px;
+        margin: 0 12px 16px;
+        border: 0;
+        box-shadow: 0 2px 8px rgba(1, 36, 51, .1);
+
+        &:focus {
+          box-shadow: 0 2px 8px rgba(1, 36, 51, .3) !important;
+        }
+
+        @include media-breakpoint-up(lg) {
+          margin: 0 12px;
+          text-align: left;
+        }
       }
 
       .form-group {
         max-width: 266px;
-        margin: 0 12px;
+        margin: 0 auto 16px;
+
+        @include media-breakpoint-up(lg) {
+          margin: 0 12px;
+        }
       }
 
       .form-check-label {
         font-size: $display8-size;
         line-height: $base-font-size;
+
+        a {
+          color: $primary;
+          text-decoration: underline;
+        }
       }
 
       .btn--book {
-        margin: 0 12px;
+        display: inherit;
+        margin: 0 auto;
         font-size: $display9-size;
         color: $light;
         letter-spacing: 1px;
         background: $primary;
+
+        @include media-breakpoint-up(lg) {
+          margin: 0 12px;
+        }
 
         &:hover, &:focus {
           color: $primary;
           background: $secondary;
         }
       }
+    }
+  }
+
+  &__copyrights {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    height: 180px;
+    margin: 0 25px 90px;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 102px;
+      margin: 0 25px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      font-family: $family-primary-lc;
+      font-size: $display9-size;
+      line-height: $base-font-size;
+      color: $dark;
+
+      @include media-breakpoint-up(md) {
+        font-size: $base-font-size;
+        line-height: $display6-size;
+      }
+    }
+
+    .fodor {
+      width: 80px;
+      height: 80px;
     }
   }
 }

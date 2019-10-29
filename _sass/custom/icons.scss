@@ -22,6 +22,11 @@
     content: $icon-call-icon;
   }
 }
+.icon-call-circle-icon {
+  &:before {
+    content: $icon-call-circle-icon;
+  }
+}
 .icon-gallery-icon {
   &:after {
     content: $icon-gallery-icon;
