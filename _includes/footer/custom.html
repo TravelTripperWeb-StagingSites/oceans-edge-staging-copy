@@ -1,5 +1,7 @@
 <section class="footer__wrapper">
-  {% include forms/jotform/newsletter.html %}
+  <div class="footer__signup">
+    {% include forms/jotform/newsletter.html %}
+  </div>
   <div class="footer__detail">
     <div class="footer__logo">
       <span
@@ -16,17 +18,19 @@
       </span>
     </div>
     <div class="footer__contact">
+      <title class="h5">Contact</title>
       <p>A - {{site.data.hotel_settings.address.street1}} {{site.data.hotel_settings.address.city}} {{site.data.hotel_settings.address.state}} {{site.data.hotel_settings.address.zipcode}}</p>
       <p>T - <a href="tel:{{site.data.hotel_settings.phone_number}}">{{site.data.hotel_settings.phone_number}}</a></p>
     </div>
     <div class="footer__reservations">
+      <title class="h5">Reservations</title>
       <p>R - <a href="tel:{{site.data.hotel_settings.reservation}}">{{site.data.hotel_settings.reservation}}</a></p>
       <p>E - <a href="mailto:{{site.data.hotel_settings.email}}">{{site.data.hotel_settings.email}}</a></p>
     </div>
-    <div class="footer__nav">
+    <ul class="footer__nav">
       {% assign items = site.data._menus.footer.items %}
       {% include nav/nav-item-list.html items=items %}
-    </div>
+    </ul>
   </div>
   <div class="copyrights">
 
