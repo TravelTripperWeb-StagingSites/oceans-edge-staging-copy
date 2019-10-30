@@ -192,37 +192,55 @@
 
       li {
         display: inline-block;
+        margin-right: 10px;
         list-style: none;
 
+        &:last-child {
+          margin-right: 0;
+        }
+
         a {
-          display: inline-block;
-          font-family: 'Font Awesome 5 Brands';
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          background: $secondary;
+          border-radius: 50%;
+          @include transition(all .3s);
+
+          &:after {
+            position: relative;
+            font-family: 'Font Awesome 5 Brands';
+            font-size: $display8-size;
+            color: $primary;
+            @include transition(all .3s);
+          }
+
+          &:hover {
+            background: $primary;
+
+            &:after {
+              color: $secondary;
+            }
+          }
         }
 
         .facebook {
           &:after {
-            position: relative;
-            font-family: 'Font Awesome 5 Brands';
-            font-size: $display5-size;
-            color: $secondary;
             content: '\f39e';
           }
         }
 
         .twitter {
           &:after {
-            font-family: 'Font Awesome 5 Brands';
-            font-size: $display5-size;
-            color: $secondary;
             content: '\f099';
           }
         }
 
         .instagram {
           &:after {
-            font-family: 'Font Awesome 5 Brands';
-            font-size: $display5-size;
-            color: $secondary;
             content: '\f16d';
           }
         }
