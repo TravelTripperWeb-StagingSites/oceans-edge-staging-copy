@@ -3,10 +3,10 @@ layout: default
 ---
 
 <section class="hero-carousel">
-  {% assign items = site.data.models.hero-carousel %}
   <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.hero_carousel | sort: order %}
     {% for item in items %}
-    <img src="{{ item.image }}" alt= "{{ item.name }}"" />
+    <img src="{{ item.image.url_large }}" alt= "{{ item.name }}" />
     {% endfor %}
   </div>
   <div class="hero-carousel__controls" id="heroNav">
