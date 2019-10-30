@@ -186,6 +186,48 @@
         display: block;
       }
     }
+
+    .social {
+      padding: 0;
+
+      li {
+        display: inline-block;
+        list-style: none;
+
+        a {
+          display: inline-block;
+          font-family: 'Font Awesome 5 Free';
+        }
+
+        .facebook {
+          &:after {
+            position: relative;
+            font-family: 'Font Awesome 5 Free';
+            font-size: $display5-size;
+            color: $secondary;
+            content: '\f054';
+          }
+        }
+
+        .twitter {
+          &:after {
+            font-family: 'Font Awesome 5 Free';
+            font-size: $display5-size;
+            color: $secondary;
+            content: '\f099';
+          }
+        }
+
+        .instagram {
+          &:after {
+            font-family: 'Font Awesome 5 Free';
+            font-size: $display5-size;
+            color: $secondary;
+            content: '\f16d';
+          }
+        }
+      }
+    }
   }
   &__nav {
     @include make-col-ready;

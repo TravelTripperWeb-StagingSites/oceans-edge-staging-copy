@@ -26,6 +26,25 @@
       <title class="h5">Reservations</title>
       <p>R - <a href="tel:{{site.data.hotel_settings.reservation}}">{{site.data.hotel_settings.reservation}}</a></p>
       <p>E - <a href="mailto:{{site.data.hotel_settings.email}}">{{site.data.hotel_settings.email}}</a></p>
+      <ul class="social">
+        {% assign socialLinks = site.data.social %}
+        {% if socialLinks.facebook.username %}
+        <li>
+          <a class="facebook" href="https://www.facebook.com/{{socialLinks.facebook.username}}/" target="_blank" title="Follow us on Facebook"></a>
+        </li>
+        {% endif %}
+        {% if socialLinks.twitter.username %}
+        <li>
+          <a class="twitter" href="https://www.twitter.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on twitter"></a>
+        </li>
+        {% endif %}
+        {% if socialLinks.instagram.username %}
+        <li>
+          <a class="instagram" href="https://www.instagram.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on instagram"></a>
+        </li>
+        {% endif %}
+
+      </ul>
     </div>
     <ul class="footer__nav">
       {% assign items = site.data._menus.footer.items %}

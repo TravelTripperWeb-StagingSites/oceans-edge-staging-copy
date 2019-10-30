@@ -3,17 +3,19 @@
 {% endcomment %}
 
 {% assign handle = site.data.social.instagram.username %}
-{% assign fb = site.data.social.facebook.username %}
 
 <section class="c-instagram-feed">
   <div class="c-instagram-feed__container">
     <div class="follow-instagram">
-      <p class="h3">Follow. Share. Inspire.</p>
-      <a href="https://www.facebook.com/{{fb}}/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/{{handle}}/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <p class="h3">OEKW Moments</p>
+      <p class="overline">Follow us on Instagram <span>@{{site.data.social.instagram.username}}</span></p>
     </div>
     <div class="c-instagram-feed__list">
-      <div class="photo-list" data-instagram-user-name="{{handle}}" tabindex="-1"></div>
+      <div class="photo-list insta-slider" data-instagram-user-name="{{handle}}" tabindex="-1"></div>
     </div>
+  </div>
+  <div class="custom-control-items" id="customNavItemsInsta">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Items"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Items"></a>
   </div>
 </section>
