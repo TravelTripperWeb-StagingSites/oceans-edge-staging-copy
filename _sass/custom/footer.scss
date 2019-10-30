@@ -196,22 +196,22 @@
 
         a {
           display: inline-block;
-          font-family: 'Font Awesome 5 Free';
+          font-family: 'Font Awesome 5 Brands';
         }
 
         .facebook {
           &:after {
             position: relative;
-            font-family: 'Font Awesome 5 Free';
+            font-family: 'Font Awesome 5 Brands';
             font-size: $display5-size;
             color: $secondary;
-            content: '\f054';
+            content: '\f39e';
           }
         }
 
         .twitter {
           &:after {
-            font-family: 'Font Awesome 5 Free';
+            font-family: 'Font Awesome 5 Brands';
             font-size: $display5-size;
             color: $secondary;
             content: '\f099';
@@ -220,7 +220,7 @@
 
         .instagram {
           &:after {
-            font-family: 'Font Awesome 5 Free';
+            font-family: 'Font Awesome 5 Brands';
             font-size: $display5-size;
             color: $secondary;
             content: '\f16d';

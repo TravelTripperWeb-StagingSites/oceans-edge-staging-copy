@@ -23,9 +23,9 @@
   &:after {
     position: relative;
     margin-left: 8px;
-    font-family: 'Font Awesome 5 Free';
+    font-family: $oceansedge-font-family;
     font-size: 90%;
-    content: '\f054';
+    content: $icon-chevron-right;
     opacity: .5;
   }
 
@@ -169,7 +169,7 @@
   }
 
   &:after {
-    font-family: 'Font Awesome 5 Free';
+    font-family: $oceansedge-font-family;
     font-size: 100%;
     color: $medium;
     content: '';
@@ -187,13 +187,13 @@
 
   &--left {
     &:after {
-      content: '\f053';
+      content: $icon-chevron-left;
     }
   }
 
   &--right {
     &:after {
-      content: '\f054';
+      content: $icon-chevron-right;
     }
   }
 
