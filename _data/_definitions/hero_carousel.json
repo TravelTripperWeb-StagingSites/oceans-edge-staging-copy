@@ -4,8 +4,7 @@
     "localizable": true
   },
   "image": {
-    "type": "image",
-    "multiple": true
+    "type": "image"
   },
   "order": {
     "type": "integer",
