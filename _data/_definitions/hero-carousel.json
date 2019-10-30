@@ -1,0 +1,14 @@
+{
+  "name": {
+    "required": true,
+    "localizable": true
+  },
+  "image": {
+    "type": "image",
+    "multiple": true
+  },
+  "order": {
+    "type": "integer",
+    "required": true
+  }
+}
