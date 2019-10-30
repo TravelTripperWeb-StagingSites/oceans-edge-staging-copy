@@ -1,5 +1,18 @@
 ---
-layout: generic
+layout: default
 ---
+
+<section class="hero-carousel">
+  {% assign items = site.data.models.hero-carousel %}
+  <div class="hero-carousel__wrap">
+    {% for item in items %}
+    <img src="{{ item.image }}" alt= "{{ item.name }}"" />
+    {% endfor %}
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+</section>
 
 {{ content }}
