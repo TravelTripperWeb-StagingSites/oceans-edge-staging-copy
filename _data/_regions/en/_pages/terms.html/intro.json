@@ -34,7 +34,7 @@
       "full_bleed": true
     },
     "html": {
-      "content": "<ol>\n<li class=\"h1\">Heading</li>\n</ol>"
+      "content": "<ol class=\"m-5\">\n<li class=\"h1\">Heading</li>\n</ol>"
     }
   }
 ]
