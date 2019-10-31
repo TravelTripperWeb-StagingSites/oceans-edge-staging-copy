@@ -43,6 +43,10 @@ layout: default
   <a class="btn" href="#">Discover More</a>
 </section>
 
+{% region intro, type:mixed %}
+
+{{ content }}
+
 <section class="experience">
   {% regionblock experience_tagline, type:text %}
   <p class="overline overline--italic text-center dark" tabindex="0">Experience Key West</p>
@@ -57,4 +61,4 @@ layout: default
   </div>
 </section>
 
-{{ content }}
+{% region outro, type:mixed %}
