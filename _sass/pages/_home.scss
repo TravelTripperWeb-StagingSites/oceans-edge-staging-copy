@@ -3,13 +3,30 @@
   width: 100%;
 
   &__wrap {
+    position: relative;
+    z-index: -1;
     width: 100%;
-    height: 100vh;
+    height: calc(80vh);
+
+    @include media-breakpoint-up(md) {
+      height: calc(100vh);
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40vh;
+      content: '';
+      @include linearGradient(transparent, $light);
     }
   }
 
@@ -18,35 +35,100 @@
     justify-content: space-between;
     width: 100%;
 
+    .iconbtn {
+      background: $light;
+      @include transition(all .3s);
+
+      @include media-breakpoint-up(md) {
+        background: rgba(2,81,113,.3);
+      }
+
+      &:after {
+        color: $dark;
+
+        @include media-breakpoint-up(md) {
+          color: $light;
+        }
+      }
+
+      &:hover {
+        background: $light;
+
+        @include media-breakpoint-up(md) {
+          background: rgba(2,81,113,1);
+        }
+      }
+    }
+
     .iconbtn--left {
       position: absolute;
-      top: calc(50% + 43px);
-      left: 10px;
+      top: calc(20% + 43px);
+      left: 16px;
       z-index: 0;
 
       @include media-breakpoint-up(sm) {
-        top: calc(50% + 36px);
-        left: 5%;
-      }
-
-      @include media-breakpoint-up(xl) {
-        left: 0;
+        top: calc(30% + 36px);
+        left: 40px;
       }
     }
 
     .iconbtn--right {
       position: absolute;
-      top: calc(50% + 43px);
-      right: 10px;
+      top: calc(20% + 43px);
+      right: 16px;
       z-index: 0;
 
       @include media-breakpoint-up(sm) {
-        top: calc(50% + 36px);
-        right: 5%;
+        top: calc(30% + 36px);
+        right: 40px;
       }
+    }
+  }
 
-      @include media-breakpoint-up(xl) {
-        right: 0;
+  &__intro {
+    position: relative;
+    z-index: 0;
+    max-width: 1046px;
+    margin: -150px auto 0;
+    padding: 0 15px;
+    .description {
+      padding: 15px 0;
+      text-align: center;
+      p {
+        font-size: $display7-size;
+        line-height: $display6-size;
+        color: $dark;
+
+        @include media-breakpoint-up(md) {
+          font-size: $display5-size;
+          line-height: $display4-size;
+        }
+
+        b {
+          font-family: $family-secondary-italic;
+        }
+      }
+    }
+  }
+}
+
+.amenities {
+  text-align: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1046px;
+    margin: 0 auto;
+    padding: 35px 15px 0;
+
+    li {
+      list-style: none;
+
+      img {
+        max-width: 104px;
+        max-height: 104px;
       }
     }
   }
