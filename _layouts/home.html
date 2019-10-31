@@ -47,4 +47,19 @@ layout: default
 
 {{ content }}
 
-{% region outro, type:mixed %}
+<section class="experience">
+  <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+  <div class="experience__wrap">
+    {% regionblock experience_tagline, type:text %}
+    <p class="overline overline--italic text-center" tabindex="0">Experience Key West</p>
+    {% endregionblock %}
+    {% regionblock experience_heading, type:header %}
+    <h5 class="h3" tabindex="0">things to do & see in Key west</h5>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>As a Ocean’s Edge guest, you have access to an <b>exceptional variety</b> of activities and things to do in Key West. Fishing, paddleboarding, yoga, kayaking & scuba diving are some of the many activities available immediately in our resort. <b>We provide everything you need</b> for rentals, equipment, and accessories for your exploration. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
