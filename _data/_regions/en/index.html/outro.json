@@ -14,7 +14,7 @@
     },
     "container_classes": " ",
     "html": {
-      "content": "<div class=\"experience__wrap\">\n<p class=\"overline overline--italic text-center dark\" tabindex=\"0\">Experience Key West</p>\n<h5 class=\"h3\" tabindex=\"0\">things to do &amp; see in Key west</h5>\n<div class=\"description\" tabindex=\"0\">\n<p>As a Ocean&rsquo;s Edge guest, you have access to an <strong>exceptional variety</strong> of activities and things to do in Key West. Fishing, paddleboarding, yoga, kayaking &amp; scuba diving are some of the many activities available immediately in our resort. <strong>We provide everything you need</strong> for rentals, equipment, and accessories for your exploration. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n</div>\n</div>"
+      "content": "<p><img alt=\"\" /></p>\n<div class=\"experience__wrap\">\n<p class=\"overline overline--italic text-center dark\" tabindex=\"0\">Experience Key West</p>\n<h5 class=\"h3\" tabindex=\"0\">things to do &amp; see in Key west</h5>\n<div class=\"description\" tabindex=\"0\">\n<p>As a Ocean&rsquo;s Edge guest, you have access to an <strong>exceptional variety</strong> of activities and things to do in Key West. Fishing, paddleboarding, yoga, kayaking &amp; scuba diving are some of the many activities available immediately in our resort. <strong>We provide everything you need</strong> for rentals, equipment, and accessories for your exploration. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n</div>\n</div>"
     }
   }
 ]
