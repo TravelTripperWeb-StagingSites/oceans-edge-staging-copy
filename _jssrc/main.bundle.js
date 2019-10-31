@@ -47,4 +47,25 @@ readyDoc(function () {
       nextButton: "#heroNav .iconbtn--right" // next button
     });
   }
+
+  if (document.getElementsByClassName('amenities__listing').length > 0) {
+    var slider = tns({
+      container: '.amenities__listing',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      responsive: {
+        640: {
+          items: 2
+        },
+        900: {
+          items: 4
+        },
+        1200: {
+          items: 5
+        }
+      }
+    });
+  }
 });

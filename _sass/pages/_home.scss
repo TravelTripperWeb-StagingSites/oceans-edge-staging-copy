@@ -119,16 +119,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1046px;
+    max-width: 1040px;
     margin: 0 auto;
-    padding: 35px 15px 0;
+    padding: 35px 0;
 
     li {
+      padding: 0 12px;
       list-style: none;
 
       img {
         max-width: 104px;
         max-height: 104px;
+      }
+
+      p {
+        font-family: $family-primary;
+        font-size: $display8-size;
+        line-height: $display6-size;
+        color: $primary;
       }
     }
   }
