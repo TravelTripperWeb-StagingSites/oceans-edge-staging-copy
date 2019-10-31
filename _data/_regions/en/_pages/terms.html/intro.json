@@ -32,6 +32,9 @@
         "description": ""
       },
       "full_bleed": true
+    },
+    "html": {
+      "content": "<ol>\n<li class=\"h1\">Heading</li>\n</ol>"
     }
   }
 ]
