@@ -181,3 +181,43 @@
     }
   }
 }
+
+.collage {
+  @include make-container;
+  padding: 64px 0;
+
+  .row {
+    margin: 0 !important;
+  }
+
+  &__image {
+    @include make-col-ready;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  }
+
+  &__content {
+    @include make-col-ready;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 48px;
+      text-align: center;
+
+      .h4, p {
+        color: $light;
+      }
+    }
+  }
+}
