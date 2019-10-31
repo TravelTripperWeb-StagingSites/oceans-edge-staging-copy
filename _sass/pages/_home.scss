@@ -143,9 +143,14 @@
 }
 
 .experience {
-  max-width: 1046px;
-  margin: 0 auto;
-  padding: 0 15px;
+  width: 100%;
+  background-color: $quartenary;
+
+  &__wrap {
+    max-width: 1046px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
   .description {
     padding: 15px 0;
