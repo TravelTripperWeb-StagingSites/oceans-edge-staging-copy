@@ -48,7 +48,9 @@ layout: default
 {{ content }}
 
 <section class="experience">
+  {% regionblock experience_image, type:image %}
   <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+  {% endregionblock %}
   <div class="experience__wrap">
     {% regionblock experience_tagline, type:text %}
     <p class="overline overline--italic text-center" tabindex="0">Experience Key West</p>
