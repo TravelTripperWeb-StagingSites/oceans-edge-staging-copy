@@ -119,9 +119,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1040px;
+    max-width: auto;
     margin: 0 auto;
     padding: 35px 0;
+
+    @include media-breakpoint-up(md) {
+      max-width: 1040px;
+    }
 
     li {
       padding: 0 12px;
@@ -184,7 +188,11 @@
 
 .collage {
   @include make-container;
-  padding: 64px 0;
+  padding: 32px 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 64px 0;
+  }
 
   .row {
     margin: 0 !important;
@@ -195,15 +203,28 @@
     padding: 0;
 
     @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
       @include make-col(4);
+    }
+
+    img {
+      display: block;
     }
   }
 
   &__content {
     @include make-col-ready;
-    padding: 0;
+    padding: 24px 0 40px;
 
     @include media-breakpoint-up(md) {
+      @include make-col(6);
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
       @include make-col(4);
     }
 
@@ -212,10 +233,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100%;
       padding: 0 48px;
       text-align: center;
 
-      .h4, p {
+      .h4 {
+        color: $s2;
+      }
+
+      p {
         color: $light;
       }
     }

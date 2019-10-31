@@ -51,14 +51,11 @@ readyDoc(function () {
   if (document.getElementsByClassName('amenities__listing').length > 0) {
     var slider = tns({
       container: '.amenities__listing',
-      items: 1,
+      items: 2,
       nav: false,
       mouseDrag: true,
       loop: false,
       responsive: {
-        640: {
-          items: 2
-        },
         900: {
           items: 4
         },
