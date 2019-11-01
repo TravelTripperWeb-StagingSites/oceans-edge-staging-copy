@@ -35,14 +35,9 @@
       "original_url": "https://d31f902anbz5po.cloudfront.net/1804/257307_2_master.jpg"
     }
   ],
-  "reztrip_room_id": "5PAX",
   "order": 2,
   "guest_size_max": 6,
   "size": " ft<sup>2</sup>",
   "room_category": "Suite",
   "ada_room": false,
-  "bed_types": [
-    "bed_type_KSB",
-    "bed_type_1"
-  ]
 }

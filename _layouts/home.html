@@ -57,25 +57,8 @@ layout: default
       {% endregionblock %}
     </div>
     <hr />
-    <div class="rooms-cross-sell__options">
-      {% regionblock rooms_filter_tagline, type:text %}
-      <p class="text-center py-4 dark">Select your preferred accommodation type directly or via our interactive resort map:</p>
-      {% endregionblock %}
-      {% assign room-categories = site.data._models.room_categories %}
-      <ul class="filter-items">
-        {% for category in categories %}
-        <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
-        {% endfor %}
-      </ul>
-      <div class="tab-content active" id="rooms">
-        <h2 class="p-5">Rooms</h2>
-      </div>
-      <div class="tab-content" id="suites">
-        <h2 class="p-5">Suites</h2>
-      </div>
-      <div class="tab-content" id="map">
-        <h2 class="p-5">Map</h2>
-      </div>
+    <div class="rooms-cross-sell__content">
+      
     </div>
   </div>
 </section>
