@@ -11,11 +11,6 @@
     "multiple": true,
     "required": true
   },
-  "feature": {
-    "type": "text",
-    "multiple": true,
-    "required": true
-  },
   "readmore": {
     "type": "text",
     "required": true
