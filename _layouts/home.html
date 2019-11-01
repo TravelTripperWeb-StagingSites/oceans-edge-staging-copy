@@ -30,7 +30,7 @@ layout: default
 </section>
 
 <section class="amenities">
-  <h2 class="h4">As our guest, you’ll enjoy these features:</h2>
+  <h2 class="h4"><span>As our guest, you’ll enjoy these features:</span></h2>
   <ul class="amenities__listing">
     {% assign items = site.data._models.amenities %}
     {% for item in items %}
@@ -43,7 +43,42 @@ layout: default
   <a class="btn" href="#">Discover More</a>
 </section>
 
-{% region intro, type:mixed %}
+<section class="rooms-cross-sell">
+  <div class="rooms-cross-sell__wrap">
+    {% regionblock rooms_tagline, type:text %}
+    <p class="overline overline--italic text-center" tabindex="0">Rooms & Suites</p>
+    {% endregionblock %}
+    {% regionblock rooms_heading, type:header %}
+    <h5 class="h3" tabindex="0">Oceanfront Luxury</h5>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock rooms_intro_description, type:text %}
+      <p>Our brand new rooms are the <strong>most spacious in Key West.</strong> But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers <strong>unparalleled ocean views,</strong> luxury amenities and a <strong>private balcony. Our brand new rooms are the most spacious in Key West. But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers unparalleled ocean views, luxury amenities and a private balcony.</strong></p>
+      {% endregionblock %}
+    </div>
+    <hr />
+    <div class="rooms-cross-sell__options">
+      {% regionblock rooms_filter_tagline, type:text %}
+      <p class="text-center py-4 dark">Select your preferred accommodation type directly or via our interactive resort map:</p>
+      {% endregionblock %}
+      {% assign room-categories = site.data._models.room_categories %}
+      <ul class="filter-items">
+        {% for category in categories %}
+        <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content active" id="rooms">
+        <h2 class="p-5">Rooms</h2>
+      </div>
+      <div class="tab-content" id="suites">
+        <h2 class="p-5">Suites</h2>
+      </div>
+      <div class="tab-content" id="map">
+        <h2 class="p-5">Map</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 {{ content }}
 

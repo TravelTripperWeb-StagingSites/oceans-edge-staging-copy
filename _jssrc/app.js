@@ -64,4 +64,38 @@ readyDoc(function() {
     });
   }
 
+  // Tabs Script Start ======================================
+
+  if(document.getElementsByClassName("filter-items")[0]) {
+    setTimeout(function() {
+      let catItems = document.querySelectorAll(".filter-items li a");
+      for(let i = 0; i < catItems.length; i++) {
+        catItems[i].addEventListener('click', function(e) {
+          for(let j = 0; j < catItems.length; j++) {
+            catItems[j].classList.remove("active");
+          }
+          e.currentTarget.classList.add("active");
+          let filterItem = e.currentTarget.getAttribute("data-filter");
+          let tabItems = document.getElementsByClassName("tab-content");
+          let currentTabItems = document.getElementsByClassName(filterItem);
+          if(filterItem == "all") {
+            for(let i = 0; i < tabItems.length; i++) {
+              tabItems[i].style.display = "flex";
+            }
+          } else {
+            for(let i = 0; i < tabItems.length; i++) {
+              tabItems[i].style.display = "none";
+            }
+            for(let i = 0; i < currentTabItems.length; i++) {
+              currentTabItems[i].style.display = "flex";
+            }
+          }
+        });
+      }
+    }, 2000);
+  }
+
+
+  // Tabs Script End ======================================
+
 });
