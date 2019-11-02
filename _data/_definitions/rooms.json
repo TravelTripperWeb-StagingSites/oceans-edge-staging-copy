@@ -25,7 +25,7 @@
     "type": "model",
     "multiple": true,
     "display_field": "Room Type",
-    "model_name": "room_type"
+    "model_name": "room_bed_type"
   },
   "view": {
     "type": "select",
