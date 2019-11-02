@@ -56,9 +56,51 @@ layout: default
       <p>Our brand new rooms are the <strong>most spacious in Key West.</strong> But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers <strong>unparalleled ocean views,</strong> luxury amenities and a <strong>private balcony. Our brand new rooms are the most spacious in Key West. But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers unparalleled ocean views, luxury amenities and a private balcony.</strong></p>
       {% endregionblock %}
     </div>
-    <hr />
-    <div class="rooms-cross-sell__content">
-      
+    <div class="rooms-cross-sell__content-wrap">
+      <div class="rooms-cross-sell__image">
+        {% assign items = site.data._models.rooms %}
+        {% for item in items %}
+          <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
+        {% endfor %}
+        <div class="rooms-cross-sell__controls" id="roomsNav">
+          <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+          <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+        </div>
+      </div>
+      <div class="rooms-cross-sell__content">
+        <div class="rooms-cross-sell__content__detail">
+          {% regionblock rooms-cross-sell_tagline, type:text %}
+          <p class="overline overline--italic dark" tabindex="0">Oceanfront Rooms & Suites</p>
+          {% endregionblock %}
+          {% regionblock rooms-cross-sell_heading, type:header %}
+          <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock rooms-cross-sell_text, type:text %}
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            {% endregionblock %}
+          </div>
+          {% regionblock rooms-cross-sell_subheading, type:header %}
+          <p class="h5" tabindex="0">Oceanfront Accommodation Features</p>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock rooms-cross-sell_features, type:text %}
+            <ul>
+              <li>Every room is oceanfront</li>
+              <li>Sizable waterfront balconies and porches</li>
+              <li>Key West's largest guestrooms and suites</li>
+              <li>Extensive onsite watersports and boat charter facilities</li>
+              <li>A variety of Key West accommodation options, including multiple room and suite combinations</li>
+              <li>On-site parking - $20 per day</li>
+              <li>High speed Wi-Fi access</li>
+            </ul>
+            {% endregionblock %}
+          </div>
+          {% regionblock rooms-cross-sell_url, type:text %}
+          <a class="btn" href="#">Browse Accomodations</a>
+          {% endregionblock %}
+        </div>
+      </div>
     </div>
   </div>
 </section>

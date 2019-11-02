@@ -78,18 +78,18 @@ readyDoc(function () {
           }
           e.currentTarget.classList.add("active");
           var filterItem = e.currentTarget.getAttribute("data-filter");
-          var happeningsItems = document.getElementsByClassName("tab-content");
-          var currentHappeningsItems = document.getElementsByClassName(filterItem);
+          var tabItems = document.getElementsByClassName("tab-content");
+          var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
-            for (var _i = 0; _i < happeningsItems.length; _i++) {
-              happeningsItems[_i].style.display = "flex";
+            for (var _i = 0; _i < tabItems.length; _i++) {
+              tabItems[_i].style.display = "flex";
             }
           } else {
-            for (var _i2 = 0; _i2 < happeningsItems.length; _i2++) {
-              happeningsItems[_i2].style.display = "none";
+            for (var _i2 = 0; _i2 < tabItems.length; _i2++) {
+              tabItems[_i2].style.display = "none";
             }
-            for (var _i3 = 0; _i3 < currentHappeningsItems.length; _i3++) {
-              currentHappeningsItems[_i3].style.display = "flex";
+            for (var _i3 = 0; _i3 < currentTabItems.length; _i3++) {
+              currentTabItems[_i3].style.display = "flex";
             }
           }
         });

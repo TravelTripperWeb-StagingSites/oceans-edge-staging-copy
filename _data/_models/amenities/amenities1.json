@@ -1,8 +1,5 @@
 {
   "order": 1,
-  "name_localized": {
-    "en": "Pool at Oceans Edge Key West"
-  },
   "image": {
     "name": "oceanview",
     "content_type": "image/png",
@@ -26,6 +23,6 @@
     "caption": "",
     "description": ""
   },
-  "name": "All rooms with 100% ocean views",
+  "name": "Oceanfront view",
   "description": "All rooms with 100% ocean views"
 }
