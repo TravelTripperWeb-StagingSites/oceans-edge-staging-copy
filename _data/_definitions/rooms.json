@@ -23,7 +23,6 @@
   },
   "room_category": {
     "type": "model",
-    "multiple": true,
     "display_field": "name",
     "model_name": "room_bed_type"
   },
