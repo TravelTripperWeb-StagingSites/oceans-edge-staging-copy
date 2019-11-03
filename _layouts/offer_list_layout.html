@@ -1,0 +1,50 @@
+---
+layout: generic
+---
+
+
+{% if site.data._models.offers %}
+  {% assign offers = site.data._models.offers | sort:"order" %}
+  <section class="c-offer-list">
+    <div class="c-offer-list__items">
+      {% for offer in offers %}
+        {% include components/offer sync_content=page.sync_offer_content %}
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  {% regionblock no_list_items, type:html %}
+    {% t 'offers.none' %}
+  {% endregionblock %}
+{% endif %}
+
+
+
+
+{{ content }}
+
+{% comment %}
+
+  Name:
+
+    Offer List Page
+
+  Description:
+
+    Displays a list of offer models enhanced with dynamic data from reztrip. 
+    
+    Allows user editable regions via the generic layout.
+
+  Usage:
+
+    In a page that uses this layout, you can add `sync_offer_content: true` to the front matter
+    which will make Image, Title, ShortDescription and Description display the latest content from reztrip
+    instead of the generated HTML from the offer model.
+
+    To completely customize the rendering of each offer model, create your own _includes/components/offer file.
+    
+    In general, use the editable regions available from the "generic" layout to add content above and below the offers list.
+    To add custom components/content to the page, write that content in the body of the page that uses this layout and it will be included after the offer list.
+
+
+{% endcomment %}

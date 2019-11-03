@@ -1,2 +1,10 @@
 // Rooms & Room Details Page Elements
 // ==========================================================================
+
+.c-room-list {
+  .overline {
+    font-size: $base-font-size;
+    color: $dark;
+    text-align: center;
+  }
+}
