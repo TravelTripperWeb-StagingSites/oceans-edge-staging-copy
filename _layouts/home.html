@@ -58,10 +58,12 @@ layout: default
     </div>
     <div class="rooms-cross-sell__content-wrap">
       <div class="rooms-cross-sell__image">
-        {% assign items = site.data._models.rooms %}
-        {% for item in items %}
-          <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
-        {% endfor %}
+        <div class="rooms-cross-sell__image__wrap">
+          {% assign items = site.data._models.rooms %}
+          {% for item in items %}
+            <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
+          {% endfor %}
+        </div>
         <div class="rooms-cross-sell__controls" id="roomsNav">
           <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
           <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>

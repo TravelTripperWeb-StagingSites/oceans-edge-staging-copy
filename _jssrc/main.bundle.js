@@ -48,6 +48,18 @@ readyDoc(function () {
     });
   }
 
+  if (document.getElementsByClassName('rooms-cross-sell__image__wrap').length > 0) {
+    var slider = tns({
+      container: '.rooms-cross-sell__image__wrap',
+      items: 1,
+      nav: true,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#roomsNav .iconbtn--left", // previous button
+      nextButton: "#roomsNav .iconbtn--right" // next button
+    });
+  }
+
   if (document.getElementsByClassName('amenities__listing').length > 0) {
     var slider = tns({
       container: '.amenities__listing',

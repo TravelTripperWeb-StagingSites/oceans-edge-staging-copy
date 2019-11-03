@@ -348,10 +348,20 @@
       @include make-col(6);
     }
 
-    img {
+    &__wrap {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .tns-outer, .tns-ovh, .tns-inner {
+      height: 100%;
     }
   }
 
@@ -370,7 +380,7 @@
       padding: 30px 12px;
 
       @include media-breakpoint-up(md) {
-        padding: 50px 0;
+        padding: 50px 30px;
       }
 
       .h3 {

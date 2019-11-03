@@ -46,9 +46,9 @@ readyDoc(function() {
     });
   }
 
-  if (document.getElementsByClassName('rooms-cross-sell__image').length > 0) {
+  if (document.getElementsByClassName('rooms-cross-sell__image__wrap').length > 0) {
     var slider = tns({
-      container: '.rooms-cross-sell__image',
+      container: '.rooms-cross-sell__image__wrap',
       items: 1,
       nav: true,
       mouseDrag: true,
