@@ -1,0 +1,53 @@
+
+.hero-inner {
+  .hero-carousel__wrap {
+    height: 280px;
+
+    @include media-breakpoint-up(md) {
+      height: 712px;
+    }
+
+    .tt-region_ped, .tt-region {
+      height: inherit;
+    }
+  }
+
+  .hero-carousel__intro {
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+}
+
+.heading-line-through {
+
+  position: relative;
+  max-width: 1224px;
+  margin: 0 auto 32px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 auto 24px;
+  }
+
+  &:before {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    height: 1px;
+    background: $t2;
+
+    @include media-breakpoint-up(md) {
+      content: '';
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 0;
+    padding: 0 20px;
+    background: $white;
+  }
+}
