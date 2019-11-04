@@ -26,14 +26,11 @@ layout: generic
 
     <ul class="filter-items">
       {% assign categories = site.data._models.room_bed_types | sort:"order" %}
+      <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
       {% for category in categories %}
-      <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
+      <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
       {% endfor %}
     </ul>
-
-    <div class="tab-content active" id="rooms">
-      <h2 class="p-5">Rooms</h2>
-    </div>
 
     {% assign rooms = site.data._models.rooms | sort:"order" %}
     <div class="c-room-list__items">

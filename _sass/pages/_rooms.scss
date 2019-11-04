@@ -7,4 +7,18 @@
     color: $dark;
     text-align: center;
   }
+  .filter-items {
+    a {
+      font-style: lowercase;
+
+      &:after {
+        display: none;
+      }
+
+      &.active, &:hover {
+        color: $light;
+        background: $dark;
+      }
+    }
+  }
 }
