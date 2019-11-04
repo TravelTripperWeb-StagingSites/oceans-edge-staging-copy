@@ -84,3 +84,19 @@ meta_tags:
     </div>
   </div>
 </section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+    {% endregionblock %}
+  </div>
+</section>
