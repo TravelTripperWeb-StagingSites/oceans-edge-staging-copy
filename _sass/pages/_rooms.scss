@@ -1,7 +1,7 @@
 // Rooms & Room Details Page Elements
 // ==========================================================================
 
-.room-list {
+.asset-list {
   position: relative;
   max-width: 1254px;
   margin: 0 auto;
@@ -12,25 +12,37 @@
   }
 }
 
-.room-item {
+.asset-item {
   @include make-col-ready;
+  display: flex;
+  flex-direction: column;
+
 
   @include media-breakpoint-up(md) {
     @include make-col(4);
   }
 
+  &__wrap {
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .15);
+  }
+
   &__featured-image {
     width: 100%;
-    height: 100%;
+    height: 240px;
     object-fit: cover;
+
+    img {
+      border-radius: 16px 16px 0 0;
+    }
   }
 
   &__text-group {
-    flex: inherit;
-    max-width: 100%;
+    background: $light;
+    border-radius: 0 0 16px 16px;
 
     &__wrap {
-
+      padding: 24px;
     }
   }
 
