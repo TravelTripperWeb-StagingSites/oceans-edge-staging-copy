@@ -25,6 +25,11 @@
   &__wrap {
     border-radius: 16px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, .15);
+    @include transition(all .3s);
+
+    &:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+    }
   }
 
   &__featured-image {
@@ -43,6 +48,48 @@
 
     &__wrap {
       padding: 24px;
+
+      .h4 {
+        margin-bottom: 20px;
+      }
+
+      .row {
+        margin: 0;
+        border-top: solid 1px $t2;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        .col-6 {
+          padding: 16px 0;
+
+          &:first-child {
+            border-right: solid 1px $t2;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.bed-type {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $dark;
+
+  p {
+    margin: 0 0 0 15px;
+    color: $dark;
+
+    span {
+      padding-top: 5px;
+      font-family: $family-primary-lc;
+      font-size: $display8-size;
+      line-height: $display6-size;
+      text-transform: uppercase;
     }
   }
 
