@@ -17,7 +17,7 @@
           <div class="col-6">
             <div class="sleeps">
               <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870729/qinioprhptzviixdjrxg.png" width="50px" height="32px" alt="Number of Sleeps">
-              <p>Sleeps<span class="d-block">{{ room.sleeps }}</span></p>
+              <p>Sleeps<span class="d-block">{{ room.guest_size_max }}</span></p>
             </div>
           </div>
         </div>
