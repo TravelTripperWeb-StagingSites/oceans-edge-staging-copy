@@ -17,6 +17,9 @@ body, p {
 }
 
 //Headings
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4 {
+  font-weight: normal;
+}
 
 .h1 {
   font-family: $family-primary;
@@ -24,6 +27,7 @@ body, p {
   line-height: $display4-size;
   color: $primary;
   text-align: center;
+  text-transform: uppercase;
   letter-spacing: 2px;
 
   @include media-breakpoint-up(md) {
@@ -38,6 +42,7 @@ body, p {
   line-height: $display1-size;
   color: $primary;
   text-align: center;
+  text-transform: uppercase;
 
   &--italic {
     font-family: $family-secondary-italic;
@@ -50,6 +55,7 @@ body, p {
   line-height: $display4-size;
   color: $primary;
   text-align: center;
+  text-transform: uppercase;
   letter-spacing: .4px;
 
   @include media-breakpoint-up(sm) {
