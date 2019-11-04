@@ -31,5 +31,6 @@
     "file_size": null
   },
   "booking_url": "#",
-  "resort_map_url": "#"
+  "resort_map_url": "#",
+  "room_type": "Guestroom"
 }

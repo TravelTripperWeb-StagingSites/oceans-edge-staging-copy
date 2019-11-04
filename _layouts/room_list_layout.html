@@ -25,7 +25,7 @@ layout: generic
     <p class="overline">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
     <ul class="filter-items">
-      {% assign categories = site.data._models.room_bed_types | sort:"order" %}
+      {% assign categories = site.data._models.room_type | sort:"order" %}
       <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
       {% for category in categories %}
       <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
@@ -35,7 +35,7 @@ layout: generic
     {% assign rooms = site.data._models.rooms | sort:"order" %}
     <div class="c-room-list__items">
       {% for room in rooms %}
-        <div class="tab-content {{room.room_category[0].name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
+        <div class="tab-content {{room.room_type[0].name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
           {% include components/room %}
         </div>
       {% endfor %}

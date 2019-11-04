@@ -21,10 +21,10 @@
     "label": "Sleeps",
     "type": "integer"
   },
-  "room_category": {
+  "room_type": {
     "type": "model",
     "display_field": "name",
-    "model_name": "room_bed_type",
+    "model_name": "room_type",
     "can_create": true
   },
   "view": {
