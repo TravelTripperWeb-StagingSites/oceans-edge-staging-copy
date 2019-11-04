@@ -1,19 +1,17 @@
-<div class="c-room">
-  <div class="c-room__image-group">
-    <div class="c-room__featured-image">
-      {% assign featured_image = room.images[0] | default: room.images[0] %}
+<div class="room-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
+  <div class="room-item__image-group">
+    <div class="room-item__featured-image">
+      {% assign featured_image = room.featured_images %}
       {% include components/image image=featured_image max_width=800 %}
     </div>
   </div>
-  <div class="c-room__text-group">
-    <div class="c-room__text-group__wrap">
-      <h3 class="c-room__name h3 line">
-        <a href="{{ room.id | permalink: model_dir: 'rooms' }}">{{ room.name }}</a>
+  <div class="room-item__text-group">
+    <div class="room-item__text-group__wrap">
+      <h3 class="h3">
+        <a href="{{ room.url_friendly_name | permalink: model_dir: 'rooms' }}">{{ room.name }}</a>
       </h3>
-      <p class="c-room__short-description">
-        {{ room.short_description }}
-      </p>
-      <div class="c-room__select">
+
+      <div class="room-item__select">
         <a class="btn" href="{{ room.booking_url }}">Book Room</a>
         <a href="{{ room.url_friendly_name | permalink: model_dir: 'rooms' | downcase }}" class="btn btn--secondary">View Room</a>
       </div>

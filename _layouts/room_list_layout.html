@@ -20,7 +20,7 @@ layout: generic
 </section>
 
 {% if site.data._models.rooms %}
-<section class="c-room-list">
+<section class="room-list">
   <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
   <ul class="filter-items">
@@ -62,11 +62,9 @@ layout: generic
   <hr>
 
   {% assign rooms = site.data._models.rooms | sort:"order" %}
-  <div class="c-room-list__items">
+  <div class="room-list__items">
     {% for room in rooms %}
-      <div class="tab-content {{room.room_type[0].name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
-        {% include components/room %}
-      </div>
+      {% include components/room %}
     {% endfor %}
   </div>
 </section>

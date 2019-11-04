@@ -1,8 +1,41 @@
 // Rooms & Room Details Page Elements
 // ==========================================================================
 
-.c-room-list {
+.room-list {
+  position: relative;
   max-width: 1254px;
+  margin: 0 auto;
 
-  
+  &__items {
+    @include make-row;
+    margin: 30px auto;
+  }
+}
+
+.room-item {
+  @include make-col-ready;
+  display: inherit !important;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+
+  &__image-group {
+    flex: inherit;
+    max-width: 100%;
+
+    &__featured-image {
+
+    }
+  }
+
+  &__text-group {
+    flex: inherit;
+    max-width: 100%;
+
+    &__wrap {
+
+    }
+  }
+
 }
