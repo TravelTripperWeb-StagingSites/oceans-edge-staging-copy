@@ -228,6 +228,7 @@
     font-size: 80%;
     content: $icon-chevron-right;
     opacity: .5;
+    @include transition(all .3s);
   }
 
   &:hover, &:focus {
