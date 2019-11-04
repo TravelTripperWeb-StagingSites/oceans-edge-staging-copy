@@ -1,9 +1,7 @@
 <div class="room-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
-  <div class="room-item__image-group">
-    <div class="room-item__featured-image">
-      {% assign featured_image = room.featured_images %}
-      {% include components/image image=featured_image max_width=800 %}
-    </div>
+  <div class="room-item__featured-image">
+    {% assign featured_image = room.featured_image %}
+    {% include components/image image=featured_image max_width=800 %}
   </div>
   <div class="room-item__text-group">
     <div class="room-item__text-group__wrap">
