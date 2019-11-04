@@ -1,11 +1,34 @@
 ---
-layout: amenities_layout
-title_localized: 
+layout: generic
+title_localized:
   en: Amenities
 meta_description_localized:
   en:
-permalink_localized: 
+permalink_localized:
   en: /amenities/
 meta_tags:
   robots:
 ---
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+      <p class="overline overline--italic text-center dark" tabindex="0">Welcome to Ocean’s Edge Key West</p>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+      <h1 class="h1" tabindex="0">key west’s mosT iconic resort</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+        <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation <b>ullamco laboris nisi ut aliquip</b> ex ea commodo
+        consequat. Lorem ipsum dolor <b>sit amet,</b> consectetur adipisicing elit.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
