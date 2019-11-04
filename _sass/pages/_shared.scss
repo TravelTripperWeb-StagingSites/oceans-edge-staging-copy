@@ -66,8 +66,12 @@ hr {
 
 .two-col-intro {
   @include make-row;
-  margin: 0;
+  margin: 24px 0;
   background: $light;
+
+  @include media-breakpoint-up(md) {
+    margin: 48px 0;
+  }
 
   &__image {
     @include make-col-ready;
@@ -75,6 +79,12 @@ hr {
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
+    }
+
+    div {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     img {
@@ -86,6 +96,7 @@ hr {
 
   &__content {
     @include make-col-ready;
+    @include linearGradient(left, $light, $tertiary);
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
@@ -96,10 +107,10 @@ hr {
       flex-direction: column;
       justify-content: center;
       max-width: 472px;
-      padding: 30px 12px;
+      padding: 20px 12px;
 
       @include media-breakpoint-up(md) {
-        padding: 50px 30px;
+        padding: 30px;
       }
 
       .overline {
@@ -113,11 +124,16 @@ hr {
       }
 
       p {
+        margin-bottom: 1rem;
         color: $dark;
       }
 
       ul {
-        padding: 0 0 10px 18px;
+        padding: 0 0 0 18px;
+
+        li {
+          color: $dark;
+        }
       }
     }
   }
