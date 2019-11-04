@@ -20,30 +20,27 @@ layout: generic
 </section>
 
 {% if site.data._models.rooms %}
-  {% assign rooms = site.data._models.rooms | sort:"order" %}
+
   <section class="c-room-list">
     <p class="overline">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
     <ul class="filter-items">
-      {% for category in rooms.room_category %}
+      {% assign categories = site.data._models.room_bed_types | sort:"order" %}
+      {% for category in categories %}
       <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
       {% endfor %}
     </ul>
 
-    <!-- <div class="tab-content active" id="rooms">
+    <div class="tab-content active" id="rooms">
       <h2 class="p-5">Rooms</h2>
     </div>
-    <div class="tab-content" id="suites">
-      <h2 class="p-5">Suites</h2>
-    </div>
-    <div class="tab-content" id="map">
-      <h2 class="p-5">Map</h2>
-    </div> -->
 
-
+    {% assign rooms = site.data._models.rooms | sort:"order" %}
     <div class="c-room-list__items">
       {% for room in rooms %}
-        {% include components/room %}
+        <div class="tab-content {{room.room_category[0].name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}"">
+          {% include components/room %}
+        </div>
       {% endfor %}
     </div>
   </section>
