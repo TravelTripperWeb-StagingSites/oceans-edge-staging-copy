@@ -1,9 +1,9 @@
 ---
 layout: generic
 title_localized:
-  en: Amenities
+  en: Best Hotels in Key West | Oceans Edge Resort & Marina
 meta_description_localized:
-  en:
+  en: Opened in 2017, Oceans Edge Resort quickly became one of the best hotels in Key West. This luxury resort features ocean-front balconies in every room.
 permalink_localized:
   en: /amenities/
 meta_tags:
@@ -11,7 +11,9 @@ meta_tags:
 ---
 <section class="hero-carousel">
   <div class="hero-carousel__wrap">
-    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+    {% regionblock carousel_intro_hero, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+    {% endregionblock %}
   </div>
   <div class="hero-carousel__controls" id="heroNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
@@ -19,15 +21,14 @@ meta_tags:
   </div>
   <div class="hero-carousel__intro">
     {% regionblock carousel_intro_tagline, type:text %}
-      <p class="overline overline--italic text-center dark" tabindex="0">Welcome to Ocean’s Edge Key West</p>
+      <h1 class="overline overline--italic text-center dark" tabindex="0">Why Is Oceans Edge the Best Hotel in Key West?</h1>
     {% endregionblock %}
     {% regionblock carousel_intro_heading, type:header %}
-      <h1 class="h1" tabindex="0">key west’s mosT iconic resort</h1>
+      <h2 class="h1" tabindex="0">Upscale Amenities for Every Guest</h2>
     {% endregionblock %}
     <div class="description" tabindex="0">
       {% regionblock carousel_intro_description, type:text %}
-        <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation <b>ullamco laboris nisi ut aliquip</b> ex ea commodo
-        consequat. Lorem ipsum dolor <b>sit amet,</b> consectetur adipisicing elit.</p>
+        <p>Oceans Edge Resort & Marina has been carefully designed as a self-contained haven while providing the means for our guests to easily experience the natural beauty and culture of Stock Island and Key West. Your first stop will likely be one of our six saltwater swimming pools—all at the perfect temperature, all the time. Discover our offerings in the list below, and learn more about <b><a href="/stay/">our luxurious accommodations</a></b>.</p>
       {% endregionblock %}
     </div>
   </div>
