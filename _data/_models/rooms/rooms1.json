@@ -32,5 +32,11 @@
   },
   "booking_url": "#",
   "resort_map_url": "#",
-  "room_type": "Guestroom"
+  "room_type": "room_type1",
+  "view": "room_view1",
+  "location": "Building1",
+  "amenities": [
+    "room_amenities2",
+    "room_amenities1"
+  ]
 }
