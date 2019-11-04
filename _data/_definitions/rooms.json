@@ -28,8 +28,10 @@
     "can_create": true
   },
   "view": {
-    "type": "select",
-    "options": ["Ocean View", "Other"]
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_view",
+    "can_create": true
   },
   "location": {
     "type": "select",
