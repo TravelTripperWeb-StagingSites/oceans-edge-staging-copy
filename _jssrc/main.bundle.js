@@ -90,7 +90,7 @@ readyDoc(function () {
           }
           e.currentTarget.classList.add("active");
           var filterItem = e.currentTarget.getAttribute("data-filter");
-          var tabItems = document.getElementsByClassName("room-item");
+          var tabItems = document.getElementsByClassName("asset-item");
           var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
             for (var _i = 0; _i < tabItems.length; _i++) {

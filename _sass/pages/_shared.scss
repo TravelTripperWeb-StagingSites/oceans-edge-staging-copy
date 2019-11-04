@@ -89,7 +89,7 @@ hr {
   background: $light;
 
   @include media-breakpoint-up(md) {
-    margin: 48px 0;
+    margin: 48px 15px;
   }
 
   &__image {
