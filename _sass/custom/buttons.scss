@@ -213,3 +213,38 @@
     }
   }
 }
+
+.arrow-link {
+  color: $primary;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:after {
+    position: relative;
+    margin-left: 8px;
+    font-family: $oceansedge-font-family;
+    font-size: 80%;
+    content: $icon-chevron-right;
+    opacity: .5;
+  }
+
+  &:hover, &:focus {
+    color: $primary;
+
+    &:after {
+      color: $primary;
+      opacity: 1;
+    }
+  }
+
+  &--light {
+    color: $primary;
+    background: $light;
+
+    &:after {
+      color: $primary;
+    }
+  }
+}

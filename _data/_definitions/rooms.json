@@ -27,6 +27,12 @@
     "model_name": "room_type",
     "can_create": true
   },
+  "room_bed_type": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_bed_type",
+    "can_create": true
+  },
   "view": {
     "type": "model",
     "display_field": "name",
