@@ -25,6 +25,11 @@
   &__wrap {
     border-radius: 16px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, .15);
+    @include transition(all .3s);
+
+    &:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+    }
   }
 
   &__featured-image {
@@ -43,6 +48,10 @@
 
     &__wrap {
       padding: 24px;
+
+      .h4 {
+        margin-bottom: 20px;
+      }
 
       .row {
         margin: 0;
