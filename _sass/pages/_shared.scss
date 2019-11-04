@@ -10,12 +10,31 @@ hr {
 }
 
 .filter-items {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   padding: 0;
 
   li {
-    display: inline-block;
+    margin: 0 12px;
     list-style: none;
+  }
+
+  a {
+    font-style: lowercase;
+    color: $dark;
+    background: $light;
+    border: solid 1px $t2;
+
+    &:after {
+      display: none;
+    }
+
+    &.active, &:hover, &:focus {
+      color: $light;
+      background: $dark;
+      border: solid 1px $dark;
+    }
   }
 }
 

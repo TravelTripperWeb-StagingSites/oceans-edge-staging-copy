@@ -4,25 +4,5 @@
 .c-room-list {
   max-width: 1254px;
 
-  .filter-items {
-    display: flex;
-    justify-content: center;
-
-    li {
-      margin: 0 12px;
-    }
-
-    a {
-      font-style: lowercase;
-
-      &:after {
-        display: none;
-      }
-
-      &.active, &:hover {
-        color: $light;
-        background: $dark;
-      }
-    }
-  }
+  
 }
