@@ -11,29 +11,46 @@ hr {
 
 .filter-items {
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin: 10px auto 0;
   padding: 0;
+  overflow-x: scroll;
+
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+  }
 
   li {
     margin: 0 12px;
     list-style: none;
-  }
 
-  a {
-    font-style: lowercase;
-    color: $dark;
-    background: $light;
-    border: solid 1px $t2;
+    a {
+      min-width: 96px;
+      color: $dark;
+      text-transform: lowercase;
+      background: $light;
+      border: solid 1px $t2;
 
-    &:after {
-      display: none;
+      @include media-breakpoint-up(sm) {
+        min-width: auto;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      &.active, &:hover, &:focus {
+        color: $light;
+        background: $dark;
+        border: solid 1px $dark;
+      }
     }
 
-    &.active, &:hover, &:focus {
-      color: $light;
-      background: $dark;
-      border: solid 1px $dark;
+    &:first-child {
+      a {
+        min-width: auto;
+      }
     }
   }
 }
@@ -153,6 +170,29 @@ hr {
         li {
           color: $dark;
         }
+      }
+    }
+  }
+}
+
+//TNS Slider Overwirtes
+
+.tns-outer {
+  .tns-nav {
+    padding: 5px;
+    background: rgba(1, 36, 51,.6);
+    border-radius: 10px;
+
+    button {
+      width: 8px;
+      height: 8px;
+      margin: 0 5px;
+      padding: 0;
+      background-color: rgba(255, 255, 255, .25);
+      border: 0;
+
+      &.tns-nav-active {
+        background-color: $light;
       }
     }
   }
