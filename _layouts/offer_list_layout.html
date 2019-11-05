@@ -110,8 +110,8 @@ layout: generic
       <span class="heading-line-through__text"><span class="h2--italic">Placeholder</span> category heading</span>
     </p>
   </div>
-  {% assign rooms = site.data._models.rooms | sort:"order" %}
-  <div class="asset-list__items">
+  {% assign rooms = site.data._models.stay | sort:"order" %}
+  <div class="asset-list__items mb-0">
     {% for room in rooms %}
       <div class="asset-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
         <div class="asset-item__wrap">
@@ -140,4 +140,47 @@ layout: generic
   </div>
 </section>
 
-<section class=""></section>
+<section class="twocol-cs mt-55">
+  <div class="twocol-cs__row">
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_left_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/ko26tx7meg3w0haxlnoq.jpg" alt="Oceanfront Suites">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_left_overline, type:header %}
+          <h3 class="overline overline--italic light">Oceanfront Suites</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_heading, type:header %}
+          <h4 class="h3 light">experience ocean views in spacious  luxury</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_button, type:text %}
+          <a href="" class="btn btn--light">View All Suites</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_right_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/w9wspvcffwusjqou3pcs.jpg" alt="Oceanfront Rooms">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_right_overline, type:header %}
+          <h3 class="overline overline--italic light">Oceanfront Rooms</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_heading, type:header %}
+          <h4 class="h3 light">Stylish comfort overlooking the marina</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_button, type:text %}
+          <a href="" class="btn btn--light">View All Rooms</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
