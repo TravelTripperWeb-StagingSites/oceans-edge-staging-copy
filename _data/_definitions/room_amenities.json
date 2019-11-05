@@ -2,10 +2,6 @@
   "name": {
     "required": true
   },
-  "description": {
-    "type": "text",
-    "required": true
-  },
   "image": {
     "type": "image",
     "required": true
