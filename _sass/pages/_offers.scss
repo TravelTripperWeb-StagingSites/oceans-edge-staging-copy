@@ -234,6 +234,10 @@
         height: 100%;
         object-fit: cover;
       }
+
+      .tt-region_ped, .tt-region {
+        height: inherit;
+      }
     }
 
     &__content {
