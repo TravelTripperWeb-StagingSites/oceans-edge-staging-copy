@@ -27,6 +27,14 @@
 }
 
 .navbar {
+
+  .navbar__offer__close {
+    display: none !important;
+  }
+  .nav-device-active {
+    top: 98px !important;
+  }
+
   padding: 0;
 
   .container-fluid {
