@@ -9,7 +9,7 @@ layout: default
     <div class="rooms-cross-sell__content-wrap">
       <div class="rooms-cross-sell__image">
         <div class="rooms-cross-sell__image__wrap">
-          {% assign items = site.data._models.rooms %}
+          {% assign items = site.data._models.stay %}
           {% for item in items %}
             <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
           {% endfor %}
@@ -21,9 +21,9 @@ layout: default
       </div>
       <div class="rooms-cross-sell__content">
         <div class="rooms-cross-sell__content__detail">
-          {% regionblock rooms-cross-sell_tagline, type:text %}
-          <p class="overline overline--italic dark" tabindex="0">Oceanfront Rooms & Suites</p>
-          {% endregionblock %}
+          <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/stay/">back to all rooms</a>
+          </div>
           {% regionblock rooms-cross-sell_heading, type:header %}
           <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
           {% endregionblock %}
@@ -32,6 +32,9 @@ layout: default
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             {% endregionblock %}
           </div>
+          {% regionblock rooms-cross-sell_tagline, type:text %}
+          <p class="overline overline--italic dark" tabindex="0">Oceanfront Rooms & Suites</p>
+          {% endregionblock %}
           {% regionblock rooms-cross-sell_subheading, type:header %}
           <p class="h5" tabindex="0">Oceanfront Accommodation Features</p>
           {% endregionblock %}
