@@ -59,8 +59,11 @@
     "type": "image",
     "multiple": true
   },
-  "video": {
+  "video_thumbnail": {
     "type": "image"
+  },
+  "video_url": {
+    "type": "text"
   },
   "booking_url": {
     "required": true
