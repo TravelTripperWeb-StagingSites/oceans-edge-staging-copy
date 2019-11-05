@@ -6,10 +6,11 @@
   "size": "400 Sq Ft",
   "ada_room": true,
   "guest_size_max": 6,
-  "view": "Ocean View",
+  "view": "room_view1",
   "location": "Building1",
   "amenities": [
-    "room_amenities1"
+    "room_amenities1",
+    "room_amenities2"
   ],
   "featured_image": {
     "name": "5pax-bed-s",
@@ -37,5 +38,8 @@
     "file_size": null
   },
   "booking_url": "#",
-  "resort_map_url": "#"
+  "resort_map_url": "#",
+  "room_type": "room_type2",
+  "room_bed_type": "room_bed_type2",
+  "room_location": "room_location1"
 }
