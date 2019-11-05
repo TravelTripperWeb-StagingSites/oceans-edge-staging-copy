@@ -27,10 +27,10 @@
     "model_name": "room_type",
     "can_create": true
   },
-  "room_bed_type": {
+  "room_bed_types": {
     "type": "model",
     "display_field": "name",
-    "model_name": "room_bed_type",
+    "model_name": "room_bed_types",
     "can_create": true
   },
   "view": {
@@ -39,9 +39,11 @@
     "model_name": "room_view",
     "can_create": true
   },
-  "location": {
-    "type": "select",
-    "options": ["Building1", "Building2"]
+  "room_location": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_location",
+    "can_create": true
   },
   "amenities": {
     "type": "model",
@@ -57,8 +59,11 @@
     "type": "image",
     "multiple": true
   },
-  "video": {
+  "video_thumbnail": {
     "type": "image"
+  },
+  "video_url": {
+    "type": "text"
   },
   "booking_url": {
     "required": true

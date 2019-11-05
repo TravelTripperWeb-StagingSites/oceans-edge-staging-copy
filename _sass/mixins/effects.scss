@@ -6,3 +6,14 @@
   -o-transition: $args;
   transition: $args;
 }
+
+@mixin absolute-position($top,$right,$bottom,$left,$width,$height) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $width;
+  height: $height;
+  content: '';
+}

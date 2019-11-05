@@ -3,22 +3,67 @@ layout: default
 ---
 
 {% assign room = page.data %}
-{% include components/room %}
 
-{% comment %}
-
-  Name:
-
-    Room Details Page
-
-  Description:
-
-    Display a single room from model enhanced with dynamic data from reztrip.
-
-  Usage:
-  
-    To customize each room page, you must create your own copy of this layout.
-
-
-{% endcomment %}
-
+<section class="rooms-cross-sell rooms-cross-sell--full-screen">
+  <div class="rooms-cross-sell__wrap">
+    <div class="rooms-cross-sell__content-wrap">
+      <div class="rooms-cross-sell__image">
+        <div class="rooms-cross-sell__image__wrap">
+          {% assign slides = room.images %}
+          {% for slide in slides %}
+            <img src="{{ slide.url_medium }}" alt= "{{ slide.alt }}" />
+          {% endfor %}
+        </div>
+        <div class="rooms-cross-sell__controls" id="roomsNav">
+          <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+          <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+        </div>
+      </div>
+      <div class="rooms-cross-sell__content">
+        <div class="rooms-cross-sell__content__detail">
+          <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/stay/">back to all rooms</a>
+          </div>
+          <h1 class="h3" tabindex="0">{{ room.name }}</h1>
+          <hr class="mb-3">
+          <div tabindex="0">{{ room.description }}</div>
+          <h2 class="h5" tabindex="0"><span>Room Features</span></h2>
+          <div class="amenities amenities--room" tabindex="0">
+            <ul class="amenities__listing">
+              {% assign items = room.amenities %}
+              {% for item in items %}
+              <li>
+                <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+                <p>{{ item.name }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="row mx-0 location">
+            <hr class="mb-2">
+            <div class="col-md-6 pl-0 brdr-right">
+              <div class="flex-column align-start py-2 pr-2">
+                <p class="h6 mb-3">Room Location</p>
+                <div class="d-flex align-items-center">
+                  <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572872008/qiqz3g27fx7dvac5g4cf.png" width="38px" height="28px" alt="Bed Type">
+                  <span class="h5 ml-2 mb-0">{{ room.room_location.name }}</span>
+                </div>
+                {% if room.resort_map_url and room.resort_map_url != "" %}
+                <a class="btn btn--tertiary mt-3" href="{{ room.resort_map_url }}">resort map</a>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="flex-column align-start p-2">
+                <p class="h6 mb-3">Room Video</p>
+                <div class="video">
+                  <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

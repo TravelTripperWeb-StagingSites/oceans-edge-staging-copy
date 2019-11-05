@@ -2,10 +2,6 @@
   "name": {
     "required": true
   },
-  "image": {
-    "type": "image",
-    "required": true
-  },
   "order": {
     "type": "integer",
     "required": true
