@@ -10,17 +10,27 @@
         <div class="row">
           <div class="col-6">
             <div class="bed-type">
-              <svg id="SVGDoc" width="38" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:avocode="https://avocode.com/" viewBox="0 0 38 28"><defs><path d="M83.84307,1686c0.83593,0 1.51593,0.68688 1.51593,1.53125v11.88542c0,0.32215 -0.25857,0.58333 -0.5775,0.58333h-2.31c-0.31893,0 -0.5775,-0.26118 -0.5775,-0.58333v-1.75h-30.03v1.75c0,0.32215 -0.25857,0.58333 -0.5775,0.58333h-2.31c-0.31893,0 -0.5775,-0.26118 -0.5775,-0.58333v-11.66667c0,-0.96498 0.77717,-1.75 1.7325,-1.75c0.48597,0 0.92501,0.20373 1.2399,0.5304c0.14177,-0.11827 0.30665,-0.23202 0.4926,-0.34125v-12.43915c0,-0.96498 0.77717,-1.75 1.7325,-1.75c0.95533,0 1.7325,0.78502 1.7325,1.75v0.58333h23.1v-0.58333c0,-0.96498 0.77717,-1.75 1.7325,-1.75c0.95533,0 1.7325,0.78502 1.7325,1.75v12.43915c0.15621,0.09187 0.29683,0.18696 0.42186,0.28496c0.27619,-0.29152 0.66399,-0.4741 1.09408,-0.4741zM53.019,1685.664c0.49954,-0.17981 1.07675,-0.343 1.7325,-0.48913v-2.67487c0,-1.60825 1.29534,-2.91666 2.8875,-2.91666h5.1975c1.59217,0 2.8875,1.30841 2.8875,2.91666v1.75584c0.37899,-0.0035 0.76245,-0.00584 1.155,-0.00584c0.39255,0 0.77601,0.00234 1.155,0.00584v-1.75584c0,-1.60825 1.29534,-2.91666 2.8875,-2.91666h5.1975c1.59217,0 2.8875,1.30841 2.8875,2.91666v2.67487c0.65575,0.14612 1.23297,0.30932 1.7325,0.48913v-11.914c0,-0.32171 -0.25901,-0.58333 -0.5775,-0.58333c-0.31849,0 -0.5775,0.26162 -0.5775,0.58333v1.16667c0,0.32215 -0.25857,0.58333 -0.5775,0.58333h-24.255c-0.31893,0 -0.5775,-0.26118 -0.5775,-0.58333v-1.16667c0,-0.32171 -0.25901,-0.58333 -0.5775,-0.58333c-0.31849,0 -0.5775,0.26162 -0.5775,0.58333zM77.8585,1682.5c0,-0.96498 -0.7778,-1.75 -1.7339,-1.75h-5.2017c-0.9561,0 -1.7339,0.78502 -1.7339,1.75v1.77158c3.54612,0.06767 6.45011,0.29619 8.6695,0.67754zM64.56201,1682.5c0,-0.96498 -0.77654,-1.75 -1.7311,-1.75h-5.1933c-0.95456,0 -1.7311,0.78502 -1.7311,1.75v2.44913c2.21581,-0.38135 5.11511,-0.60988 8.6555,-0.67754zM51.86299,1687.70906c0.00029,0.00334 -0.00043,0.00669 -0.00029,0.01018c0.00014,0.00844 0.00129,0.01659 0.00129,0.02517v0.58194h30.03v-0.61961c-0.07868,-0.19568 -1.25577,-2.29006 -15.015,-2.29006c-13.81062,0 -14.94497,2.11038 -15.01601,2.29239zM84.204,1687.53103c0,-0.20084 -0.16199,-0.36436 -0.36093,-0.36436h-0.43312c-0.19895,0 -0.36094,0.16353 -0.36094,0.36436v0.09503c0.00462,0.06063 0.00361,0.11339 0,0.15609v1.13347c0,0.32195 -0.25857,0.58298 -0.5775,0.58298h-31.185c-0.31893,0 -0.5775,-0.26103 -0.5775,-0.58298v-1.13361c-0.00159,-0.01836 -0.00246,-0.03891 -0.00289,-0.06077c-0.01501,-0.30811 -0.26579,-0.55456 -0.57461,-0.55456c-0.31849,0 -0.5775,0.26147 -0.5775,0.58298v11.07669h1.155v-1.74895c0,-0.32195 0.25857,-0.58299 0.5775,-0.58299h31.185c0.31893,0 0.5775,0.26103 0.5775,0.58299v1.74895h1.155z" id="Path-0"/><path d="M48.399,1700h36.96v-28h-36.96z" id="Path-1"/><path d="M82.539,1691.04h-31.32c-0.32031,0 -0.58,0.25074 -0.58,0.56v3.36c0,0.30926 0.25969,0.56 0.58,0.56h31.32c0.32031,0 0.58,-0.25074 0.58,-0.56v-3.36c0,-0.30926 -0.25969,-0.56 -0.58,-0.56zM51.799,1694.4h30.153v-2.24h-30.153z" id="Path-2"/><path d="M77.071,1677.824h1.344v1.344c0,0.37111 0.30089,0.672 0.672,0.672c0.37111,0 0.672,-0.30089 0.672,-0.672v-2.016c0,-0.37111 -0.30089,-0.672 -0.672,-0.672h-2.016c-0.37111,0 -0.672,0.30089 -0.672,0.672c0,0.37111 0.30089,0.672 0.672,0.672" id="Path-3"/><path d="M55.343,1679.168v-1.344h1.344c0.37111,0 0.672,-0.30089 0.672,-0.672c0,-0.37111 -0.30089,-0.672 -0.672,-0.672h-2.016c-0.37111,0 -0.672,0.30089 -0.672,0.672v2.016c0,0.37111 0.30089,0.672 0.672,0.672c0.37111,0 0.672,-0.30089 0.672,-0.672" id="Path-4"/><clipPath id="clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E"><use xlink:href="#Path-1" /></clipPath></defs><desc>Generated with Avocode.</desc><g transform="matrix(1,0,0,1,-48,-1672)"><g><title>stay</title><g><title>Fill 1</title><use xlink:href="#Path-0" fill="#6f6f6f" fill-opacity="1"/></g><g><title>Clip 4</title></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 3</title><use xlink:href="#Path-2" fill="#6f6f6f" fill-opacity="1"/></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 5</title><use xlink:href="#Path-3" fill="#6f6f6f" fill-opacity="1"/></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 6</title><use xlink:href="#Path-4" fill="#6f6f6f" fill-opacity="1"/></g></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 6</title><use xlink:href="#Path-4" fill="#6f6f6f" fill-opacity="1"/></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 5</title><use xlink:href="#Path-3" fill="#6f6f6f" fill-opacity="1"/></g><g clip-path="url(#clip-2D73CBD7-7CC3-8A5D-75B1-E6D3E5933A3E)"><title>Fill 3</title><use xlink:href="#Path-2" fill="#6f6f6f" fill-opacity="1"/></g><g><title>Clip 4</title></g><g><title>Fill 1</title><use xlink:href="#Path-0" fill="#6f6f6f" fill-opacity="1"/></g></g></svg>
-              <p>Beds<span class="d-block">1 King</span></p>
+              <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870728/f5kspesyf1nlyjuekqtw.png" width="38px" height="28px" alt="Bed Type">
+              <p>Beds<span class="d-block">{{ room.room_bed_type.name }}</span></p>
             </div>
           </div>
           <div class="col-6">
-            <p class="sleeps">Sleeps<span class="d-block">2</span></p>
+            <div class="sleeps">
+              <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870729/qinioprhptzviixdjrxg.png" width="50px" height="32px" alt="Number of Sleeps">
+              <p>Sleeps<span class="d-block">{{ room.guest_size_max }}</span></p>
+            </div>
           </div>
         </div>
-        <div class="asset-item__select">
-          <a class="btn" href="{{ room.booking_url }}">Book Room</a>
-          <a href="{{ room.url_friendly_name | permalink: model_dir: 'rooms' | downcase }}" class="btn btn--secondary">View Room</a>
+        <div class="row">
+          <div class="col-9">
+            <div class="bed-type">
+              <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572872008/qiqz3g27fx7dvac5g4cf.png" width="38px" height="28px" alt="Bed Type">
+              <p>Resort Location<span class="d-block">{{ room.room_location.name }}</span></p>
+            </div>
+          </div>
+          <div class="col-3">
+            <a class="btn" href="{{ room.booking_url }}">Book</a>
+          </div>
         </div>
       </div>
     </div>

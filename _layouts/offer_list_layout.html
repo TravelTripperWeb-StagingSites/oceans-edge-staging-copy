@@ -2,49 +2,71 @@
 layout: generic
 ---
 
-
-{% if site.data._models.offers %}
-  {% assign offers = site.data._models.offers | sort:"order" %}
-  <section class="c-offer-list">
-    <div class="c-offer-list__items">
-      {% for offer in offers %}
-        {% include components/offer sync_content=page.sync_offer_content %}
-      {% endfor %}
+<section class="hero-carousel hero-inner">
+  <div class="hero-carousel__wrap">
+    {% regionblock hero_image, type:text %}
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572857541/vwty1inbqhp9anqyxie4.jpg" alt= "Couple blowing bubbles" />
+    {% endregionblock %}
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock page_intro_tagline, type:text %}
+    <p class="overline overline--italic text-center dark" tabindex="0">Unmissable Deals</p>
+    {% endregionblock %}
+    {% regionblock page_intro_heading, type:header %}
+    <h1 class="h1" tabindex="0">Special Offers</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock page_intro_description, type:text %}
+      <p>Explore our selection of <b>tempting Key West deals</b> below and <b>enjoy special savings, added perks, and more</b> from Oceans Edge Key West. From family vacations in the Florida Keys to romantic escapes, fishing excursions and beyond, our Key West hotel deals ensure your stay is as a <b>relaxing or adventure-filled</b> as you desire.</p>
+      {% endregionblock %}
     </div>
-  </section>
-{% else %}
-  {% regionblock no_list_items, type:html %}
-    {% t 'offers.none' %}
-  {% endregionblock %}
-{% endif %}
+  </div>
+</section>
 
+<section class="heading-line-through">
+  <p class="h2">
+    <span class="heading-line-through__text">Limited time, <span class="h2--italic">don’t miss out!</span></span>
+  </p>
+</section>
 
+<section class="large-card">
+  <div class="large-card__row">
+    <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572918305/iqrdhynnjrxrvo1gqyfc.jpg" alt=" Limited Time Offer">
+        </div>
+        <div class="large-card__item__wrap">
+          <h3 class="h4 light">
+            <a href="">Limited Time Offer</a>
+          </h3>
+          <div class="large-card__item__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <div class="large-card__item__button">
+              <a href="" class="btn btn--secondary-s2">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-{{ content }}
-
-{% comment %}
-
-  Name:
-
-    Offer List Page
-
-  Description:
-
-    Displays a list of offer models enhanced with dynamic data from reztrip. 
-    
-    Allows user editable regions via the generic layout.
-
-  Usage:
-
-    In a page that uses this layout, you can add `sync_offer_content: true` to the front matter
-    which will make Image, Title, ShortDescription and Description display the latest content from reztrip
-    instead of the generated HTML from the offer model.
-
-    To completely customize the rendering of each offer model, create your own _includes/components/offer file.
-    
-    In general, use the editable regions available from the "generic" layout to add content above and below the offers list.
-    To add custom components/content to the page, write that content in the body of the page that uses this layout and it will be included after the offer list.
-
-
-{% endcomment %}
+    <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572918305/yxnyrauevf2mkadl8u0g.jpg" alt=" Limited Time Offer">
+        </div>
+        <div class="large-card__item__wrap">
+          <h3 class="h4 light">
+            <a href="">Exclusive Benefits</a>
+          </h3>
+          <div class="large-card__item__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <div class="large-card__item__button">
+              <a href="" class="btn btn--secondary-s2">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

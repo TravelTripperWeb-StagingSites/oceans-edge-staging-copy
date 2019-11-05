@@ -38,5 +38,7 @@
   "amenities": [
     "room_amenities2",
     "room_amenities1"
-  ]
+  ],
+  "room_bed_type": "room_bed_type4",
+  "room_location": "room_location2"
 }

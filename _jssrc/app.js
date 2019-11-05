@@ -88,7 +88,7 @@ readyDoc(function() {
           }
           e.currentTarget.classList.add("active");
           let filterItem = e.currentTarget.getAttribute("data-filter");
-          let tabItems = document.getElementsByClassName("room-item");
+          let tabItems = document.getElementsByClassName("asset-item");
           let currentTabItems = document.getElementsByClassName(filterItem);
           if(filterItem == "all") {
             for(let i = 0; i < tabItems.length; i++) {
