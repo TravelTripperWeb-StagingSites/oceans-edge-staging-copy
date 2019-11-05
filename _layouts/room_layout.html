@@ -9,9 +9,9 @@ layout: default
     <div class="rooms-cross-sell__content-wrap">
       <div class="rooms-cross-sell__image">
         <div class="rooms-cross-sell__image__wrap">
-          {% assign items = site.data._models.stay %}
-          {% for item in items %}
-            <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
+          {% assign slides = room.images %}
+          {% for slide in slides %}
+            <img src="{{ slide.url_medium }}" alt= "{{ slide.alt }}" />
           {% endfor %}
         </div>
         <div class="rooms-cross-sell__controls" id="roomsNav">
@@ -24,32 +24,20 @@ layout: default
           <div class="d-inline-block mb-2">
             <a class="btn btn--tertiary btn--reverse" href="/stay/">back to all rooms</a>
           </div>
-          {% regionblock rooms-cross-sell_heading, type:header %}
-          <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
-          {% endregionblock %}
-          <div tabindex="0">
-            {% regionblock rooms-cross-sell_text, type:text %}
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            {% endregionblock %}
-          </div>
-          {% regionblock rooms-cross-sell_tagline, type:text %}
-          <p class="overline overline--italic dark" tabindex="0">Oceanfront Rooms & Suites</p>
-          {% endregionblock %}
-          {% regionblock rooms-cross-sell_subheading, type:header %}
-          <p class="h5" tabindex="0">Oceanfront Accommodation Features</p>
-          {% endregionblock %}
-          <div tabindex="0">
-            {% regionblock rooms-cross-sell_features, type:text %}
-            <ul>
-              <li>Every room is oceanfront</li>
-              <li>Sizable waterfront balconies and porches</li>
-              <li>Key West's largest guestrooms and suites</li>
-              <li>Extensive onsite watersports and boat charter facilities</li>
-              <li>A variety of Key West accommodation options, including multiple room and suite combinations</li>
-              <li>On-site parking - $20 per day</li>
-              <li>High speed Wi-Fi access</li>
+          <h1 class="h3" tabindex="0">{{ room.name }}</h1>
+          <hr class="mb-3">
+          <div tabindex="0">{{ room.description }}</div>
+          <h2 class="h5" tabindex="0">Room Features</h2>
+          <div class="amenities amenities--room" tabindex="0">
+            <ul class="amenities__listing">
+              {% assign items = room.room_amenities %}
+              {% for item in items %}
+              <li>
+                <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+                <p>{{ item.name }}</p>
+              </li>
+              {% endfor %}
             </ul>
-            {% endregionblock %}
           </div>
           {% regionblock rooms-cross-sell_url, type:text %}
           <a class="btn" href="#">Browse Accomodations</a>
