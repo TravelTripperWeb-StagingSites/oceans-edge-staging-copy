@@ -19,7 +19,7 @@ layout: generic
   </div>
 </section>
 
-{% if site.data._models.stay %}
+{% if site.data._models.rooms %}
 <section class="asset-list">
   <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
@@ -61,7 +61,7 @@ layout: generic
   </div>
   <hr>
 
-  {% assign rooms = site.data._models.stay | sort:"order" %}
+  {% assign rooms = site.data._models.rooms | sort:"order" %}
   <div class="asset-list__items">
     {% for room in rooms %}
       {% include components/room %}

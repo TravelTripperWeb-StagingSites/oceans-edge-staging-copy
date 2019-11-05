@@ -321,6 +321,70 @@
 
     .rooms-cross-sell__content__detail {
       max-width: 585px;
+
+      .h5 {
+        position: relative;
+        z-index: 0;
+        display: block;
+
+        span {
+          padding-right: 20px;
+          background: $light;
+        }
+
+        &:after {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 1px;
+          content: '';
+          background: $t2;
+        }
+      }
+
+      .location {
+        p {
+          color: $primary;
+        }
+        span {
+          font-size: $display8-size;
+          line-height: $display8-size;
+          color: $dark;
+
+          &:after {
+            display: none;
+          }
+        }
+        .video {
+          position: relative;
+          max-width: 206px;
+          max-height: 210px;
+
+          img {
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            width: 40px;
+            height: 40px;
+            content: '';
+            background-image: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572961251/ow9nym1a8y6z0qgzfpza.png');
+            background-repeat: no-repeat;
+          }
+        }
+      }
     }
   }
 }

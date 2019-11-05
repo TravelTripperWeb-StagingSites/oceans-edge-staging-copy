@@ -7,7 +7,7 @@
   "ada_room": true,
   "guest_size_max": 6,
   "room_type": "room_type3",
-  "room_bed_type": "room_bed_type6",
+  "room_bed_types": "room_bed_types6",
   "view": "room_view2",
   "room_location": "room_location3",
   "amenities": [
