@@ -165,7 +165,11 @@
 .asset-list {
   &--variant {
     .asset-item__text-group__wrap {
-      min-height: 200px;
+      min-height: auto;
+
+      @include media-breakpoint-up(md) {
+        min-height: 200px;
+      }
 
       .row {
         .col-9 {
