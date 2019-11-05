@@ -81,9 +81,11 @@ meta_tags:
     <div class="two-col-cta__left">
       <div class="two-col-cta__inner">
         <div class="two-col-cta__image">
-          {% regionblock two-col-cta-left-img, type: image %}
-            <img src="" alt="">
-          {% endregionblock %}
+          <div class="objectfit">
+            {% regionblock two-col-cta-left-img, type: image %}
+              <img src="" alt="">
+            {% endregionblock %}
+          </div>
         </div>
         <div class="two-col-cta__text text-center">
           {% regionblock two-col-cta-left, type: text %}
@@ -97,9 +99,11 @@ meta_tags:
     <div class="two-col-cta__right">
       <div class="two-col-cta__inner">
         <div class="two-col-cta__image">
-          {% regionblock two-col-cta-right-img, type: image %}
+          <div class="objectfit">
+            {% regionblock two-col-cta-right-img, type: image %}
             <img src="" alt="">
-          {% endregionblock %}
+            {% endregionblock %}
+          </div>
         </div>
         <div class="two-col-cta__text text-center">
           {% regionblock two-col-cta-right, type: text %}
