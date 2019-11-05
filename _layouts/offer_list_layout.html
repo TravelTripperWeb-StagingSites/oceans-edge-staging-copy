@@ -23,13 +23,12 @@ layout: generic
   </div>
 </section>
 
-<section class="heading-line-through">
-  <p class="h2">
-    <span class="heading-line-through__text">Limited time, <span class="h2--italic">don’t miss out!</span></span>
-  </p>
-</section>
-
 <section class="large-card">
+  <div class="heading-line-through">
+    <p class="h2">
+      <span class="heading-line-through__text">Limited time, <span class="h2--italic">don’t miss out!</span></span>
+    </p>
+  </div>
   <div class="large-card__row">
     <div class="large-card__item">
       <div class="large-card__item__inner">
@@ -43,7 +42,7 @@ layout: generic
           <div class="large-card__item__content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
             <div class="large-card__item__button">
-              <a href="" class="btn btn--secondary-s2">Book</a>
+              <a href="" class="btn btn--book-small">Book</a>
             </div>
           </div>
         </div>
@@ -62,11 +61,47 @@ layout: generic
           <div class="large-card__item__content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
             <div class="large-card__item__button">
-              <a href="" class="btn btn--secondary-s2">Book</a>
+              <a href="" class="btn btn--book-small">Book</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="asset-list asset-list--variant mt-55">
+  <div class="heading-line-through">
+    <p class="h2">
+      <span class="heading-line-through__text"><span class="h2--italic">Placeholder</span> category heading</span>
+    </p>
+  </div>
+  {% assign rooms = site.data._models.stay | sort:"order" %}
+  <div class="asset-list__items">
+    {% for room in rooms %}
+      <div class="asset-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
+        <div class="asset-item__wrap">
+          <div class="asset-item__featured-image">
+            {% assign featured_image = room.featured_image %}
+            {% include components/image image=featured_image max_width=800 %}
+          </div>
+          <div class="asset-item__text-group">
+            <div class="asset-item__text-group__wrap">
+              <h3 class="h4"><a class="arrow-link" href="{{ room.url_friendly_name | permalink: model_dir: 'stay' }}">{{ room.name }}</a></h3>
+              <div class="row">
+                <div class="col-9">
+                  <div class="bed-type">
+                    <p>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <a class="btn" href="{{ room.booking_url }}">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </section>

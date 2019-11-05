@@ -8,7 +8,6 @@ layout: default
     {% for item in items %}
     <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
     {% endfor %}
-
   </div>
   <div class="hero-carousel__controls" id="heroNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
@@ -59,7 +58,7 @@ layout: default
     <div class="rooms-cross-sell__content-wrap">
       <div class="rooms-cross-sell__image">
         <div class="rooms-cross-sell__image__wrap">
-          {% assign items = site.data._models.rooms %}
+          {% assign items = site.data._models.stay %}
           {% for item in items %}
             <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
           {% endfor %}
