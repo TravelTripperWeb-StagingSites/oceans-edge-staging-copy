@@ -11,7 +11,7 @@
           <div class="col-6">
             <div class="bed-type">
               <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870728/f5kspesyf1nlyjuekqtw.png" width="38px" height="28px" alt="Bed Type">
-              <p>Beds<span class="d-block">{{ room.room_bed_type.name }}</span></p>
+              <p>Beds<span class="d-block">{{ room.room_bed_types.name }}</span></p>
             </div>
           </div>
           <div class="col-6">

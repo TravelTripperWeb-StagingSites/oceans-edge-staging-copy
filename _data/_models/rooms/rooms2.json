@@ -40,6 +40,6 @@
   "booking_url": "#",
   "resort_map_url": "#",
   "room_type": "room_type2",
-  "room_bed_type": "room_bed_type2",
+  "room_bed_types": "room_bed_types2",
   "room_location": "room_location1"
 }
