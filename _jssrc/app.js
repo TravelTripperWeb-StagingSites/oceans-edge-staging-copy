@@ -109,7 +109,7 @@ readyDoc(function() {
 
   var classname = document.getElementsByClassName("navbar__offer");
   var usercookie = getCookie("username");
-  document.getElementById("mobile-menu").addEventListener('click', 'mobilemenu', false);
+  // document.getElementById("mobile-menu").addEventListener('click', 'mobilemenu', false);
 
   if(usercookie == "usercookie"){
     classname[0].setAttribute("id", 'navbar__offer__close');
@@ -184,7 +184,6 @@ readyDoc(function() {
     }
     return "";
   }
-
   function mobilemenu(){
     alert()
   }
