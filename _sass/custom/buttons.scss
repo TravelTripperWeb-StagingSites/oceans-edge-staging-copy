@@ -67,6 +67,30 @@
     }
   }
 
+  &--book-small {
+    padding: 11px 16px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: $secondary;
+    border-radius: 16px;
+
+    &:after {
+      content: normal;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
   &--secondary {
     color: $primary;
     background: $tertiary;

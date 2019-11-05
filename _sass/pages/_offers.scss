@@ -127,10 +127,15 @@
             font-size: 85%;
             content: $icon-chevron-right;
             opacity: .5;
+            @include transition(.3s);
           }
 
           &:hover {
             text-decoration: none;
+
+            &:after {
+              opacity: 1;
+            }
           }
         }
       }
@@ -153,10 +158,25 @@
 
     &__button {
       padding-left: 24px;
+    }
+  }
+}
 
-      .btn--secondary-s2 {
-        &:after {
-          content: normal;
+.asset-list {
+  &--variant {
+    .asset-item__text-group__wrap {
+      min-height: 200px;
+
+      .row {
+        .col-9 {
+          padding-top: 0;
+        }
+
+        p {
+          margin: 0 24px 0 0;
+          padding-top: 16px;
+          padding-right: 24px;
+          border-right: solid 1px $t2;
         }
       }
     }

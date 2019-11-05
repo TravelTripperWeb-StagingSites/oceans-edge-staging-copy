@@ -157,3 +157,11 @@ hr {
     }
   }
 }
+
+.mt-55 {
+  margin-top: 40px !important;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 55px !important;
+  }
+}
