@@ -205,3 +205,42 @@ hr {
     }
   }
 }
+
+.two-col-cta {
+  &__wrap {
+    @include make-row;
+    margin: 0;
+  }
+  &__left {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      padding: 0 12px 0 0;
+    }
+  }
+  &__right {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      padding: 0 0 0 12px;
+    }
+  }
+  &__inner {
+    position: relative;
+    min-height: 664px;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      content: '';
+      background-color: rgba(1, 36, 51, .6);
+    }
+  }
+  &__text {
+    @include total-center;
+    z-index: 3;
+  }
+}

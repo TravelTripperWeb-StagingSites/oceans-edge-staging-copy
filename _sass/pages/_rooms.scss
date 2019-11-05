@@ -92,22 +92,23 @@
         }
 
         .btn {
-          color: $primary;
-          background: $secondary;
+          &:not(.btn--secondary) {
+            color: $primary;
+            background: $secondary;
 
-          &:after {
-            display: none;
-          }
+            &:after {
+              display: none;
+            }
 
-          &:hover {
-            color: $light;
-            background: $primary;
+            &:hover {
+              color: $light;
+              background: $primary;
+            }
           }
         }
       }
     }
   }
-
 }
 
 .bed-type {
