@@ -87,3 +87,23 @@
     content: $icon-filter;
   }
 }
+.icon-chevron-bottom {
+  &:before {
+    content: $icon-chevron-bottom;
+  }
+}
+.icon-chevron-left {
+  &:before {
+    content: $icon-chevron-left;
+  }
+}
+.icon-chevron-right {
+  &:before {
+    content: $icon-chevron-right;
+  }
+}
+.icon-chevron-top {
+  &:before {
+    content: $icon-chevron-top;
+  }
+}
