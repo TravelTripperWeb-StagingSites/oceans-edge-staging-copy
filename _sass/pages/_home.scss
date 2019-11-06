@@ -107,6 +107,15 @@
         b {
           font-family: $family-secondary-italic;
         }
+
+        a {
+          font-weight: normal;
+          color: inherit;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
     }
   }
