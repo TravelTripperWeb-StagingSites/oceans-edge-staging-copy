@@ -513,13 +513,13 @@
   .sm-d-none {
     display: none !important;
   }
-  .navbar .nav--device ul .has-subnav i{
+  .navbar .nav--device ul .has-subnav i {
     display: none;
   }
 }
 @include media-breakpoint-down(md) {
-  .navbar .nav--device{
-    top: 88px
+  .navbar .nav--device {
+    top: 88px;
   }
   li.nav__item.has-subnav {
     flex: 0 0 100% !important;
@@ -533,8 +533,8 @@
     padding-left: 0;
  }
 
- .navbar .nav--device ul .has-subnav span {
-   padding-left: 10px;
+  .navbar .nav--device ul .has-subnav span {
+    padding-left: 10px;
 }
 
   .navbar .nav--device ul .subnav .nav__item:last-child {
@@ -545,18 +545,18 @@
     padding-left: 12px;
 }
 
- .navbar .nav--device ul .has-subnav i.fa-angle-down, .navbar .nav--device ul .has-subnav i.fa-angle-up {
-    font-weight: 900;
+  .navbar .nav--device ul .has-subnav i.fa-angle-down, .navbar .nav--device ul .has-subnav i.fa-angle-up {
     position: absolute;
-    right: 20px;
     top: 2px;
+    right: 20px;
+    font-weight: 900;
 }
-.navbar .nav--device ul{
-  max-width: 100%
+  .navbar .nav--device ul {
+    max-width: 100%;
 }
 
-.navbar .nav--device ul .subnav .nav__item .nav__link{
-  padding: 3px 0;
+  .navbar .nav--device ul .subnav .nav__item .nav__link {
+    padding: 3px 0;
 }
 
 }
