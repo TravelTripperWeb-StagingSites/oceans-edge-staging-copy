@@ -294,6 +294,10 @@ hr {
     }
   }
 
+  .btn--tertiary {
+    
+  }
+
   &__form {
     @include make-col-ready;
     @include make-col(6);
@@ -303,11 +307,11 @@ hr {
     }
 
     form {
-      display: none;
       @include make-row;
+      display: none;
       margin: 0;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         display: flex;
       }
 
