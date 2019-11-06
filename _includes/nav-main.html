@@ -2,19 +2,15 @@
   note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
 {% endcomment %}
 <nav class="navbar is-fixed-top nav--main" id="js-navbar--main">
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div class="wrapper">
       <a class="nav__link navbar-brand" href="#">
-        <span class="nav__logo"
-          data-live-edit-settings='hotel_settings'
-          data-live-edit-settings-field='logo'
-          data-live-editable-type='image'
-        >
+        <span class="nav__logo" data-live-edit-settings='hotel_settings' data-live-edit-settings-field='logo' data-live-editable-type='image'>
           {% if site.data.hotel_settings.logo and site.data.hotel_settings.logo.url and site.data.hotel_settings.logo.url != '' %}
-            {% assign logo_url = site.data.hotel_settings.logo.url_xsmall | default: site.data.hotel_settings.logo.url %}
-            <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo.alt | default: 'Logo' }}" />
+          {% assign logo_url = site.data.hotel_settings.logo.url_xsmall | default: site.data.hotel_settings.logo.url %}
+          <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo.alt | default: 'Logo' }}" />
           {% else %}
-            <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
+          <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
           {% endif %}
         </span>
       </a>
@@ -35,7 +31,7 @@
               </ul>
             </div>
           </div>
-          </div>
+        </div>
 
         <div class="navbar__group__wrap d-none d-lg-flex">
           <div class="nav__items">
@@ -48,7 +44,7 @@
               {% include nav/nav-item-list.html items=items %}
               <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">Menu</a></li>
             </ul>
-            <div class="nav--device">
+            <div class="nav--device nav-device-lg">
               <ul navMenu>
                 {% assign items = site.data._menus.mega.items %}
                 {% include nav/nav-item-list.html items=items %}
