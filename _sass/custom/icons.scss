@@ -72,3 +72,18 @@
     content: $icon-menu-icon-default;
   }
 }
+.icon-size {
+  &:before {
+    content: $icon-size;
+  }
+}
+.icon-sleeps {
+  &:before {
+    content: $icon-sleeps;
+  }
+}
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
