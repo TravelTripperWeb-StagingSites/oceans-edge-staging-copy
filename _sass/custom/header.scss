@@ -518,6 +518,9 @@
   }
 }
 @media (max-width: 991px) {
+  .navbar .nav--device{
+    top: 88px
+  }
   li.nav__item.has-subnav {
     flex: 0 0 100% !important;
     max-width: 100% !important;
