@@ -326,7 +326,9 @@ hr {
 
         .form-control {
           position: relative;
-          padding-left: 0; 
+          padding-left: 0;
+          font-size: $display8-size;
+          color: $primary;
           background: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573034803/m4g4eq5hd5nztlknq7j5.png');
           background-repeat: no-repeat;
           background-position: 99.9% 50%;
