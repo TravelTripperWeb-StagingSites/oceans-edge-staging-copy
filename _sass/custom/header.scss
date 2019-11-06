@@ -504,6 +504,9 @@
     }
   }
 }
+.sm-d-none {
+  display: block;
+}
 @media (min-width: 768px) {
   .sm-d-none {
     display: none !important;
@@ -514,13 +517,10 @@
     flex: 0 0 100% !important;
     max-width: 100% !important;
 }
-.navbar .nav--device ul .subnav {
-  display: none;
+  .navbar .nav--device ul .subnav {
+    display: none;
 }
-.navbar .nav--device ul .has-subnav {
-  padding-top: 0px
+  .navbar .nav--device ul .has-subnav {
+    padding-top: 0;
  }
-}
-.sm-d-none {
-  display: block;
 }
