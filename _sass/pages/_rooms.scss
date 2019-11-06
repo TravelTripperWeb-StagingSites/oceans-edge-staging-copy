@@ -244,6 +244,11 @@
         text-align: left;
       }
 
+      .h4 {
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+
       .h5 {
         margin-bottom: 10px;
         color: $primary;
@@ -399,6 +404,54 @@
             background-size: cover;
             opacity: 1;
           }
+        }
+      }
+    }
+  }
+
+  &--offer-details {
+    .overline {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      li {
+        color: $dark;
+      }
+    }
+
+    .h5 {
+      font-size: $display10-size;
+      color: $dark;
+      text-transform: uppercase;
+      letter-spacing: .83px;
+    }
+
+    .btn-holder {
+      margin-bottom: 38px;
+    }
+
+    .social-media {
+      display: flex;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+        font-size: 13px;
+        color: $dark;
+        text-align: center;
+        background-color: $tertiary;
+        border-radius: 50%;
+        @include transition(.3s);
+
+        &:hover {
+          color: $tertiary;
+          text-decoration: none;
+          background-color: $dark;
         }
       }
     }
