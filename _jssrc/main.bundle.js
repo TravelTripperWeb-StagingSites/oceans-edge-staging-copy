@@ -78,6 +78,26 @@ readyDoc(function () {
     });
   }
 
+  if (document.getElementsByClassName('asset-list-carousel').length > 0) {
+    var slider = tns({
+      container: '.asset-list-carousel',
+      items: 2,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      prevButton: "#roomsNav .iconbtn--left", // previous button
+      nextButton: "#roomsNav .iconbtn--right",
+      responsive: {
+        900: {
+          items: 4
+        },
+        1200: {
+          items: 5
+        }
+      }
+    });
+  }
+
   // Tabs Script Start ======================================
 
   if (document.getElementsByClassName("filter-items")[0]) {

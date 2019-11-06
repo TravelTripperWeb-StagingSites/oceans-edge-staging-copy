@@ -10,14 +10,14 @@ layout: generic
   </div>
   <div class="hero-carousel__intro">
     {% regionblock page_intro_tagline, type:text %}
-    <p class="overline overline--italic text-center dark" tabindex="0">Unmissable Deals</p>
+    <p class="overline overline--italic text-center dark" tabindex="0">Exquisite Key West Vacations</p>
     {% endregionblock %}
     {% regionblock page_intro_heading, type:header %}
-    <h1 class="h1" tabindex="0">Special Offers</h1>
+    <h1 class="h1" tabindex="0">Oceans Edge Special Offers</h1>
     {% endregionblock %}
     <div class="description" tabindex="0">
       {% regionblock page_intro_description, type:text %}
-      <p>Explore our selection of <b>tempting Key West deals</b> below and <b>enjoy special savings, added perks, and more</b> from Oceans Edge Key West. From family vacations in the Florida Keys to romantic escapes, fishing excursions and beyond, our Key West hotel deals ensure your stay is as a <b>relaxing or adventure-filled</b> as you desire.</p>
+      <p>At any time of year, you’ll find the best offers and packages for a stay at Oceans Edge here on our website. Time spent in one of our <b><a href="/rooms/">beautifully appointed suites or rooms</a></b> can only be improved with a great deal on your nightly rate and perks like full breakfast at <a href="/dining/">Yellowfin Bar & Grill</a>. Read about our tantalizing offers below and book soon.</p>
       {% endregionblock %}
     </div>
   </div>
@@ -77,7 +77,7 @@ layout: generic
     </p>
   </div>
   {% assign rooms = site.data._models.stay | sort:"order" %}
-  <div class="asset-list__items">
+  <div class="asset-list__items asset-list-carousel">
     {% for room in rooms %}
       <div class="asset-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
         <div class="asset-item__wrap">
@@ -157,7 +157,7 @@ layout: generic
           <h4 class="h3 light">experience ocean views in spacious  luxury</h4>
           {% endregionblock %}
           {% regionblock twocol_cross_sell_left_button, type:text %}
-          <a href="" class="btn btn--light">View All Suites</a>
+          <a href="/stay/" class="btn btn--light">View All Suites</a>
           {% endregionblock %}
         </div>
       </div>
@@ -177,7 +177,7 @@ layout: generic
           <h4 class="h3 light">Stylish comfort overlooking the marina</h4>
           {% endregionblock %}
           {% regionblock twocol_cross_sell_right_button, type:text %}
-          <a href="" class="btn btn--light">View All Rooms</a>
+          <a href="/stay/" class="btn btn--light">View All Rooms</a>
           {% endregionblock %}
         </div>
       </div>

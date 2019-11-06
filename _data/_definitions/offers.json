@@ -1,0 +1,43 @@
+{
+  "name": {
+    "required": true,
+    "localizable": true
+  },
+  "url_friendly_name": {
+    "label": "URL Friendly Name",
+    "type": "url_slug",
+    "localizable": true
+  },  
+  "short_description": {
+    "localizable": true,
+    "type": "text"
+  },
+  "description": {
+    "localizable": true,
+    "type": "richtext"
+  },
+  "image": {
+    "type": "image"
+  },
+  "reztrip_offer_id": {
+    "Label": "Reztrip ID",
+    "instructions": "The reztrip ID for this offer"
+  },
+  "featured": {
+    "type": "boolean",
+    "label": "Featured Offer?"
+  },
+  "order": {
+    "type": "order",
+    "required": false
+  },
+  "featured_order": {
+    "type": "order"
+  },
+  "__META__": {
+    "remote": {
+      "type": "reztrip_offers",
+      "key": "reztrip_offer_id"
+    }
+  }
+}
