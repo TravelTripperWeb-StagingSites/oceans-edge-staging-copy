@@ -24,6 +24,9 @@
   "terms_conditions": {
     "type": "richtext"
   },
+  "booking_url": {
+    "required": true
+  },
   "image": {
     "type": "image"
   },
