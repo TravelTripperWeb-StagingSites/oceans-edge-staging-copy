@@ -2,23 +2,84 @@
 layout: default
 ---
 
-
 {% assign offer = page.data %}
-{% include components/offer %}
 
+<section class="rooms-cross-sell rooms-cross-sell--full-screen rooms-cross-sell--offer-details">
+  <div class="rooms-cross-sell__wrap">
+    <div class="rooms-cross-sell__content-wrap">
+      <div class="rooms-cross-sell__image">
+        <div class="rooms-cross-sell__image__wrap">
+          <img src="{{ offer.image.url_medium }}" alt="{{ offer.image.alt }}" />
+        </div>
+      </div>
+      <div class="rooms-cross-sell__content">
+        <div class="rooms-cross-sell__content__detail">
+          <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/offers/">back to all offers</a>
+          </div>
+          <h1 class="h3" tabindex="0">{{ offer.name }}</h1>
+          <hr class="mb-3">
+          {% if offer.short_description_detail_page %}
+          <div tabindex="0">
+            <p class="overline">{{ offer.short_description_detail_page }}</p>
+          </div>
+          {% endif %}
+          <div tabindex="0">{{ offer.description }}</div>
+          <p>Need to know:</p>
+          <div tabindex="0">{{ offer.terms_conditions }}</div>
+          <div class="btn-holder">
+            <a class="btn btn--book" href="{{ offer.booking_url }}" target="_blank">Book Offer</a>
+          </div>
+          <div class="social-share">
+            <p class="h5" tabindex="0"><span>Share</span></p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/OceansEdgeKeyWest/" target="_blank" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.twitter.com/oceansedgekeywest/" target="_blank" title="follow us on twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/oceansedgekeywest/" target="_blank" title=""><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% comment %}
-
-  Name:
-
-    Offer Details Page
-
-  Description:
-
-    Display a single offer from RezTrip.
-
-  Usage:
-
-    To customize each offer page, you must create your own copy of this layout.
-
-{% endcomment %}
+<section class="asset-list asset-list--variant mt-55">
+  <hr class="mb-3">
+  <div class="asset-list__header">
+    <h2 class="h4">More Related Offers</h2>
+    <a href="/offers/" class="btn">View all Offers</a>
+  </div>
+  {% assign offers = site.data._models.offers | sort:"order" %}
+  <div class="asset-list__items asset-list-carousel mb-0">
+    {% for offer in offers %}
+      <div class="asset-item">
+        <div class="asset-item__wrap">
+          <div class="asset-item__featured-image">
+            {% assign featured_image = offer.image %}
+            {% include components/image image=featured_image max_width=800 %}
+          </div>
+          <div class="asset-item__text-group">
+            <div class="asset-item__text-group__wrap">
+              <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
+              <div class="row">
+                <div class="col-9">
+                  <div class="bed-type">
+                    <p>{{ offer.short_description }}</p>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <a class="btn" href="{{ offer.booking_url }}" target="_blank">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="asset-list-carousel__controls" id="offersCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+</section>

@@ -184,6 +184,36 @@
         }
       }
     }
+
+    &__header {
+      padding: 0 15px;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .h4 {
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .asset-list-carousel {
+    .asset-item {
+      flex: none;
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
