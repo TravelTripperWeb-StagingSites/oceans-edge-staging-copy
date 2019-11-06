@@ -1,0 +1,12 @@
+{
+  "name": {
+    "required": true
+  },
+  "description": {
+    "type": "text"
+  },
+  "order": {
+    "type": "integer",
+    "required": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": {
+    "required": true
+  },
+  "description": {
+    "type": "text",
+    "required": true
+  },
+  "image": {
+    "type": "image",
+    "required": true
+  },
+  "cta_label": {
+    "type": "text",
+    "label": "Call to action label"
+  },
+  "cta_link": {
+    "type": "text",
+    "label": "Call to action link"
+  },
+  "order": {
+    "type": "integer",
+    "required": true
+  }
+}

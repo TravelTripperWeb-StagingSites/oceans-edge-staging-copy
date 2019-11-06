@@ -9,3 +9,41 @@ permalink_localized:
 meta_tags:
   robots:
 ---
+
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.hero_carousel | sort: order %}
+    {% for item in items %}
+    <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
+    {% endfor %}
+
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+    <p class="overline overline--italic text-center dark" tabindex="0">Group Travel</p>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+    <h1 class="h1" tabindex="0">Lorem ipsum dolor sit amet</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="form-wrapper">
+  <div class="form-wrapper__inner text-center">
+    <p class="overline overline--italic">Group Event Inquiry</p>
+    <h3 class="h3">Request for proposal</h3>
+    <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p><b>Required fields are marked *</b></p>
+    <hr>
+    {% include forms/jotform/rfp.html %}
+  </div>
+</section>
