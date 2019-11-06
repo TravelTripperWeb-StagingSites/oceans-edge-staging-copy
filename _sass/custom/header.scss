@@ -509,6 +509,18 @@
     display: none !important;
   }
 }
+@media (max-width: 768px) {
+  li.nav__item.has-subnav {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.navbar .nav--device ul .subnav {
+  display: none;
+}
+.navbar .nav--device ul .has-subnav {
+  padding-top: 0px
+ }
+}
 .sm-d-none {
   display: block;
 }

@@ -139,7 +139,7 @@ readyDoc(function () {
   };
 
   var advclose2 = function advclose2() {
-    alert('Test');
+    document.querySelector(".nav--device").style.display = "block";
   };
   for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', advclose, false);
