@@ -165,7 +165,11 @@
 .asset-list {
   &--variant {
     .asset-item__text-group__wrap {
-      min-height: 200px;
+      min-height: auto;
+
+      @include media-breakpoint-up(md) {
+        min-height: 200px;
+      }
 
       .row {
         .col-9 {
@@ -178,6 +182,83 @@
           padding-right: 24px;
           border-right: solid 1px $t2;
         }
+      }
+    }
+  }
+}
+
+.twocol-cs {
+  @include make-container;
+  width: auto;
+  max-width: none;
+
+  &__row {
+    @include make-row;
+  }
+
+  &__item {
+    @include make-col-ready;
+    margin-bottom: 24px;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      @include media-breakpoint-up(md) {
+        padding-left: 15px;
+      }
+    }
+
+    &:nth-child(odd) {
+      @include media-breakpoint-up(md) {
+        padding-right: 15px;
+      }
+    }
+
+    &__inner {
+      position: relative;
+    }
+
+    &__image {
+      height: 384px;
+
+      @include media-breakpoint-up(md) {
+        height: 664px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .tt-region_ped, .tt-region {
+        height: inherit;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      @include absolute-position(0,0,0,0,auto,auto);
+      background-color: rgba($overlay-color, .6);
+
+      @include media-breakpoint-up(lg) {
+        padding: 0 20%;
+      }
+
+      .overline {
+        margin-bottom: 8px;
+      }
+
+      .h3 {
+        margin-bottom: 32px;
       }
     }
   }
