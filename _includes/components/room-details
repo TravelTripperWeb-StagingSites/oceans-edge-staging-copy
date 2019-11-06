@@ -94,7 +94,7 @@
           <div class="alternative-rooms__intro">
             <h3 class="h4 light line">Alternative Suite options</h3>
             <div class="alternative-rooms__intro__right">
-              <a href="/rooms/" class="btn btn--secondary btn--secondary--light">View All Suites</a>
+              <a href="/stay/" class="btn btn--secondary btn--secondary--light">View All Suites</a>
               <div class="slider-controls">
                 <a id="moreSuitesSliderPrev" href="javascript:void(0);" class="prev-slide">
                   <i class="fas fa-chevron-left"></i>
@@ -124,7 +124,7 @@
           <div class="alternative-rooms__intro">
             <h3 class="h4 light line">Alternative room options</h3>
             <div class="alternative-rooms__intro__right">
-              <a href="/rooms/" class="btn btn--secondary btn--secondary--light">View All Rooms</a>
+              <a href="/stay/" class="btn btn--secondary btn--secondary--light">View All Rooms</a>
               <div class="slider-controls">
                 <a id="moreRoomsSliderPrev" href="javascript:void(0);" class="prev-slide">
                   <i class="fas fa-chevron-left"></i>
@@ -154,7 +154,7 @@
     <div class="col ">
       <div class="col-html-content">
         <p class="h2">OWN YOUR OWN PIECE OF PARADISE</p>
-        <a class="btn btn--primary btn--primary--light" href="/rooms/">Learn More</a>
+        <a class="btn btn--primary btn--primary--light" href="/stay/">Learn More</a>
       </div>
     </div>
   </div>
