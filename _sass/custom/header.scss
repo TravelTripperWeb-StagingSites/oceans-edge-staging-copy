@@ -509,7 +509,7 @@
   display: block;
 }
 
-@media (min-width: 991px) {
+@include media-breakpoint-up(lg) {
   .sm-d-none {
     display: none !important;
   }
@@ -517,7 +517,7 @@
     display: none;
   }
 }
-@media (max-width: 991px) {
+@include media-breakpoint-down(md) {
   .navbar .nav--device{
     top: 88px
   }

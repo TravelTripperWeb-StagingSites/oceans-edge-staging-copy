@@ -92,22 +92,23 @@
         }
 
         .btn {
-          color: $primary;
-          background: $secondary;
+          &:not(.btn--secondary) {
+            color: $primary;
+            background: $secondary;
 
-          &:after {
-            display: none;
-          }
+            &:after {
+              display: none;
+            }
 
-          &:hover {
-            color: $light;
-            background: $primary;
+            &:hover {
+              color: $light;
+              background: $primary;
+            }
           }
         }
       }
     }
   }
-
 }
 
 .bed-type {
@@ -243,6 +244,11 @@
         text-align: left;
       }
 
+      .h4 {
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+
       .h5 {
         margin-bottom: 10px;
         color: $primary;
@@ -359,30 +365,93 @@
         }
         .video {
           position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           max-width: 206px;
-          max-height: 210px;
+          border-radius: 8px;
+          box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
 
           img {
             position: relative;
-            z-index: -1;
+            z-index: 0;
             width: 100%;
             height: 100%;
+            border-radius: 8px;
             object-fit: cover;
           }
 
-          &:after {
+          &:before {
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            z-index: 0;
+            z-index: 1;
+            content: '';
+            background: rgba(0,0,0,.5);
+            border-radius: 8px;
+          }
+
+          &:after {
+            position: absolute;
+            z-index: 1;
             width: 40px;
             height: 40px;
             content: '';
             background-image: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572961251/ow9nym1a8y6z0qgzfpza.png');
             background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 1;
           }
+        }
+      }
+    }
+  }
+
+  &--offer-details {
+    .overline {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      li {
+        color: $dark;
+      }
+    }
+
+    .h5 {
+      font-size: $display10-size;
+      color: $dark;
+      text-transform: uppercase;
+      letter-spacing: .83px;
+    }
+
+    .btn-holder {
+      margin-bottom: 38px;
+    }
+
+    .social-media {
+      display: flex;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+        font-size: 13px;
+        color: $dark;
+        text-align: center;
+        background-color: $tertiary;
+        border-radius: 50%;
+        @include transition(.3s);
+
+        &:hover {
+          color: $tertiary;
+          text-decoration: none;
+          background-color: $dark;
         }
       }
     }
