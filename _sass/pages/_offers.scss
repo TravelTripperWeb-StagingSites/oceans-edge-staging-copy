@@ -184,23 +184,23 @@
         }
       }
     }
+  }
 
-    &__header {
-      padding: 0 15px;
-      text-align: center;
+  &__header {
+    padding: 0 15px;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .h4 {
+      margin-bottom: 24px;
 
       @include media-breakpoint-up(md) {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-      }
-
-      .h4 {
-        margin-bottom: 24px;
-
-        @include media-breakpoint-up(md) {
-          margin-bottom: 0;
-        }
+        margin-bottom: 0;
       }
     }
   }
@@ -213,6 +213,8 @@
     &__controls {
       display: flex;
       justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
     }
   }
 }
