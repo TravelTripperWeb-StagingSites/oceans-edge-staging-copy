@@ -188,9 +188,9 @@ readyDoc(function () {
     classname[i].addEventListener('click', advclose, false);
   }
 
-  for (var i = 0; i < classname2.length; i++) {
-    classname2[i].addEventListener('click', advclose2, false);
-  }
+  // for (var i = 0; i < classname2.length; i++) {
+  //   classname2[i].addEventListener('click', advclose2, false);
+  // }
 
   for (var i = 0; i < navitemcls.length; i++) {
     navitemcls[i].addEventListener('click', advclose3, false);
