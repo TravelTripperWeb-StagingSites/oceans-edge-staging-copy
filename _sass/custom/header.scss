@@ -27,6 +27,14 @@
 }
 
 .navbar {
+
+  .navbar__offer__close {
+    display: none !important;
+  }
+  .nav-device-active {
+    top: 98px !important;
+  }
+
   padding: 0;
 
   .container-fluid {
@@ -495,4 +503,60 @@
       }
     }
   }
+}
+
+.sm-d-none {
+  display: block;
+}
+
+@include media-breakpoint-up(lg) {
+  .sm-d-none {
+    display: none !important;
+  }
+  .navbar .nav--device ul .has-subnav i {
+    display: none;
+  }
+}
+@include media-breakpoint-down(md) {
+  .navbar .nav--device {
+    top: 88px;
+  }
+  li.nav__item.has-subnav {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+  .navbar .nav--device ul .subnav {
+    display: none;
+}
+  .navbar .nav--device ul .has-subnav {
+    padding-top: 0;
+    padding-left: 0;
+ }
+
+  .navbar .nav--device ul .has-subnav span {
+    padding-left: 10px;
+}
+
+  .navbar .nav--device ul .subnav .nav__item:last-child {
+    margin-bottom: 10px !important;
+ }
+
+  .navbar .has-subnav:hover .nav__link+.subnav {
+    padding-left: 12px;
+}
+
+  .navbar .nav--device ul .has-subnav i.fa-angle-down, .navbar .nav--device ul .has-subnav i.fa-angle-up {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    font-weight: 900;
+}
+  .navbar .nav--device ul {
+    max-width: 100%;
+}
+
+  .navbar .nav--device ul .subnav .nav__item .nav__link {
+    padding: 3px 0;
+}
+
 }
