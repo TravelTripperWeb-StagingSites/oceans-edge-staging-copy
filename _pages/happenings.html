@@ -35,6 +35,38 @@ meta_tags:
   </div>
 </section>
 
+<section class="large-card">
+  <div class="heading-line-through">
+    <p class="h2">
+      <span class="heading-line-through__text">Featured <span class="h2--italic">happenings</span></span>
+    </p>
+  </div>
+  <div class="large-card__row">
+
+    {% assign featured_happenings = site.data._models.happenings | where: "featured_happening", true | sort: "date" %}
+    {% for featured_happening in featured_happenings %}
+      <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="{{featured_happening.image.url_medium}}" alt="{{featured_happening.name}}">
+        </div>
+        <div class="large-card__item__wrap">
+          <h3 class="h4 light">
+            {{featured_happening.name}}<br>{{featured_happening.tagline}}
+          </h3>
+          <div class="large-card__item__content">
+            <p>{{featured_happening.description}}</p>
+            <div class="large-card__item__button">
+              <a href="{{featured_happening.cta_link}}" class="btn btn--light" target="_blank">{{featured_happening.cta_label}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="asset-list asset-list--happenings-list">
   {% assign happenings_categories = site.data._models.happenings_categories | sort: "order" %}
   {% for happenings_category in happenings_categories %}
