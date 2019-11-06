@@ -85,8 +85,6 @@ readyDoc(function () {
       nav: false,
       mouseDrag: true,
       loop: false,
-      prevButton: "#roomsNav .iconbtn--left", // previous button
-      nextButton: "#roomsNav .iconbtn--right",
       responsive: {
         900: {
           items: 4
