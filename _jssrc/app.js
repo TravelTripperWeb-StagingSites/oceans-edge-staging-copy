@@ -32,6 +32,25 @@ readyDoc(function() {
         }
       });
     }
+    if (document.getElementsByClassName('asset-list-carousel').length > 0) {
+      var assetSlider = tns({
+        container: '.asset-list-carousel',
+        items: 1,
+        nav: false,
+        mouseDrag: true,
+        loop: false,
+        prevButton: "#offersCarouselNav .iconbtn--left", // previous button
+        nextButton: "#offersCarouselNav .iconbtn--right", // next button
+        responsive: {
+          767: {
+            items: 2
+          },
+          1199: {
+            items: 3
+          }
+        }
+      });
+    }
   }, 2000);
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
@@ -76,23 +95,7 @@ readyDoc(function() {
     });
   }
 
-  if (document.getElementsByClassName('asset-list-carousel').length > 0) {
-    var slider = tns({
-      container: '.asset-list-carousel',
-      items: 2,
-      nav: false,
-      mouseDrag: true,
-      loop: false,
-      responsive: {
-        900: {
-          items: 4
-        },
-        1200: {
-          items: 5
-        }
-      }
-    });
-  }
+
 
   // Tabs Script Start ======================================
 

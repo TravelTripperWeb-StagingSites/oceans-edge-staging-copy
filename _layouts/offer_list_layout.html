@@ -40,12 +40,12 @@ layout: generic
         </div>
         <div class="large-card__item__wrap">
           <h3 class="h4 light">
-            <a href="{{ offer.url_friendly_name }}">{{ offer.name }}</a>
+            <a href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a>
           </h3>
           <div class="large-card__item__content">
             <p>{{ offer.short_description }}</p>
             <div class="large-card__item__button">
-              <a href="{{ offer.booking_url }}" class="btn btn--book-small">Book</a>
+              <a href="{{ offer.booking_url }}" class="btn btn--book-small" target="_blank">Book</a>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ layout: generic
           </div>
           <div class="asset-item__text-group">
             <div class="asset-item__text-group__wrap">
-              <h3 class="h4"><a class="arrow-link" href="{{ room.url_friendly_name | permalink: model_dir: 'rooms' }}">{{ offer.name }}</a></h3>
+              <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
               <div class="row">
                 <div class="col-9">
                   <div class="bed-type">
@@ -85,7 +85,7 @@ layout: generic
                   </div>
                 </div>
                 <div class="col-3">
-                  <a class="btn" href="{{ offer.booking_url }}">Book</a>
+                  <a class="btn" href="{{ offer.booking_url }}" target="_blank">Book</a>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ layout: generic
           </div>
           <div class="asset-item__text-group">
             <div class="asset-item__text-group__wrap">
-              <h3 class="h4"><a class="arrow-link" href="{{ room.url_friendly_name | permalink: model_dir: 'rooms' }}">{{ offer.name }}</a></h3>
+              <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
               <div class="row">
                 <div class="col-9">
                   <div class="bed-type">
