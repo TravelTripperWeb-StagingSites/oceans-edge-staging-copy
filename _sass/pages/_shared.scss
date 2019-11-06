@@ -276,3 +276,65 @@ hr {
 .brdr-right {
   border-right: solid 1px $t2;
 }
+
+.filters-block {
+  @include make-row;
+  margin: 30px 0;
+
+  &__room-type {
+    @include make-col-ready;
+    @include make-col(6);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+
+    .overline {
+      font-size: $base-font-size;
+    }
+  }
+
+  &__form {
+    @include make-col-ready;
+    @include make-col(6);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
+
+    form {
+      display: none;
+      @include make-row;
+      margin: 0;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
+
+      .form-group {
+        @include make-col-ready;
+        @include make-col(4);
+        padding: 0 40px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        .form-control {
+          position: relative;
+          padding-left: 0; 
+          background: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573034803/m4g4eq5hd5nztlknq7j5.png');
+          background-repeat: no-repeat;
+          background-position: 99.9% 50%;
+          background-size: 8px;
+          border-bottom: solid 1px $primary;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
