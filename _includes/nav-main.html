@@ -2,9 +2,9 @@
   note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
 {% endcomment %}
 <nav class="navbar is-fixed-top nav--main" id="js-navbar--main">
-  <div class="container-fluid">
+    <div class="container-fluid">
     <div class="wrapper">
-      <a class="nav__link navbar-brand" href="/">
+      <a class="nav__link navbar-brand" href="#">
         <span class="nav__logo"
           data-live-edit-settings='hotel_settings'
           data-live-edit-settings-field='logo'
@@ -25,6 +25,18 @@
         <div class="navbar__offer d-none d-lg-block">
           <p>Exclusive Member Benefits Offer: <span>Save up to 25%</span> <a class="btn btn--tertiary-s2" href="#">find out more</a></p>
         </div>
+
+        <div class="navbar__group__wrap sm-d-none">
+          <div class="nav__items">
+            <div class="nav--device">
+              <ul navMenu>
+                {% assign items = site.data._menus.mega.items %}
+                {% include nav/nav-item-list.html items=items %}
+              </ul>
+            </div>
+          </div>
+          </div>
+
         <div class="navbar__group__wrap d-none d-lg-flex">
           <div class="nav__items">
             <ul class="nav__featured">

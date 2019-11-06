@@ -504,3 +504,11 @@
     }
   }
 }
+@media (min-width: 768px) {
+  .sm-d-none {
+    display: none !important;
+  }
+}
+.sm-d-none {
+  display: block;
+}

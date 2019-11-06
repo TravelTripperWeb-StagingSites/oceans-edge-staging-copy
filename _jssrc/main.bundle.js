@@ -110,6 +110,7 @@ readyDoc(function () {
   }
 
   var classname = document.getElementsByClassName("navbar__offer");
+  var classname2 = document.getElementsByClassName("navbar-brand");
   var usercookie = getCookie("username");
   // document.getElementById("mobile-menu").addEventListener('click', 'mobilemenu', false);
 
@@ -136,8 +137,16 @@ readyDoc(function () {
     document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
     document.querySelector(".nav--device").style.top = "98px !important";
   };
+
+  var advclose2 = function advclose2() {
+    alert('Test');
+  };
   for (var i = 0; i < classname.length; i++) {
     classname[i].addEventListener('click', advclose, false);
+  }
+
+  for (var i = 0; i < classname2.length; i++) {
+    classname2[i].addEventListener('click', advclose2, false);
   }
 
   window.onscroll = function () {
@@ -185,9 +194,6 @@ readyDoc(function () {
       }
     }
     return "";
-  }
-  function mobilemenu() {
-    alert();
   }
 
   // Tabs Script End ======================================
