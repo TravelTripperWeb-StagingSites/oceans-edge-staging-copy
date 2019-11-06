@@ -1,0 +1,34 @@
+{
+  "name": {
+    "required": true
+  },
+  "category": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "offer_categories",
+    "can_create": true
+  },
+  "url_friendly_name": {
+    "label": "URL Friendly Name",
+    "type": "url_slug"
+  },
+  "short_description": {
+    "type": "text"
+  },
+  "short_description_detail_page": {
+    "type": "text"
+  },
+  "description": {
+    "type": "richtext"
+  },
+  "terms_conditions": {
+    "type": "richtext"
+  },
+  "image": {
+    "type": "image"
+  },
+  "order": {
+    "type": "order",
+    "required": false
+  }
+}
