@@ -29,6 +29,20 @@
     opacity: .5;
   }
 
+  &--reverse {
+    &:after {
+      display: none;
+    }
+    &:before {
+      position: relative;
+      margin-right: 8px;
+      font-family: $oceansedge-font-family;
+      font-size: 90%;
+      content: $icon-chevron-left;
+      opacity: .5;
+    }
+  }
+
   &:hover, &:focus {
     color: $primary;
     background: $secondary;

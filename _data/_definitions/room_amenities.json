@@ -2,13 +2,12 @@
   "name": {
     "required": true
   },
-  "icon": {
-    "type": "image"
+  "image": {
+    "type": "image",
+    "required": true
   },
-  "short_description": {
-    "type": "text"
-  },
-  "description": {
-    "type": "rich_text"
+  "order": {
+    "type": "integer",
+    "required": true
   }
 }
