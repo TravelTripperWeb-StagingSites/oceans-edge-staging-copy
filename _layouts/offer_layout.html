@@ -51,7 +51,7 @@ layout: default
     <a href="/offers/" class="btn">View all Offers</a>
   </div>
   {% assign offers = site.data._models.offers | sort:"order" %}
-  <div class="asset-list__items asset-list-carousel mb-0">
+  <div class="asset-list__items asset-list-carousel">
     {% for offer in offers %}
       <div class="asset-item">
         <div class="asset-item__wrap">
