@@ -8,31 +8,31 @@ main:
     page_id: _pages/resort.html
     label_localized:
       en: Resort
-    items: 
+    items:
   - folder: false
     url_localized: ''
     label_localized:
       en: Stay
-    page_id: _pages/rooms.html
-    items: 
+    page_id: _pages/stay.html
+    items:
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html
     label_localized:
       en: Offers
-    items: 
+    items:
   - folder: false
     url_localized: ''
     page_id: _pages/experiences.html
     label_localized:
       en: Experiences
-    items: 
+    items:
   - folder: false
     url_localized: ''
     page_id: _pages/dining.html
     label_localized:
       en: Dining
-    items: 
+    items:
 mega:
   depth: 2
   name: Mega Menu
@@ -46,19 +46,19 @@ mega:
       page_id: _pages/resort.html
       label_localized:
         en: Overview
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/amenities.html
       label_localized:
         en: Amenities
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "#"
       label_localized:
         en: Resort Map
-      items: 
+      items:
     expanded: true
   - folder: true
     label_localized:
@@ -69,35 +69,35 @@ mega:
       page_id: _pages/rooms.html
       label_localized:
         en: All Rooms & Suites
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "/stay/#guestrooms"
       page_id: _pages/rooms.html
       label_localized:
         en: Guestrooms
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "/stay/#1-bedrooms/"
       page_id: _pages/rooms.html
       label_localized:
         en: 1 Bedrooms
-      items: 
+      items:
     - folder: false
       url_localized:
         en: 'tel: 8779350862'
       page_id: _pages/rooms.html
       label_localized:
         en: 'Res: 877 935 0862'
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "/stay/#accessible-rooms"
       page_id: _pages/rooms.html
       label_localized:
         en: Accessible Rooms
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -108,25 +108,25 @@ mega:
       page_id: _pages/experiences.html
       label_localized:
         en: Overview
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/activities.html
       label_localized:
         en: Activities
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/adventures.html
       label_localized:
         en: Adventures
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/happenings.html
       label_localized:
         en: Happenings
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -137,25 +137,25 @@ mega:
       page_id: _pages/dining.html
       label_localized:
         en: Overview
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/yellofin-bar-grill.html
       label_localized:
         en: Yellowfin Bar & Grill
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/ocean-edge-cafe.html
       label_localized:
         en: Oceans Edge Cafe
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/in-room-dining.html
       label_localized:
         en: In-room Dining
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -166,19 +166,19 @@ mega:
       page_id: _pages/marina.html
       label_localized:
         en: Overview
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/marina-services.html
       label_localized:
         en: Services
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/fishing-records-charters.html
       label_localized:
         en: Fishing Records & Charters
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -189,21 +189,21 @@ mega:
       page_id: _pages/groups.html
       label_localized:
         en: Overview
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "/groups#weddings"
       page_id: _pages/groups.html
       label_localized:
         en: Weddings
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "/groups#meetings-events"
       page_id: _pages/groups.html
       label_localized:
         en: Meetings & Events
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -214,19 +214,19 @@ mega:
       page_id: _pages/gallery.html
       label_localized:
         en: Gallery
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/webcam.html
       label_localized:
         en: Webcam
-      items: 
+      items:
     - folder: false
       url_localized: ''
       page_id: _pages/blogs.html
       label_localized:
         en: Blog
-      items: 
+      items:
     expanded: false
   - folder: true
     label_localized:
@@ -237,19 +237,19 @@ mega:
         en: 'mailto: 8779350862'
       label_localized:
         en: 'Res: 877 935 0862'
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "#"
       label_localized:
         en: Have us call you
-      items: 
+      items:
     - folder: false
       url_localized:
         en: "#"
       label_localized:
         en: Email us
-      items: 
+      items:
     expanded: false
 featured:
   depth: 2

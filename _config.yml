@@ -78,8 +78,8 @@ page_gen:
   dir: offers
   title_field: name
 - data: rooms
-  template: room_layout
-  dir: rooms
+  template: stay_layout
+  dir: stay
   title_field: name
 plugins_dir:
 - _plugins-38
