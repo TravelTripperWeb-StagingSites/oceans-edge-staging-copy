@@ -2,6 +2,12 @@
   "name": {
     "required": true
   },
+  "category": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "offer_categories",
+    "can_create": true
+  },
   "url_friendly_name": {
     "label": "URL Friendly Name",
     "type": "url_slug"
