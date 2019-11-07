@@ -61,7 +61,7 @@
       margin-left: 10px;
       font-family: $oceansedge-font-family;
       font-size: $display6-size;
-      content: $icon-menu-icon-default;
+      content: $icon-menu-default;
       //Better Font Rendering
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -70,7 +70,7 @@
     &.is-active {
       &:after {
         font-family: $oceansedge-font-family;
-        content: $icon-menu-icon-close;
+        content: $icon-menu-close;
       }
     }
 
@@ -348,7 +348,7 @@
       font-size: $display6-size;
       color: $s2;
       cursor: pointer;
-      content: $icon-menu-icon-close;
+      content: $icon-menu-close;
       opacity: .8;
       @include transition(all .3s);
     }
@@ -567,13 +567,13 @@
   &:after {
     font-family: $oceansedge-font-family;
     font-size: $display6-size;
-    content: $icon-menu-icon-default;
+    content: $icon-menu-default;
   }
 
   &.is-active {
     &:after {
       font-family: $oceansedge-font-family;
-      content: $icon-menu-icon-close;
+      content: $icon-menu-close;
     }
   }
 

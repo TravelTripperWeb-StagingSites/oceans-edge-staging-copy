@@ -73,47 +73,89 @@ layout: generic
         <div class="form-group">
           <label for="">Filter by Room Type:</label>
           <select class="form-control">
-            <option>Selection 1</option>
-            <option selected>Selection 2</option>
-            <option>Selection 3</option>
-            <option>Selection 4</option>
+            {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
+            {% for type in bedtypes %}
+            <option>{{ type.name }}</option>
+            {% endfor %}
           </select>
         </div>
         <div class="form-group">
           <label for="">Filter by View:</label>
           <select class="form-control">
-            <option>Selection 1</option>
-            <option selected>Selection 2</option>
-            <option>Selection 3</option>
-            <option>Selection 4</option>
+            {% assign views = site.data._models.room_view | sort:"order" %}
+            {% for view in views %}
+            <option>{{ view.name }}</option>
+            {% endfor %}
           </select>
         </div>
         <div class="form-group">
           <label for="">No of Guests:</label>
-          <div class="slider-wrapper">
-						<div id="slider-js">
-							<div id="slider-progress"></div>
-							<div id="slider-handle"></div>
-							<div id="slider-counter">1</div>
-						</div>
-					</div>
         </div>
       </form>
-      <a class="btn btn--tertiary" href="#">Filters</a>
+      <a class="btn btn--tertiary-filter d-inline-block d-lg-none jsModalTrigger" href="#jsModal">Filters</a>
     </div>
-
-
   </div>
+
   <div class="asset-list__items">
     {% for room in rooms %}
       {% include components/room %}
     {% endfor %}
   </div>
 </section>
+
+<div class="mobile-filter-popup" id="jsModal">
+  <a class="close jsModalClose" href="javascript:void(0);" title="Close"></a>
+  <form>
+    <p class="h4">Filter accomodation by:</p>
+    <div class="form-group">
+      <label for="">Room Type:</label>
+      <select class="form-control">
+        {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
+        {% for type in bedtypes %}
+        <option>{{ type.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">View:</label>
+      <select class="form-control">
+        {% assign views = site.data._models.room_view | sort:"order" %}
+        {% for view in views %}
+        <option>{{ view.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">No of Guests:</label>
+      <div class="slider-wrapper">
+        <div id="slider-js">
+          <div id="slider-progress"></div>
+          <div id="slider-handle"></div>
+          <div id="slider-counter">1</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
 {% else %}
-  {% regionblock no_list_items, type:html %}
-    {% t 'rooms.none' %}
-  {% endregionblock %}
+{% regionblock no_list_items, type:html %}
+  <p class="h3">No rooms availble to show.</p>
+{% endregionblock %}
 {% endif %}
 
-{{ content }}
+{% if site.data._models.offers %}
+
+<section class="asset-list asset-list--variant mt-55">
+  <hr class="mb-3">
+  <div class="asset-list__header">
+    <div>
+      <h2 class="h4">Oceans Edge Key West Hotel Deals</h2>
+      <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+    </div>
+    <a href="/offers/" class="btn">View all Offers</a>
+  </div>
+  {% include components/offer-cross-sell %}
+</section>
+
+{% endif %}
