@@ -84,6 +84,12 @@
     content: $icon-menu-default;
   }
 }
+.icon-bed-type-stroke {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-bed-type-stroke;
+  }
+}
 .icon-size {
   &:before {
     font-family: $oceansedge-font-family;
