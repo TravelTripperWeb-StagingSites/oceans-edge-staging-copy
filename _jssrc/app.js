@@ -251,24 +251,19 @@ readyDoc(function() {
     document.querySelector(".nav--device").style.top = "98px !important";
   }
 
-  var advclose2 = function() {
-    // document.querySelector(".nav--device").style.display = "block";
-    document.querySelector(".nav--device").classList.toggle('sm-d-none');
-    document.querySelector(".nav--device").classList.toggle('sm-d-block');
+  var mobilenavev = function() {
+    var mobilecls = document.querySelector(".nav--device.mobileview");
+
+      if(mobilecls.classList.contains('sm-d-none')){
+        mobilecls.classList.remove('sm-d-none');
+        mobilecls.classList.add('sm-d-block');
+      }else{
+        mobilecls.classList.add('sm-d-none');
+        mobilecls.classList.remove('sm-d-block');
+      }
+
+    // document.querySelector(".nav--device").classList.toggle('sm-d-block');
     document.querySelector(".mobile-menu").classList.toggle('is-active');
-
-    // console.log("classList ", document.querySelector(".nav--device").classList)
-
-    // var queryall =  document.querySelector(".navbar .nav--device ul .nav__item i");
-    // queryall.classList.toggle('fa-angle-down');
-    // queryall.classList.toggle('fa-angle-up');
-    // var queryall =  document.querySelectorAll(".navbar .nav--device ul .has-subnav .nav__link");
-    //
-    // for (var i = 0; i < queryall.length; i++) {
-    //   queryall[i].insertAdjacentHTML('afterend', '');
-    // }
-    // alert("hii");
-    // <i class="fa fa-angle-down" aria-hidden="true" style="font-size: 1.4em;position: absolute;top: -3px;left: 65px;"></i>
   }
 
   var advclose3 = function() {
@@ -300,8 +295,6 @@ readyDoc(function() {
       this.querySelector(".subnav").classList.remove("sm-d-block");
       this.querySelector(".subnav").classList.add("sm-d-none");
     }
-    // this.querySelector(".subnav").classList.toggle("sm-d-none");
-    // this.querySelector(".subnav").classList.toggle("sm-d-block");
 
 
     var queryall = this.querySelector("i");
@@ -315,7 +308,7 @@ readyDoc(function() {
   }
 
   for (var i = 0; i < classname2.length; i++) {
-    classname2[i].addEventListener('click', advclose2, false);
+    classname2[i].addEventListener('click', mobilenavev, false);
   }
 
   for (var i = 0; i < navitemcls.length; i++) {
