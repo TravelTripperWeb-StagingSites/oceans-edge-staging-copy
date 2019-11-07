@@ -23,7 +23,7 @@ layout: generic
 <section class="asset-list">
   <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
-  <ul class="filter-items">
+  <ul class="filter-items rooms-filter">
     {% assign categories = site.data._models.room_type | sort:"order" %}
     <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
     {% for category in categories %}
@@ -73,19 +73,19 @@ layout: generic
         <div class="form-group">
           <label for="">Filter by Room Type:</label>
           <select class="form-control">
-            <option>Selection 1</option>
-            <option selected>Selection 2</option>
-            <option>Selection 3</option>
-            <option>Selection 4</option>
+            {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
+            {% for type in bedtypes %}
+            <option>{{ type.name }}</option>
+            {% endfor %}
           </select>
         </div>
         <div class="form-group">
           <label for="">Filter by View:</label>
           <select class="form-control">
-            <option>Selection 1</option>
-            <option selected>Selection 2</option>
-            <option>Selection 3</option>
-            <option>Selection 4</option>
+            {% assign views = site.data._models.room_view | sort:"order" %}
+            {% for view in views %}
+            <option>{{ view.name }}</option>
+            {% endfor %}
           </select>
         </div>
         <div class="form-group">
@@ -96,6 +96,7 @@ layout: generic
           </div>
         </div>
       </form>
+      <a class="btn btn--tertiary-filter d-inline-block d-lg-none jsModalTrigger" href="#jsModal">Filters</a>
     </div>
   </div>
   <div class="asset-list__items">
@@ -104,13 +105,46 @@ layout: generic
     {% endfor %}
   </div>
 </section>
+<div class="mobile-filter-popup" id="jsModal">
+  <a class="close jsModalClose" href="javascript:void(0);" title="Close"></a>
+  <form>
+    <p class="h4">Filter accomodation by:</p>
+    <div class="form-group">
+      <label for="">Room Type:</label>
+      <select class="form-control">
+        {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
+        {% for type in bedtypes %}
+        <option>{{ type.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">View:</label>
+      <select class="form-control">
+        {% assign views = site.data._models.room_view | sort:"order" %}
+        {% for view in views %}
+        <option>{{ view.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">No of Guests:</label>
+      <div class="slider-wrapper">
+        <div id="slider-js">
+          <div id="slider-progress"></div>
+          <div id="slider-handle"></div>
+          <div id="slider-counter">1</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 {% else %}
 {% regionblock no_list_items, type:html %}
   <p class="h3">No rooms availble to show.</p>
 {% endregionblock %}
 {% endif %}
 
-{% if site.data._models.offers %}
 <div class="offers-cross-sell__no-nav">
   <div class="asset-list asset-list--variant">
     <div class="asset-list__header">
@@ -123,4 +157,3 @@ layout: generic
     {% include components/offer-cross-sell %}
   </div>
 </div>
-{% endif %}
