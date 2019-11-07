@@ -217,6 +217,19 @@
       margin: 0 auto;
     }
   }
+
+  .offer-list-carousel {
+    .asset-item {
+      flex: none;
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
 }
 
 .twocol-cs {
