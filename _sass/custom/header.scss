@@ -238,7 +238,7 @@
   .wrapper {
     @include make-row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 
     @include media-breakpoint-up(lg) {
       justify-content: flex-end;
@@ -247,6 +247,7 @@
 
   .navbar-brand {
     @include make-col-ready;
+    @include make-col(4);
     margin: 0;
     padding: 0;
 
@@ -559,4 +560,24 @@
     padding: 3px 0;
 }
 
+}
+
+.mobile-menu {
+
+  &:after {
+    font-family: $oceansedge-font-family;
+    font-size: $display6-size;
+    content: $icon-menu-icon-default;
+  }
+
+  &.is-active {
+    &:after {
+      font-family: $oceansedge-font-family;
+      content: $icon-menu-icon-close;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
 }

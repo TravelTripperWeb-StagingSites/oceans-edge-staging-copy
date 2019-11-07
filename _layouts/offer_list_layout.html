@@ -17,7 +17,7 @@ layout: generic
     {% endregionblock %}
     <div class="description" tabindex="0">
       {% regionblock page_intro_description, type:text %}
-      <p>At any time of year, you’ll find the best offers and packages for a stay at Oceans Edge here on our website. Time spent in one of our <b><a href="/stay/">beautifully appointed suites or rooms</a></b> can only be improved with a great deal on your nightly rate and perks like full breakfast at <a href="/dining/">Yellowfin Bar & Grill</a>. Read about our tantalizing offers below and book soon.</p>
+      <p>At any time of year, you’ll find the best offers and packages for a stay at Oceans Edge here on our website. Time spent in one of our <b><a href="/stay/">beautifully appointed suites or rooms</a></b> can only be improved with a great deal on your nightly rate and perks like full breakfast at <b><a href="/dining/">Yellowfin Bar & Grill</a></b>. Read about our tantalizing offers below and book soon.</p>
       {% endregionblock %}
     </div>
   </div>
@@ -94,6 +94,11 @@ layout: generic
       </div>
       {% endif %}
     {% endfor %}
+  </div>
+
+  <div class="asset-list-carousel__controls" id="offersCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 
   {% comment %}
