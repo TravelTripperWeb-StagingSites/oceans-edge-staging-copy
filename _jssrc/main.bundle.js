@@ -98,7 +98,7 @@ readyDoc(function () {
   }
 
   // Tabs Script Start ======================================
-
+  gh;
   if (document.getElementsByClassName("filter-items")[0]) {
     setTimeout(function () {
       var catItems = document.querySelectorAll(".filter-items li a");
