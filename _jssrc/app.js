@@ -54,6 +54,18 @@ readyDoc(function() {
     }
   }, 2000);
 
+  setTimeout(function(){
+    var guestsSlider = document.querySelector(".guests-slider .slider");
+    var guestsSliderOutput = document.querySelector(".guests-slider .output");
+    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    guestsSlider.oninput = function() {
+      guestsSliderOutput.innerHTML = this.value;
+      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
+    }
+  }, 1000);
+
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
       container: '.hero-carousel__wrap',
@@ -127,67 +139,6 @@ readyDoc(function() {
     }, 2000);
   }
 
-
-  //Fliters Modal Box Script
-  //This script supports IE9+
-  (function() {
-    //Opening modal window function
-    function openModal() {
-        //Get trigger element
-        var modalTrigger = document.getElementsByClassName('jsModalTrigger');
-
-        //Set onclick event handler for all trigger elements
-        for(var i = 0; i < modalTrigger.length; i++) {
-            modalTrigger[i].onclick = function() {
-              var target = this.getAttribute('href').substr(1);
-              var modalWindow = document.getElementById(target);
-
-              modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open';
-            }
-        }
-    }
-
-    function closeModal(){
-      //Get close button
-      var closeButton = document.getElementsByClassName('jsModalClose');
-      // var closeOverlay = document.getElementsByClassName('jsOverlay');
-
-        //Set onclick event handler for close buttons
-        for(var i = 0; i < closeButton.length; i++) {
-          closeButton[i].onclick = function() {
-            var modalWindow = this.parentNode.parentNode;
-
-            modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-          }
-        }
-
-        //Set onclick event handler for modal overlay
-        // for(var i = 0; i < closeOverlay.length; i++) {
-        //   closeOverlay[i].onclick = function() {
-        //     var modalWindow = this.parentNode;
-        //
-        //     modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        //   }
-        // }
-
-    }
-
-    //Handling domready event IE9+
-    function ready(fn) {
-      if (document.readyState != 'loading'){
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
-    //Triggering modal window function after dom ready
-    ready(openModal);
-    ready(closeModal);
-  }());
-
-  //NavBar effects scripts
-
   var classname = document.getElementsByClassName("navbar__offer");
   var classname2 = document.getElementsByClassName("navbar-brand");
   var usercookie = getCookie("username");
@@ -256,6 +207,8 @@ readyDoc(function() {
       navitemcls[i].addEventListener('click', advclose3, false);
   }
 
+
+
   window.onscroll = function() {
     document.querySelector(".navbar").style.background = "#fff";
     var scrollPosY = window.pageYOffset | document.body.scrollTop;
@@ -302,9 +255,4 @@ readyDoc(function() {
     }
     return "";
   }
-
-  window.addEventListener("mouseup", function(event){
-      isMoving = false;
-    })
-
 });
