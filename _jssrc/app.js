@@ -132,6 +132,22 @@ readyDoc(function() {
     });
   }
 
+  if (document.getElementsByClassName('rooms-cross-carousel').length > 0) {
+    var slider = tns({
+      container: '.rooms-cross-carousel',
+      items: 1,
+      nav: true,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 85,
+      responsive: {
+        900: {
+          items: 2
+        }
+      }
+    });
+  }
+
   // Tabs Script Start ======================================
 
   if (document.getElementsByClassName("filter-items")[0]) {

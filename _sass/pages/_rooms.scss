@@ -567,3 +567,13 @@
     }
   }
 }
+
+.rooms-cross-carousel {
+  .large-card__row {
+
+  }
+  .large-card__item {
+    flex: inherit;
+    max-width: 100%;
+  }
+}

@@ -43,9 +43,9 @@ layout: default
             <hr>
             <div class="col-6 pl-0 brdr-right pt-2">
               <div class="flex-column align-start py-2 pr-2">
-                <p class="h6 mb-3">Room Location</p>
-                <div class="d-flex align-items-center">
-                  <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572872008/qiqz3g27fx7dvac5g4cf.png" width="38px" height="28px" alt="Bed Type">
+                <p class="h6 mb-3 ml-0">Room Location</p>
+                <div class="location">
+                  <i></i>
                   <span class="h5 ml-2 mb-0">{{ room.room_location.name }}</span>
                 </div>
                 {% if room.resort_map_url and room.resort_map_url != "" %}
@@ -75,7 +75,7 @@ layout: default
     <h2 class="h4 mb-2">More Rooms</h2>
     <a href="/stay/" class="btn mb-auto">View all Rooms</a>
   </div>
-  <div class="large-card__row">
+  <div class="large-card__row rooms-cross-carousel">
     {% assign rooms = site.data._models.rooms | sort:"order" %}
     {% for room in rooms %}
     <div class="large-card__item">
