@@ -63,13 +63,19 @@
   }
 
   &--book {
-    padding: 13px 32px;
-    font-size: $display8-size;
+    padding: 8px 16px;
+    font-size: $display9-size;
     color: $primary;
     text-transform: lowercase;
-    letter-spacing: 1.17px;
+    letter-spacing: 1px;
     background: $secondary;
     border-radius: 20px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 13px 32px;
+      font-size: $display8-size;
+      letter-spacing: 1.17px;
+    }
 
     &:hover, &:focus {
       color: $secondary;
