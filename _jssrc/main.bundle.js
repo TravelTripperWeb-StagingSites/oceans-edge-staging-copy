@@ -34,6 +34,30 @@ readyDoc(function () {
         }
       });
     }
+    var w = window.innerWidth;
+    if (w < 768) {
+      if (document.getElementsByClassName('offer-list-carousel').length > 0) {
+        var offerSlider = tns({
+          container: '.offer-list-carousel',
+          items: 1.1,
+          nav: false,
+          mouseDrag: true,
+          loop: false,
+          prevButton: "#offersListCarouselNav .iconbtn--left", // previous button
+          nextButton: "#offersListCarouselNav .iconbtn--right", // next button
+          responsive: {
+            767: {
+              items: 2,
+              "autoHeight": false
+            },
+            1199: {
+              items: 3
+            }
+          }
+        });
+      }
+    }
+
     if (document.getElementsByClassName('asset-list-carousel').length > 0) {
       var assetSlider = tns({
         container: '.asset-list-carousel',
