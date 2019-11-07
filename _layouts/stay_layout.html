@@ -39,9 +39,9 @@ layout: default
               {% endfor %}
             </ul>
           </div>
-          <div class="row mx-0 location">
+          <div class="row mx-0 location align-items-start">
             <hr>
-            <div class="col-6 pl-0 brdr-right pt-2">
+            <div class="col-6 pl-0 pt-2">
               <div class="flex-column align-start py-2 pr-2">
                 <p class="h6 mb-3 ml-0">Room Location</p>
                 <div class="location">
@@ -53,9 +53,9 @@ layout: default
                 {% endif %}
               </div>
             </div>
-            <div class="col-6 pt-2">
+            <div class="col-6 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
-                <p class="h6 mb-3">Room Video</p>
+                <p class="h6 mb-3 ml-0">Room Video</p>
                 <div class="video">
                   <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                 </div>
@@ -69,13 +69,13 @@ layout: default
   </div>
 </section>
 
-<section class="large-card">
+<section class="large-card rooms-cross-carousel">
   <hr class="mt-5">
   <div class="heading-2-col">
-    <h2 class="h4 mb-2">More Rooms</h2>
+    <h2 class="h4">More Rooms</h2>
     <a href="/stay/" class="btn mb-auto">View all Rooms</a>
   </div>
-  <div class="large-card__row rooms-cross-carousel">
+  <div class="large-card__row rooms-cross-carousel__handle">
     {% assign rooms = site.data._models.rooms | sort:"order" %}
     {% for room in rooms %}
     <div class="large-card__item">
@@ -92,7 +92,7 @@ layout: default
               <div class="sleeps icon-light">
                 <p>Sleeps<span class="d-block">{{ room.guest_size_max }}</span></p>
               </div>
-              <div class="size icon-light">
+              <div class="size icon-light d-none d-lg-flex">
                 <p>Size<span class="d-block">{{ room.size }}</span></p>
               </div>
             </div>
@@ -104,6 +104,10 @@ layout: default
       </div>
     </div>
     {% endfor %}
+  </div>
+  <div class="large-card__controls" id="roomsCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>
 

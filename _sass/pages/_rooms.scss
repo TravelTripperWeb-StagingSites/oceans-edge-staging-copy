@@ -569,11 +569,76 @@
 }
 
 .rooms-cross-carousel {
-  .large-card__row {
+  max-width: 100% !important;
+  padding: 0 !important;
 
+  .heading-2-col {
+    max-width: 1254px;
+    margin: 0 auto;
+    padding: 32px 25px 0 !important;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 50px !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding: 0 !important;
+    }
   }
-  .large-card__item {
-    flex: inherit;
-    max-width: 100%;
+
+  hr {
+    max-width: 1254px;
+    padding: 0 25px;
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 auto 30px;
+      padding: 0 50px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 auto 30px;
+      padding: 0;
+    }
   }
+
+  .tns-inner {
+    margin-left: 25px !important;
+    padding: 30px 0 !important;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 50px !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: 100px !important;
+    }
+  }
+
+  .large-card__controls {
+    display: flex;
+    justify-content: space-between;
+    max-width: 888px;
+    margin: 0 auto 50px;
+    padding: 0 25px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 50px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding: 0;
+    }
+  }
+
+  &__handle {
+    .large-card__item {
+      flex: inherit;
+      max-width: 100%;
+    }
+    .large-card__row {
+
+    }
+  }
+
+
 }
