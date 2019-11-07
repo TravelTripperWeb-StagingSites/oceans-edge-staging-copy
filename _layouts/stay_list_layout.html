@@ -146,16 +146,18 @@ layout: generic
 
 {% if site.data._models.offers %}
 
-<section class="asset-list asset-list--variant mt-55">
-  <hr class="mb-3">
-  <div class="asset-list__header">
-    <div>
-      <h2 class="h4">Oceans Edge Key West Hotel Deals</h2>
-      <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+<div class="offers-cross-sell__no-nav">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header">
+      <div class="content">
+        <h2 class="h4 mb-2">Oceans Edge Key West Hotel Deals</h2>
+        <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+      </div>
+      <a href="/offers/" class="btn mb-auto">View all Offers</a>
     </div>
-    <a href="/offers/" class="btn">View all Offers</a>
+    {% include components/offer-cross-sell %}
   </div>
-  {% include components/offer-cross-sell %}
-</section>
+</div>
+
 
 {% endif %}
