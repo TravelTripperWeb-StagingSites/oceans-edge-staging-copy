@@ -62,6 +62,7 @@ layout: default
               </div>
             </div>
           </div>
+          <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book room</a>
         </div>
       </div>
     </div>
@@ -72,7 +73,7 @@ layout: default
   <hr class="mt-5">
   <div class="heading-2-col">
     <h2 class="h4 mb-2">More Rooms</h2>
-    <a href="/offers/" class="btn mb-auto">View all Rooms</a>
+    <a href="/stay/" class="btn mb-auto">View all Rooms</a>
   </div>
   <div class="large-card__row">
     {% assign rooms = site.data._models.rooms | sort:"order" %}
@@ -87,14 +88,12 @@ layout: default
             <a href="{{ room.url_friendly_name | permalink: model_dir: 'stay' }}">{{ room.name }}</a>
           </h3>
           <div class="large-card__item__content">
-            <div>
-              <div class="bed-type">
-                <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870728/f5kspesyf1nlyjuekqtw.png" width="38px" height="28px" alt="Bed Type">
-                <p>Beds<span class="d-block">{{ room.room_bed_types.name }}</span></p>
-              </div>
-              <div class="sleeps">
-                <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572870729/qinioprhptzviixdjrxg.png" width="50px" height="32px" alt="Number of Sleeps">
+            <div class="row mx-0">
+              <div class="sleeps icon-light">
                 <p>Sleeps<span class="d-block">{{ room.guest_size_max }}</span></p>
+              </div>
+              <div class="size icon-light">
+                <p>Size<span class="d-block">{{ room.size }}</span></p>
               </div>
             </div>
             <div class="large-card__item__button">
