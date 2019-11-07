@@ -32,6 +32,30 @@ readyDoc(function() {
         }
       });
     }
+    var w = window.innerWidth;
+    if (w < 768 ) {
+      if (document.getElementsByClassName('offer-list-carousel').length > 0) {
+        var offerSlider = tns({
+          container: '.offer-list-carousel',
+          items: 1.1,
+          nav: false,
+          mouseDrag: true,
+          loop: false,
+          prevButton: "#offersListCarouselNav .iconbtn--left", // previous button
+          nextButton: "#offersListCarouselNav .iconbtn--right", // next button
+          responsive: {
+            767: {
+              items: 2,
+              "autoHeight": false,
+            },
+            1199: {
+              items: 3
+            }
+          }
+        });
+      }
+    }
+
     if (document.getElementsByClassName('asset-list-carousel').length > 0) {
       var assetSlider = tns({
         container: '.asset-list-carousel',
@@ -53,6 +77,18 @@ readyDoc(function() {
       });
     }
   }, 2000);
+
+  setTimeout(function(){
+    var guestsSlider = document.querySelector(".guests-slider .slider");
+    var guestsSliderOutput = document.querySelector(".guests-slider .output");
+    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    guestsSlider.oninput = function() {
+      guestsSliderOutput.innerHTML = this.value;
+      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
+    }
+  }, 1000);
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
@@ -127,10 +163,9 @@ readyDoc(function() {
     }, 2000);
   }
 
-
   //Fliters Modal Box Script
   //This script supports IE9+
-  (function() {
+  (function () {
     //Opening modal window function
     function openModal() {
       //Get trigger element
@@ -138,7 +173,7 @@ readyDoc(function() {
 
       //Set onclick event handler for all trigger elements
       for (var i = 0; i < modalTrigger.length; i++) {
-        modalTrigger[i].onclick = function() {
+        modalTrigger[i].onclick = function () {
           var target = this.getAttribute('href').substr(1);
           var modalWindow = document.getElementById(target);
 
@@ -154,11 +189,11 @@ readyDoc(function() {
 
       //Set onclick event handler for close buttons
       for (var i = 0; i < closeButton.length; i++) {
-        closeButton[i].onclick = function() {
+        closeButton[i].onclick = function () {
           var modalWindow = this.parentNode.parentNode;
 
           modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        }
+        };
       }
 
       //Set onclick event handler for modal overlay
@@ -169,7 +204,6 @@ readyDoc(function() {
       //     modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
       //   }
       // }
-
     }
 
     //Handling domready event IE9+
@@ -184,7 +218,7 @@ readyDoc(function() {
     //Triggering modal window function after dom ready
     ready(openModal);
     ready(closeModal);
-  }());
+  })();
 
   //NavBar effects scripts
 
@@ -288,6 +322,8 @@ readyDoc(function() {
     navitemcls[i].addEventListener('click', advclose3, false);
   }
 
+
+
   window.onscroll = function() {
     document.querySelector(".navbar").style.background = "#fff";
     var scrollPosY = window.pageYOffset | document.body.scrollTop;
@@ -334,7 +370,18 @@ readyDoc(function() {
     }
     return "";
   }
-  window.addEventListener("mouseup", function(event) {
-    // isMoving = false;
-  })
-})()
+
+  //rooms filter
+
+  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+  for(let i = 0; i < roomsFilterItems.length; i++) {
+    roomsFilterItems[i].addEventListener("click", function(e){
+      let currentElement = e.currentTarget;
+      for(let j = 0; j < roomsFilterItems.length; j++) {
+        roomsFilterItems[j].classList.remove("active");
+      }
+      currentElement.classList.add("active");
+    });
+  }
+
+});

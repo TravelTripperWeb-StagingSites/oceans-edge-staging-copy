@@ -65,7 +65,7 @@ layout: generic
     {% endregionblock %}
   </div>
   {% assign offers = site.data._models.offers | sort:"order" %}
-  <div class="asset-list__items asset-list-carousel">
+  <div class="asset-list__items offer-list-carousel">
     {% for offer in offers %}
     {% if offer.category.name %}
       {% else %}
@@ -80,7 +80,7 @@ layout: generic
               <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
               <div class="row">
                 <div class="col-9">
-                  <div class="bed-type">
+                  <div class="bed-type no-icon">
                     <p>{{ offer.short_description }}</p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ layout: generic
     {% endfor %}
   </div>
 
-  <div class="asset-list-carousel__controls" id="offersCarouselNav">
+  <div class="asset-list-carousel__controls d-md-none" id="offersListCarouselNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>

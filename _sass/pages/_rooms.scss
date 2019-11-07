@@ -136,6 +136,12 @@
       text-transform: uppercase;
     }
   }
+
+  &.no-icon {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .sleeps {
@@ -161,6 +167,45 @@
       font-size: $base-font-size;
       line-height: $display7-size;
       text-transform: uppercase;
+    }
+  }
+
+  &.no-icon {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark;
+
+  &:before {
+    font-family: $oceansedge-font-family;
+    font-size: $display3-size;
+    color: $medium;
+    content: $icon-size;
+  }
+
+  p {
+    margin: 0 0 0 15px;
+    color: $dark;
+
+    span {
+      padding-top: 5px;
+      font-family: $family-primary-lc;
+      font-size: $base-font-size;
+      line-height: $display7-size;
+      text-transform: uppercase;
+    }
+  }
+
+  &.no-icon {
+    &:before {
+      display: none;
     }
   }
 }
@@ -203,6 +248,12 @@
       line-height: $display6-size;
       text-transform: uppercase;
     }
+  }
+}
+
+.icon-light {
+  &:after, &:before {
+    color: $light;
   }
 }
 

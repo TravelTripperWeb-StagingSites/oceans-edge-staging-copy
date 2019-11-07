@@ -23,7 +23,7 @@ layout: generic
 <section class="asset-list">
   <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
 
-  <ul class="filter-items">
+  <ul class="filter-items rooms-filter">
     {% assign categories = site.data._models.room_type | sort:"order" %}
     <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
     {% for category in categories %}
@@ -89,20 +89,22 @@ layout: generic
           </select>
         </div>
         <div class="form-group">
-          <label for="">No of Guests:</label>
+          <label for="noOfGuests">No of Guests:</label>
+          <div class="guests-slider">
+            <span class="output"></span>
+            Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
+          </div>
         </div>
       </form>
       <a class="btn btn--tertiary-filter d-inline-block d-lg-none jsModalTrigger" href="#jsModal">Filters</a>
     </div>
   </div>
-
   <div class="asset-list__items">
     {% for room in rooms %}
       {% include components/room %}
     {% endfor %}
   </div>
 </section>
-
 <div class="mobile-filter-popup" id="jsModal">
   <a class="close jsModalClose" href="javascript:void(0);" title="Close"></a>
   <form>
@@ -137,14 +139,12 @@ layout: generic
     </div>
   </form>
 </div>
-
 {% else %}
 {% regionblock no_list_items, type:html %}
   <p class="h3">No rooms availble to show.</p>
 {% endregionblock %}
 {% endif %}
 
-{% if site.data._models.offers %}
 <div class="offers-cross-sell__no-nav">
   <div class="asset-list asset-list--variant">
     <div class="asset-list__header">
@@ -157,4 +157,3 @@ layout: generic
     {% include components/offer-cross-sell %}
   </div>
 </div>
-{% endif %}
