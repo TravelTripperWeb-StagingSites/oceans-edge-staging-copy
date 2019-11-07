@@ -348,6 +348,7 @@ hr {
   bottom: 0;
   left: 0;
   z-index: 30;
+  display: none; //Visible only on trigger event
   width: 100vw;
   height: 100vh;
   padding: 48px 24px;
@@ -357,7 +358,6 @@ hr {
     position: absolute;
     top: 24px;
     right: 24px;
-    display: none;
 
     &:after {
       font-family: $oceansedge-font-family;
