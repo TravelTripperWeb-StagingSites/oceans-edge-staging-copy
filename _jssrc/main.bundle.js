@@ -305,4 +305,4 @@ readyDoc(function () {
   window.addEventListener("mouseup", function (event) {
     isMoving = false;
   });
-})();
+});
