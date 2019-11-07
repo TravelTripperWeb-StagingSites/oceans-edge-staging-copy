@@ -239,13 +239,7 @@ readyDoc(function () {
 
   var advclose3 = function advclose3() {
     var queryall = document.querySelectorAll(".navbar .nav--device ul .nav__item i");
-    for (var i = 0; i < queryall.length; i++) {
-      queryall[i].classList.add('fa-angle-down');
-      queryall[i].classList.remove('fa-angle-up');
-    }
-
     var subnav = document.querySelectorAll(".navbar .nav--device ul .has-subnav .subnav");
-
     var hassubnav = document.querySelectorAll(".navbar .nav--device ul .has-subnav");
 
     for (var i = 0; i < subnav.length; i++) {
@@ -253,6 +247,7 @@ readyDoc(function () {
     }
 
     for (var i = 0; i < hassubnav.length; i++) {
+      hassubnav[i].classList.add("navlink__not__active");
       if (!this) hassubnav[i].classList.remove("navlink__active");
     }
     if (this.classList.contains("navlink__active")) {
