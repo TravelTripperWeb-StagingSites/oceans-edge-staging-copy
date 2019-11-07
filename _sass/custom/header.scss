@@ -31,9 +31,9 @@
     display: none !important;
   }
 
-  // .nav-device-active {
-  //   top: 88px !important;
-  // }
+  .nav-device-active {
+    top: 88px !important;
+  }
   padding: 0;
 
   .container-fluid {
@@ -524,9 +524,9 @@
 }
 @include media-breakpoint-down(md) {
   .navbar .nav--device {
-    // top: 88px;
-    top: 69px;
-    padding-top: 15px;
+    top: 88px;
+    // top: 67px;
+    // padding-top: 20px;
 
   }
 
@@ -545,7 +545,7 @@
   }
 
   .navbar .nav--device ul .has-subnav span {
-    padding-left: 18px;
+    padding-left: 15px;
   }
 
   .navbar .nav--device ul .subnav .nav__item:last-child {
@@ -553,7 +553,7 @@
   }
 
   .navbar .has-subnav:hover .nav__link+.subnav {
-    padding-left: 18px;
+    padding-left: 12px;
   }
 
   .navbar .nav--device ul .has-subnav i.fa-angle-down,
@@ -594,16 +594,14 @@
 @include media-breakpoint-down(md) {
   .navbar {
     .nav--device {
-      .nav__item {
-        .subnav {
-          border-bottom: #dad7cb 1px solid;
-        }
-      }
       height: 100vh;
       .has-subnav {
         .nav__link {
           &.active {
             &:after {
+              // position: absolute;
+              // top: 23px;
+              // left: 129px;
               margin-top: 10px;
               padding-left: 12px;
               font-family: $oceansedge-font-family;
