@@ -279,4 +279,18 @@ readyDoc(function() {
     }
     return "";
   }
+
+  //rooms filter
+
+  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+  for(let i = 0; i < roomsFilterItems.length; i++) {
+    roomsFilterItems[i].addEventListener("click", function(e){
+      let currentElement = e.currentTarget;
+      for(let j = 0; j < roomsFilterItems.length; j++) {
+        roomsFilterItems[j].classList.remove("active");
+      }
+      currentElement.classList.add("active");
+    });
+  }
+
 });
