@@ -58,11 +58,11 @@ layout: generic
 
 <section class="asset-list asset-list--variant mt-55">
   <div class="heading-line-through">
+    {% regionblock offer_category_heading_two, type:header %}
     <p class="h2">
-      {% regionblock offer_category_heading_two, type:header %}
       <span class="heading-line-through__text"><span class="h2--italic">Placeholder</span> category heading</span>
-      {% endregionblock %}
     </p>
+    {% endregionblock %}
   </div>
   {% assign offers = site.data._models.offers | sort:"order" %}
   <div class="asset-list__items asset-list-carousel">

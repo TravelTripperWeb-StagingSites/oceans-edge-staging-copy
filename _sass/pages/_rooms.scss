@@ -117,6 +117,13 @@
   justify-content: flex-start;
   color: $dark;
 
+  &:before {
+    font-family: $oceansedge-font-family;
+    font-size: $display3-size;
+    color: $medium;
+    content: $icon-bed-type-stroke;
+  }
+
   p {
     margin: 0 0 0 15px;
     color: $dark;
@@ -137,6 +144,13 @@
   justify-content: center;
   color: $dark;
 
+  &:before {
+    font-family: $oceansedge-font-family;
+    font-size: $display1-size;
+    color: $medium;
+    content: $icon-sleeps;
+  }
+
   p {
     margin: 0 0 0 15px;
     color: $dark;
@@ -146,6 +160,47 @@
       font-family: $family-primary-lc;
       font-size: $base-font-size;
       line-height: $display7-size;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $dark;
+
+  i {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: $tertiary;
+    border-radius: 50%;
+
+    &:before {
+      width: 12px;
+      height: 12px;
+      content: '';
+      background: $dark;
+      border: solid 2px $light;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    }
+  }
+
+  p {
+    margin: 0 0 0 15px;
+    color: $dark;
+
+    span {
+      padding-top: 5px;
+      font-family: $family-primary-lc;
+      font-size: $display8-size;
+      line-height: $display6-size;
       text-transform: uppercase;
     }
   }
@@ -372,6 +427,10 @@
           border-radius: 8px;
           box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
 
+          &:hover {
+            cursor: pointer;
+          }
+
           img {
             position: relative;
             z-index: 0;
@@ -389,7 +448,7 @@
             left: 0;
             z-index: 1;
             content: '';
-            background: rgba(0,0,0,.5);
+            background: rgba(1, 36, 51, .5);
             border-radius: 8px;
           }
 
