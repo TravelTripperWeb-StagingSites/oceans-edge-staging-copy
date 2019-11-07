@@ -21,9 +21,13 @@ TODO:
     {% assign text = item.label %}
   {% endif %}
   {% if show_item %}
-    <li class="nav__item{% if item.items %} has-subnav {% endif %}">
+    <li class="navlink__not__active nav__item{% if item.items %} has-subnav {% endif %}">
       {% if item.folder %}
-        <span class="nav__link--group nav__link{% if page.url == url %} active{% endif %}" >{{text}}</span>
+        <span class="nav__link--group nav__link{% if page.url == url %} active{% endif %}" >{{text}}
+          <!-- {% if item.items %}
+          <span class="angle-down-icon" aria-hidden="true"></span>
+          {% endif %} -->
+        </span>
       {% else %}
         <a class="nav__link{% if page.url == url %} active{% endif %}" href="{{url}}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{text}}{% if page.url == url %}<span class="sr-only">(current)</span>{% endif %}</a>
       {% endif %}
@@ -32,9 +36,7 @@ TODO:
           {% include nav/nav-item-list.html items=item.items %}
         </ul>
       {% endif %}
-      {% if item.items %}
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      {% endif %}
+
     </li>
   {% endif %}
 
