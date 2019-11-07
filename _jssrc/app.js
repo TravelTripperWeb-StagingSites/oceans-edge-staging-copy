@@ -43,7 +43,8 @@ readyDoc(function() {
         nextButton: "#offersCarouselNav .iconbtn--right", // next button
         responsive: {
           767: {
-            items: 2
+            items: 2,
+            "autoHeight": false,
           },
           1199: {
             items: 3
@@ -338,7 +339,6 @@ readyDoc(function() {
     }
     return "";
   }
-
   window.addEventListener("mouseup", function(event) {
     // isMoving = false;
   })
