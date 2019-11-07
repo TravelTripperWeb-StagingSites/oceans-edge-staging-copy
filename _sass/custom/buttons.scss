@@ -63,13 +63,19 @@
   }
 
   &--book {
-    padding: 13px 32px;
-    font-size: $display8-size;
+    padding: 8px 16px;
+    font-size: $display9-size;
     color: $primary;
     text-transform: lowercase;
-    letter-spacing: 1.17px;
+    letter-spacing: 1px;
     background: $secondary;
     border-radius: 20px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 13px 32px;
+      font-size: $display8-size;
+      letter-spacing: 1.17px;
+    }
 
     &:hover, &:focus {
       color: $secondary;
@@ -153,6 +159,33 @@
 
     &:after {
       color: $primary;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
+  &--tertiary-filter {
+    padding: 6px 12px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $light;
+    text-transform: lowercase;
+    letter-spacing: .83px;
+    background: $primary;
+    border-radius: 16px;
+
+    &:after {
+      font-size: 100%;
+      color: $light;
+      content: $icon-filter;
+      opacity: .5;
     }
 
     &:hover, &:focus {

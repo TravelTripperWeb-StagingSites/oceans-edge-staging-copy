@@ -1,0 +1,14 @@
+{% if site.languages.size > 1 %}
+    <li class="nav__item has-subnav">
+      <span class="nav__link nav__link--group">{% t 'language_name', site.active_lang %}</span>
+      <ul class="subnav">
+        {% for lang in site.languages %}
+          {% if lang != site.active_lang %}
+            <li class="nav__item">
+              <a class="nav__link" href="{{page | permalink, locale: lang}}">{% t 'language_name', lang %}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+{% endif %}

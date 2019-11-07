@@ -14,61 +14,115 @@
 
 .icon-calendar {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-calendar;
   }
 }
 .icon-call-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-call-icon;
   }
 }
 .icon-call-circle-icon {
   &:before {
+    font-family: $oceansedge-font-family;
     content: $icon-call-circle-icon;
   }
 }
 .icon-gallery-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-gallery-icon;
   }
 }
 .icon-groups-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-groups-icon;
   }
 }
 .icon-marina-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-marina-icon;
   }
 }
 .icon-offers-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-offers-icon;
   }
 }
 .icon-resort-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-resort-icon;
   }
 }
 .icon-stay-icon {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-stay-icon;
   }
 }
 .icon-webcam {
   &:after {
+    font-family: $oceansedge-font-family;
     content: $icon-webcam;
   }
 }
 .icon-menu-icon-close {
   &:before {
-    content: $icon-menu-icon-close;
+    font-family: $oceansedge-font-family;
+    content: $icon-menu-close;
   }
 }
 .icon-menu-icon-default {
   &:before {
-    content: $icon-menu-icon-default;
+    font-family: $oceansedge-font-family;
+    content: $icon-menu-default;
+  }
+}
+.icon-size {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-size;
+  }
+}
+.icon-sleeps {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-sleeps;
+  }
+}
+.icon-filter {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-filter;
+  }
+}
+.icon-chevron-bottom {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-bottom;
+  }
+}
+.icon-chevron-left {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-left;
+  }
+}
+.icon-chevron-right {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-right;
+  }
+}
+.icon-chevron-top {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-top;
   }
 }
