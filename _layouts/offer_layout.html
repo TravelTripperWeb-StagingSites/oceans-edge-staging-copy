@@ -52,3 +52,20 @@ layout: default
   </div>
   {% include components/offer-cross-sell %}
 </section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header, type:text %}
+      <p class="h4 light">The Resort</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text, type:text %}
+      <p class="h3 light">an exhilarating Key West escape</p>
+      <a href="/dining/" class="btn btn--light">Discover More</a>
+    {% endregionblock %}
+  </div>
+</section>
