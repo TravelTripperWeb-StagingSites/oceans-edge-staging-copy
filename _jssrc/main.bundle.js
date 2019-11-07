@@ -255,4 +255,17 @@ readyDoc(function () {
     }
     return "";
   }
+
+  //rooms filter
+
+  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+  for (var _i5 = 0; _i5 < roomsFilterItems.length; _i5++) {
+    roomsFilterItems[_i5].addEventListener("click", function (e) {
+      var currentElement = e.currentTarget;
+      for (var j = 0; j < roomsFilterItems.length; j++) {
+        roomsFilterItems[j].classList.remove("active");
+      }
+      currentElement.classList.add("active");
+    });
+  }
 });
