@@ -67,6 +67,17 @@
   @include make-container;
   max-width: 1254px;
 
+  .heading-2-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0 24px;
+
+    .h4 {
+      margin-right: auto;
+    }
+  }
+
   &__row {
     @include make-row;
   }
@@ -333,5 +344,11 @@
 
   .asset-list-carousel__controls {
     display: none;
+  }
+
+  .bed-type {
+    &:before {
+      display: none;
+    }
   }
 }
