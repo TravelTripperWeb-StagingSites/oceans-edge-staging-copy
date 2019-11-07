@@ -5,6 +5,78 @@ function readyDoc(fn) {
 
 readyDoc(function() {
 
+  // Range Slider Starts ============================
+  if(document.getElementsByClassName("slider-wrapper").length > 0) {
+    const rangeSliderController = (function(){
+      const rangeSlider = document.getElementById("slider-js");
+      const sliderHandle = document.getElementById("slider-handle");
+      const sliderCounter = document.getElementById("slider-counter");
+      const sliderValue = 5; // give any slider value, result will be n+1
+      let sliderOffset = rangeSlider.offsetLeft;
+      console.log(sliderOffset);
+      let sliderWidth = rangeSlider.offsetWidth;
+      let isMoving = false;
+      let handlePosition = null;
+      let valueStops = (function(){
+        let array = [];
+        let fraction = sliderWidth / sliderValue;
+        for (let i = 0; i <= sliderValue; i++) {
+          array.push(fraction * i);
+        };
+        return(array)
+      }());
+      let skipPoint = valueStops[1]/2;
+
+      window.addEventListener("resize", function() {
+        isMoving = false;
+        handlePosition = null;
+        valueStops = (function(){
+          let array = [];
+          let fraction = sliderWidth / sliderValue;
+          for (let i = 0; i <= sliderValue; i++) {
+            array.push(fraction * i)
+          };
+          return(array);
+        }());
+        skipPoint = valueStops[1]/2;
+        sliderOffset = rangeSlider.offsetLeft;
+        sliderWidth = rangeSlider.offsetWidth;
+      });
+
+      rangeSlider.addEventListener("mousedown", function(event){
+        event.preventDefault();
+        isMoving = true;
+        handlePosition = event.pageX - sliderOffset;
+        valueStops.forEach(function(stop, i){
+          if ( handlePosition >= (stop - skipPoint ) ) {
+            sliderHandle.style.left = stop + "px";
+            sliderCounter.style.left = stop + "px";
+            sliderCounter.innerHTML = i + 1;
+          }
+        })
+
+      });
+
+      window.addEventListener("mousemove", function(event){
+        if (isMoving) {
+          handlePosition = event.pageX - sliderOffset;
+          handlePosition = Math.min(Math.max(parseInt(handlePosition), 0), sliderWidth);
+          valueStops.forEach(function(stop, i){
+            if ( handlePosition >= (stop - skipPoint ) ) {
+              sliderHandle.style.left = stop + "px";
+              sliderCounter.style.left = stop + "px";
+              sliderCounter.innerHTML = i + 1;
+            }
+          })
+        }
+      })
+
+      window.addEventListener("mouseup", function(event){
+        isMoving = false;
+      })
+    })();
+  }
+
   setTimeout(function(){
     //Instagram Slider
     if (document.getElementsByClassName('insta-slider').length > 0) {
@@ -95,8 +167,6 @@ readyDoc(function() {
     });
   }
 
-
-
   // Tabs Script Start ======================================
 
   if(document.getElementsByClassName("filter-items")[0]) {
@@ -127,75 +197,5 @@ readyDoc(function() {
       }
     }, 2000);
   }
-
-  // Range Slider Starts ============================
-
-  const rangeSliderController = (function(){
-    const slider = document.getElementById("slider-js");
-    const sliderHandle = document.getElementById("slider-handle");
-    const sliderCounter = document.getElementById("slider-counter");
-    const sliderValue = 5; // give any slider value, result will be n+1
-    var sliderOffset = slider.offsetLeft;
-    var sliderWidth = slider.offsetWidth;
-    var isMoving = false;
-    var handlePosition = null;
-    var valueStops = (function(){
-      var array = [];
-      var fraction = sliderWidth / sliderValue;
-      for (var i = 0; i <= sliderValue; i++) {
-        array.push(fraction * i);
-        };
-      return(array)
-      }());
-    var skipPoint = valueStops[1]/2;
-
-    window.addEventListener("resize", function() {
-      isMoving = false;
-      handlePosition = null;
-      valueStops = (function(){
-        var array = [];
-        var fraction = sliderWidth / sliderValue;
-        for (var i = 0; i <= sliderValue; i++) {
-          array.push(fraction * i)
-        };
-        return(array);
-      }());
-      skipPoint = valueStops[1]/2;
-      sliderOffset = slider.offsetLeft;
-      sliderWidth = slider.offsetWidth;
-    });
-
-    slider.addEventListener("mousedown", function(event){
-      event.preventDefault();
-      isMoving = true;
-      handlePosition = event.pageX - sliderOffset;
-      valueStops.forEach(function(stop, i){
-        if ( handlePosition >= (stop - skipPoint ) ) {
-          sliderHandle.style.left = stop + "px";
-          sliderCounter.style.left = stop + "px";
-          sliderCounter.innerHTML = i + 1;
-        }
-      })
-
-    });
-
-    window.addEventListener("mousemove", function(event){
-      if (isMoving) {
-        handlePosition = event.pageX - sliderOffset;
-        handlePPostion = Math.min(Math.max(parseInt(handlePosition), 0), sliderWidth);
-        valueStops.forEach(function(stop, i){
-          if ( handlePosition >= (stop - skipPoint ) ) {
-            sliderHandle.style.left = stop + "px";
-            sliderCounter.style.left = stop + "px";
-            sliderCounter.innerHTML = i + 1;
-          }
-        })
-      }
-    })
-
-    window.addEventListener("mouseup", function(event){
-      isMoving = false;
-    })
-  })()
 
 });
