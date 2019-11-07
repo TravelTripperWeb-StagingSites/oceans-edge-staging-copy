@@ -99,17 +99,52 @@ layout: generic
 					</div>
         </div>
       </form>
-      <a class="btn btn--tertiary" href="#">Filters</a>
+      <a class="btn btn--tertiary-filter" href="#">Filters</a>
     </div>
-
-
   </div>
+
   <div class="asset-list__items">
     {% for room in rooms %}
       {% include components/room %}
     {% endfor %}
   </div>
 </section>
+
+<div class="mobile-filter-popup">
+  <a class="close" href="javascript:void(0);" title="Close"></a>
+  <form>
+    <p class="h4">Filter accomodation by:</p>
+    <div class="form-group">
+      <label for="">Room Type:</label>
+      <select class="form-control">
+        <option>Selection 1</option>
+        <option selected>Selection 2</option>
+        <option>Selection 3</option>
+        <option>Selection 4</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">View:</label>
+      <select class="form-control">
+        <option>Selection 1</option>
+        <option selected>Selection 2</option>
+        <option>Selection 3</option>
+        <option>Selection 4</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">No of Guests:</label>
+      <div class="slider-wrapper">
+        <div id="slider-js">
+          <div id="slider-progress"></div>
+          <div id="slider-handle"></div>
+          <div id="slider-counter">1</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
 {% else %}
   {% regionblock no_list_items, type:html %}
     {% t 'rooms.none' %}
