@@ -146,9 +146,23 @@ layout: generic
 </div>
 
 {% else %}
-  {% regionblock no_list_items, type:html %}
-    {% t 'rooms.none' %}
-  {% endregionblock %}
+{% regionblock no_list_items, type:html %}
+  <p class="h3">No rooms availble to show.</p>
+{% endregionblock %}
 {% endif %}
 
-{{ content }}
+{% if site.data._models.offers %}
+
+<section class="asset-list asset-list--variant mt-55">
+  <hr class="mb-3">
+  <div class="asset-list__header">
+    <div>
+      <h2 class="h4">Oceans Edge Key West Hotel Deals</h2>
+      <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+    </div>
+    <a href="/offers/" class="btn">View all Offers</a>
+  </div>
+  {% include components/offer-cross-sell %}
+</section>
+
+{% endif %}
