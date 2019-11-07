@@ -37,7 +37,7 @@ readyDoc(function() {
       if (document.getElementsByClassName('offer-list-carousel').length > 0) {
         var offerSlider = tns({
           container: '.offer-list-carousel',
-          items: 1,
+          items: 1.1,
           nav: false,
           mouseDrag: true,
           loop: false,
