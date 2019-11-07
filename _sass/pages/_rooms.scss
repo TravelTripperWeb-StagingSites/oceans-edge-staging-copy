@@ -136,6 +136,12 @@
       text-transform: uppercase;
     }
   }
+
+  &.no-icon {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .sleeps {
@@ -161,6 +167,12 @@
       font-size: $base-font-size;
       line-height: $display7-size;
       text-transform: uppercase;
+    }
+  }
+
+  &.no-icon {
+    &:before {
+      display: none;
     }
   }
 }
