@@ -40,8 +40,8 @@ layout: default
             </ul>
           </div>
           <div class="row mx-0 location">
-            <hr class="mb-2">
-            <div class="col-6 pl-0 brdr-right">
+            <hr>
+            <div class="col-6 pl-0 brdr-right pt-2">
               <div class="flex-column align-start py-2 pr-2">
                 <p class="h6 mb-3">Room Location</p>
                 <div class="d-flex align-items-center">
@@ -53,7 +53,7 @@ layout: default
                 {% endif %}
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 pt-2">
               <div class="flex-column align-start p-2">
                 <p class="h6 mb-3">Room Video</p>
                 <div class="video">
@@ -67,3 +67,35 @@ layout: default
     </div>
   </div>
 </section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+      <a href="/dining/" class="btn btn--light">Discover Dining</a>
+    {% endregionblock %}
+  </div>
+</section>
+
+{% if site.data._models.offers %}
+<section class="offers-cross-sell__no-nav">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header">
+      <div class="content">
+        <h2 class="h4 mb-2">Oceans Edge Key West Hotel Deals</h2>
+        <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+      </div>
+      <a href="/offers/" class="btn mb-auto">View all Offers</a>
+    </div>
+    {% include components/offer-cross-sell %}
+  </div>
+</section>
+{% endif %}

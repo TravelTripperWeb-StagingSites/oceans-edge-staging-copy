@@ -302,6 +302,7 @@
 
   .asset-list__header {
     padding-top: 50px;
+    text-align: left;
 
     .content {
       max-width: 100%;
@@ -313,6 +314,7 @@
 
     p {
       font-size: $display6-size;
+      color: $dark;
     }
   }
 
