@@ -3,7 +3,146 @@ function readyDoc(fn) {
   (d.readyState == 'loading') ? d.addEventListener('DOMContentLoaded', fn): fn();
 }
 
+var updateGuestsSlider = function(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
+  let allRooms = document.querySelectorAll(".room-list-item");
+  for (let i = 0; i < allRooms.length; i++) {
+    let guestsNum = Number(allRooms[i].getAttribute("data-guests"));
+    if(guestsNum < val) {
+      allRooms[i].classList.add("hidden-by-guests");
+    } else {
+      allRooms[i].classList.remove("hidden-by-guests");
+    }
+  }
+}
+
+var resetInnerFilters = function() {
+  var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+  var roomViewFilter = document.querySelectorAll(".room-view-filter");
+  var roomGuestsFilter = document.querySelectorAll(".room-guests-filter");
+  for (let i = 0; i < bedTypeFilters.length; i++) {
+    bedTypeFilters[i].value = "all";
+  }
+  for (let i = 0; i < roomViewFilter.length; i++) {
+    roomViewFilter[i].value = "all";
+  }
+  for (let i = 0; i < roomGuestsFilter.length; i++) {
+    roomGuestsFilter[i].value = "1";
+    updateGuestsSlider(document.querySelector("#guestsSlider .output"), 1);
+    updateGuestsSlider(document.querySelector("#guestsSliderMobile .output"), 1);
+  }
+}
+
+var filterRooms = function(roomType) {
+  let allRooms = document.querySelectorAll(".room-list-item");
+  if (roomType == "all") {
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+    for (let i = 0; i < allRooms.length; i++) {
+      allRooms[i].classList.remove("hidden");
+      allRooms[i].classList.remove("hidden-by-guests");
+    }
+  } else {
+    let roomsToShow = document.querySelectorAll("." + roomType);
+    let roomsCount = roomsToShow.length;
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+    for (let i = 0; i < allRooms.length; i++) {
+      allRooms[i].classList.add("hidden");
+    }
+    for (let i = 0; i < roomsCount; i++) {
+      roomsToShow[i].classList.remove("hidden");
+      roomsToShow[i].classList.remove("hidden-by-guests");
+    }
+  }
+  resetInnerFilters();
+}
+
 readyDoc(function() {
+
+  //Rooms main Filter
+  if(document.querySelectorAll(".rooms-filter li a").length > 1) {
+    var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+    for (let i = 0; i < roomsFilterItems.length; i++) {
+      roomsFilterItems[i].addEventListener("click", function(e) {
+        let currentElement = e.currentTarget;
+        for (let j = 0; j < roomsFilterItems.length; j++) {
+          roomsFilterItems[j].classList.remove("active");
+        }
+        currentElement.classList.add("active");
+        filterRooms(currentElement.getAttribute("data-filter"));
+      });
+    }
+  }
+
+
+  //Room Inner Filters
+
+  if(document.querySelectorAll(".bed-type-filter").length > 0) {
+    var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+    let allRooms = document.querySelectorAll(".room-list-item");
+    for(let i = 0; i < bedTypeFilters.length; i++) {
+      bedTypeFilters[i].onchange = function() {
+        let bedTypeVal = this.value;
+        for (let i = 0; i < allRooms.length; i++) {
+          let bedType = allRooms[i].getAttribute("data-bed-type");
+          if(bedType == bedTypeVal || bedTypeVal == "all") {
+            allRooms[i].classList.remove("hidden-by-bedtype");
+          } else {
+            allRooms[i].classList.add("hidden-by-bedtype");
+          }
+        }
+      }
+    }
+  }
+  if(document.querySelectorAll(".room-view-filter").length > 0) {
+    var viewTypeFilters = document.querySelectorAll(".room-view-filter");
+    let allRooms = document.querySelectorAll(".room-list-item");
+    for(let i = 0; i < bedTypeFilters.length; i++) {
+      viewTypeFilters[i].onchange = function() {
+        let viewTypeVal = this.value;
+        for (let i = 0; i < allRooms.length; i++) {
+          let viewType = allRooms[i].getAttribute("data-view-type");
+          if(viewType == viewTypeVal || viewTypeVal == "all") {
+            allRooms[i].classList.remove("hidden-by-viewtype");
+          } else {
+            allRooms[i].classList.add("hidden-by-viewtype");
+          }
+        }
+      }
+    }
+  }
+  if (document.querySelectorAll("#guestsSlider").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
+  if (document.querySelectorAll("#guestsSliderMobile").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
+  if(document.querySelectorAll(".jsModalTrigger").length > 0) {
+    document.querySelector(".jsModalTrigger").onclick = function() {
+      document.getElementById("jsModal").style.display = "block";
+    }
+    document.querySelector(".jsModalClose").onclick = function() {
+      document.getElementById("jsModal").style.display = "none";
+    }
+  }
 
   setTimeout(function() {
     //Instagram Slider
@@ -33,7 +172,7 @@ readyDoc(function() {
       });
     }
     var w = window.innerWidth;
-    if (w < 768 ) {
+    if (w < 768) {
       if (document.getElementsByClassName('offer-list-carousel').length > 0) {
         var offerSlider = tns({
           container: '.offer-list-carousel',
@@ -76,29 +215,6 @@ readyDoc(function() {
       });
     }
   }, 2000);
-
-  setTimeout(function(){
-    var guestsSlider = document.querySelector("#guestsSlider .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSlider .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
-
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
-    }
-  }, 1000);
-  setTimeout(function(){
-    var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
-
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
-    }
-  }, 1000);
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
@@ -219,63 +335,6 @@ readyDoc(function() {
     }, 2000);
   }
 
-  //Fliters Modal Box Script
-  //This script supports IE9+
-  (function () {
-    //Opening modal window function
-    function openModal() {
-      //Get trigger element
-      var modalTrigger = document.getElementsByClassName('jsModalTrigger');
-
-      //Set onclick event handler for all trigger elements
-      for (var i = 0; i < modalTrigger.length; i++) {
-        modalTrigger[i].onclick = function () {
-          var target = this.getAttribute('href').substr(1);
-          var modalWindow = document.getElementById(target);
-
-          modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open';
-        }
-      }
-    }
-
-    function closeModal() {
-      //Get close button
-      var closeButton = document.getElementsByClassName('jsModalClose');
-      // var closeOverlay = document.getElementsByClassName('jsOverlay');
-
-      //Set onclick event handler for close buttons
-      for (var i = 0; i < closeButton.length; i++) {
-        closeButton[i].onclick = function () {
-          var modalWindow = this.parentNode.parentNode;
-
-          modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        };
-      }
-
-      //Set onclick event handler for modal overlay
-      // for(var i = 0; i < closeOverlay.length; i++) {
-      //   closeOverlay[i].onclick = function() {
-      //     var modalWindow = this.parentNode;
-      //
-      //     modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-      //   }
-      // }
-    }
-
-    //Handling domready event IE9+
-    function ready(fn) {
-      if (document.readyState != 'loading') {
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
-    //Triggering modal window function after dom ready
-    ready(openModal);
-    ready(closeModal);
-  })();
-
   //NavBar effects scripts
 
   var classname = document.getElementsByClassName("navbar__offer");
@@ -283,40 +342,42 @@ readyDoc(function() {
   var usercookie = getCookie("username");
   var navitemcls = document.querySelectorAll(".navbar .nav--device ul .has-subnav");
 
-  if (usercookie == "usercookie") {
+  if (usercookie == "cookiefreeoffer") {
     classname[0].setAttribute("id", 'navbar__offer__close');
     var el = document.getElementById('navbar__offer__close');
     el.classList.add("navbar__offer__close");
-    document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    document.querySelector(".nav--device").style.top = "98px !important";
+    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
+    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
+    // document.querySelector(".nav--device").style.top = "98px !important";
+    navMenu1();
   }
 
   var advclose = function() {
-    setCookie("username", "usercookie", 1);
+    setCookie("username", "cookiefreeoffer", 1);
     classname[0].setAttribute("id", 'navbar__offer__close');
     var el = document.getElementById('navbar__offer__close');
     el.parentNode.removeChild(el);
     el.classList.add("navbar__offer__close");
-    document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    document.querySelector(".nav--device").style.top = "98px !important";
+    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
+    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
+    // document.querySelector(".nav--device").style.top = "98px !important";
+    navMenu1();
   }
 
   var mobilenavev = function() {
     var mobilecls = document.querySelector(".nav--device.mobileview");
 
-      if(mobilecls.classList.contains('sm-d-none')){
-        mobilecls.classList.remove('sm-d-none');
-        mobilecls.classList.add('sm-d-block');
-      }else{
-        mobilecls.classList.add('sm-d-none');
-        mobilecls.classList.remove('sm-d-block');
-      }
+    if (mobilecls.classList.contains('sm-d-none')) {
+      mobilecls.classList.remove('sm-d-none');
+      mobilecls.classList.add('sm-d-block');
+    } else {
+      mobilecls.classList.add('sm-d-none');
+      mobilecls.classList.remove('sm-d-block');
+    }
 
     // document.querySelector(".nav--device").classList.toggle('sm-d-block');
     document.querySelector(".mobile-menu").classList.toggle('is-active');
@@ -372,34 +433,38 @@ readyDoc(function() {
   }
 
 
+function navMenu1() {
+  document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+  document.querySelector("nav.navbar").classList.add('is-fixed-top');
+  document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
+}
+
+function navMenu2() {
+  document.querySelector('.navbar .navbar-brand img').style.maxWidth = "240px";
+  document.querySelector("nav.navbar").classList.remove('is-fixed-top');
+  document.querySelector(".navbar .nav--device").classList.remove("nav-device-active");
+}
 
   window.onscroll = function() {
     document.querySelector(".navbar").style.background = "#fff";
     var scrollPosY = window.pageYOffset | document.body.scrollTop;
-    if (scrollPosY > 100 || usercookie == "usercookie") {
+    if (scrollPosY > 100 || usercookie == "cookiefreeoffer") {
       classname[0].setAttribute("id", 'navbar__offer__close');
       var el = document.getElementById('navbar__offer__close');
       el.classList.add("navbar__offer__close");
-      document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-      document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-      document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-      document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
-      document.querySelector(".nav--device").style.top = "98px !important";
-    } else if (scrollPosY <= 100 && usercookie != "usercookie") {
+      navMenu1();
+    } else if (scrollPosY <= 100 && usercookie != "cookiefreeoffer") {
       classname[0].setAttribute("id", 'navbar__offer__close');
       var el = document.getElementById('navbar__offer__close');
       el.classList.remove("navbar__offer__close");
-      document.querySelector('.navbar .navbar-brand img').style.maxWidth = "240px";
-      document.querySelector(".navbar.is-fixed-top").style.height = "151px";
-      document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "151px";
-      document.querySelector(".navbar .nav--device").classList.remove("nav-device-active");
-      document.querySelector(".nav--device").style.top = "151px !important";
+      navMenu2();
     }
   }
 
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      d.setTime(d.getTime() + (exdays * 1));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
@@ -418,19 +483,6 @@ readyDoc(function() {
       }
     }
     return "";
-  }
-
-  //rooms filter
-
-  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for(let i = 0; i < roomsFilterItems.length; i++) {
-    roomsFilterItems[i].addEventListener("click", function(e){
-      let currentElement = e.currentTarget;
-      for(let j = 0; j < roomsFilterItems.length; j++) {
-        roomsFilterItems[j].classList.remove("active");
-      }
-      currentElement.classList.add("active");
-    });
   }
 
 });
