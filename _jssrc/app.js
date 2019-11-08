@@ -78,8 +78,19 @@ readyDoc(function() {
   }, 2000);
 
   setTimeout(function(){
-    var guestsSlider = document.querySelector(".guests-slider .slider");
-    var guestsSliderOutput = document.querySelector(".guests-slider .output");
+    var guestsSlider = document.querySelector("#guestsSlider .slider");
+    var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    guestsSlider.oninput = function() {
+      guestsSliderOutput.innerHTML = this.value;
+      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
+    }
+  }, 1000);
+  setTimeout(function(){
+    var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+    var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
     guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
@@ -141,6 +152,29 @@ readyDoc(function() {
       edgePadding: 25,
       prevButton: "#roomsCarouselNav .iconbtn--left", // previous button
       nextButton: "#roomsCarouselNav .iconbtn--right", // next button
+      responsive: {
+        900: {
+          items: 2,
+          edgePadding: 50
+        },
+        1200: {
+          items: 2,
+          edgePadding: 85
+        }
+      }
+    });
+  }
+
+  if (document.getElementsByClassName('rooms-cross-carousel__handle-suites').length > 0) {
+    var slider = tns({
+      container: '.rooms-cross-carousel__handle-suites',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 25,
+      prevButton: "#roomsCarouselNavSuites .iconbtn--left", // previous button
+      nextButton: "#roomsCarouselNavSuites .iconbtn--right", // next button
       responsive: {
         900: {
           items: 2,
