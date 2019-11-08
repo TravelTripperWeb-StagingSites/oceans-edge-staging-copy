@@ -701,6 +701,19 @@
 
 .mobileview {
   &.nav--device {
+
+    .nav__item {
+      width: 100%;
+      padding: 16px 20px !important;
+      border-bottom: solid 1px $t2;
+
+      .nav__link {
+        margin: 0;
+        font-family: $family-primary-bold;
+        font-size: $base-font-size;
+      }
+    }
+
     .has-subnav {
       padding: 10px 5px 6px !important;
       border-bottom: solid 1px $t2;
@@ -746,9 +759,17 @@
 
           .nav__item {
             margin-bottom: 10px;
+            padding: 0 !important;
+            border: 0;
+
+            .nav__link {
+              font-family: $family-primary-lc;
+              font-size: $display8-size;
+            }
           }
         }
       }
     }
+
   }
 }
