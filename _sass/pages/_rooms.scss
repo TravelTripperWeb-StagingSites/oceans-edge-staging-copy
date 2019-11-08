@@ -258,7 +258,7 @@
   }
 }
 
-.rooms-cross-sell {
+.rooms-cross-sell, .offers-cross-sell {
   width: 100%;
   padding: 32px 0;
 
@@ -425,12 +425,12 @@
   &--full-screen {
     padding: 0;
 
-    .rooms-cross-sell__wrap {
+    .rooms-cross-sell__wrap, .offers-cross-selll__wrap {
       max-width: 100%;
       padding: 0;
     }
 
-    .rooms-cross-sell__content__detail {
+    .rooms-cross-sell__content__detail, .offers-cross-sell__content__detail {
       max-width: 585px;
 
       .h5 {
