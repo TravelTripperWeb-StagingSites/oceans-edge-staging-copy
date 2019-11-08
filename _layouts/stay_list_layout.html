@@ -12,7 +12,7 @@ layout: generic
     {% endregionblock %}
     <div class="description" tabindex="0">
       {% regionblock rooms_intro_description, type:text %}
-      <p>Our brand new rooms are the <strong>most spacious in Key West.</strong> But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers <strong>unparalleled ocean views,</strong> luxury amenities and a <strong>private balcony. Our brand new rooms are the most spacious in Key West. But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers unparalleled ocean views, luxury amenities and a private balcony.</strong></p>
+        <p>Our brand new rooms are the <strong>most spacious in Key West.</strong> But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers <strong>unparalleled ocean views,</strong> luxury amenities and a <strong>private balcony. Our brand new rooms are the most spacious in Key West. But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers unparalleled ocean views, luxury amenities and a private balcony.</strong></p>
       {% endregionblock %}
     </div>
     <hr>
@@ -90,7 +90,7 @@ layout: generic
         </div>
         <div class="form-group">
           <label for="noOfGuests">No of Guests:</label>
-          <div class="guests-slider">
+          <div class="guests-slider" id="guestsSlider">
             <span class="output"></span>
             Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
           </div>
@@ -129,12 +129,9 @@ layout: generic
     </div>
     <div class="form-group">
       <label for="">No of Guests:</label>
-      <div class="slider-wrapper">
-        <div id="slider-js">
-          <div id="slider-progress"></div>
-          <div id="slider-handle"></div>
-          <div id="slider-counter">1</div>
-        </div>
+      <div class="guests-slider" id="guestsSliderMobile">
+        <span class="output"></span>
+        Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
       </div>
     </div>
   </form>

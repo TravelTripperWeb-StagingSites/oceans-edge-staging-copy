@@ -329,48 +329,6 @@ hr {
           padding-right: 0;
           padding-left: 10px;
         }
-        .guests-slider {
-          position: relative;
-          margin-top: 20px;
-          font-family: $family-primary-lc;
-          font-size: $display10-size;
-          line-height: 16px;
-          color: $medium;
-          .output {
-            position: absolute;
-            top: -20px;
-            left: 69px;
-            z-index: 10;
-            color: $white;
-          }
-          .slider {
-            position: relative;
-            width: 110px;
-            height: 4px;
-            margin: 0 6px;
-            //overflow: hidden;
-            cursor: pointer;
-            background: rgba($primary, .4);
-            outline: none;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-            -webkit-appearance: none;
-            &::-webkit-slider-thumb {
-              position: relative;
-              top: -20px;
-              z-index: 9;
-              width: 47px;
-              height: 39px;
-              background-color: transparent;
-              border-radius: 16px;
-               //box-shadow: -100vw 0 0 100vw $primary;
-              -webkit-appearance: none;
-              background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573122364/ytool9czplrbvdav2hhz.png');
-              background-repeat: no-repeat;
-              background-position: center center;
-            }
-          }
-        }
         .form-control {
           position: relative;
           padding-left: 0;
@@ -384,6 +342,49 @@ hr {
           border-radius: 0;
         }
       }
+    }
+  }
+}
+
+.guests-slider {
+  position: relative;
+  margin-top: 20px;
+  font-family: $family-primary-lc;
+  font-size: $display10-size;
+  line-height: 16px;
+  color: $medium;
+  .output {
+    position: absolute;
+    top: -20px;
+    left: 69px;
+    z-index: 10;
+    color: $white;
+  }
+  .slider {
+    position: relative;
+    width: 110px;
+    height: 4px;
+    margin: 0 6px;
+    //overflow: hidden;
+    cursor: pointer;
+    background: rgba($primary, .4);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    -webkit-appearance: none;
+    &::-webkit-slider-thumb {
+      position: relative;
+      top: -20px;
+      z-index: 9;
+      width: 47px;
+      height: 39px;
+      background-color: transparent;
+      border-radius: 16px;
+      //box-shadow: -100vw 0 0 100vw $primary;
+      -webkit-appearance: none;
+      background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573122364/ytool9czplrbvdav2hhz.png');
+      background-repeat: no-repeat;
+      background-position: center center;
     }
   }
 }
