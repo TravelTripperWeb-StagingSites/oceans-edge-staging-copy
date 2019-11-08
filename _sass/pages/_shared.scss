@@ -277,6 +277,10 @@ hr {
   border-right: solid 1px $t2;
 }
 
+.brdr-left {
+  border-left: solid 1px $t2;
+}
+
 .filters-block {
   @include make-row;
   margin: 30px 0;
