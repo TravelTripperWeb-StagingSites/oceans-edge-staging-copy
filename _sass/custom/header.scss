@@ -43,10 +43,18 @@
   }
 
   &.is-fixed-top {
-    height: 151px;
+    height: auto;
+
+    @include media-breakpoint-up(lg) {
+      height: 98px;
+    }
 
     &+.main {
-      padding-top: 151px;
+      padding-top: auto;
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 98px;
+      }
     }
   }
 
@@ -54,7 +62,7 @@
     width: auto;
     height: auto;
     background: transparent;
-    @include transition(all 0.3s);
+    @include transition(all .3s);
 
     &:after {
       margin-left: 10px;
@@ -79,11 +87,12 @@
   }
 
   .nav--device {
-    top: 151px;
+    top: auto;
     right: 0;
     left: 0;
     display: none;
     width: 100%;
+    margin-top: 1px;
     padding: 0 0 80px;
     font-family: $family-primary-lc;
     font-size: $display8-size;
@@ -247,7 +256,7 @@
   .navbar-brand {
     @include make-col-ready;
     @include make-col(4);
-    margin: 0;
+    margin: 5px 0 0;
     padding: 0;
     @include media-breakpoint-up(sm) {
       @include make-col(2.5);
@@ -613,7 +622,7 @@
               padding-left: 12px;
               font-family: $oceansedge-font-family;
               font-size: 10px;
-              color: #6fd4e4;
+              color: $secondary;
               content: $icon-chevron-right;
             }
           }
@@ -650,11 +659,11 @@
     &.active {
       width: 69px;
       height: 17px;
-      font-family: 'Code - Pro - LC';
+      font-family: $family-primary-lc;
       font-size: 14px;
       line-height: 16px;
-      color: #025172 !important;
-      letter-spacing: 0.5px;
+      color: $primary !important;
+      letter-spacing: .5px;
     }
   }
 }
