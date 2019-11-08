@@ -1,10 +1,10 @@
 {
   "order": 4,
-  "name": "Biking around Stock Island",
-  "url_friendly_name": "biking-around-stock-island",
-  "description": "<p>Complimentary use of bikes for an hour daily is included with your stay at Oceans Edge; Stock Island is a longtime home of fishers and artists, and biking around the area gives you a look at daily life here. Want to bike around the island like a local? Half and full-day rentals are also available on site. Please visit the Tiki Hut upon arrival for more information.</p>",
-  "terms_conditions": "Available on a first-come, first-serve basis",
-  "price": "First Hour is free, $5/hr thereafter",
+  "name": "Jet Ski Guided Tour",
+  "url_friendly_name": "jet-ski-guided-tour",
+  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+  "terms_conditions": "Cost (3hrs)",
+  "price": "$10 /person",
   "image": {
     "name": "jet-ski-tours",
     "content_type": "image/jpeg",
