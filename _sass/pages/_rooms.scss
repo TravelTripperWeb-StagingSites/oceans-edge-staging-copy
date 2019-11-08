@@ -110,6 +110,9 @@
       }
     }
   }
+  &.hidden, &.hidden-by-guests, &.hidden-by-bedtype, &.hidden-by-viewtype {
+    display: none !important;
+  }
 }
 
 .bed-type {
