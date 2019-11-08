@@ -506,10 +506,17 @@
   .sm-d-none {
     display: block !important;
   }
+
   .sm-d-block {
     display: none !important;
   }
   @include media-breakpoint-up(lg) {
+    &.nav--active {
+      .mobileview {
+        display: none !important;
+      }
+    }
+
     .sm-d-none {
       display: none !important;
     }

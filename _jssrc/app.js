@@ -310,7 +310,6 @@ readyDoc(function() {
 
   var mobilenavev = function() {
     var mobilecls = document.querySelector(".nav--device.mobileview");
-
       if(mobilecls.classList.contains('sm-d-none')){
         mobilecls.classList.remove('sm-d-none');
         mobilecls.classList.add('sm-d-block');
