@@ -39,6 +39,7 @@ meta_tags:
   <div class="large-card__row rooms-cross-carousel__handle">
     {% assign activities = site.data._models.activities | sort: 'order' %}
     {% for item in activities %}
+    {% if item.complimentary-resort-activities == true %}
     <div class="large-card__item">
       <div class="large-card__item__inner">
         <div class="large-card__item__image">
@@ -46,7 +47,7 @@ meta_tags:
         </div>
         <div class="large-card__item__wrap">
           <h4 class="h4 light">
-            <a href="{{ room.url_friendly_name | permalink: model_dir: 'stay' }}">{{ item.name }}</a>
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
           </h4>
           <div class="large-card__item__content">
             <div class="mb-3 mb-md-0">
@@ -54,12 +55,13 @@ meta_tags:
               <span class="price mw-100 border-0">{{ item.price }}<span></p>
             </div>
             <div class="large-card__item__button">
-              <a href="{{ offer.url_friendly_name }}" class="btn btn--light" target="_blank">View</a>
+              <a href="{{ item.url_friendly_name }}" class="btn btn--light" target="_blank">View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
   <div class="large-card__controls" id="roomsCarouselNav">
@@ -81,7 +83,7 @@ meta_tags:
           <label for="">Sort By:</label>
           <select class="form-control">
             <option>All On-site Marina Activities</option>
-            {% assign items = site.data._models.marina_activities_categories | order: 'sort' %}
+            {% assign items = site.data._models.activities_categories | order: 'sort' %}
             {% for item in items %}
             <option>{{ item.name }}</option>
             {% endfor %}
@@ -93,13 +95,16 @@ meta_tags:
   <div class="activities-listing__row">
     {% assign activities = site.data._models.activities | sort: 'order' %}
     {% for item in activities %}
+    {% if item.complimentary-resort-activities != true %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
           <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5" tabindex="0">{{ item.name }}</h4>
+          <h4 class="h5" tabindex="0">
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
+          </h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
               <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
@@ -112,6 +117,7 @@ meta_tags:
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
