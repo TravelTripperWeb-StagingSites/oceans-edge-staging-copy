@@ -67,4 +67,63 @@
       }
     }
   }
+
+  .filters-block {
+    .h4 {
+      margin-bottom: 12px;
+    }
+
+    &__room-type {
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
+    }
+
+    &__form {
+      @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-left: auto;
+      }
+
+      form {
+        display: block;
+
+        .form-group {
+          flex: none;
+          max-width: none;
+          padding: 0;
+
+          @include media-breakpoint-up(sm) {
+            max-width: 288px;
+          }
+
+          &:last-child {
+            @include media-breakpoint-up(md) {
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.activities-carousel {
+  .large-card__item__content {
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  .large-card__item__image {
+    height: 312px;
+
+    @include media-breakpoint-up(md) {
+      height: 384px;
+    }
+  }
+
+  .large-card__item__button {
+    padding-left: 0;
+  }
 }
