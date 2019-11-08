@@ -1,7 +1,7 @@
 {
-  "order": 9,
-  "name": "test-2-test",
-  "url_friendly_name": "test2",
-  "booking_url": "test.com",
-  "resort_map_url": "test.com"
+  "order": 10,
+  "name": "test3",
+  "url_friendly_name": "test3",
+  "booking_url": "test3",
+  "resort_map_url": "test3"
 }
