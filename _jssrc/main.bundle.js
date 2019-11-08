@@ -59,7 +59,29 @@ var filterRooms = function filterRooms(roomType) {
   resetInnerFilters();
 };
 
+var filterThroughURL = function filterThroughURL() {
+  if (window.location.href.indexOf("/stay/") > -1 && window.location.hash) {
+    var hashValue = window.location.hash.substring(1);
+    if (hashValue == 'accessible-rooms') {
+      document.querySelector(".rooms-filter [data-filter='accessible']").click();
+    } else if (hashValue == 'guestrooms') {
+      document.querySelector(".rooms-filter [data-filter='guestroom']").click();
+    } else if (hashValue == '1-bedrooms') {
+      document.querySelector(".rooms-filter [data-filter='one-bedroom']").click();
+    }
+  }
+};
+
 readyDoc(function () {
+
+  window.onhashchange = function () {
+    filterThroughURL();
+  };
+
+  //if url contains hash
+  setTimeout(function () {
+    filterThroughURL();
+  }, 500);
 
   //Rooms main Filter
   if (document.querySelectorAll(".rooms-filter li a").length > 1) {
