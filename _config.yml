@@ -81,10 +81,6 @@ page_gen:
   template: stay_layout
   dir: stay
   title_field: name
-- data: hotel_amenities
-  template: hotel_amenities_details_layout
-  dir: amenities
-  title_field: name
 plugins_dir:
 - _plugins-38
 - _plugins
