@@ -421,22 +421,14 @@ readyDoc(function () {
 
   function navMenu1() {
     document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    document.querySelector(".navbar.is-fixed-top").classList.remove('sticky');
-    document.querySelector(".navbar.is-fixed-top+.main").classList.remove('sticky-body');
-    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+    document.querySelector("nav.navbar").classList.add('is-fixed-top');
     document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
-    document.querySelector(".nav--device").style.top = "98px !important";
   }
 
   function navMenu2() {
     document.querySelector('.navbar .navbar-brand img').style.maxWidth = "240px";
-    document.querySelector(".navbar.is-fixed-top").classList.add('sticky');
-    document.querySelector(".navbar.is-fixed-top+.main").classList.add('sticky-body');
-    // document.querySelector(".navbar.is-fixed-top").style.height = "151px";
-    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "151px";
+    document.querySelector("nav.navbar").classList.remove('is-fixed-top');
     document.querySelector(".navbar .nav--device").classList.remove("nav-device-active");
-    document.querySelector(".nav--device").style.top = "151px !important";
   }
 
   window.onscroll = function () {
