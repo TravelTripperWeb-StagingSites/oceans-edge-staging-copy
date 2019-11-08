@@ -12,7 +12,7 @@ meta_tags:
 
 <section class="hero-carousel">
   <div class="hero-carousel__wrap">
-    {% assign items = site.data._models.hero_carousel | sort: order %}
+    {% assign items = site.data._models.groups_hero_carousel | sort: order %}
     {% for item in items %}
     <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
     {% endfor %}
@@ -45,5 +45,16 @@ meta_tags:
     <p><b>Required fields are marked *</b></p>
     <hr>
     {% include forms/jotform/rfp.html %}
+  </div>
+</section>
+
+<section class="common-cta mt-55">
+  <div class="common-cta__img">
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+  </div>
+  <div class="common-cta__text text-center">
+      <p class="h4 light">The Resort</p>
+      <p class="h3 light">an exhilarating Key West escape</p>
+      <a href="/dining/" class="btn btn--light">Discover More</a>
   </div>
 </section>
