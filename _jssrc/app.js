@@ -3,10 +3,6 @@ function readyDoc(fn) {
   (d.readyState == 'loading') ? d.addEventListener('DOMContentLoaded', fn): fn();
 }
 
-filterRooms() {
-  
-}
-
 readyDoc(function() {
 
   setTimeout(function() {
