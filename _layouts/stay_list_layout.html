@@ -27,7 +27,7 @@ layout: generic
     {% assign categories = site.data._models.room_type | sort:"order" %}
     <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
     {% for category in categories %}
-    <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">{{ category.name }}</a></li>
+    <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }}">{{ category.name }}</a></li>
     {% endfor %}
   </ul>
 
@@ -66,7 +66,9 @@ layout: generic
   <div class="filters-block">
     <div class="filters-block__room-type">
       <p class="h4">All Accomodations</p>
-      <p class="overline dark"><span>12</span> Rooms & Suites</p>
+      <p class="overline dark filtered-rooms-text">
+        <span>{{rooms.size}}</span> Rooms & Suites
+      </p>
     </div>
     <div class="filters-block__form">
       <form>
@@ -112,6 +114,7 @@ layout: generic
     <div class="form-group">
       <label for="">Room Type:</label>
       <select class="form-control">
+        <option class="all">All</option>
         {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
         {% for type in bedtypes %}
         <option>{{ type.name }}</option>
@@ -121,6 +124,7 @@ layout: generic
     <div class="form-group">
       <label for="">View:</label>
       <select class="form-control">
+        <option class="all">All</option>
         {% assign views = site.data._models.room_view | sort:"order" %}
         {% for view in views %}
         <option>{{ view.name }}</option>

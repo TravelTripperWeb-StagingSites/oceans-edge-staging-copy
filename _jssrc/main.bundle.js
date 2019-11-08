@@ -5,6 +5,32 @@ function readyDoc(fn) {
   d.readyState == 'loading' ? d.addEventListener('DOMContentLoaded', fn) : fn();
 }
 
+var applyInnerFilters = function applyInnerFilters() {};
+
+var filterRooms = function filterRooms(roomType) {
+  var allRooms = document.querySelectorAll(".room-list-item");
+  console.log(roomType);
+  if (roomType == "all") {
+    console.log("I am here");
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+    for (var i = 0; i < allRooms.length; i++) {
+      allRooms[i].style.display = "block";
+    }
+  } else {
+    console.log("I am here too");
+    var roomsToShow = document.querySelectorAll("." + roomType);
+    var roomsCount = roomsToShow.length;
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+    for (var _i = 0; _i < allRooms.length; _i++) {
+      allRooms[_i].style.display = "none";
+    }
+    for (var _i2 = 0; _i2 < roomsCount; _i2++) {
+      roomsToShow[_i2].style.display = "block";
+    }
+  }
+  applyInnerFilters();
+};
+
 readyDoc(function () {
 
   setTimeout(function () {
@@ -196,8 +222,8 @@ readyDoc(function () {
   if (document.getElementsByClassName("filter-items")[0]) {
     setTimeout(function () {
       var catItems = document.querySelectorAll(".filter-items li a");
-      for (var _i = 0; _i < catItems.length; _i++) {
-        catItems[_i].addEventListener('click', function (e) {
+      for (var _i3 = 0; _i3 < catItems.length; _i3++) {
+        catItems[_i3].addEventListener('click', function (e) {
           for (var j = 0; j < catItems.length; j++) {
             catItems[j].classList.remove("active");
           }
@@ -206,15 +232,15 @@ readyDoc(function () {
           var tabItems = document.getElementsByClassName("asset-item");
           var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
-            for (var _i2 = 0; _i2 < tabItems.length; _i2++) {
-              tabItems[_i2].style.display = "flex";
+            for (var _i4 = 0; _i4 < tabItems.length; _i4++) {
+              tabItems[_i4].style.display = "flex";
             }
           } else {
-            for (var _i3 = 0; _i3 < tabItems.length; _i3++) {
-              tabItems[_i3].style.display = "none";
+            for (var _i5 = 0; _i5 < tabItems.length; _i5++) {
+              tabItems[_i5].style.display = "none";
             }
-            for (var _i4 = 0; _i4 < currentTabItems.length; _i4++) {
-              currentTabItems[_i4].style.display = "flex";
+            for (var _i6 = 0; _i6 < currentTabItems.length; _i6++) {
+              currentTabItems[_i6].style.display = "flex";
             }
           }
         });
@@ -422,13 +448,14 @@ readyDoc(function () {
   //rooms filter
 
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for (var _i5 = 0; _i5 < roomsFilterItems.length; _i5++) {
-    roomsFilterItems[_i5].addEventListener("click", function (e) {
+  for (var _i7 = 0; _i7 < roomsFilterItems.length; _i7++) {
+    roomsFilterItems[_i7].addEventListener("click", function (e) {
       var currentElement = e.currentTarget;
       for (var j = 0; j < roomsFilterItems.length; j++) {
         roomsFilterItems[j].classList.remove("active");
       }
       currentElement.classList.add("active");
+      filterRooms(currentElement.getAttribute("data-filter"));
     });
   }
 });

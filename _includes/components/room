@@ -1,4 +1,4 @@
-<div class="room-list-item asset-item {{room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' }}">
+<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }}">
   <div class="asset-item__wrap">
     <div class="asset-item__featured-image">
       {% assign featured_image = room.featured_image %}

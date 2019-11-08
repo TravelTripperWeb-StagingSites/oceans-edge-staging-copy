@@ -5,7 +5,7 @@
   "description": "<p><span style=\"color: #434343; font-family: AdobeGaramondW01-Regula; font-size: 16px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>",
   "size": "400 Sq Ft",
   "ada_room": true,
-  "guest_size_max": 6,
+  "guest_size_max": 1,
   "room_type": "room_type3",
   "room_bed_types": "room_bed_types6",
   "view": "room_view2",
