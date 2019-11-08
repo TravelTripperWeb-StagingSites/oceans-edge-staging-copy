@@ -137,139 +137,28 @@ meta_tags:
     </div>
   </div>
   <div class="activities-listing__row">
+    {% assign activities = site.data._models.marina-activities | sort: 'order' %}
+    {% for item in activities %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
+        <div class="activities-listing__item__image" tabindex="0">
+          <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
+          <h4 class="h5" tabindex="0">{{ item.name }}</h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
+              <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p>
             </div>
             <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
+              <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </section>
 
