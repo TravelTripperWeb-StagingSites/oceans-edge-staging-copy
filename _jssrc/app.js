@@ -3,8 +3,26 @@ function readyDoc(fn) {
   (d.readyState == 'loading') ? d.addEventListener('DOMContentLoaded', fn): fn();
 }
 
-var applyInnerFilters = function() {
+var updateGuestsSlider = function(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
+}
 
+var resetInnerFilters = function() {
+  var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+  var roomViewFilter = document.querySelectorAll(".room-view-filter");
+  var roomGuestsFilter = document.querySelectorAll(".room-guests-filter");
+  for(let i = 0; i < bedTypeFilters.length; i++) {
+    bedTypeFilters[i].value = "all";
+  }
+  for(let i = 0; i < roomViewFilter.length; i++) {
+    roomViewFilter[i].value = "all";
+  }
+  for(let i = 0; i < roomGuestsFilter.length; i++) {
+    roomGuestsFilter[i].value = "1";
+    updateGuestsSlider(document.querySelector("#guestsSlider .output"), 1);
+    updateGuestsSlider(document.querySelector("#guestsSliderMobile .output"), 1);
+  }
 }
 
 var filterRooms = function(roomType) {
@@ -12,20 +30,20 @@ var filterRooms = function(roomType) {
   if(roomType == "all") {
     document.querySelector(".filtered-rooms-text").innerHTML = "<span>"+allRooms.length+"</span> Rooms & Suites";
     for(let i=0; i < allRooms.length; i++) {
-      allRooms[i].style.display = "block";
+      allRooms[i].classList.remove("hidden");
     }
   } else {
     let roomsToShow = document.querySelectorAll("."+roomType);
     let roomsCount = roomsToShow.length;
     document.querySelector(".filtered-rooms-text").innerHTML = "<span>"+roomsCount+"</span> "+roomType;
     for(let i=0; i < allRooms.length; i++) {
-      allRooms[i].style.display = "none";
+      allRooms[i].classList.add("hidden");
     }
     for(let i=0; i < roomsCount; i++) {
-      roomsToShow[i].style.display = "block";
+      roomsToShow[i].classList.remove("hidden");
     }
   }
-  applyInnerFilters();
+  resetInnerFilters();
 }
 
 readyDoc(function() {
@@ -110,10 +128,9 @@ readyDoc(function() {
 
     // Update the current slider value (each time you drag the slider handle)
     guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59 + (12 * this.value) + "px";
+      updateGuestsSlider(guestsSliderOutput, this.value);
     }
-  }, 1000);
+  }, 500);
   setTimeout(function() {
     var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
     var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
@@ -121,10 +138,9 @@ readyDoc(function() {
 
     // Update the current slider value (each time you drag the slider handle)
     guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59 + (12 * this.value) + "px";
+      updateGuestsSlider(guestsSliderOutput, this.value);
     }
-  }, 1000);
+  }, 500);
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({

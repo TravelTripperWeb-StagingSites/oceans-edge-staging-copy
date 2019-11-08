@@ -74,19 +74,21 @@ layout: generic
       <form>
         <div class="form-group">
           <label for="">Filter by Room Type:</label>
-          <select class="form-control">
+          <select class="form-control bed-type-filter">
+            <option value="all">All</option>
             {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
             {% for type in bedtypes %}
-            <option>{{ type.name }}</option>
+            <option value="{{ type.name | downcase | replace: '&', '' | replace: ',', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' | replace: '4', 'four' | replace: '5', 'five' }}">{{ type.name }}</option>
             {% endfor %}
           </select>
         </div>
         <div class="form-group">
           <label for="">Filter by View:</label>
-          <select class="form-control">
+          <select class="form-control room-view-filter">
+            <option value="all">All</option>
             {% assign views = site.data._models.room_view | sort:"order" %}
             {% for view in views %}
-            <option>{{ view.name }}</option>
+            <option value="view.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three'">{{ view.name }}</option>
             {% endfor %}
           </select>
         </div>
@@ -94,7 +96,7 @@ layout: generic
           <label for="noOfGuests">No of Guests:</label>
           <div class="guests-slider" id="guestsSlider">
             <span class="output"></span>
-            Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
+            Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider room-guests-filter" id="noOfGuests"> Sleeps 6
           </div>
         </div>
       </form>
