@@ -6,7 +6,7 @@
   "size": "400 Sq Ft",
   "ada_room": true,
   "guest_size_max": 2,
-  "view": "room_view1",
+  "view": "room_view2",
   "location": "Building1",
   "amenities": [
     "room_amenities1",

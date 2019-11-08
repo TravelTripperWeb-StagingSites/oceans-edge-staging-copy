@@ -61,7 +61,7 @@ layout: generic
   </div>
   <hr>
 
-  {% assign rooms = site.data._models.rooms | sort:"order" %}
+  {% assign rooms = site.data._models.rooms | sort: "order" %}
 
   <div class="filters-block">
     <div class="filters-block__room-type">
@@ -78,7 +78,7 @@ layout: generic
             <option value="all">All</option>
             {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
             {% for type in bedtypes %}
-            <option value="{{ type.name | downcase | replace: '&', '' | replace: ',', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' | replace: '4', 'four' | replace: '5', 'five' }}">{{ type.name }}</option>
+            <option value="{{ type.name }}">{{ type.name }}</option>
             {% endfor %}
           </select>
         </div>
@@ -88,7 +88,7 @@ layout: generic
             <option value="all">All</option>
             {% assign views = site.data._models.room_view | sort:"order" %}
             {% for view in views %}
-            <option value="view.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three'">{{ view.name }}</option>
+            <option value="{{ view.name }}">{{ view.name }}</option>
             {% endfor %}
           </select>
         </div>
@@ -100,7 +100,7 @@ layout: generic
           </div>
         </div>
       </form>
-      <a class="btn btn--tertiary-filter d-inline-block d-lg-none jsModalTrigger" href="#jsModal">Filters</a>
+      <a class="btn btn--tertiary-filter d-inline-block d-lg-none jsModalTrigger" href="javascript:void(0);">Filters</a>
     </div>
   </div>
   <div class="asset-list__items">
@@ -115,21 +115,21 @@ layout: generic
     <p class="h4">Filter accomodation by:</p>
     <div class="form-group">
       <label for="">Room Type:</label>
-      <select class="form-control">
-        <option class="all">All</option>
+      <select class="form-control bed-type-filter">
+        <option value="all">All</option>
         {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
         {% for type in bedtypes %}
-        <option>{{ type.name }}</option>
+        <option value="{{ type.name }}">{{ type.name }}</option>
         {% endfor %}
       </select>
     </div>
     <div class="form-group">
       <label for="">View:</label>
-      <select class="form-control">
-        <option class="all">All</option>
+      <select class="form-control room-view-filter">
+        <option value="all">All</option>
         {% assign views = site.data._models.room_view | sort:"order" %}
         {% for view in views %}
-        <option>{{ view.name }}</option>
+        <option value="{{ view.name }}">{{ view.name }}</option>
         {% endfor %}
       </select>
     </div>

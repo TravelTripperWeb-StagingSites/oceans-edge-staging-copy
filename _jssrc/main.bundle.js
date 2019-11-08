@@ -8,6 +8,15 @@ function readyDoc(fn) {
 var updateGuestsSlider = function updateGuestsSlider(guestsSliderOutput, val) {
   guestsSliderOutput.innerHTML = val;
   guestsSliderOutput.style.left = 59 + 12 * val + "px";
+  var allRooms = document.querySelectorAll(".room-list-item");
+  for (var i = 0; i < allRooms.length; i++) {
+    var guestsNum = Number(allRooms[i].getAttribute("data-guests"));
+    if (guestsNum < val) {
+      allRooms[i].classList.add("hidden-by-guests");
+    } else {
+      allRooms[i].classList.remove("hidden-by-guests");
+    }
+  }
 };
 
 var resetInnerFilters = function resetInnerFilters() {
@@ -33,6 +42,7 @@ var filterRooms = function filterRooms(roomType) {
     document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
     for (var i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.remove("hidden");
+      allRooms[i].classList.remove("hidden-by-guests");
     }
   } else {
     var roomsToShow = document.querySelectorAll("." + roomType);
@@ -43,12 +53,107 @@ var filterRooms = function filterRooms(roomType) {
     }
     for (var _i4 = 0; _i4 < roomsCount; _i4++) {
       roomsToShow[_i4].classList.remove("hidden");
+      roomsToShow[_i4].classList.remove("hidden-by-guests");
     }
   }
   resetInnerFilters();
 };
 
 readyDoc(function () {
+
+  //Rooms main Filter
+  if (document.querySelectorAll(".rooms-filter li a").length > 1) {
+    var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+    for (var _i5 = 0; _i5 < roomsFilterItems.length; _i5++) {
+      roomsFilterItems[_i5].addEventListener("click", function (e) {
+        var currentElement = e.currentTarget;
+        for (var j = 0; j < roomsFilterItems.length; j++) {
+          roomsFilterItems[j].classList.remove("active");
+        }
+        currentElement.classList.add("active");
+        filterRooms(currentElement.getAttribute("data-filter"));
+      });
+    }
+  }
+
+  //Room Inner Filters
+
+  if (document.querySelectorAll(".bed-type-filter").length > 0) {
+    var bedTypeFilters;
+
+    (function () {
+      bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+
+      var allRooms = document.querySelectorAll(".room-list-item");
+      for (var _i6 = 0; _i6 < bedTypeFilters.length; _i6++) {
+        bedTypeFilters[_i6].onchange = function () {
+          var bedTypeVal = this.value;
+          for (var _i7 = 0; _i7 < allRooms.length; _i7++) {
+            var bedType = allRooms[_i7].getAttribute("data-bed-type");
+            if (bedType == bedTypeVal || bedTypeVal == "all") {
+              allRooms[_i7].classList.remove("hidden-by-bedtype");
+            } else {
+              allRooms[_i7].classList.add("hidden-by-bedtype");
+            }
+          }
+        };
+      }
+    })();
+  }
+  if (document.querySelectorAll(".room-view-filter").length > 0) {
+    var viewTypeFilters;
+
+    (function () {
+      viewTypeFilters = document.querySelectorAll(".room-view-filter");
+
+      var allRooms = document.querySelectorAll(".room-list-item");
+      for (var _i8 = 0; _i8 < bedTypeFilters.length; _i8++) {
+        viewTypeFilters[_i8].onchange = function () {
+          var viewTypeVal = this.value;
+          for (var _i9 = 0; _i9 < allRooms.length; _i9++) {
+            var viewType = allRooms[_i9].getAttribute("data-view-type");
+            if (viewType == viewTypeVal || viewTypeVal == "all") {
+              allRooms[_i9].classList.remove("hidden-by-viewtype");
+            } else {
+              allRooms[_i9].classList.add("hidden-by-viewtype");
+            }
+          }
+        };
+      }
+    })();
+  }
+  if (document.querySelectorAll("#guestsSlider").length > 0) {
+    setTimeout(function () {
+      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function () {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      };
+    }, 500);
+  }
+  if (document.querySelectorAll("#guestsSliderMobile").length > 0) {
+    setTimeout(function () {
+      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function () {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      };
+    }, 500);
+  }
+  if (document.querySelectorAll(".jsModalTrigger").length > 0) {
+    document.querySelector(".jsModalTrigger").onclick = function () {
+      document.getElementById("jsModal").style.display = "block";
+    };
+    document.querySelector(".jsModalClose").onclick = function () {
+      document.getElementById("jsModal").style.display = "none";
+    };
+  }
 
   setTimeout(function () {
     //Instagram Slider
@@ -122,31 +227,6 @@ readyDoc(function () {
       });
     }
   }, 2000);
-
-  if (document.querySelectorAll("#guestsSlider").length > 0) {
-    setTimeout(function () {
-      var guestsSlider = document.querySelector("#guestsSlider .slider");
-      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
-      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      guestsSlider.oninput = function () {
-        updateGuestsSlider(guestsSliderOutput, this.value);
-      };
-    }, 500);
-  }
-  if (document.querySelectorAll("#guestsSliderMobile").length > 0) {
-    setTimeout(function () {
-      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
-      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
-      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      guestsSlider.oninput = function () {
-        updateGuestsSlider(guestsSliderOutput, this.value);
-      };
-    }, 500);
-  }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
@@ -241,8 +321,8 @@ readyDoc(function () {
   if (document.getElementsByClassName("filter-items")[0]) {
     setTimeout(function () {
       var catItems = document.querySelectorAll(".filter-items li a");
-      for (var _i5 = 0; _i5 < catItems.length; _i5++) {
-        catItems[_i5].addEventListener('click', function (e) {
+      for (var _i10 = 0; _i10 < catItems.length; _i10++) {
+        catItems[_i10].addEventListener('click', function (e) {
           for (var j = 0; j < catItems.length; j++) {
             catItems[j].classList.remove("active");
           }
@@ -251,78 +331,21 @@ readyDoc(function () {
           var tabItems = document.getElementsByClassName("asset-item");
           var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
-            for (var _i6 = 0; _i6 < tabItems.length; _i6++) {
-              tabItems[_i6].style.display = "flex";
+            for (var _i11 = 0; _i11 < tabItems.length; _i11++) {
+              tabItems[_i11].style.display = "flex";
             }
           } else {
-            for (var _i7 = 0; _i7 < tabItems.length; _i7++) {
-              tabItems[_i7].style.display = "none";
+            for (var _i12 = 0; _i12 < tabItems.length; _i12++) {
+              tabItems[_i12].style.display = "none";
             }
-            for (var _i8 = 0; _i8 < currentTabItems.length; _i8++) {
-              currentTabItems[_i8].style.display = "flex";
+            for (var _i13 = 0; _i13 < currentTabItems.length; _i13++) {
+              currentTabItems[_i13].style.display = "flex";
             }
           }
         });
       }
     }, 2000);
   }
-
-  //Fliters Modal Box Script
-  //This script supports IE9+
-  (function () {
-    //Opening modal window function
-    function openModal() {
-      //Get trigger element
-      var modalTrigger = document.getElementsByClassName('jsModalTrigger');
-
-      //Set onclick event handler for all trigger elements
-      for (var i = 0; i < modalTrigger.length; i++) {
-        modalTrigger[i].onclick = function () {
-          var target = this.getAttribute('href').substr(1);
-          var modalWindow = document.getElementById(target);
-
-          modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open';
-        };
-      }
-    }
-
-    function closeModal() {
-      //Get close button
-      var closeButton = document.getElementsByClassName('jsModalClose');
-      // var closeOverlay = document.getElementsByClassName('jsOverlay');
-
-      //Set onclick event handler for close buttons
-      for (var i = 0; i < closeButton.length; i++) {
-        closeButton[i].onclick = function () {
-          var modalWindow = this.parentNode.parentNode;
-
-          modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        };
-      }
-
-      //Set onclick event handler for modal overlay
-      // for(var i = 0; i < closeOverlay.length; i++) {
-      //   closeOverlay[i].onclick = function() {
-      //     var modalWindow = this.parentNode;
-      //
-      //     modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-      //   }
-      // }
-    }
-
-    //Handling domready event IE9+
-    function ready(fn) {
-      if (document.readyState != 'loading') {
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
-    //Triggering modal window function after dom ready
-    ready(openModal);
-    ready(closeModal);
-  })();
 
   //NavBar effects scripts
 
@@ -462,19 +485,5 @@ readyDoc(function () {
       }
     }
     return "";
-  }
-
-  //rooms filter
-
-  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for (var _i9 = 0; _i9 < roomsFilterItems.length; _i9++) {
-    roomsFilterItems[_i9].addEventListener("click", function (e) {
-      var currentElement = e.currentTarget;
-      for (var j = 0; j < roomsFilterItems.length; j++) {
-        roomsFilterItems[j].classList.remove("active");
-      }
-      currentElement.classList.add("active");
-      filterRooms(currentElement.getAttribute("data-filter"));
-    });
   }
 });
