@@ -46,7 +46,6 @@ readyDoc(function() {
           responsive: {
             767: {
               items: 2,
-              "autoHeight": false,
             },
             1199: {
               items: 3

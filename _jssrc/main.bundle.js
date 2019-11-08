@@ -47,8 +47,7 @@ readyDoc(function () {
           nextButton: "#offersListCarouselNav .iconbtn--right", // next button
           responsive: {
             767: {
-              items: 2,
-              "autoHeight": false
+              items: 2
             },
             1199: {
               items: 3
