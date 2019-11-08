@@ -666,7 +666,31 @@
 
 .mobileview {
   &.nav--device {
+
+    .nav__item {
+      width: 100%;
+      padding: 16px 20px !important;
+      border-bottom: solid 1px $t2;
+
+      .nav__link {
+        margin: 0;
+        font-family: $family-primary-bold;
+        font-size: $base-font-size;
+      }
+    }
+
     .has-subnav {
+      padding: 10px 5px 6px !important;
+      border-bottom: solid 1px $t2;
+
+      &:first-child {
+        padding-top: 0 !important;
+      }
+
+      &:after {
+        display: none;
+      }
+
       span {
         &:after {
           position: relative;
@@ -680,6 +704,37 @@
           background: transparent !important;
         }
       }
+
+      &:hover {
+        .nav__link {
+          +.subnav {
+            padding-left: 0;
+          }
+        }
+      }
+
+      &.navlink__active {
+        span {
+          &:after {
+            content: $icon-chevron-bottom !important;
+          }
+        }
+        .subnav {
+          padding-left: 14px !important;
+
+          .nav__item {
+            margin-bottom: 10px;
+            padding: 0 !important;
+            border: 0;
+
+            .nav__link {
+              font-family: $family-primary-lc;
+              font-size: $display8-size;
+            }
+          }
+        }
+      }
     }
+
   }
 }
