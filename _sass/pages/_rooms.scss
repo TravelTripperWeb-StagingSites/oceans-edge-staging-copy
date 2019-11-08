@@ -110,6 +110,9 @@
       }
     }
   }
+  &.hidden, &.hidden-by-guests, &.hidden-by-bedtype, &.hidden-by-viewtype {
+    display: none !important;
+  }
 }
 
 .bed-type {
@@ -258,9 +261,10 @@
   }
 }
 
-.rooms-cross-sell {
+.rooms-cross-sell, .offers-cross-sell {
   width: 100%;
   padding: 32px 0;
+
 
   @include media-breakpoint-up(md) {
     padding: 64px 0;
@@ -425,12 +429,12 @@
   &--full-screen {
     padding: 0;
 
-    .rooms-cross-sell__wrap {
+    .rooms-cross-sell__wrap, .offers-cross-selll__wrap {
       max-width: 100%;
       padding: 0;
     }
 
-    .rooms-cross-sell__content__detail {
+    .rooms-cross-sell__content__detail, .offers-cross-sell__content__detail {
       max-width: 585px;
 
       .h5 {
@@ -567,6 +571,17 @@
   }
 }
 
+.rooms-cross-sell {
+  background: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573214565/cadbyytifu8mmaqavgft.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  &--full-screen {
+    background: transparent;
+  }
+}
+
 .rooms-cross-carousel {
   max-width: 100% !important;
   padding: 0 !important;
@@ -602,10 +617,15 @@
 
   .tns-inner {
     margin-left: 25px !important;
-    padding: 30px 0 !important;
+    padding: 30px 0 15px !important;
+
+    @include media-breakpoint-up(sm) {
+      padding: 30px 0 !important;
+    }
 
     @include media-breakpoint-up(lg) {
       margin-left: 50px !important;
+      padding: 30px 0 50px !important;
     }
 
     @include media-breakpoint-up(xl) {
