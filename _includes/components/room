@@ -1,4 +1,4 @@
-<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }} {{room.room_bed_types.name | downcase | replace: '&', '' | replace: ',', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' | replace: '4', 'four' | replace: '5', 'five' }}">
+<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }}" data-bed-type="{{ room.room_bed_types.name }}" data-view-type="{{ room.view.name }}" data-guests="{{ room.guest_size_max }}">
   <div class="asset-item__wrap">
     <div class="asset-item__featured-image">
       {% assign featured_image = room.featured_image %}

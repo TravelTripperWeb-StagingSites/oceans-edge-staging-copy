@@ -1,11 +1,11 @@
 {
   "order": 2,
-  "name": "Partial Ocean View Balcony 2 Queen Suite",
-  "url_friendly_name": "partial-ocean-view-balcony-2-queen-suite",
-  "description": "<p class=\"overline\">One-bedroom luxury suites<span class=\"overline oveline--italic\">on our first floor</span></p>\n<p>Create a memorable trip for the family or among friends in our suite with two queen beds, separate living room with sofa bed, and views of our lush landscaping and the ocean. Gather on your balcony in the evenings to reconnect and marvel at the amazing sky. With the kitchenette (and delicious offerings in our minibar), you can enjoy morning coffee and evening cocktails.</p>",
-  "size": "570 Sq Ft",
-  "ada_room": false,
-  "guest_size_max": 6,
+  "name": "Partial Ocean View King",
+  "url_friendly_name": "partial-ocean-view-king",
+  "description": "<p class=\"overline\">Retreat to your <span class=\"overline oveline--italic\">romantic hideaway</span></p>\n<p>Serenity, comfort and luxury come together with sophisticated d&eacute;cor, to create an unforgettable water side vacation in Key West. Ideal for couples, each king guestroom features a breezy oceanfront-facing balcony, from which stunning views can be soaked up each evening over a glass of wine.</p>",
+  "size": "400 Sq Ft",
+  "ada_room": true,
+  "guest_size_max": 2,
   "view": "room_view2",
   "location": "Building1",
   "amenities": [
