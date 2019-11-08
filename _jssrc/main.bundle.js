@@ -5,6 +5,49 @@ function readyDoc(fn) {
   d.readyState == 'loading' ? d.addEventListener('DOMContentLoaded', fn) : fn();
 }
 
+var updateGuestsSlider = function updateGuestsSlider(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + 12 * val + "px";
+};
+
+var resetInnerFilters = function resetInnerFilters() {
+  var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+  var roomViewFilter = document.querySelectorAll(".room-view-filter");
+  var roomGuestsFilter = document.querySelectorAll(".room-guests-filter");
+  for (var i = 0; i < bedTypeFilters.length; i++) {
+    bedTypeFilters[i].value = "all";
+  }
+  for (var _i = 0; _i < roomViewFilter.length; _i++) {
+    roomViewFilter[_i].value = "all";
+  }
+  for (var _i2 = 0; _i2 < roomGuestsFilter.length; _i2++) {
+    roomGuestsFilter[_i2].value = "1";
+    updateGuestsSlider(document.querySelector("#guestsSlider .output"), 1);
+    updateGuestsSlider(document.querySelector("#guestsSliderMobile .output"), 1);
+  }
+};
+
+var filterRooms = function filterRooms(roomType) {
+  var allRooms = document.querySelectorAll(".room-list-item");
+  if (roomType == "all") {
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+    for (var i = 0; i < allRooms.length; i++) {
+      allRooms[i].classList.remove("hidden");
+    }
+  } else {
+    var roomsToShow = document.querySelectorAll("." + roomType);
+    var roomsCount = roomsToShow.length;
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+    for (var _i3 = 0; _i3 < allRooms.length; _i3++) {
+      allRooms[_i3].classList.add("hidden");
+    }
+    for (var _i4 = 0; _i4 < roomsCount; _i4++) {
+      roomsToShow[_i4].classList.remove("hidden");
+    }
+  }
+  resetInnerFilters();
+};
+
 readyDoc(function () {
 
   setTimeout(function () {
@@ -80,28 +123,30 @@ readyDoc(function () {
     }
   }, 2000);
 
-  setTimeout(function () {
-    var guestsSlider = document.querySelector("#guestsSlider .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSlider .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+  if (document.querySelectorAll("#guestsSlider").length > 0) {
+    setTimeout(function () {
+      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function () {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59 + 12 * this.value + "px";
-    };
-  }, 1000);
-  setTimeout(function () {
-    var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function () {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      };
+    }, 500);
+  }
+  if (document.querySelectorAll("#guestsSliderMobile").length > 0) {
+    setTimeout(function () {
+      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function () {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59 + 12 * this.value + "px";
-    };
-  }, 1000);
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function () {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      };
+    }, 500);
+  }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
@@ -196,8 +241,8 @@ readyDoc(function () {
   if (document.getElementsByClassName("filter-items")[0]) {
     setTimeout(function () {
       var catItems = document.querySelectorAll(".filter-items li a");
-      for (var _i = 0; _i < catItems.length; _i++) {
-        catItems[_i].addEventListener('click', function (e) {
+      for (var _i5 = 0; _i5 < catItems.length; _i5++) {
+        catItems[_i5].addEventListener('click', function (e) {
           for (var j = 0; j < catItems.length; j++) {
             catItems[j].classList.remove("active");
           }
@@ -206,15 +251,15 @@ readyDoc(function () {
           var tabItems = document.getElementsByClassName("asset-item");
           var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
-            for (var _i2 = 0; _i2 < tabItems.length; _i2++) {
-              tabItems[_i2].style.display = "flex";
+            for (var _i6 = 0; _i6 < tabItems.length; _i6++) {
+              tabItems[_i6].style.display = "flex";
             }
           } else {
-            for (var _i3 = 0; _i3 < tabItems.length; _i3++) {
-              tabItems[_i3].style.display = "none";
+            for (var _i7 = 0; _i7 < tabItems.length; _i7++) {
+              tabItems[_i7].style.display = "none";
             }
-            for (var _i4 = 0; _i4 < currentTabItems.length; _i4++) {
-              currentTabItems[_i4].style.display = "flex";
+            for (var _i8 = 0; _i8 < currentTabItems.length; _i8++) {
+              currentTabItems[_i8].style.display = "flex";
             }
           }
         });
@@ -422,13 +467,14 @@ readyDoc(function () {
   //rooms filter
 
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for (var _i5 = 0; _i5 < roomsFilterItems.length; _i5++) {
-    roomsFilterItems[_i5].addEventListener("click", function (e) {
+  for (var _i9 = 0; _i9 < roomsFilterItems.length; _i9++) {
+    roomsFilterItems[_i9].addEventListener("click", function (e) {
       var currentElement = e.currentTarget;
       for (var j = 0; j < roomsFilterItems.length; j++) {
         roomsFilterItems[j].classList.remove("active");
       }
       currentElement.classList.add("active");
+      filterRooms(currentElement.getAttribute("data-filter"));
     });
   }
 });

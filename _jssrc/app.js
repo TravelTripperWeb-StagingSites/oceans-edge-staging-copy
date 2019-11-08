@@ -3,6 +3,49 @@ function readyDoc(fn) {
   (d.readyState == 'loading') ? d.addEventListener('DOMContentLoaded', fn): fn();
 }
 
+var updateGuestsSlider = function(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
+}
+
+var resetInnerFilters = function() {
+  var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+  var roomViewFilter = document.querySelectorAll(".room-view-filter");
+  var roomGuestsFilter = document.querySelectorAll(".room-guests-filter");
+  for(let i = 0; i < bedTypeFilters.length; i++) {
+    bedTypeFilters[i].value = "all";
+  }
+  for(let i = 0; i < roomViewFilter.length; i++) {
+    roomViewFilter[i].value = "all";
+  }
+  for(let i = 0; i < roomGuestsFilter.length; i++) {
+    roomGuestsFilter[i].value = "1";
+    updateGuestsSlider(document.querySelector("#guestsSlider .output"), 1);
+    updateGuestsSlider(document.querySelector("#guestsSliderMobile .output"), 1);
+  }
+}
+
+var filterRooms = function(roomType) {
+  let allRooms = document.querySelectorAll(".room-list-item");
+  if(roomType == "all") {
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>"+allRooms.length+"</span> Rooms & Suites";
+    for(let i=0; i < allRooms.length; i++) {
+      allRooms[i].classList.remove("hidden");
+    }
+  } else {
+    let roomsToShow = document.querySelectorAll("."+roomType);
+    let roomsCount = roomsToShow.length;
+    document.querySelector(".filtered-rooms-text").innerHTML = "<span>"+roomsCount+"</span> "+roomType;
+    for(let i=0; i < allRooms.length; i++) {
+      allRooms[i].classList.add("hidden");
+    }
+    for(let i=0; i < roomsCount; i++) {
+      roomsToShow[i].classList.remove("hidden");
+    }
+  }
+  resetInnerFilters();
+}
+
 readyDoc(function() {
 
   setTimeout(function() {
@@ -33,7 +76,7 @@ readyDoc(function() {
       });
     }
     var w = window.innerWidth;
-    if (w < 768 ) {
+    if (w < 768) {
       if (document.getElementsByClassName('offer-list-carousel').length > 0) {
         var offerSlider = tns({
           container: '.offer-list-carousel',
@@ -78,28 +121,30 @@ readyDoc(function() {
     }
   }, 2000);
 
-  setTimeout(function(){
-    var guestsSlider = document.querySelector("#guestsSlider .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSlider .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+  if(document.querySelectorAll("#guestsSlider").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
-    }
-  }, 1000);
-  setTimeout(function(){
-    var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
+  if(document.querySelectorAll("#guestsSliderMobile").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      guestsSliderOutput.innerHTML = this.value;
-      guestsSliderOutput.style.left = 59+(12*this.value)+"px";
-    }
-  }, 1000);
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
@@ -222,7 +267,7 @@ readyDoc(function() {
 
   //Fliters Modal Box Script
   //This script supports IE9+
-  (function () {
+  (function() {
     //Opening modal window function
     function openModal() {
       //Get trigger element
@@ -230,7 +275,7 @@ readyDoc(function() {
 
       //Set onclick event handler for all trigger elements
       for (var i = 0; i < modalTrigger.length; i++) {
-        modalTrigger[i].onclick = function () {
+        modalTrigger[i].onclick = function() {
           var target = this.getAttribute('href').substr(1);
           var modalWindow = document.getElementById(target);
 
@@ -246,7 +291,7 @@ readyDoc(function() {
 
       //Set onclick event handler for close buttons
       for (var i = 0; i < closeButton.length; i++) {
-        closeButton[i].onclick = function () {
+        closeButton[i].onclick = function() {
           var modalWindow = this.parentNode.parentNode;
 
           modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
@@ -311,13 +356,13 @@ readyDoc(function() {
   var mobilenavev = function() {
     var mobilecls = document.querySelector(".nav--device.mobileview");
 
-      if(mobilecls.classList.contains('sm-d-none')){
-        mobilecls.classList.remove('sm-d-none');
-        mobilecls.classList.add('sm-d-block');
-      }else{
-        mobilecls.classList.add('sm-d-none');
-        mobilecls.classList.remove('sm-d-block');
-      }
+    if (mobilecls.classList.contains('sm-d-none')) {
+      mobilecls.classList.remove('sm-d-none');
+      mobilecls.classList.add('sm-d-block');
+    } else {
+      mobilecls.classList.add('sm-d-none');
+      mobilecls.classList.remove('sm-d-block');
+    }
 
     // document.querySelector(".nav--device").classList.toggle('sm-d-block');
     document.querySelector(".mobile-menu").classList.toggle('is-active');
@@ -424,13 +469,14 @@ readyDoc(function() {
   //rooms filter
 
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for(let i = 0; i < roomsFilterItems.length; i++) {
-    roomsFilterItems[i].addEventListener("click", function(e){
+  for (let i = 0; i < roomsFilterItems.length; i++) {
+    roomsFilterItems[i].addEventListener("click", function(e) {
       let currentElement = e.currentTarget;
-      for(let j = 0; j < roomsFilterItems.length; j++) {
+      for (let j = 0; j < roomsFilterItems.length; j++) {
         roomsFilterItems[j].classList.remove("active");
       }
       currentElement.classList.add("active");
+      filterRooms(currentElement.getAttribute("data-filter"));
     });
   }
 
