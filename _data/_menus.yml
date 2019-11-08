@@ -320,7 +320,7 @@ mega_mobile:
       label_localized:
         en: Resort Map
       items: 
-    expanded: true
+    expanded: false
   - folder: true
     label_localized:
       en: Stay
@@ -512,6 +512,11 @@ mega_mobile:
         en: Email us
       items: 
     expanded: false
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
 mobile:
   depth: 2
   name: Mobile Footer Menu
