@@ -141,5 +141,6 @@
     "description": ""
   },
   "video_url": "#",
-  "suite": true
+  "suite": true,
+  "accessible": true
 }
