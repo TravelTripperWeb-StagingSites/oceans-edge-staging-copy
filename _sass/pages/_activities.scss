@@ -51,6 +51,14 @@
       .h5 {
         min-height: 65px;
         border-bottom: solid 1px $quartenary;
+
+        a {
+          color: $primary;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
 
       &__info {
@@ -110,10 +118,22 @@
   &--more {
     .asset-list__header {
       margin-bottom: 45px;
+      padding: 0;
 
       @include media-breakpoint-up(md) {
         margin-bottom: 30px;
       }
+    }
+
+    .activities-listing__item {
+      flex: none;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
     }
   }
 }
