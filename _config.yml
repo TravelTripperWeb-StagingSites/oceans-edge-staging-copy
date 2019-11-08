@@ -3,8 +3,8 @@ title: Bedrock
 title_separator: "|"
 name: Hotel Property Name
 description: Site default description.
-url: 
-repository: 
+url:
+repository:
 default_lang: en
 languages:
 - en
@@ -71,7 +71,7 @@ sass:
   - _sass
   style: compressed
 permalink: pretty
-timezone: 
+timezone:
 page_gen:
 - data: offers
   template: offer_layout
@@ -80,6 +80,10 @@ page_gen:
 - data: rooms
   template: stay_layout
   dir: stay
+  title_field: name
+- data: hotel_amenities
+  template: hotel_amenities_details_layout
+  dir: amenities
   title_field: name
 plugins_dir:
 - _plugins-38
