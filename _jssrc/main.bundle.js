@@ -249,6 +249,28 @@ readyDoc(function () {
     }
   }, 2000);
 
+  if (document.getElementsByClassName('activities-list-carousel').length > 0) {
+    var assetSlider = tns({
+      container: '.activities-list-carousel',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 15,
+      prevButton: "#activitiesCarouselNav .iconbtn--left", // previous button
+      nextButton: "#activitiesCarouselNav .iconbtn--right", // next button
+      responsive: {
+        767: {
+          items: 3,
+          edgePadding: 0
+        },
+        1199: {
+          items: 4
+        }
+      }
+    });
+  }
+
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
       container: '.hero-carousel__wrap',
