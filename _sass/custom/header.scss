@@ -32,7 +32,7 @@
   }
 
   .nav-device-active {
-    top: 88px !important;
+    top: 98px !important;
   }
   padding: 0;
 
@@ -344,8 +344,8 @@
       color: $s2;
       cursor: pointer;
       content: $icon-menu-close;
-      opacity: .8;
-      @include transition(all .3s);
+      opacity: 0.8;
+      @include transition(all 0.3s);
     }
 
     p {
@@ -502,88 +502,89 @@
   }
 }
 
-.sm-d-none {
-  display: block !important;
-}
-
-.sm-d-block {
-  display: none !important;
-}
-@include media-breakpoint-up(lg) {
+.navbar {
   .sm-d-none {
-    display: none !important;
-  }
-
-  .sm-d-block {
     display: block !important;
   }
-
-  .navbar .nav--device ul .has-subnav i {
-    display: none;
+  .sm-d-block {
+    display: none !important;
   }
-}
-@include media-breakpoint-down(md) {
-  .navbar .nav--device {
-    top: 88px;
-    // top: 67px;
-    // padding-top: 20px;
+  @include media-breakpoint-up(lg) {
+    .sm-d-none {
+      display: none !important;
+    }
 
+    .sm-d-block {
+      display: block !important;
+    }
+
+    .nav--device {
+      .has-subnav {
+        i {
+          display: none;
+        }
+      }
+    }
   }
+  @include media-breakpoint-down(md) {
+    .nav--device {
+      top: 88px;
 
-  li.nav__item.has-subnav {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
+      ul {
+        max-width: 100%;
 
-  .navbar .nav--device ul .subnav {
-    display: none;
-  }
+        .subnav {
+          display: none;
 
-  .navbar .nav--device ul .has-subnav {
-    padding-top: 0;
-    padding-left: 0;
-  }
+          .nav__item {
+            &:last-child {
+              margin-bottom: 10px !important;
+            }
 
-  .navbar .nav--device ul .has-subnav span {
-    padding-left: 15px;
-  }
+            .nav__link {
+              padding: 3px 0;
+            }
+          }
+        }
 
-  .navbar .nav--device ul .subnav .nav__item:last-child {
-    margin-bottom: 10px !important;
-  }
+        .has-subnav {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+          padding-top: 0;
+          padding-left: 0;
 
-  .navbar .has-subnav:hover .nav__link+.subnav {
-    padding-left: 12px;
-  }
+          span {
+            padding-left: 15px;
+          }
 
-  .navbar .nav--device ul .has-subnav i.fa-angle-down,
-  .navbar .nav--device ul .has-subnav i.fa-angle-up {
-    position: absolute;
-    top: 2px;
-    left: 139px;
-    font-weight: 900;
-  }
-
-  .navbar .nav--device ul {
-    max-width: 100%;
-  }
-
-  .navbar .nav--device ul .subnav .nav__item .nav__link {
-    padding: 3px 0;
+          &:hover {
+            .nav__link {
+              &+.subnav {
+                padding-left: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+    // li.nav__item.has-subnav {
+    //   flex: 0 0 100% !important;
+    //   max-width: 100% !important;
+    // }
   }
 }
 
 .mobile-menu {
   &:after {
     font-family: $oceansedge-font-family;
-    content: $icon-menu-close; //\e909
+    font-size: $display6-size;
+    content: $icon-menu-default;
   }
 
   &.is-active {
     &:after {
       font-family: $oceansedge-font-family;
-      font-size: $display6-size;
-      content: $icon-menu-default;
+      content: $icon-menu-close; //\e909
     }
   }
 
@@ -595,13 +596,11 @@
   .navbar {
     .nav--device {
       height: 100vh;
+
       .has-subnav {
         .nav__link {
           &.active {
             &:after {
-              // position: absolute;
-              // top: 23px;
-              // left: 129px;
               margin-top: 10px;
               padding-left: 12px;
               font-family: $oceansedge-font-family;
@@ -610,7 +609,8 @@
               content: $icon-chevron-right;
             }
           }
-         }
+        }
+
         &.navlink__active {
           &:after {
             position: absolute;
@@ -620,6 +620,7 @@
             content: $icon-chevron-top;
           }
         }
+
         &.navlink__not__active {
           &:after {
             position: absolute;
@@ -628,10 +629,11 @@
             font-family: $oceansedge-font-family;
             content: $icon-chevron-bottom;
           }
-      }
+        }
+
         .nav__link {
           display: initial;
-       }
+        }
       }
     }
   }
@@ -644,7 +646,7 @@
       font-size: 14px;
       line-height: 16px;
       color: #025172 !important;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
     }
-    }
+  }
 }
