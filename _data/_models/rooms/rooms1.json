@@ -1,7 +1,7 @@
 {
   "order": 1,
-  "name": "Ocean King Guestroom",
-  "url_friendly_name": "ocean-king-guestroom",
+  "name": "Ocean King Guestroom Suite",
+  "url_friendly_name": "ocean-king-guestroom-suite",
   "description": "<p class=\"overline\">Retreat to your <span class=\"overline overline--italic\">romantic hideaway</span></p>\n<p>Serenity, comfort and luxury come together with sophisticated d&eacute;cor, to create an unforgettable water side vacation in Key West. Ideal for couples, each king guestroom features a breezy oceanfront-facing balcony, from which stunning views can be soaked up each evening over a glass of wine.</p>",
   "size": "380 Sq Ft",
   "guest_size_max": 4,
@@ -113,5 +113,6 @@
     "caption": "",
     "description": ""
   },
-  "video_url": "#"
+  "video_url": "#",
+  "suite": true
 }
