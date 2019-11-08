@@ -99,7 +99,9 @@ meta_tags:
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
-          <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          <a href="{{ item.url_friendly_name }}">
+            <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          </a>
         </div>
         <div class="activities-listing__item__content">
           <h4 class="h5" tabindex="0">

@@ -22,7 +22,7 @@ layout: default
           <div tabindex="0">{{ item.description }}</div>
           <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
           <div tabindex="0"><p>{{ item.price }}</p></div>
-          <div class="btn-holder">
+          <div class="btn-holder mb-0">
             <a class="btn btn--book" href="#" target="_blank">Book Now</a>
           </div>
         </div>
@@ -37,14 +37,16 @@ layout: default
     <h2 class="h4">More Activities</h2>
     <a href="/activities/" class="btn">View all Activities</a>
   </div>
-  <div class="activities-listing__row">
+  <div class="activities-listing__row activities-list-carousel">
   {% assign activities = site.data._models.activities | sort: 'order' %}
   {% for item in activities %}
   {% if item.complimentary-resort-activities != true %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
-          <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          <a href="{{ item.url_friendly_name }}">
+            <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          </a>
         </div>
         <div class="activities-listing__item__content">
           <h4 class="h5" tabindex="0">
@@ -64,6 +66,11 @@ layout: default
     </div>
   {% endif %}
   {% endfor %}
+  </div>
+
+  <div class="carousel-controls" id="activitiesCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Slide"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Slide"></a>
   </div>
 </section>
 
