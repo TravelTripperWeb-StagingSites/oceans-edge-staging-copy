@@ -121,26 +121,30 @@ readyDoc(function() {
     }
   }, 2000);
 
-  setTimeout(function() {
-    var guestsSlider = document.querySelector("#guestsSlider .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSlider .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+  if(document.querySelectorAll("#guestsSlider").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSlider .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      updateGuestsSlider(guestsSliderOutput, this.value);
-    }
-  }, 500);
-  setTimeout(function() {
-    var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
-    var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
-    guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
+  if(document.querySelectorAll("#guestsSliderMobile").length > 0) {
+    setTimeout(function() {
+      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
+      guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
-    // Update the current slider value (each time you drag the slider handle)
-    guestsSlider.oninput = function() {
-      updateGuestsSlider(guestsSliderOutput, this.value);
-    }
-  }, 500);
+      // Update the current slider value (each time you drag the slider handle)
+      guestsSlider.oninput = function() {
+        updateGuestsSlider(guestsSliderOutput, this.value);
+      }
+    }, 500);
+  }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
     var slider = tns({
