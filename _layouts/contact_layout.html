@@ -36,7 +36,7 @@ layout: default
       <div class="contact-infomap__content">
         <div class="contact-infomap__content__detail">
           <p class="h5">Address</p>
-          <div class="d-flex align-items-center">
+          <div class="side-by">
             <p>5950 Peninsular Avenue,<br>Key West FL 33040</p>
             <div class="btn-holder">
               <a class="btn" href="#">get directions</a>
@@ -74,9 +74,19 @@ layout: default
   </div>
 </section>
 
+<section class="form-wrapper">
+  <div class="form-wrapper__inner text-center">
+    {% regionblock contact_form_inquiry, type:text %}
+    <p class="h5">Inquiry Form</p>
+    {% endregionblock %}
+    {% regionblock contact_form_required, type:text %}
+    <p><b>Required fields are marked *</b></p>
+    {% endregionblock %}
+    {% include forms/jotform/contact.html %}
+  </div>
+</section>
 
-
-<section class="twocol-cs mt-55">
+<section class="twocol-cs">
   <div class="twocol-cs__row">
     <div class="twocol-cs__item">
       <div class="twocol-cs__item__inner">
