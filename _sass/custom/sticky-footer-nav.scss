@@ -1,7 +1,7 @@
 .sticky-footer-nav {
   position: fixed;
-  bottom: 0;
-  z-index: 4;
+  bottom: -1px;
+  z-index: 11;
   display: block;
   width: 100%;
   height: 88px;
@@ -62,8 +62,12 @@
         }
 
         &:hover, &.active {
+          width: auto;
+          height: auto;
+          font-size: $display10-size;
           color: $primary;
           text-decoration: none;
+          letter-spacing: normal;
 
           &:before {
             color: $primary;
