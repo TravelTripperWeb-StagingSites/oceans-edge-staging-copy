@@ -12,19 +12,20 @@
   &__item {
     @include make-col-ready;
     margin-bottom: 24px;
-    
+
     @include media-breakpoint-up(md) {
       @include make-col(3);
       margin-bottom: 48px;
     }
 
     &__inner {
-      border-radius: 0 0 16px 16px;
+      border-radius: 16px;
       box-shadow: 0 12px 32px rgba($black, .15);
     }
 
     &__image {
       height: 192px;
+      border-radius: 16px 16px 0 0;
 
       img {
         width: 100%;
