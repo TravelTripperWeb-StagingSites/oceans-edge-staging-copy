@@ -1,9 +1,7 @@
 {
-  "order": 10,
-  "name": "test nagesh",
-  "url_friendly_name": "test-nagesh",
-  "description": "<p>atestt</p>",
-  "size": "350",
+  "order": 11,
+  "name": "test-2-test",
+  "url_friendly_name": "test2",
   "booking_url": "test.com",
-  "resort_map_url": "tets.com"
+  "resort_map_url": "test.com"
 }
