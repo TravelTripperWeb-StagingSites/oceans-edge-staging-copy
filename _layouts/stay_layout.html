@@ -4,7 +4,7 @@ layout: default
 
 {% assign room = page.data %}
 
-{% if room.name and room.name contains "suite" %}
+{% if room.suite and room.suite != "" %}
 
 <section class="rooms-cross-sell rooms-cross-sell--full-screen">
   <div class="rooms-cross-sell__wrap">
@@ -24,12 +24,12 @@ layout: default
       <div class="rooms-cross-sell__content">
         <div class="rooms-cross-sell__content__detail">
           <div class="d-inline-block mb-2">
-            <a class="btn btn--tertiary btn--reverse" href="/stay/">back to all rooms</a>
+            <a class="btn btn--tertiary btn--reverse" href="/stay/">back to all rooms & suites</a>
           </div>
           <h1 class="h3" tabindex="0">{{ room.name }}</h1>
           <hr class="mb-3">
           <div tabindex="0">{{ room.description }}</div>
-          <h2 class="h5" tabindex="0"><span>Room Features</span></h2>
+          <h2 class="h5" tabindex="0"><span>Suite Features</span></h2>
           <div class="amenities amenities--room" tabindex="0">
             <ul class="amenities__listing">
               {% assign items = room.amenities %}
@@ -45,7 +45,7 @@ layout: default
             <hr>
             <div class="col-6 pl-0 pt-2">
               <div class="flex-column align-start py-2 pr-2">
-                <p class="h6 mb-3 ml-0">Room Location</p>
+                <p class="h6 mb-3 ml-0">Suite Location</p>
                 <div class="location">
                   <i></i>
                   <span class="h5 ml-2 mb-0">{{ room.room_location.name }}</span>
@@ -57,14 +57,14 @@ layout: default
             </div>
             <div class="col-6 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
-                <p class="h6 mb-3 ml-0">Room Video</p>
+                <p class="h6 mb-3 ml-0">Suite Video</p>
                 <div class="video">
                   <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                 </div>
               </div>
             </div>
           </div>
-          <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book room</a>
+          <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book suite</a>
         </div>
       </div>
     </div>
@@ -74,12 +74,13 @@ layout: default
 <section class="large-card rooms-cross-carousel">
   <hr class="mt-5">
   <div class="heading-2-col">
-    <h2 class="h4">More Rooms</h2>
-    <a href="/stay/" class="btn mb-auto">View all Rooms</a>
+    <h2 class="h4">More Suite Options</h2>
+    <a href="/stay/" class="btn mb-auto">View all Rooms & Suites</a>
   </div>
   <div class="large-card__row rooms-cross-carousel__handle">
     {% assign rooms = site.data._models.rooms | sort:"order" %}
     {% for room in rooms %}
+    {% if room.suite and room.suite != "" %}
     <div class="large-card__item">
       <div class="large-card__item__inner">
         <div class="large-card__item__image">
@@ -105,6 +106,7 @@ layout: default
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
   <div class="large-card__controls" id="roomsCarouselNav">
@@ -114,6 +116,7 @@ layout: default
 </section>
 
 {% else %}
+
 <section class="rooms-cross-sell rooms-cross-sell--full-screen">
   <div class="rooms-cross-sell__wrap">
     <div class="rooms-cross-sell__content-wrap">
@@ -220,7 +223,9 @@ layout: default
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>
+
 {% endif %}
+
 <section class="common-cta">
   <div class="common-cta__img">
     <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573119559/mbgjiexbehd8ukaomoqd.jpg" alt="Amenities">
