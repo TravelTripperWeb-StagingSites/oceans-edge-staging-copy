@@ -111,7 +111,7 @@
     }
   }
   &.hidden, &.hidden-by-guests, &.hidden-by-bedtype, &.hidden-by-viewtype {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -264,6 +264,7 @@
 .rooms-cross-sell, .offers-cross-sell {
   width: 100%;
   padding: 32px 0;
+
 
   @include media-breakpoint-up(md) {
     padding: 64px 0;
@@ -567,6 +568,17 @@
         }
       }
     }
+  }
+}
+
+.rooms-cross-sell {
+  background: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573214565/cadbyytifu8mmaqavgft.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  &--full-screen {
+    background: transparent;
   }
 }
 
