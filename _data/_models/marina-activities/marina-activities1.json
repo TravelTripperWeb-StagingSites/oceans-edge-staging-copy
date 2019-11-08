@@ -1,10 +1,10 @@
 {
   "order": 1,
-  "name": "Kayaking from our marina",
-  "url_friendly_name": "kayaking-from-our-marina",
-  "description": "<p>Included with your stay is one hour daily of kayak use for each guest. Inquire at the concierge desk in our lobby regarding arrangements. This is a highlight for so many of our guests&mdash;you can easily see marine life, and gliding along the calm waters restores your sense of connectedness to nature.</p>",
-  "terms_conditions": "Available on a first-come, first-serve basis",
-  "price": "First Hour is free, $5/hr thereafter",
+  "name": "Flats & Backcountry Fishing",
+  "url_friendly_name": "flats-backcountry-fishing",
+  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+  "terms_conditions": "Cost (half-day)",
+  "price": "$50 /person",
   "image": {
     "name": "family-kayaking",
     "content_type": "image/jpeg",
