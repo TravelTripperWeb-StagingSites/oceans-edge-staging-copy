@@ -1,0 +1,27 @@
+[
+  {
+    "content": {
+      "name": "ocean edge groups meeting",
+      "content_type": "image/jpeg",
+      "date_added": "2019-11-08-053733",
+      "url_thumb": "//res.cloudinary.com/traveltripperweb/image/upload/c_fill,g_faces,h_140,w_140/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url_xsmall": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_300,w_300/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url_small": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_768,w_768/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url_medium": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_992,w_992/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url_large": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_1200,w_1200/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url_xlarge": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_1920,w_1920/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "url": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "width": 1440,
+      "height": 1088,
+      "format": "jpg",
+      "url_raw": "//res.cloudinary.com/traveltripperweb/image/upload/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "resource_type": "image",
+      "size": 304786,
+      "git_file_name": "_assets/image_data/meeting-table-2x.jpg.json",
+      "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573209453/vkhijqrcwsfgk8j2iqav.jpg",
+      "file_size": null,
+      "alt": "ocean edge groups meeting"
+    },
+    "_template": "image"
+  }
+]
