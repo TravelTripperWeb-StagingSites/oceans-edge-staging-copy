@@ -5,7 +5,7 @@
   "description": "<p class=\"overline\">Retreat to your <span class=\"overline oveline--italic\">romantic hideaway</span></p>\n<p>Serenity, comfort and luxury come together with sophisticated d&eacute;cor, to create an unforgettable water side vacation in Key West. Ideal for couples, each king guestroom features a breezy oceanfront-facing balcony, from which stunning views can be soaked up each evening over a glass of wine.</p>",
   "size": "400 Sq Ft",
   "ada_room": true,
-  "guest_size_max": 6,
+  "guest_size_max": 2,
   "view": "room_view1",
   "location": "Building1",
   "amenities": [
