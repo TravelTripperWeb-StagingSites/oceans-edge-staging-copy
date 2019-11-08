@@ -52,6 +52,10 @@
     "model_name": "room_amenities",
     "can_create": true
   },
+  "suite": {
+    "type": "boolean",
+    "instructions": "Check this if it's a Suite"
+  },
   "featured_image": {
     "type": "image"
   },
