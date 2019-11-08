@@ -360,6 +360,12 @@ mega_mobile:
         en: Accessible Rooms
       items: 
     expanded: false
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
+    items: 
   - folder: true
     label_localized:
       en: Experiences
@@ -512,11 +518,6 @@ mega_mobile:
         en: Email us
       items: 
     expanded: false
-  - folder: false
-    url_localized: ''
-    page_id: _pages/offers.html
-    label_localized:
-      en: Offers
 mobile:
   depth: 2
   name: Mobile Footer Menu
