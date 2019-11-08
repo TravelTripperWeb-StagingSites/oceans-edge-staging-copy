@@ -113,5 +113,6 @@
     "caption": "",
     "description": ""
   },
-  "video_url": "#"
+  "video_url": "#",
+  "suite": true
 }
