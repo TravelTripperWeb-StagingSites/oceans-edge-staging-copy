@@ -118,8 +118,19 @@ readyDoc(function() {
           }
         }
       });
+
+      document.querySelector("#sliderRange").addEventListener('change', goToSlider);
+
+
+      function goToSlider() {
+          var sliderindex = document.getElementById('sliderRange').value;
+          console.log('sliderindex ',sliderindex)
+          assetSlider.goTo(sliderindex - 1);
+      }
+
+      // goToSlider(assetSlider);
     }
-  }, 2000);
+  }, 3000);
 
   if(document.querySelectorAll("#guestsSlider").length > 0) {
     setTimeout(function() {
@@ -471,6 +482,9 @@ function navMenu2() {
     }
     return "";
   }
+
+
+
 
   //rooms filter
 

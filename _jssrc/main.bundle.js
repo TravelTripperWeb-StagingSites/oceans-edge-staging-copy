@@ -102,6 +102,15 @@ readyDoc(function () {
     }
 
     if (document.getElementsByClassName('asset-list-carousel').length > 0) {
+      var goToSlider = function goToSlider() {
+        var sliderindex = document.getElementById('sliderRange').value;
+        console.log('sliderindex ', sliderindex);
+        assetSlider.goTo(sliderindex - 1);
+      };
+
+      // goToSlider(assetSlider);
+
+
       var assetSlider = tns({
         container: '.asset-list-carousel',
         items: 1,
@@ -120,8 +129,10 @@ readyDoc(function () {
           }
         }
       });
+
+      document.querySelector("#sliderRange").addEventListener('change', goToSlider);
     }
-  }, 2000);
+  }, 3000);
 
   if (document.querySelectorAll("#guestsSlider").length > 0) {
     setTimeout(function () {
