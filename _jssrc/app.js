@@ -284,28 +284,30 @@ readyDoc(function() {
   var usercookie = getCookie("username");
   var navitemcls = document.querySelectorAll(".navbar .nav--device ul .has-subnav");
 
-  if (usercookie == "usercookie") {
+  if (usercookie == "cookiefreeoffer") {
     classname[0].setAttribute("id", 'navbar__offer__close');
     var el = document.getElementById('navbar__offer__close');
     el.classList.add("navbar__offer__close");
-    document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    document.querySelector(".nav--device").style.top = "98px !important";
+    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
+    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
+    // document.querySelector(".nav--device").style.top = "98px !important";
+    navMenu1();
   }
 
   var advclose = function() {
-    setCookie("username", "usercookie", 1);
+    setCookie("username", "cookiefreeoffer", 1);
     classname[0].setAttribute("id", 'navbar__offer__close');
     var el = document.getElementById('navbar__offer__close');
     el.parentNode.removeChild(el);
     el.classList.add("navbar__offer__close");
-    document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    document.querySelector(".nav--device").style.top = "98px !important";
+    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
+    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
+    // document.querySelector(".nav--device").style.top = "98px !important";
+    navMenu1();
   }
 
   var mobilenavev = function() {
@@ -372,34 +374,46 @@ readyDoc(function() {
   }
 
 
+function navMenu1() {
+  document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
+  document.querySelector(".navbar.is-fixed-top").classList.remove('sticky');
+  document.querySelector(".navbar.is-fixed-top+.main").classList.remove('sticky-body');
+  // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
+  // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
+  document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
+  document.querySelector(".nav--device").style.top = "98px !important";
+}
+
+function navMenu2() {
+  document.querySelector('.navbar .navbar-brand img').style.maxWidth = "240px";
+  document.querySelector(".navbar.is-fixed-top").classList.add('sticky');
+  document.querySelector(".navbar.is-fixed-top+.main").classList.add('sticky-body');
+  // document.querySelector(".navbar.is-fixed-top").style.height = "151px";
+  // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "151px";
+  document.querySelector(".navbar .nav--device").classList.remove("nav-device-active");
+  document.querySelector(".nav--device").style.top = "151px !important";
+}
 
   window.onscroll = function() {
     document.querySelector(".navbar").style.background = "#fff";
     var scrollPosY = window.pageYOffset | document.body.scrollTop;
-    if (scrollPosY > 100 || usercookie == "usercookie") {
+    if (scrollPosY > 100 || usercookie == "cookiefreeoffer") {
       classname[0].setAttribute("id", 'navbar__offer__close');
       var el = document.getElementById('navbar__offer__close');
       el.classList.add("navbar__offer__close");
-      document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-      document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-      document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-      document.querySelector(".navbar .nav--device").classList.add("nav-device-active");
-      document.querySelector(".nav--device").style.top = "98px !important";
-    } else if (scrollPosY <= 100 && usercookie != "usercookie") {
+      navMenu1();
+    } else if (scrollPosY <= 100 && usercookie != "cookiefreeoffer") {
       classname[0].setAttribute("id", 'navbar__offer__close');
       var el = document.getElementById('navbar__offer__close');
       el.classList.remove("navbar__offer__close");
-      document.querySelector('.navbar .navbar-brand img').style.maxWidth = "240px";
-      document.querySelector(".navbar.is-fixed-top").style.height = "151px";
-      document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "151px";
-      document.querySelector(".navbar .nav--device").classList.remove("nav-device-active");
-      document.querySelector(".nav--device").style.top = "151px !important";
+      navMenu2();
     }
   }
 
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      d.setTime(d.getTime() + (exdays * 1));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
