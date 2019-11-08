@@ -134,6 +134,29 @@ readyDoc(function () {
     });
   }
 
+  if (document.getElementsByClassName('rooms-cross-carousel__handle').length > 0) {
+    var slider = tns({
+      container: '.rooms-cross-carousel__handle',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 25,
+      prevButton: "#roomsCarouselNav .iconbtn--left", // previous button
+      nextButton: "#roomsCarouselNav .iconbtn--right", // next button
+      responsive: {
+        900: {
+          items: 2,
+          edgePadding: 50
+        },
+        1200: {
+          items: 2,
+          edgePadding: 85
+        }
+      }
+    });
+  }
+
   // Tabs Script Start ======================================
 
   if (document.getElementsByClassName("filter-items")[0]) {
