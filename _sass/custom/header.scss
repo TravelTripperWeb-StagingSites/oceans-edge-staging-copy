@@ -674,8 +674,8 @@
       linear,
       left top,
       right top,
-      color-stop(0, $medium),
-      color-stop(0, $dark)
+      color-stop(0, $dark),
+      color-stop(0, $medium)
     );
     border-radius: 6px;
     -webkit-appearance: none;

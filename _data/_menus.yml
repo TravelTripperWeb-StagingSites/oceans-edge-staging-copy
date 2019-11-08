@@ -73,28 +73,24 @@ mega:
     - folder: false
       url_localized:
         en: "/stay/#guestrooms"
-      page_id: _pages/stay.html
       label_localized:
         en: Guestrooms
       items: 
     - folder: false
       url_localized:
         en: "/stay/#1-bedrooms/"
-      page_id: _pages/stay.html
       label_localized:
         en: 1 Bedrooms
       items: 
     - folder: false
       url_localized:
         en: 'tel: 8779350862'
-      page_id: _pages/stay.html
       label_localized:
         en: 'Res: 877 935 0862'
       items: 
     - folder: false
       url_localized:
         en: "/stay/#accessible-rooms"
-      page_id: _pages/stay.html
       label_localized:
         en: Accessible Rooms
       items: 

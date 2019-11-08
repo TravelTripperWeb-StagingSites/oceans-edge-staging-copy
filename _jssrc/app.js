@@ -57,7 +57,29 @@ var filterRooms = function(roomType) {
   resetInnerFilters();
 }
 
+var filterThroughURL = function() {
+  if((window.location.href.indexOf("/stay/") > -1) && window.location.hash) {
+    var hashValue = window.location.hash.substring(1);
+    if(hashValue == 'accessible-rooms') {
+      document.querySelector(".rooms-filter [data-filter='accessible']").click();
+    } else if(hashValue == 'guestrooms') {
+      document.querySelector(".rooms-filter [data-filter='guestroom']").click();
+    } else if(hashValue == '1-bedrooms') {
+      document.querySelector(".rooms-filter [data-filter='one-bedroom']").click();
+    }
+  }
+}
+
 readyDoc(function() {
+
+  window.onhashchange = function() {
+    filterThroughURL();
+  }
+
+  //if url contains hash
+  setTimeout(function(){
+    filterThroughURL();
+  }, 500);
 
   //Rooms main Filter
   if (document.querySelectorAll(".rooms-filter li a").length > 1) {
@@ -217,8 +239,8 @@ readyDoc(function() {
       document.querySelector("#sliderRange").addEventListener('change' , () => {
         var ele = document.getElementById("sliderRange");
         var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #6f6f6f), '
-        + 'color-stop(' + val + ', #434343)'
+        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
+        + 'color-stop(' + val + ', #6f6f6f)'
         + ')';
 
         var sliderindex = document.getElementById('sliderRange').value;
