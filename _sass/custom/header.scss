@@ -667,6 +667,17 @@
 .mobileview {
   &.nav--device {
     .has-subnav {
+      padding: 10px 5px 6px !important;
+      border-bottom: solid 1px $t2;
+
+      &:first-child {
+        padding-top: 0 !important;
+      }
+
+      &:after {
+        display: none;
+      }
+
       span {
         &:after {
           position: relative;
@@ -678,6 +689,29 @@
           font-size: $display10-size;
           content: $icon-chevron-right !important;
           background: transparent !important;
+        }
+      }
+
+      &:hover {
+        .nav__link {
+          +.subnav {
+            padding-left: 0;
+          }
+        }
+      }
+
+      &.navlink__active {
+        span {
+          &:after {
+            content: $icon-chevron-bottom !important;
+          }
+        }
+        .subnav {
+          padding-left: 14px !important;
+
+          .nav__item {
+            margin-bottom: 10px;
+          }
         }
       }
     }
