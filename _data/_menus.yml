@@ -59,7 +59,7 @@ mega:
       label_localized:
         en: Resort Map
       items: 
-    expanded: true
+    expanded: false
   - folder: true
     label_localized:
       en: Stay
