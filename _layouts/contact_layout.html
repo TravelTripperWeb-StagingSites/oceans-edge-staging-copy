@@ -23,6 +23,57 @@ layout: default
   </div>
 </section>
 
+<section class="contact-infomap contact-infomap--reverse contact-infomap--full-screen">
+  <div class="contact-infomap__wrap">
+    <div class="contact-infomap__content-wrap">
+      <div class="contact-infomap__image">
+        <div class="contact-infomap__image__wrap">
+          {% regionblock contact_map, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573216881/w6hr4ttfka6lmwigz8sw.jpg" alt="Ocean Edge Meetings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="contact-infomap__content">
+        <div class="contact-infomap__content__detail">
+          <p class="h5">Address</p>
+          <div class="d-flex align-items-center">
+            <p>5950 Peninsular Avenue,<br>Key West FL 33040</p>
+            <div class="btn-holder">
+              <a class="btn" href="#">get directions</a>
+            </div>
+          </div>
+          <hr>
+          <p class="h5">Contact</p>
+          <p>Telephone - 305 809 8204<br>
+            Reservations - 877 935 0862<br>
+            Sales - 877 935 0862<br>
+            Email - Info@oceansedgekeywest.com</p>
+          <hr>
+          <p class="h5">Follow Us</p>
+          <ul class="social">
+            {% assign socialLinks = site.data.social %}
+            {% if socialLinks.facebook.username %}
+            <li>
+              <a class="facebook" href="https://www.facebook.com/{{socialLinks.facebook.username}}/" target="_blank" title="Follow us on Facebook"></a>
+            </li>
+            {% endif %}
+            {% if socialLinks.twitter.username %}
+            <li>
+              <a class="twitter" href="https://www.twitter.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on twitter"></a>
+            </li>
+            {% endif %}
+            {% if socialLinks.instagram.username %}
+            <li>
+              <a class="instagram" href="https://www.instagram.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on instagram"></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="twocol-cs mt-55">
