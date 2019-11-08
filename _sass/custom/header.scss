@@ -613,7 +613,7 @@
               padding-left: 12px;
               font-family: $oceansedge-font-family;
               font-size: 10px;
-              color: #6fd4e4;
+              color: $secondary;
               content: $icon-chevron-right;
             }
           }
@@ -650,11 +650,11 @@
     &.active {
       width: 69px;
       height: 17px;
-      font-family: 'Code - Pro - LC';
+      font-family: $family-primary-lc;
       font-size: 14px;
       line-height: 16px;
-      color: #025172 !important;
-      letter-spacing: 0.5px;
+      color: $primary !important;
+      letter-spacing: .5px;
     }
   }
 }
