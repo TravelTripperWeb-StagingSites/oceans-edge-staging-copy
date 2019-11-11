@@ -537,11 +537,15 @@ readyDoc(function() {
     return "";
   }
 
-
-
+  //ofr slider range-thumb dynamic width
+  var style = document.querySelector('[data="offerslistyle"]');
+  var slidelen = document.getElementById("sliderRange");
+  slidelen = slidelen.getAttribute('max');
+  var x = (3/slidelen * 100) + '%';
+  var y = '15';
+  style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
 
   //rooms filter
-
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
   for (let i = 0; i < roomsFilterItems.length; i++) {
     roomsFilterItems[i].addEventListener("click", function(e) {
