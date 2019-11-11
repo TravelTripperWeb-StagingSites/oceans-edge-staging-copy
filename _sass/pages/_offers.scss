@@ -188,6 +188,12 @@
           }
         }
       }
+
+      .price {
+        font-family: $family-primary;
+        font-size: $display9-size;
+        color: $white;
+      }
     }
 
     &__button {
