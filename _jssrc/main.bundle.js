@@ -251,7 +251,6 @@ readyDoc(function () {
         var ele = document.getElementById("sliderRange");
         var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
         ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-
         var sliderindex = document.getElementById('sliderRange').value;
         assetSlider.goTo(sliderindex - 1);
       });
