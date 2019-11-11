@@ -242,7 +242,6 @@ readyDoc(function() {
         ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
         + 'color-stop(' + val + ', #6f6f6f)'
         + ')';
-
         var sliderindex = document.getElementById('sliderRange').value;
         assetSlider.goTo(sliderindex - 1);
       });
