@@ -28,11 +28,9 @@
 </div>
 <div class="asset-list-carousel__controls" id="offersCarouselNav">
   <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
-  <div class="form-group">
-    <div class="guests-slider" id="guestsSliderMobile">
-      <span class="output"></span>
-      Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
+    <style data="offerslistyle"></style>
+     <div class="slidecontainer">
+      <input type="range" min="1" max="{{offers.size}}" value="1" class="slider" id="sliderRange">
     </div>
-  </div>
   <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
 </div>
