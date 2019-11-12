@@ -7,7 +7,7 @@
   "description": "<p class=\"overline\">Spacious accessible rooms with <span class=\"overline overline--italic\">awe-inspiring views</span></p>\n<p>Book one of our hearing- and mobility-accessible rooms for a truly indulgent vacation in Key West. In addition to two luxurious queen beds, an ADA tub or roll-in shower, and a spacious interior, you&rsquo;ll have a waterfront balcony and our impressive variety of on-site dining, amenities, and activities to choose from.</p>",
   "url_friendly_name": "accessible-partial-ocean-view-balcony-2-queen",
   "size": "380",
-  "ada_room": true,
+  "accessible": true,
   "guest_size_max": 4,
   "room_type": "room_type1",
   "room_bed_types": "room_bed_types3",
