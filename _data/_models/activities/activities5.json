@@ -1,10 +1,10 @@
 {
   "order": 5,
-  "name": "Dive-In Movies and poolside games for all ages",
+  "name": "Dive-In Movies and Poolside Games for All Ages",
   "url_friendly_name": "dive-in-movies",
   "description": "<p>When you&rsquo;re ready to take a break (if ever) from our saltwater pools, you&rsquo;ll find a selection of games along the pool decks. Engage in a battle of wits on our giant chess or Connect Four boards, or grab a paddle for ping pong. There&rsquo;s always something for all ages to do here at Oceans Edge Resort.</p>",
-  "terms_conditions": "Available on a first-come, first-serve basis",
-  "price": "First Hour is free, $5/hr thereafter",
+  "terms_conditions": "Resort amenity",
+  "price": "Complimentary",
   "image": {
     "name": "Diving",
     "content_type": "image/jpeg",
