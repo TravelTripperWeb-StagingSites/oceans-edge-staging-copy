@@ -12,8 +12,13 @@ address:
   zip_code: '33040'
 default_currency: USD
 default_timezone: America/New_York
-_hotel_id: RAHUL
-_portal_id: Rahul
+_hotel_id: 4091
+_chain_id: 10237
+_portal_id:
+booking_url: https://be.synxis.com/?hotel=4091&chain=10237
+booking_link: https://be.synxis.com/
+_root_path: https://rt3api-prd.ttaws.com
+_ttweb_plugins_version: v3.5.0
 __EDITABLE_FIELDS__:
   name:
     required: true
@@ -66,7 +71,7 @@ logo:
   resource_type: image
   size: 85237
   path: "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1571902567/ym5qpajryd261t5kot5s.png"
-  file_size: 
+  file_size:
   alt: Oceans Edge Key West
   caption: ''
   description: ''
@@ -88,5 +93,5 @@ logo-footer:
   resource_type: image
   size: 3798
   path: "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572310100/hy90tniffjeoxnnywfbg.png"
-  file_size: 
+  file_size:
   alt: Oceans Edge Key West
