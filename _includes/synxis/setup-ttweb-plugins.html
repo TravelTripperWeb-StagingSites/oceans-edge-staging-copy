@@ -1,0 +1,42 @@
+{% if site.data.hotel_settings._hotel_id != nil && site.data.hotel_settings._hotel_id != '' %}
+  <script src="https://plugins.traveltripper.io/{{site.data.hotel_settings._ttweb_plugins_version}}/rt3api.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+
+    var rootPath = '{{site.data.ttweb_plugins.root_path}}';
+    if (rootPath == '') {
+      rootPath = null;
+    }
+    var defaultTimezone = '{{site.data.hotel_settings.default_timezone}}';
+    if (defaultTimezone == '') {
+      defaultTimezone = 'America/New_York';
+    }
+    var defaultCurrency = '{{site.data.hotel_settings.default_currency}}';
+    if (defaultCurrency == '') {
+      defaultCurrency = 'USD';
+    }
+
+    var locale = '{{site.active_lang}}';
+    if (locale == '') {
+      locale = 'en';
+    }
+
+    var ttwebHotel = new TTWebHotel(TTWebHotel.Synxis, {
+      hotelCode: '{{site.data.hotel_settings._hotel_id}}',
+      chainCode: '{{site.data.hotel_settings._chain_id}}',
+      defaultLocale: locale,
+      defaultCurrency: defaultCurrency,
+      defaultTimezone: defaultTimezone
+    });
+
+    TTRender.initComponents(ttwebHotel);
+
+  </script>
+{% endif %}
+
+{% comment %}
+
+  To use conversion plus instead of brg, follow these steps:
+  1. Rename _data/conversion_plus.yml to _data/brg_configuration.yml
+      (This is a file that turns OFF configuration settings)
+  3. TODO: Determine where to load conversion plus in template.
+{% endcomment %}

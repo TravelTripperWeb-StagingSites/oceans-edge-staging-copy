@@ -101,8 +101,8 @@
     .h4 {
       margin-bottom: 20px;
     }
-
   }
+
   ul {
     padding-left: 0;
 
@@ -191,38 +191,55 @@
 }
 
 .amenities-cross-sell {
+  margin-bottom: 64px;
   &__wrap {
     max-width: none;
     padding: 0;
   }
+
+  &__image {
+    &__wrap {
+      div {
+        height: 100%;
+      }
+    }
+  }
+
   &__content {
     &__detail {
       max-width: none;
+
       .filter-items {
         justify-content: left;
         margin-left: 0;
         padding-left: 0;
       }
+
       .h6 {
         margin-bottom: 5px;
         color: $primary;
       }
+
       .large-card {
         &__item {
           flex: 0 0 100%;
           max-width: 100%;
           margin-top: 10px;
+
           &__wrap {
             padding: 24px;
+
             .h4 {
               font-size: $base-font-size;
               line-height: normal;
               text-transform: none;
             }
           }
+
           &__image {
             height: 210px;
           }
+
           &__content {
             p {
               margin: 20px 0 0;
@@ -232,9 +249,11 @@
         }
       }
     }
+
     .more-amenities {
       margin: 0;
       padding: 0;
+
       ul {
         li {
           display: inline-block;

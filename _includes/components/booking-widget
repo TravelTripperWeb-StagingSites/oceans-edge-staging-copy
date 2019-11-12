@@ -1,0 +1,4 @@
+<div ttweb-component="BookingWidget"
+  data-tt-show-agency-id="{{ site.data.booking_widget.show_offer_code }}"
+  data-tt-show-specials="{{ site.data.booking_widget.show_specials }}" >
+</div>
