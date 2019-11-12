@@ -1,0 +1,120 @@
+.ttweb-booking-widget {
+  font-family: $family-primary;
+  letter-spacing: normal;
+
+  .ttweb-calendar-month {
+
+    &__name {
+      font-family: $family-primary;
+      color: $primary;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    &__header {
+      background: $white;
+    }
+  }
+
+  .ttweb-slide-out-widget {
+
+    &__header {
+      background: $white;
+    }
+
+    &__title {
+      font-family: $family-primary;
+      font-size: $display4-size;
+      color: $primary;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    &__close {
+      color: $primary;
+    }
+  }
+
+  .ttweb-search-date-display {
+    color: $primary;
+    background: $white;
+    border: solid 1px rgba(0,0,0,.2);
+
+    &__selected-date {
+      background: $white;
+    }
+
+    &__date-display {
+      input {
+        width: 80%;
+        font-size: $base-font-size;
+        line-height: $base-font-size;
+        text-align: center;
+        border: 0;
+      }
+    }
+  }
+
+  select {
+    &.ttweb-select {
+      position: relative;
+      font-family: $family-primary;
+      font-size: $base-font-size;
+      line-height: $base-font-size;
+      border: solid 1px rgba(0,0,0,.2);
+      border-radius: 0;
+    }
+  }
+
+  .ttweb-calendar-month {
+    .ttweb-calendar-month__grid {
+      .ttweb-day--in-selection {
+        font-weight: $display4-weight;
+        color: $primary;
+        background: $white;
+        border: solid 1px $primary;
+        border-radius: 0;
+      }
+      .ttweb-day {
+        &__arrival-label, &__departure-label {
+          color: $white;
+          background: $primary;
+          border: 0;
+          border-radius: 0;
+        }
+
+        &__arrival-label {
+          top: -11px;
+          left: -1px;
+          width: 52px;
+        }
+      }
+    }
+  }
+
+  &__submit {
+    background-color: $primary !important;
+  }
+
+  &__footer__rate__label {
+    float: none;
+    letter-spacing: normal;
+  }
+
+  &__footer__rate__cost, &__footer__rate .ttweb-cross-out-rate {
+    display: flex;
+    justify-content: center;
+    float: none;
+    text-align: center;
+  }
+
+}
+
+.radioPad__wrapper {
+  line-height: 2rem;
+  letter-spacing: normal;
+}
+
+.Collapsible__trigger {
+  font-weight: normal;
+}

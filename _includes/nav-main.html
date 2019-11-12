@@ -1,5 +1,5 @@
 {% comment %}
-  note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
+note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
 {% endcomment %}
 <nav class="navbar nav--main" id="js-navbar--main">
   <div class="container-fluid">
@@ -57,8 +57,9 @@
           </div>
           <div class="navbar__booking">
             <a class="tel" href="tel:877-935-0862">(877) 935-0862</a>
-            <div>
-              <a href="{{site.data.hotel_settings.booking_url}}" target="_NEW" role="button" class="btn btn--book">Book Now</a>
+
+            <div class="booking-widget-button">
+              {% include components/booking-widget-button %}
             </div>
           </div>
         </div>

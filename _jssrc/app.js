@@ -3,20 +3,6 @@ function readyDoc(fn) {
   (d.readyState == 'loading') ? d.addEventListener('DOMContentLoaded', fn): fn();
 }
 
-var updateGuestsSlider = function(guestsSliderOutput, val) {
-  guestsSliderOutput.innerHTML = val;
-  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
-  let allRooms = document.querySelectorAll(".room-list-item");
-  for (let i = 0; i < allRooms.length; i++) {
-    let guestsNum = Number(allRooms[i].getAttribute("data-guests"));
-    if (guestsNum < val) {
-      allRooms[i].classList.add("hidden-by-guests");
-    } else {
-      allRooms[i].classList.remove("hidden-by-guests");
-    }
-  }
-}
-
 var resetInnerFilters = function() {
   var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
   var roomViewFilter = document.querySelectorAll(".room-view-filter");
@@ -34,26 +20,41 @@ var resetInnerFilters = function() {
   }
 }
 
+var updateGuestsSlider = function(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
+  let allRooms = document.querySelectorAll(".room-list-item");
+  for (let i = 0; i < allRooms.length; i++) {
+    let guestsNum = Number(allRooms[i].getAttribute("data-guests"));
+    if (guestsNum < val) {
+      allRooms[i].classList.add("hidden-by-guests");
+    } else {
+      allRooms[i].classList.remove("hidden-by-guests");
+    }
+  }
+  displayNoRoomsMessage();
+}
+
 var filterRooms = function(roomType) {
   let allRooms = document.querySelectorAll(".room-list-item");
   if (roomType == "all") {
-  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+    //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.remove("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
       allRooms[i].classList.remove("hidden-by-bedtype");
-      allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-viewtype");
       allRooms[i].classList.remove("hidden-by-accessibility");
     }
   } else {
     let roomsToShow = document.querySelectorAll("." + roomType);
     let roomsCount = roomsToShow.length;
-  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+    //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.add("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
       allRooms[i].classList.remove("hidden-by-bedtype");
-      allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-viewtype");
       allRooms[i].classList.remove("hidden-by-accessibility");
     }
     for (let i = 0; i < roomsCount; i++) {
@@ -63,14 +64,31 @@ var filterRooms = function(roomType) {
   resetInnerFilters();
 }
 
+var displayNoRoomsMessage = function() {
+  setTimeout(function() {
+    let allRooms = document.querySelectorAll(".room-list-item");
+    let hiddenRoomsLength = 0;
+    for (let i = 0; i < allRooms.length; i++) {
+      if (allRooms[i].classList.contains("hidden") || allRooms[i].classList.contains("hidden-by-accessibility") || allRooms[i].classList.contains("hidden-by-bedtype") || allRooms[i].classList.contains("hidden-by-viewtype") || allRooms[i].classList.contains("hidden-by-guests")) {
+        hiddenRoomsLength++;
+      }
+    }
+    if (allRooms.length == hiddenRoomsLength) {
+      document.querySelector(".no-rooms-message").style.display = "block";
+    } else {
+      document.querySelector(".no-rooms-message").style.display = "none";
+    }
+  }, 1000);
+}
+
 var filterThroughURL = function() {
-  if((window.location.href.indexOf("/stay/") > -1) && window.location.hash) {
+  if ((window.location.href.indexOf("/stay/") > -1) && window.location.hash) {
     var hashValue = window.location.hash.substring(1);
-    if(hashValue == 'accessible-rooms') {
+    if (hashValue == 'accessible-rooms') {
       document.querySelector(".rooms-filter [data-filter='accessible']").click();
-    } else if(hashValue == 'guestrooms') {
+    } else if (hashValue == 'guestrooms') {
       document.querySelector(".rooms-filter [data-filter='guestroom']").click();
-    } else if(hashValue == '1-bedrooms') {
+    } else if (hashValue == '1-bedrooms') {
       document.querySelector(".rooms-filter [data-filter='one-bedroom']").click();
     }
   }
@@ -83,7 +101,7 @@ readyDoc(function() {
   }
 
   //if url contains hash
-  setTimeout(function(){
+  setTimeout(function() {
     filterThroughURL();
   }, 500);
 
@@ -109,10 +127,10 @@ readyDoc(function() {
     var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
     let allRooms = document.querySelectorAll(".room-list-item");
     let accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
-    for(let i = 0; i < bedTypeFilters.length; i++) {
+    for (let i = 0; i < bedTypeFilters.length; i++) {
       bedTypeFilters[i].onchange = function() {
         let bedTypeVal = this.value;
-        if(bedTypeVal == "Accessible") {
+        if (bedTypeVal == "Accessible") {
           for (let i = 0; i < allRooms.length; i++) {
             allRooms[i].classList.remove("hidden-by-bedtype");
             allRooms[i].classList.add("hidden-by-accessibility");
@@ -124,13 +142,14 @@ readyDoc(function() {
           for (let i = 0; i < allRooms.length; i++) {
             let bedType = allRooms[i].getAttribute("data-bed-type");
             allRooms[i].classList.remove("hidden-by-accessibility");
-            if(bedType == bedTypeVal || bedTypeVal == "all") {
+            if (bedType == bedTypeVal || bedTypeVal == "all") {
               allRooms[i].classList.remove("hidden-by-bedtype");
             } else {
               allRooms[i].classList.add("hidden-by-bedtype");
             }
           }
         }
+        displayNoRoomsMessage();
       }
     }
   }
@@ -148,6 +167,7 @@ readyDoc(function() {
             allRooms[i].classList.add("hidden-by-viewtype");
           }
         }
+        displayNoRoomsMessage();
       }
     }
   }
@@ -480,7 +500,7 @@ readyDoc(function() {
 
     var queryall = this.querySelector("i");
     //console.log("queryall ", queryall);
-    if(queryall) {
+    if (queryall) {
       queryall.classList.toggle('fa-angle-down');
       queryall.classList.toggle('fa-angle-up');
     }

@@ -85,12 +85,12 @@
 
   &__item {
     @include make-col-ready;
-    margin-bottom: 24px;
+    margin: 12px 0;
     border-radius: 16px;
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
-      margin-bottom: 0;
+      margin: 17px 0;
     }
 
     &__image {
