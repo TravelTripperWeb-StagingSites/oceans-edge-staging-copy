@@ -4,7 +4,7 @@
   "url_friendly_name": "accessible-partial-ocean-view-balcony-2-queen-suite",
   "description": "<p class=\"overline\">A one-bedroom suite to accommodate<span class=\"overline overline--italic\">all of our guests in luxury</span></p>\n<p>Take time out to reconnect with each other in peaceful surroundings and the comfort of our ADA-compliant suites. In a spectacular setting with green expanses, views of the sea and sky from every balcony, and elegant interior design, these hearing- and mobility-accessible accommodations offer either a tub or roll-in shower as well as visual communication features.</p>",
   "size": "570 Sq Ft",
-  "ada_room": true,
+  "accessible": true,
   "guest_size_max": 5,
   "room_type": "room_type2",
   "room_bed_types": "room_bed_types4",
