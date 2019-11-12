@@ -25,9 +25,10 @@
     "git_file_name": "_assets/image_data/girls-cocktails.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572918305/yxnyrauevf2mkadl8u0g.jpg",
     "file_size": null,
-    "alt": "Girls Cocktails",
+    "alt": "Nonrefundable advance purchase offer from Oceans Edge Resort and Marina",
     "caption": "",
     "description": ""
   },
-  "terms_conditions": "<p>Offer must be booked at least 7 days prior to arrival. Reservation is non-refundable and non-transferable. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. on-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>"
+  "terms_conditions": "<p>Offer must be booked at least 7 days prior to arrival. Reservation is non-refundable and non-transferable. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. On-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
+  "booking_url": "*"
 }
