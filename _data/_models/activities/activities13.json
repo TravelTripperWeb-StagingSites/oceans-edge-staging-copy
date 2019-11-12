@@ -1,10 +1,10 @@
 {
   "order": 13,
-  "name": "Jet Ski Guided Tour",
-  "url_friendly_name": "jet-ski-guided-tour",
-  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-  "terms_conditions": "Cost (3hrs)",
-  "price": "$10 /person",
+  "name": "Glass-Bottom Boat Tour",
+  "url_friendly_name": "glass-bottom-boat-tours",
+  "description": "<p>Stay cool and dry as you view a stunning array of tropical marine life in air-conditioned comfort aboard Fury&rsquo;s Glass Bottom Boat. Through our windows to the sea, guests can witness the wonder of one of North America&rsquo;s few living coral reefs. You may even observe sea turtles, rays and fish of all kinds gliding through the crystal waters they call home.</p>\n<p>Book online: https://fareharbor.com/embeds/book/furycat/?sheet=18636&amp;asn=oceansedgekeywest&amp;full-items=yes/</p>\n<p>&nbsp;</p>",
+  "terms_conditions": "Cost",
+  "price": "Please inquire",
   "image": {
     "name": "jet-ski-tours",
     "content_type": "image/jpeg",
@@ -25,8 +25,9 @@
     "git_file_name": "_assets/image_data/jet-ski-tours.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573203154/s4nxneovi6bsvpw1vook.jpg",
     "file_size": null,
-    "alt": "Jet Ski Tours",
+    "alt": "Glass-bottom boat tours with Oceans Edge Resort and Marina",
     "caption": "",
     "description": ""
-  }
+  },
+  "category": "activities_categories2"
 }
