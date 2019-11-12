@@ -13,10 +13,6 @@
     "type": "string",
     "instructions": "Enter room size e.g. '350sq ft'"
   },
-  "ada_room": {
-    "label": "ADA Compliant",
-    "type": "boolean"
-  },
   "guest_size_max": {
     "label": "Sleeps",
     "type": "integer"
@@ -55,6 +51,10 @@
   "suite": {
     "type": "boolean",
     "instructions": "Check this if it's a Suite"
+  },
+  "accessible": {
+    "type": "boolean",
+    "instructions": "Check this if the room/suite is accessible"
   },
   "featured_image": {
     "type": "image"

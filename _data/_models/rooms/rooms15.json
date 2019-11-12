@@ -7,7 +7,7 @@
   "description": "<p class=\"overline\">Feature-rich rooms with <span class=\"overline overline--italic\">spectacular views</span></p>\n<p>Located on our 1st, 2nd, or 3rd floors, these hearing- and mobility-accessible rooms offer all the resources you need and then some: a roll-in shower or ADA tub in the spacious bath, visual emergency and communication features, premium bedding, elegant furnishings, and of course your ocean-facing balcony. Pure indulgence!</p>",
   "url_friendly_name": "accessible-partial-ocean-view-balcony-king",
   "size": "380",
-  "ada_room": true,
+  "accessible": true,
   "guest_size_max": 3,
   "room_type": "room_type1",
   "room_bed_types": "room_bed_types1",
