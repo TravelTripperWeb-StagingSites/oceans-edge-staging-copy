@@ -37,21 +37,27 @@ var resetInnerFilters = function() {
 var filterRooms = function(roomType) {
   let allRooms = document.querySelectorAll(".room-list-item");
   if (roomType == "all") {
-    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.remove("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
+      allRooms[i].classList.remove("hidden-by-bedtype");
+      allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-accessibility");
     }
   } else {
     let roomsToShow = document.querySelectorAll("." + roomType);
     let roomsCount = roomsToShow.length;
-    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.add("hidden");
+      allRooms[i].classList.remove("hidden-by-guests");
+      allRooms[i].classList.remove("hidden-by-bedtype");
+      allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-accessibility");
     }
     for (let i = 0; i < roomsCount; i++) {
       roomsToShow[i].classList.remove("hidden");
-      roomsToShow[i].classList.remove("hidden-by-guests");
     }
   }
   resetInnerFilters();
@@ -102,15 +108,27 @@ readyDoc(function() {
   if (document.querySelectorAll(".bed-type-filter").length > 0) {
     var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
     let allRooms = document.querySelectorAll(".room-list-item");
-    for (let i = 0; i < bedTypeFilters.length; i++) {
+    let accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
+    for(let i = 0; i < bedTypeFilters.length; i++) {
       bedTypeFilters[i].onchange = function() {
         let bedTypeVal = this.value;
-        for (let i = 0; i < allRooms.length; i++) {
-          let bedType = allRooms[i].getAttribute("data-bed-type");
-          if (bedType == bedTypeVal || bedTypeVal == "all") {
+        if(bedTypeVal == "Accessible") {
+          for (let i = 0; i < allRooms.length; i++) {
             allRooms[i].classList.remove("hidden-by-bedtype");
-          } else {
-            allRooms[i].classList.add("hidden-by-bedtype");
+            allRooms[i].classList.add("hidden-by-accessibility");
+          }
+          for (let i = 0; i < accessibleRooms.length; i++) {
+            accessibleRooms[i].classList.remove("hidden-by-accessibility");
+          }
+        } else {
+          for (let i = 0; i < allRooms.length; i++) {
+            let bedType = allRooms[i].getAttribute("data-bed-type");
+            allRooms[i].classList.remove("hidden-by-accessibility");
+            if(bedType == bedTypeVal || bedTypeVal == "all") {
+              allRooms[i].classList.remove("hidden-by-bedtype");
+            } else {
+              allRooms[i].classList.add("hidden-by-bedtype");
+            }
           }
         }
       }
@@ -220,6 +238,7 @@ readyDoc(function() {
       var assetSlider = tns({
         container: '.asset-list-carousel',
         items: 1,
+        slideBy: "page",
         nav: false,
         mouseDrag: true,
         loop: false,
@@ -242,7 +261,9 @@ readyDoc(function() {
         + 'color-stop(' + val + ', #6f6f6f)'
         + ')';
         var sliderindex = document.getElementById('sliderRange').value;
-        assetSlider.goTo(sliderindex - 1);
+        var sliderindex2 = ((sliderindex - 1) * 3);
+        console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
+        assetSlider.goTo(sliderindex2);
       });
     }
   }, 3000);
@@ -399,11 +420,6 @@ readyDoc(function() {
     classname[0].setAttribute("id", 'navbar__offer__close');
     var el = document.getElementById('navbar__offer__close');
     el.classList.add("navbar__offer__close");
-    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    // document.querySelector(".nav--device").style.top = "98px !important";
     navMenu1();
   }
 
@@ -413,11 +429,6 @@ readyDoc(function() {
     var el = document.getElementById('navbar__offer__close');
     el.parentNode.removeChild(el);
     el.classList.add("navbar__offer__close");
-    // document.querySelector('.navbar .navbar-brand img').style.maxWidth = "200px";
-    // document.querySelector(".navbar.is-fixed-top").style.height = "auto";
-    // document.querySelector(".navbar.is-fixed-top+.main").style.paddingTop = "97px";
-    // document.querySelector(".navbar .nav-device-lg").classList.add("nav-device-active");
-    // document.querySelector(".nav--device").style.top = "98px !important";
     navMenu1();
   }
 
@@ -468,9 +479,11 @@ readyDoc(function() {
 
 
     var queryall = this.querySelector("i");
-    console.log("queryall ", queryall);
-    queryall.classList.toggle('fa-angle-down');
-    queryall.classList.toggle('fa-angle-up');
+    //console.log("queryall ", queryall);
+    if(queryall) {
+      queryall.classList.toggle('fa-angle-down');
+      queryall.classList.toggle('fa-angle-up');
+    }
   }
 
   for (var i = 0; i < classname.length; i++) {
@@ -539,11 +552,16 @@ readyDoc(function() {
 
   //ofr slider range-thumb dynamic width
   var style = document.querySelector('[data="offerslistyle"]');
-  var slidelen = document.getElementById("sliderRange");
-  slidelen = slidelen.getAttribute('max');
-  var x = (3/slidelen * 100) + '%';
+  var sliderangele = document.getElementById("sliderRange");
+  var slidelen = sliderangele.getAttribute('max');
+
+  var slidemax = Math.round(slidelen/3);
+  sliderangele.setAttribute('max', slidemax);
+
+  var x = (100/slidemax) + '%';
   var y = '15';
   style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+
 
   //rooms filter
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
