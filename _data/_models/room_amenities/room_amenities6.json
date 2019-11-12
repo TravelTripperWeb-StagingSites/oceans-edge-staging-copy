@@ -1,6 +1,6 @@
 {
   "order": 6,
-  "name": "ADA Features",
+  "name": "ADA compliant",
   "description": "ADA Features",
   "image": {
     "name": "icon-ADA-features",
@@ -21,7 +21,7 @@
     "size": 17348,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573550412/zycoeyj4jebai9qpab88.png",
     "file_size": null,
-    "alt": "ADA features",
+    "alt": "ADA compliant",
     "caption": "",
     "description": ""
   }
