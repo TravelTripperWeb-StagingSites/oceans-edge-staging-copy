@@ -34,7 +34,9 @@ layout: default
     {% assign items = site.data._models.amenities %}
     {% for item in items %}
     <li>
-      <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+      <div class="amenities__icon">
+        <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+      </div>
       <p>{{ item.name }}</p>
     </li>
     {% endfor %}
