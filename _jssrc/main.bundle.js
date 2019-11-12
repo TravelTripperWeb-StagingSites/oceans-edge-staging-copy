@@ -5,20 +5,6 @@ function readyDoc(fn) {
   d.readyState == 'loading' ? d.addEventListener('DOMContentLoaded', fn) : fn();
 }
 
-var updateGuestsSlider = function updateGuestsSlider(guestsSliderOutput, val) {
-  guestsSliderOutput.innerHTML = val;
-  guestsSliderOutput.style.left = 59 + 12 * val + "px";
-  var allRooms = document.querySelectorAll(".room-list-item");
-  for (var i = 0; i < allRooms.length; i++) {
-    var guestsNum = Number(allRooms[i].getAttribute("data-guests"));
-    if (guestsNum < val) {
-      allRooms[i].classList.add("hidden-by-guests");
-    } else {
-      allRooms[i].classList.remove("hidden-by-guests");
-    }
-  }
-};
-
 var resetInnerFilters = function resetInnerFilters() {
   var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
   var roomViewFilter = document.querySelectorAll(".room-view-filter");
@@ -36,6 +22,21 @@ var resetInnerFilters = function resetInnerFilters() {
   }
 };
 
+var updateGuestsSlider = function updateGuestsSlider(guestsSliderOutput, val) {
+  guestsSliderOutput.innerHTML = val;
+  guestsSliderOutput.style.left = 59 + 12 * val + "px";
+  var allRooms = document.querySelectorAll(".room-list-item");
+  for (var i = 0; i < allRooms.length; i++) {
+    var guestsNum = Number(allRooms[i].getAttribute("data-guests"));
+    if (guestsNum < val) {
+      allRooms[i].classList.add("hidden-by-guests");
+    } else {
+      allRooms[i].classList.remove("hidden-by-guests");
+    }
+  }
+  displayNoRoomsMessage();
+};
+
 var filterRooms = function filterRooms(roomType) {
   var allRooms = document.querySelectorAll(".room-list-item");
   if (roomType == "all") {
@@ -44,7 +45,7 @@ var filterRooms = function filterRooms(roomType) {
       allRooms[i].classList.remove("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
       allRooms[i].classList.remove("hidden-by-bedtype");
-      allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-viewtype");
       allRooms[i].classList.remove("hidden-by-accessibility");
     }
   } else {
@@ -55,7 +56,7 @@ var filterRooms = function filterRooms(roomType) {
       allRooms[_i3].classList.add("hidden");
       allRooms[_i3].classList.remove("hidden-by-guests");
       allRooms[_i3].classList.remove("hidden-by-bedtype");
-      allRooms[_i3].classList.remove("hidden-by-view");
+      allRooms[_i3].classList.remove("hidden-by-viewtype");
       allRooms[_i3].classList.remove("hidden-by-accessibility");
     }
     for (var _i4 = 0; _i4 < roomsCount; _i4++) {
@@ -63,6 +64,23 @@ var filterRooms = function filterRooms(roomType) {
     }
   }
   resetInnerFilters();
+};
+
+var displayNoRoomsMessage = function displayNoRoomsMessage() {
+  setTimeout(function () {
+    var allRooms = document.querySelectorAll(".room-list-item");
+    var hiddenRoomsLength = 0;
+    for (var i = 0; i < allRooms.length; i++) {
+      if (allRooms[i].classList.contains("hidden") || allRooms[i].classList.contains("hidden-by-accessibility") || allRooms[i].classList.contains("hidden-by-bedtype") || allRooms[i].classList.contains("hidden-by-viewtype") || allRooms[i].classList.contains("hidden-by-guests")) {
+        hiddenRoomsLength++;
+      }
+    }
+    if (allRooms.length == hiddenRoomsLength) {
+      document.querySelector(".no-rooms-message").style.display = "block";
+    } else {
+      document.querySelector(".no-rooms-message").style.display = "none";
+    }
+  }, 1000);
 };
 
 var filterThroughURL = function filterThroughURL() {
@@ -136,6 +154,7 @@ readyDoc(function () {
               }
             }
           }
+          displayNoRoomsMessage();
         };
       }
     })();
@@ -158,6 +177,7 @@ readyDoc(function () {
               allRooms[_i11].classList.add("hidden-by-viewtype");
             }
           }
+          displayNoRoomsMessage();
         };
       }
     })();
