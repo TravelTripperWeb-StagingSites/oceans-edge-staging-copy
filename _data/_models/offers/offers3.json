@@ -2,7 +2,7 @@
   "order": 3,
   "name": "Five Nights in Paradise",
   "url_friendly_name": "five-nights-in-paradise",
-  "short_description": "Stay a while in paradise and truly indulge! Save 25% on stays of at least 5 nights.",
+  "short_description": "Stay awhile in paradise and truly indulge! Save 25% on stays of at least 5 nights.",
   "short_description_detail_page": "A resort this indulgent calls for time to truly savor it. When you stay 5 consecutive nights or more at Oceans Edge, you’ll save 25% and receive 2 welcome cocktails. Cheers to vacation!",
   "description": "<p>Book this offer and enjoy:</p>\n<ul>\n<li>Tropically inspired elegant accommodations</li>\n<li>2 welcome cocktails</li>\n<li>Complimentary 2-hour kayak, paddleboard, or bicycle rental</li>\n<li>Shuttle service to Key West Historic Seaport (eowntown)</li>\n<li>Personalized in-room entertainment via 49-inch Smart TV</li>\n<li>Access to Digital Concierge services</li>\n<li>Access to complimentary resort activities, 24-hour gym, and lawn games</li>\n<li>Access to 6 heated pristine pools with poolside refreshment service</li>\n<li>Access to a deep-water full marina with a variety of water activities</li>\n</ul>",
   "image": {
@@ -29,5 +29,6 @@
     "caption": "",
     "description": ""
   },
-  "terms_conditions": "<p>Stay must include at least 5 consecutive nights. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. on-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>"
+  "terms_conditions": "<p>Stay must include at least 5 consecutive nights. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. On-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
+  "booking_url": "-"
 }
