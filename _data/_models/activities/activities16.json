@@ -4,5 +4,6 @@
   "terms_conditions": "Cost",
   "price": "Please inquire",
   "name": "Snuba",
-  "category": "activities_categories4"
+  "category": "activities_categories4",
+  "url_friendly_name": "snuba"
 }
