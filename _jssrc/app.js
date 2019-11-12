@@ -238,6 +238,7 @@ readyDoc(function() {
       var assetSlider = tns({
         container: '.asset-list-carousel',
         items: 1,
+        slideBy: "page",
         nav: false,
         mouseDrag: true,
         loop: false,
@@ -260,7 +261,7 @@ readyDoc(function() {
         + 'color-stop(' + val + ', #6f6f6f)'
         + ')';
         var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = ((sliderindex - 1) * 3) + 1;
+        var sliderindex2 = ((sliderindex - 1) * 3);
         console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
         assetSlider.goTo(sliderindex2);
       });

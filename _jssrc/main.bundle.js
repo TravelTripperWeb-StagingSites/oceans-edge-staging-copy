@@ -249,6 +249,7 @@ readyDoc(function () {
       var assetSlider = tns({
         container: '.asset-list-carousel',
         items: 1,
+        slideBy: "page",
         nav: false,
         mouseDrag: true,
         loop: false,
@@ -269,7 +270,7 @@ readyDoc(function () {
         var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
         ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
         var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = (sliderindex - 1) * 3 + 1;
+        var sliderindex2 = (sliderindex - 1) * 3;
         console.log("sliderindex " + sliderindex + " sliderindex2 " + sliderindex2);
         assetSlider.goTo(sliderindex2);
       });
