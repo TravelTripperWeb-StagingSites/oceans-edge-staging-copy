@@ -12,9 +12,13 @@ address:
   zip_code: '33040'
 default_currency: USD
 default_timezone: America/New_York
-booking_url: https://be.synxis.com/?chain=10237&hotel=4091
-_hotel_id: RAHUL
-_portal_id: Rahul
+_hotel_id: 4091
+_chain_id: 10237
+_portal_id:
+booking_url: https://be.synxis.com/?hotel=4091&chain=10237
+booking_link: https://be.synxis.com/
+_root_path: https://rt3api-prd.ttaws.com
+_ttweb_plugins_version: v3.5.0
 __EDITABLE_FIELDS__:
   name:
     required: true
