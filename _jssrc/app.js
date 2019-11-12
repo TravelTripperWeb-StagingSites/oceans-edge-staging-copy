@@ -260,7 +260,9 @@ readyDoc(function() {
         + 'color-stop(' + val + ', #6f6f6f)'
         + ')';
         var sliderindex = document.getElementById('sliderRange').value;
-        assetSlider.goTo(sliderindex - 1);
+        var sliderindex2 = ((sliderindex - 1) * 3) + 1;
+        console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
+        assetSlider.goTo(sliderindex2);
       });
     }
   }, 3000);
@@ -549,11 +551,16 @@ readyDoc(function() {
 
   //ofr slider range-thumb dynamic width
   var style = document.querySelector('[data="offerslistyle"]');
-  var slidelen = document.getElementById("sliderRange");
-  slidelen = slidelen.getAttribute('max');
-  var x = (3/slidelen * 100) + '%';
+  var sliderangele = document.getElementById("sliderRange");
+  var slidelen = sliderangele.getAttribute('max');
+
+  var slidemax = Math.round(slidelen/3);
+  sliderangele.setAttribute('max', slidemax);
+
+  var x = (100/slidemax) + '%';
   var y = '15';
   style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+
 
   //rooms filter
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
