@@ -37,22 +37,24 @@ var resetInnerFilters = function() {
 var filterRooms = function(roomType) {
   let allRooms = document.querySelectorAll(".room-list-item");
   if (roomType == "all") {
-    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
+  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + allRooms.length + "</span> Rooms & Suites";
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.remove("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
       allRooms[i].classList.remove("hidden-by-bedtype");
       allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-accessibility");
     }
   } else {
     let roomsToShow = document.querySelectorAll("." + roomType);
     let roomsCount = roomsToShow.length;
-    document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
+  //  document.querySelector(".filtered-rooms-text").innerHTML = "<span>" + roomsCount + "</span> " + roomType;
     for (let i = 0; i < allRooms.length; i++) {
       allRooms[i].classList.add("hidden");
       allRooms[i].classList.remove("hidden-by-guests");
       allRooms[i].classList.remove("hidden-by-bedtype");
       allRooms[i].classList.remove("hidden-by-view");
+      allRooms[i].classList.remove("hidden-by-accessibility");
     }
     for (let i = 0; i < roomsCount; i++) {
       roomsToShow[i].classList.remove("hidden");
@@ -106,15 +108,27 @@ readyDoc(function() {
   if(document.querySelectorAll(".bed-type-filter").length > 0) {
     var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
     let allRooms = document.querySelectorAll(".room-list-item");
+    let accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
     for(let i = 0; i < bedTypeFilters.length; i++) {
       bedTypeFilters[i].onchange = function() {
         let bedTypeVal = this.value;
-        for (let i = 0; i < allRooms.length; i++) {
-          let bedType = allRooms[i].getAttribute("data-bed-type");
-          if(bedType == bedTypeVal || bedTypeVal == "all") {
+        if(bedTypeVal == "Accessible") {
+          for (let i = 0; i < allRooms.length; i++) {
             allRooms[i].classList.remove("hidden-by-bedtype");
-          } else {
-            allRooms[i].classList.add("hidden-by-bedtype");
+            allRooms[i].classList.add("hidden-by-accessibility");
+          }
+          for (let i = 0; i < accessibleRooms.length; i++) {
+            accessibleRooms[i].classList.remove("hidden-by-accessibility");
+          }
+        } else {
+          for (let i = 0; i < allRooms.length; i++) {
+            let bedType = allRooms[i].getAttribute("data-bed-type");
+            allRooms[i].classList.remove("hidden-by-accessibility");
+            if(bedType == bedTypeVal || bedTypeVal == "all") {
+              allRooms[i].classList.remove("hidden-by-bedtype");
+            } else {
+              allRooms[i].classList.add("hidden-by-bedtype");
+            }
           }
         }
       }
@@ -456,7 +470,7 @@ readyDoc(function() {
     //console.log("queryall ", queryall);
     if(queryall) {
       queryall.classList.toggle('fa-angle-down');
-      queryall.classList.toggle('fa-angle-up');      
+      queryall.classList.toggle('fa-angle-up');
     }
   }
 
