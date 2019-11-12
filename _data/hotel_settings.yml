@@ -30,6 +30,8 @@ __EDITABLE_FIELDS__:
     type: string
   phone:
     type: string
+  booking_url:
+    type: string
   default_currency:
     required: true
   address:

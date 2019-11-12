@@ -383,7 +383,7 @@
     width: 100%;
 
     .iconbtn {
-      background: $light;
+      background: rgba(2,81,113,.8);
       @include transition(all .3s);
 
       @include media-breakpoint-up(md) {
@@ -391,19 +391,11 @@
       }
 
       &:after {
-        color: $dark;
-
-        @include media-breakpoint-up(md) {
-          color: $light;
-        }
+        color: $light;
       }
 
       &:hover {
-        background: $light;
-
-        @include media-breakpoint-up(md) {
-          background: rgba(2,81,113,1);
-        }
+        background: rgba(2,81,113,1);
       }
     }
 
