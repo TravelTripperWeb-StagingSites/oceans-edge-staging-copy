@@ -1,10 +1,10 @@
 {
-  "order": 5,
-  "name": "Dive-In Movies and poolside games for all ages-copy",
-  "url_friendly_name": "dive-in-movies-copy",
-  "description": "<p>When you&rsquo;re ready to take a break (if ever) from our saltwater pools, you&rsquo;ll find a selection of games along the pool decks. Engage in a battle of wits on our giant chess or Connect Four boards, or grab a paddle for ping pong. There&rsquo;s always something for all ages to do here at Oceans Edge Resort.</p>",
-  "terms_conditions": "Available on a first-come, first-serve basis",
-  "price": "First Hour is free, $5/hr thereafter",
+  "order": 19,
+  "name": "Parasailing",
+  "url_friendly_name": "parasailing",
+  "description": "<p>Parasail high above the sparkling waters of Key West while enjoying breathtaking panoramic views of this island paradise. From your secure spot in the sky, you&rsquo;ll float along on a warm, tropical ocean breeze. While parasailing, you may even catch a glimpse of dolphins playing in the surf. An exhilarating yet safe trip for the adventurer in all of us!&nbsp;</p>\n<p><a href=\"https://fareharbor.com/embeds/book/furycat/?sheet=18636&amp;asn=oceansedgekeywest&amp;full-items=yes/\">BOOK ONLINE</a></p>\n<p>&nbsp;</p>",
+  "terms_conditions": "Cost",
+  "price": "Please inquire",
   "image": {
     "name": "Diving",
     "content_type": "image/jpeg",
@@ -25,9 +25,10 @@
     "git_file_name": "_assets/image_data/Diving.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573203153/r4d8ktvze0w5as5sarln.jpg",
     "file_size": null,
-    "alt": "Diving",
+    "alt": "book parasailing adventures with Oceans Edge Resort",
     "caption": "",
     "description": ""
   },
-  "complimentary-resort-activities": true
+  "complimentary-resort-activities": false,
+  "category": "activities_categories4"
 }
