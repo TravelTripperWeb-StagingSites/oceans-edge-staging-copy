@@ -10,11 +10,11 @@
   "view": "room_view1",
   "room_location": "room_location2",
   "amenities": [
-    "room_amenities2",
     "room_amenities1",
-    "room_amenities3",
-    "room_amenities4",
-    "room_amenities5"
+    "room_amenities9",
+    "room_amenities10",
+    "room_amenities11",
+    "room_amenities14"
   ],
   "featured_image": {
     "name": "Room Bed",
