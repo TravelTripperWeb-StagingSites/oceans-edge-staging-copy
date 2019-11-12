@@ -559,10 +559,12 @@ readyDoc(function () {
   //ofr slider range-thumb dynamic width
   var style = document.querySelector('[data="offerslistyle"]');
   var sliderangele = document.getElementById("sliderRange");
-  var slidelen = sliderangele.getAttribute('max');
+  var slidelen = sliderangele.getAttribute('data-max');
 
-  var slidemax = Math.round(slidelen / 3);
+  var slidemax = Math.ceil(slidelen / 3);
   sliderangele.setAttribute('max', slidemax);
+
+  console.log("a " + slidelen + " slidemax " + slidemax);
 
   var x = 100 / slidemax + '%';
   var y = '15';
