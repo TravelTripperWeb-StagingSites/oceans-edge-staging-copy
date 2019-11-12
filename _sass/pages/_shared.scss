@@ -308,7 +308,7 @@ hr {
     @include media-breakpoint-up(md) {
       @include make-col(4);
     }
-    
+
     @include media-breakpoint-up(lg) {
       @include make-col(8);
     }
@@ -460,4 +460,23 @@ hr {
 
 .bg-light {
   background: $tertiary;
+}
+
+.mt-48 {
+  margin-top: 48px !important;
+}
+
+.mb-48 {
+  margin-bottom: 48px !important;
+}
+
+.mt-md-48 {
+  @include media-breakpoint-up(md) {
+    margin-top: 48px !important;
+  }
+}
+.mb-md-48 {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 48px !important;
+  }
 }
