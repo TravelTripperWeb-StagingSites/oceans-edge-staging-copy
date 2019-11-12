@@ -24,9 +24,10 @@
     "git_file_name": "_assets/image_data/sunset-cruise.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572918305/iqrdhynnjrxrvo1gqyfc.jpg",
     "file_size": null,
-    "alt": "Sunset Cruise",
+    "alt": "Breakfast included - offer from Oceans Edge Resort and Marina",
     "caption": "",
     "description": ""
   },
-  "terms_conditions": "<p>Breakfast vouchers will be provided based on number of adults listed on reservation. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. on-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>"
+  "terms_conditions": "<p>Breakfast vouchers will be provided based on number of adults listed on reservation. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. On-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
+  "booking_url": "*"
 }
