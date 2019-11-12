@@ -7,14 +7,15 @@
   "ada_room": true,
   "guest_size_max": 5,
   "room_type": "room_type2",
-  "room_bed_types": "room_bed_types1",
+  "room_bed_types": "room_bed_types4",
   "view": "room_view2",
   "room_location": "room_location2",
   "amenities": [
-    "room_amenities2",
-    "room_amenities3",
-    "room_amenities4",
-    "room_amenities5"
+    "room_amenities9",
+    "room_amenities6",
+    "room_amenities14",
+    "room_amenities10",
+    "room_amenities11"
   ],
   "featured_image": {
     "name": "Suite Lounge",

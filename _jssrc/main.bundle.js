@@ -246,8 +246,15 @@ readyDoc(function () {
           }
         }
       });
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        var ele = document.getElementById("sliderRange");
+        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+        var sliderindex = document.getElementById('sliderRange').value;
+        assetSlider.goTo(sliderindex - 1);
+      });
     }
-  }, 2000);
+  }, 3000);
 
   if (document.getElementsByClassName('activities-list-carousel').length > 0) {
     var assetSlider = tns({
@@ -515,8 +522,7 @@ readyDoc(function () {
 
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    d.setTime(d.getTime() + exdays * 1);
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
@@ -535,5 +541,26 @@ readyDoc(function () {
       }
     }
     return "";
+  }
+
+  //ofr slider range-thumb dynamic width
+  var style = document.querySelector('[data="offerslistyle"]');
+  var slidelen = document.getElementById("sliderRange");
+  slidelen = slidelen.getAttribute('max');
+  var x = 3 / slidelen * 100 + '%';
+  var y = '15';
+  style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+
+  //rooms filter
+  var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
+  for (var _i14 = 0; _i14 < roomsFilterItems.length; _i14++) {
+    roomsFilterItems[_i14].addEventListener("click", function (e) {
+      var currentElement = e.currentTarget;
+      for (var j = 0; j < roomsFilterItems.length; j++) {
+        roomsFilterItems[j].classList.remove("active");
+      }
+      currentElement.classList.add("active");
+      filterRooms(currentElement.getAttribute("data-filter"));
+    });
   }
 });
