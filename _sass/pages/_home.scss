@@ -275,7 +275,9 @@
 
   &__image {
     @include make-col-ready;
+    max-height: 328px;
     padding: 0;
+    overflow: hidden;
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
