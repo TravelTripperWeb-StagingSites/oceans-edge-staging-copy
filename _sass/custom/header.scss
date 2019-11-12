@@ -285,53 +285,6 @@
           @include make-col(8.85);
         }
       }
-
-      .navbar__booking {
-        @include make-col-ready;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-top: solid 1px $t2;
-        @include media-breakpoint-up(sm) {
-          @include make-col(3.15);
-        }
-
-        span {
-          display: block;
-        }
-
-        .btn--book {
-          font-family: $family-primary-bold;
-          font-size: $display9-size;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .tel {
-          display: block;
-          margin-bottom: 10px;
-          font-family: $family-primary;
-          font-size: $display9-size;
-          color: $medium;
-          text-align: left;
-          letter-spacing: 1px;
-
-          &:after {
-            margin-left: 15px;
-            font-family: $oceansedge-font-family;
-            font-size: $display9-size;
-            content: $icon-call-icon;
-            //Better Font Rendering
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-          }
-
-          &:hover {
-            color: $primary;
-            text-decoration: none;
-          }
-        }
-      }
     }
   }
 
@@ -702,6 +655,7 @@
         margin: 0;
         font-family: $family-primary-bold;
         font-size: $base-font-size;
+        color: $primary;
       }
     }
 
@@ -762,5 +716,61 @@
       }
     }
 
+  }
+}
+
+.navbar__booking {
+  @include make-col-ready;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 0;
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(3.15);
+    flex-direction: column;
+    border-top: solid 1px $t2;
+  }
+
+  span {
+    display: block;
+  }
+
+  .btn--book {
+    font-family: $family-primary-bold;
+    font-size: $display9-size;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.tel {
+  display: inline-block;
+  margin-bottom: 0;
+  font-family: $family-primary;
+  font-size: $display9-size;
+  color: $medium;
+  text-align: left;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &:after {
+    margin-left: 5px;
+    font-family: $oceansedge-font-family;
+    font-size: $display9-size;
+    content: $icon-call-icon;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 15px;
+    }
+  }
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
   }
 }

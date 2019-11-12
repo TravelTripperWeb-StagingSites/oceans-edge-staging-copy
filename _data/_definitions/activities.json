@@ -1,0 +1,37 @@
+{
+  "name": {
+    "required": true
+  },
+  "category": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "activities_categories",
+    "can_create": true
+  },
+  "complimentary-resort-activities": {
+    "type": "boolean"
+  },
+  "url_friendly_name": {
+    "label": "URL Friendly Name",
+    "type": "url_slug"
+  },
+  "short_description": {
+    "type": "text"
+  },
+  "description": {
+    "type": "richtext"
+  },
+  "terms_conditions": {
+    "required": true
+  },
+  "price": {
+    "required": true
+  },
+  "image": {
+    "type": "image"
+  },
+  "order": {
+    "type": "order",
+    "required": false
+  }
+}

@@ -13,9 +13,18 @@
     @include make-col-ready;
     margin-bottom: 24px;
 
-    @include media-breakpoint-up(md) {
-      @include make-col(3);
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
       margin-bottom: 48px;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(3);
+
     }
 
     &__inner {
@@ -42,6 +51,14 @@
       .h5 {
         min-height: 65px;
         border-bottom: solid 1px $quartenary;
+
+        a {
+          color: $primary;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
 
       &__info {
@@ -57,5 +74,86 @@
         }
       }
     }
+  }
+
+  .filters-block {
+    .h4 {
+      margin-bottom: 12px;
+    }
+
+    &__room-type {
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
+    }
+
+    &__form {
+      @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-left: auto;
+      }
+
+      form {
+        display: block;
+
+        .form-group {
+          flex: none;
+          max-width: none;
+          padding: 0;
+
+          @include media-breakpoint-up(sm) {
+            max-width: 288px;
+          }
+
+          &:last-child {
+            @include media-breakpoint-up(md) {
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--more {
+    .asset-list__header {
+      margin-bottom: 45px;
+      padding: 0;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .activities-listing__item {
+      flex: none;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.activities-carousel {
+  .large-card__item__content {
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  .large-card__item__image {
+    height: 312px;
+
+    @include media-breakpoint-up(md) {
+      height: 384px;
+    }
+  }
+
+  .large-card__item__button {
+    padding-left: 0;
   }
 }

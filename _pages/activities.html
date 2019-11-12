@@ -28,163 +28,99 @@ meta_tags:
   </div>
 </section>
 
+<section class="large-card activities-carousel rooms-cross-carousel">
+  <div class="heading-line-through">
+    {% regionblock offer_category_heading_two, type:header %}
+    <h3 class="h2">
+      <span class="heading-line-through__text"><span class="h2--italic">Complimentary</span> resort activities</span>
+    </h3>
+    {% endregionblock %}
+  </div>
+  <div class="large-card__row rooms-cross-carousel__handle">
+    {% assign activities = site.data._models.activities | sort: 'order' %}
+    {% for item in activities %}
+    {% if item.complimentary-resort-activities == true %}
+    <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="{{ item.image.url_medium }}" alt="{{ item.alt }}">
+        </div>
+        <div class="large-card__item__wrap">
+          <h4 class="h4 light">
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
+          </h4>
+          <div class="large-card__item__content">
+            <div class="mb-3 mb-md-0">
+              <p class="mb-1 mw-100 border-0">{{ item.terms_conditions }}<br>
+              <span class="price mw-100 border-0">{{ item.price }}<span></p>
+            </div>
+            <div class="large-card__item__button">
+              <a href="{{ item.url_friendly_name }}" class="btn btn--light" target="_blank">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="large-card__controls" id="roomsCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+</section>
+
 <section class="activities-listing">
   <hr></hr>
-  <div class="row">
-    <div class="filters-block">
-      <div class="filters-block__room-type">
-        <h3 class="h4" tabindex="0">Oceans Edge Marina Activities You Can Book On Site</h3>
-        <p class="overline dark" tabindex="0">Our full-service marina offers a wealth of ways to discover the beauty and excitement of Key West.</p>
-      </div>
-      <div class="filters-block__form">
-        <form>
-          <div class="form-group">
-            <label for="">Sort By:</label>
-            <select class="form-control">
-              <option>Selection 1</option>
-              <option selected="">Selection 2</option>
-              <option>Selection 3</option>
-              <option>Selection 4</option>
-            </select>
-          </div>
-        </form>
-      </div>
+  <div class="filters-block">
+    <div class="filters-block__room-type">
+      <h3 class="h4" tabindex="0">Oceans Edge Marina Activities You Can Book On Site</h3>
+      <p class="dark" tabindex="0">Our full-service marina offers a wealth of ways to discover the beauty and excitement of Key West.</p>
+    </div>
+    <div class="filters-block__form">
+      <form>
+        <div class="form-group">
+          <label for="">Sort By:</label>
+          <select class="form-control">
+            <option>All On-site Marina Activities</option>
+            {% assign items = site.data._models.activities_categories | order: 'sort' %}
+            {% for item in items %}
+            <option>{{ item.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </form>
     </div>
   </div>
   <div class="activities-listing__row">
+    {% assign activities = site.data._models.activities | sort: 'order' %}
+    {% for item in activities %}
+    {% if item.complimentary-resort-activities != true %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
+        <div class="activities-listing__item__image" tabindex="0">
+          <a href="{{ item.url_friendly_name }}">
+            <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          </a>
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
+          <h4 class="h5" tabindex="0">
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
+          </h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
+              <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p>
             </div>
             <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
+              <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="activities-listing__item">
-      <div class="activities-listing__item__inner">
-        <div class="activities-listing__item__image">
-          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573131966/kvan6laitejoy7ywazsn.jpg" alt="Fishing">
-        </div>
-        <div class="activities-listing__item__content">
-          <h4 class="h5">Flats & Backcountry Fishing</h4>
-          <div class="activities-listing__item__content__info">
-            <div class="left">
-              <p class="h6 mb-1">Cost (half-day)</p>
-              <p class="price mb-0">$50 /person</p>
-            </div>
-            <div class="right">
-              <a class="btn btn--secondary" href="#">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endif %}
+    {% endfor %}
   </div>
 </section>
 
