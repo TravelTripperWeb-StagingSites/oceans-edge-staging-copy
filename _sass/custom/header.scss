@@ -492,10 +492,9 @@
   }
   @include media-breakpoint-down(md) {
     .nav--device {
-
       ul {
         max-width: 100%;
-        padding: .75rem 0;
+        padding: 0.75rem 0;
 
         .subnav {
           display: none;
@@ -620,32 +619,42 @@
     margin-top: 5px;
     text-align: center;
   }
+
   .slider {
     width: 80%;
-    height: 6px;
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(0, $dark),
-      color-stop(0, $medium)
-    );
-    border-radius: 6px;
+    height: 8px;
+    margin: 21px auto;
     -webkit-appearance: none;
-    -moz-apperance: none;
-    &input::-webkit-slider-thumb {
-      width: 1px;
-      height: 15px;
-      background-color: #E9E9E9;
-      border: 1px solid #CECECE;
-      -webkit-appearance: none !important;
- }
+    border-radius: 4px;
+    outline: none !important;
+    background-color: $medium;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      overflow: visible;
+      cursor: pointer;
+      background-color: $dark;
+      border-radius: 6px;
+      height: 14px;
+    }
+
+    &::-moz-range-thumb {
+      height: 14px;
+      cursor: pointer;
+      background: $dark;
+      border-radius: 6px;
+    }
+
+
+  }
+
+  .slidecontainer {
+    transform: translateY(-10px);
   }
 }
 
 .mobileview {
   &.nav--device {
-
     .nav__item {
       width: 100%;
       padding: 16px 20px !important;
@@ -699,6 +708,7 @@
             content: $icon-chevron-bottom !important;
           }
         }
+
         .subnav {
           padding-left: 14px !important;
 
@@ -715,7 +725,6 @@
         }
       }
     }
-
   }
 }
 
