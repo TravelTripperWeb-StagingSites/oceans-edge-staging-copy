@@ -132,6 +132,12 @@
     content: $icon-bed-type-stroke;
   }
 
+  &.two {
+    &:before {
+      content: $icon-2bed-type-icon;
+    }
+  }
+
   p {
     margin: 0 0 0 15px;
     color: $dark;
@@ -243,6 +249,33 @@
       border-radius: 50%;
       box-shadow: 0 1px 3px rgba(0,0,0,.3);
     }
+  }
+
+  p {
+    margin: 0 0 0 15px;
+    color: $dark;
+
+    span {
+      padding-top: 5px;
+      font-family: $family-primary-lc;
+      font-size: $display8-size;
+      line-height: $display6-size;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $dark;
+
+  &:before {
+    font-family:  $oceansedge-font-family;
+    font-size: $display5-size;
+    color: $medium;
+    content: $icon-eye-light;
   }
 
   p {
