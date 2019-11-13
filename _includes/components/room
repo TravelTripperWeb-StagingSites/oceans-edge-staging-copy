@@ -9,7 +9,7 @@
         <h3 class="h4"><a class="arrow-link" href="/stay/{{ room.url_friendly_name }}">{{ room.name }}</a></h3>
         <div class="row">
           <div class="col-6">
-            <div class="bed-type">
+            <div class="bed-type {% if room.room_bed_types.name contains '2' %}two{% endif %}">
               <p>Beds<span class="d-block">{{ room.room_bed_types.name }}</span></p>
             </div>
           </div>
@@ -21,9 +21,8 @@
         </div>
         <div class="row">
           <div class="col-9">
-            <div class="location">
-              <i></i>
-              <p>Resort Location<span class="d-block">{{ room.room_location.name }}</span></p>
+            <div class="view">
+              <p>View<span class="d-block">{{ room.view.name }}</span></p>
             </div>
           </div>
           <div class="col-3">
