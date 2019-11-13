@@ -90,6 +90,12 @@
     content: $icon-bed-type-stroke;
   }
 }
+.icon-2bed-type-icon {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-2bed-type-icon;
+  }
+}
 .icon-size {
   &:before {
     font-family: $oceansedge-font-family;
