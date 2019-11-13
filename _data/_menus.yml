@@ -149,7 +149,7 @@ mega:
     expanded: false
   - folder: true
     label_localized:
-      en: Marnina
+      en: Marina
     items:
     - folder: false
       url_localized: ''
@@ -416,7 +416,7 @@ mega_mobile:
     expanded: false
   - folder: true
     label_localized:
-      en: Marnina
+      en: Marina
     items:
     - folder: false
       url_localized: ''
