@@ -1,10 +1,10 @@
 {
   "order": 3,
-  "name": "Our shuttle: your gateway to Key West",
+  "name": "Our Shuttle: Your Gateway to Key West",
   "description": "<p>Our resort is secluded but you can easily experience lively downtown Key West thanks to our daily shuttle, which leaves Oceans Edge at the top of the hour from 9 a.m. to 11 p.m., with dropoff and pickup at the Waterfront Brewery, conveniently near all the sights of downtown, including Duval Street and Mallory Square. Downtown pickup is at 25 minutes past the hour from 9:25 a.m. to 11:25 p.m. For more information, please call <a href=\"tel:877-935-0862\">877-935-0862</a>.</p>",
-  "url_friendly_name": "our-shuttle-your-gateway-to-key-west",
+  "url_friendly_name": "complimentary-shuttle-downtown-key-west",
   "terms_conditions": "Available on a first-come, first-serve basis",
-  "price": "First Hour is free, $5/hr thereafter",
+  "price": "Complimentary",
   "image": {
     "name": "family-kayaking",
     "content_type": "image/jpeg",
@@ -25,7 +25,7 @@
     "git_file_name": "_assets/image_data/family-kayaking.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573203153/g5ytwrvlizgjnebf1kpy.jpg",
     "file_size": null,
-    "alt": "Our Shuttle",
+    "alt": "oceans edge resort and marina complimentary shuttle to downtown key west",
     "caption": "",
     "description": ""
   },
