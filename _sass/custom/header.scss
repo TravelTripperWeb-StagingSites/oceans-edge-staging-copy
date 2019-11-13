@@ -783,3 +783,9 @@
     text-decoration: none;
   }
 }
+
+.nav__link {
+  &.active {
+    background: $tertiary;
+  }
+}

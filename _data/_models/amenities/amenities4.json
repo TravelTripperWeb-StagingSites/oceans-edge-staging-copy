@@ -1,7 +1,7 @@
 {
   "order": 4,
-  "name": "Immediate access to the full service marina",
-  "description": "Immediate access to the full service marina",
+  "name": "Immediate access to the full-service marina",
+  "description": "Immediate access to the full-service marina",
   "image": {
     "name": "Immediate access to the full service marina",
     "content_type": "image/png",
@@ -21,7 +21,7 @@
     "size": 7030,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572484728/qxi5jlu3rmnxoursj5xb.png",
     "file_size": null,
-    "alt": "Immediate access to the full service marina",
+    "alt": "Immediate access to the full-service marina",
     "caption": "",
     "description": ""
   }
