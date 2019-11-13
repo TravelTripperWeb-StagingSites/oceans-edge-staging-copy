@@ -57,15 +57,15 @@ layout: generic
         <div class="collage__content t-order">
           <div class="collage__content__wrap">
             {% regionblock breakfast_title, type:header %}
-            <h4 class="h4" tabindex="0">Breakfast</h4>
+            <h4 class="h4" tabindex="0">Lunch</h4>
             {% endregionblock %}
             <div tabindex="0">
               {% regionblock breakfast_description, type:text %}
-              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
+              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
               {% endregionblock %}
             </div>
             {% regionblock breakfast_url, type:header %}
-            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
             {% endregionblock %}
           </div>
         </div>
@@ -77,15 +77,15 @@ layout: generic
         <div class="collage__content t-order">
           <div class="collage__content__wrap">
             {% regionblock lunch_title, type:header %}
-            <h4 class="h4" tabindex="0">Lunch</h4>
+            <h4 class="h4" tabindex="0">Breakfast</h4>
             {% endregionblock %}
             <div tabindex="0">
               {% regionblock lunch_description, type:text %}
-              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
+              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
               {% endregionblock %}
             </div>
             {% regionblock lunch_url, type:header %}
-            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
             {% endregionblock %}
           </div>
         </div>
@@ -113,8 +113,6 @@ layout: generic
     </div>
   </div>
 </section>
-
-
 
 {% if site.data._models.dining %}
   {% assign dinings = site.data._models.dining | sort:"order" %}
