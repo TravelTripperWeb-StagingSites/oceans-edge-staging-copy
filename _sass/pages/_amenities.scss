@@ -191,6 +191,14 @@
     .h3 {
       margin-bottom: 24px;
     }
+
+    .para {
+      p {
+        font-family: $family-primary-lc;
+        font-size: $display9-size;
+        color: $light;
+      }  
+    }
   }
 }
 
