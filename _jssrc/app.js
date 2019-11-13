@@ -366,7 +366,9 @@ readyDoc(function() {
       items: 2,
       nav: false,
       mouseDrag: true,
-      loop: false,
+      loop: true,
+      prevButton: "#amenitiesNav .iconbtn--left", // previous button
+      nextButton: "#amenitiesNav .iconbtn--right", // next button
       responsive: {
         900: {
           items: 4

@@ -21,7 +21,7 @@ layout: generic
 
 {% if site.data._models.rooms %}
 <section class="asset-list">
-  <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
+  <p class="overline overline--small text-center">Select your preferred accommodation type directly:</p>
 
   <ul class="filter-items rooms-filter hidden">
     {% assign categories = site.data._models.room_type | sort:"order" %}
@@ -36,7 +36,7 @@ layout: generic
 
   <div class="filters-block">
     <div class="filters-block__room-type">
-      <p class="h4">All Accomodations</p>
+      <p class="h4">All Accommodations</p>
       <p class="overline dark filtered-rooms-text">
         <span>{{rooms.size}}</span> Rooms & Suites
       </p>

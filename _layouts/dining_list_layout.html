@@ -1,0 +1,132 @@
+---
+layout: generic
+---
+
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.dining_hero_carousel | sort: order %}
+    {% for item in items %}
+    <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
+    {% endfor %}
+
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+    <h1 class="overline overline--italic text-center dark" tabindex="0">Key West Restaurants on the Water</h1>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+    <h2 class="h1" tabindex="0">Light Lunches to Indulgent Dinners: Dining at Oceans Edge Is Just Right</h2>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>Seafood sourced right from our marina or your own catch cooked right here? Yellowfin Bar & Grill serves dishes that impress in a lovely setting amongst our pools and overlooking the marina. Celebrating flavors native to the Florida Keys while seamlessly blending them with the cultural influences and cooking styles of East Asia has made the Yellowfin Bar and Grill a dining destination.</p>
+      <p>Vibrant island flavors paired with complex umami touches allow freshly caught fish to shine. Our cocktails and wines pair well with the menu choices, and you’ll enjoy all this in an atmosphere that layers style over the casual Key West vibe for a unique and elevated experience.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="experience experience--light">
+  <div class="experience__wrap">
+    <div class="description" tabindex="0">
+      <div class="row">
+        <div class="col-md-6">
+          {% regionblock dining_description1, type:text %}
+          <p>The Yellowfin Bar and Grill introduces the new concept for island cooking. Celebrating flavors native to the Florida Keys while seamlessly blending them with the cultural influences and cooking styles of East Asia has made the Yellowfin Bar and Grill a dining destination.</p>
+          {% endregionblock %}
+        </div>
+        <div class="col-md-6">
+          {% regionblock dining_description2, type:text %}
+          <p>We’ve refreshed our restaurant from the dock up. Expect explosive island flavors paired with the complex umami of something from another ocean, fresh caught fish right from the waters of Key West, and a refreshed atmosphere blending the stylish yet casual Key West vibe with a unique and elevated al fresco dining experience.</p>
+          {% endregionblock %}
+        </div>
+      </div>
+
+    </div>
+    <div class="collage">
+      <div class="row">
+        <div class="collage__image t-order">
+          {% regionblock breakfast_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock breakfast_title, type:header %}
+            <h4 class="h4" tabindex="0">Breakfast</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock breakfast_description, type:text %}
+              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock breakfast_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock lunch_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock lunch_title, type:header %}
+            <h4 class="h4" tabindex="0">Lunch</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock lunch_description, type:text %}
+              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock lunch_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock dinner_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock dinner_title, type:header %}
+            <p class="h4" tabindex="0">Dinner</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock dinner_description, type:text %}
+              <p>This is where our kitchen really dazzles. A vacation evening doesn’t get better than innovative flavors enjoyed while watching the sunset.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock dinner_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/jgduv8vvi09df6w5hgtb.pdf" target="_blank">View Dinner Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% if site.data._models.dining %}
+  {% assign dinings = site.data._models.dining | sort:"order" %}
+  <div class="dining-list">
+    {% for dining in dinings %}
+      {% include components/dining %}
+    {% endfor %}
+  </div>
+{% else %}
+  {% regionblock no_list_items, type:html %}
+    {% t 'dining.none' %}
+  {% endregionblock %}
+{% endif %}
+
+{{ content }}
