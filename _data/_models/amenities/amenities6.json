@@ -1,7 +1,7 @@
 {
   "order": 6,
-  "name": "ADA compliant",
-  "description": "ADA compliant",
+  "name": "ADA-compliant property",
+  "description": "ADA-compliant property",
   "image": {
     "name": "icon-ADA-features",
     "content_type": "image/png",
@@ -21,7 +21,7 @@
     "size": 17348,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573550412/zycoeyj4jebai9qpab88.png",
     "file_size": null,
-    "alt": "ADA compliant",
+    "alt": "ADA-compliant property",
     "caption": "",
     "description": ""
   }

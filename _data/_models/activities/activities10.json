@@ -1,10 +1,10 @@
 {
   "order": 10,
-  "name": "Snorkeling",
-  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-  "url_friendly_name": "snorkeling",
-  "terms_conditions": "Cost (3hrs)",
-  "price": "$10 /person",
+  "name": "Crewed Luxury Charters",
+  "description": "<p>Enjoy a day trip or a multiday charter aboard a luxury sailing or power cruising yacht with your own captain, or schedule a weeklong bareboat charter. Sleep at anchor under the stars, snorkel hidden reefs, and experience the hidden Keys!</p>\n<p>Contact Jan Henry<br /><a href=\"mailto:charters@floridayachtscharters.com\">charters@floridayachtscharters.com<br /></a>(800) 650-6940 or (305) 677-9200</p>",
+  "url_friendly_name": "crewed-luxury-charters",
+  "terms_conditions": "Cost",
+  "price": "Please inquire",
   "image": {
     "name": "snorkelling",
     "content_type": "image/jpeg",
@@ -25,8 +25,9 @@
     "git_file_name": "_assets/image_data/snorkelling.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573207032/mf3tjt7zidoeuffcislh.jpg",
     "file_size": null,
-    "alt": "Snorkelling",
+    "alt": "Crewed luxury charters from Oceans Edge Resort and Marina",
     "caption": "",
     "description": ""
-  }
+  },
+  "category": "activities_categories2"
 }

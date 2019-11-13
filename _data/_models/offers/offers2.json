@@ -1,7 +1,7 @@
 {
   "order": 2,
   "name": "The Suite-est Escape",
-  "category": "offer_categories1",
+  "category": "offer_categories2",
   "url_friendly_name": "the-suite-est-escape",
   "short_description": "An island escape, a suite by the ocean, amazing meals. These are the makings of the ultimate vacation.",
   "short_description_detail_page": "An island escape to a suite by the ocean is the key to the ultimate vacation! Wait no longer. Book now and receive $50 food & beverage credit per night at Yellowfin Bar & Grill.",
@@ -26,9 +26,10 @@
     "git_file_name": "_assets/image_data/girls-cocktails.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572918305/yxnyrauevf2mkadl8u0g.jpg",
     "file_size": null,
-    "alt": "Girls Cocktails",
+    "alt": "Special offers on suites from Oceans Edge Resort Key West",
     "caption": "",
     "description": ""
   },
-  "terms_conditions": "<p>This package is valid for 1- or 2-bedroom suite accommodations. Daily food and beverage credit is received per reservation and to be used daily at Yellowfin Bar &amp; Grill. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. on-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>"
+  "terms_conditions": "<p>This package is valid for 1- or 2-bedroom suite accommodations. Daily food and beverage credit is received per reservation and to be used daily at Yellowfin Bar &amp; Grill. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. on-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
+  "booking_url": "https://be.synxis.com/?adult=2&arrive=2019-11-14&chain=10237&child=0&currency=USD&nights=1&hotel=4091&level=hotel&locale=en-US&rate=SUITE&rooms=1"
 }
