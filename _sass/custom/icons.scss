@@ -138,3 +138,9 @@
     content: $icon-chevron-top;
   }
 }
+.icon-eye-light {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-eye-light;
+  }
+}
