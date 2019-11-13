@@ -62,6 +62,10 @@
   }
 }
 
+.amenities-filter {
+  @extend .filter-items;
+}
+
 .more-amenities {
   @include make-container;
   max-width: 1250px;

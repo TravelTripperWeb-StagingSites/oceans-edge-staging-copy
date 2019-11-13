@@ -184,7 +184,7 @@ readyDoc(function () {
   }
   if (document.querySelectorAll("#guestsSlider").length > 0) {
     setTimeout(function () {
-      var guestsSlider = document.querySelector("#guestsSlider .slider");
+      var guestsSlider = document.querySelector("#guestsSlider .guests-slider-input");
       var guestsSliderOutput = document.querySelector("#guestsSlider .output");
       guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
@@ -196,7 +196,7 @@ readyDoc(function () {
   }
   if (document.querySelectorAll("#guestsSliderMobile").length > 0) {
     setTimeout(function () {
-      var guestsSlider = document.querySelector("#guestsSliderMobile .slider");
+      var guestsSlider = document.querySelector("#guestsSliderMobile .guests-slider-input");
       var guestsSliderOutput = document.querySelector("#guestsSliderMobile .output");
       guestsSliderOutput.innerHTML = guestsSlider.value; // Display the default slider value
 
@@ -349,7 +349,9 @@ readyDoc(function () {
       items: 2,
       nav: false,
       mouseDrag: true,
-      loop: false,
+      loop: true,
+      prevButton: "#amenitiesNav .iconbtn--left", // previous button
+      nextButton: "#amenitiesNav .iconbtn--right", // next button
       responsive: {
         900: {
           items: 4
@@ -579,7 +581,9 @@ readyDoc(function () {
   //ofr slider range-thumb dynamic width
   var style = document.querySelector('[data="offerslistyle"]');
   var sliderangele = document.getElementById("sliderRange");
-  var slidelen = sliderangele.getAttribute('data-max');
+  if (sliderangele) {
+    var slidelen = sliderangele.getAttribute('data-max');
+  }
 
   var slidemax = Math.ceil(slidelen / 3);
   sliderangele.setAttribute('max', slidemax);

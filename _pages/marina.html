@@ -29,19 +29,19 @@ meta_tags:
           {% endregionblock %}
           <hr class="mb-3">
 
-          <ul class="filter-items tabs mb-3">
+          <ul class="amenities-filter tabs mb-3">
             <li class="tab" id="tab1">
-              <a class="btn btn--tertiary active" href="javascript:void(0);">Overview</a>
+              <a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="overview">Overview</a>
             </li>
             <li class="tab">
-              <a class="btn btn--tertiary" href="javascript:void(0);">Services</a>
+              <a class="btn btn--tertiary" href="javascript:void(0);" data-filter="services">Services</a>
             </li>
             <li class="tab">
-              <a class="btn btn--tertiary" href="javascript:void(0);">Fishing Records & Charters</a>
+              <a class="btn btn--tertiary" href="javascript:void(0);" data-filter="fishing">Fishing Records & Charters</a>
             </li>
           </ul>
 
-          <div class="tab-content" id="content1">
+          <div class="amenities-content overview">
             {% regionblock cross-sell-main, type:text %}
               <p>A nautical paradise for fishing enthusiasts for over 35 years, our marina has been host to over 400 International Game Fish Association (IGFA) world records, the most of any marina in the world. It continues to serve Key West with exceptional service and competitive prices.</p>
 
@@ -112,6 +112,12 @@ meta_tags:
                 </div>
               </div>
             </div>
+          </div>
+          <div class="amenities-content services">
+            <p>Services</p>
+          </div>
+          <div class="amenities-content fishing">
+            <p>Fishing</p>
           </div>
         </div>
       </div>
