@@ -254,6 +254,26 @@ readyDoc(function() {
       }
     }
 
+    if (document.getElementsByClassName('happenings-list-carousel').length > 0) {
+      var offerSlider = tns({
+        container: '.happenings-list-carousel',
+        items: 1.1,
+        nav: false,
+        mouseDrag: true,
+        loop: false,
+        prevButton: "#happeningsListCarouselNav .iconbtn--left", // previous button
+        nextButton: "#happeningsListCarouselNav .iconbtn--right", // next button
+        responsive: {
+          767: {
+            items: 3,
+          },
+          1199: {
+            items: 4
+          }
+        }
+      });
+    }
+
     if (document.getElementsByClassName('asset-list-carousel').length > 0) {
       var assetSlider = tns({
         container: '.asset-list-carousel',
