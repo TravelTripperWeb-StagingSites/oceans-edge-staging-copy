@@ -32,7 +32,7 @@ layout: generic
   <div class="large-card__row">
     {% assign offers = site.data._models.offers | sort:"order" %}
     {% for offer in offers %}
-    {% if offer.category.name == "Limited Time Offer" %}
+    {% if offer.category.name == "Featured Offers" %}
     <div class="large-card__item">
       <div class="large-card__item__inner">
         <div class="large-card__item__image">
@@ -67,32 +67,31 @@ layout: generic
   {% assign offers = site.data._models.offers | sort:"order" %}
   <div class="asset-list__items offer-list-carousel">
     {% for offer in offers %}
-    {% if offer.category.name %}
-      {% else %}
-      <div class="asset-item">
-        <div class="asset-item__wrap">
-          <div class="asset-item__featured-image">
-            {% assign featured_image = offer.image %}
-            {% include components/image image=featured_image max_width=800 %}
-          </div>
-          <div class="asset-item__text-group">
-            <div class="asset-item__text-group__wrap">
-              <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
-              <div class="row">
-                <div class="col-9">
-                  <div class="bed-type no-icon">
-                    <p>{{ offer.short_description }}</p>
-                  </div>
+    {% if offer.category.name == "Limited Time Offers" %}
+    <div class="asset-item">
+      <div class="asset-item__wrap">
+        <div class="asset-item__featured-image">
+          {% assign featured_image = offer.image %}
+          {% include components/image image=featured_image max_width=800 %}
+        </div>
+        <div class="asset-item__text-group">
+          <div class="asset-item__text-group__wrap">
+            <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
+            <div class="row">
+              <div class="col-9">
+                <div class="bed-type no-icon">
+                  <p>{{ offer.short_description }}</p>
                 </div>
-                <div class="col-3">
-                  <a class="btn" href="{{ offer.booking_url }}" target="_blank">Book</a>
-                </div>
+              </div>
+              <div class="col-3">
+                <a class="btn" href="{{ offer.booking_url }}" target="_blank">Book</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {% endif %}
+    </div>
+    {% endif %}
     {% endfor %}
   </div>
 
