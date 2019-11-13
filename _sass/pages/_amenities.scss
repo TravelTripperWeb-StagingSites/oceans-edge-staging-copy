@@ -192,10 +192,12 @@
       margin-bottom: 24px;
     }
 
-    p {
-      font-family: $family-primary-lc;
-      font-size: $display9-size;
-      color: $light;
+    .para {
+      p {
+        font-family: $family-primary-lc;
+        font-size: $display9-size;
+        color: $light;
+      }  
     }
   }
 }

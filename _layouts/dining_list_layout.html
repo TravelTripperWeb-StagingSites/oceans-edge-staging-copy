@@ -122,14 +122,16 @@ layout: generic
   </div>
   <div class="common-cta__text text-center">
     {% regionblock bar_cta_subheading, type:header %}
-    <h3 class="h4 light">Bar Service</h3>
+    <h3 class="h4 light" tabindex="0">Bar Service</h3>
     {% endregionblock %}
     {% regionblock bar_cta_heading, type:header %}
-    <h4 class="h3 light">Refresh by the pool or at our cozy, social patio overlooking the marina</h4>
+    <h4 class="h3 light" tabindex="0">Refresh by the pool or at our cozy, social patio overlooking the marina</h4>
     {% endregionblock %}
-    {% regionblock bar_cta_content, type:text %}
-    <p>Bar Hours: 10am to 11pm    |    Happy Hour: 4:30pm to 6:30pm (only at the bar)</p>
-    {% endregionblock %}
+    <div class="para" tabindex="0">
+      {% regionblock bar_cta_content, type:text %}
+      <p>Bar Hours: 10am to 11pm    |    Happy Hour: 4:30pm to 6:30pm (only at the bar)</p>
+      {% endregionblock %}
+    </div>
     <div class="d-flex justify-content-center">
       {% regionblock bar_cta_btn, type:text %}
       <a href="#" class="btn btn--light mx-0 mx-md-2">View Happy Hour Menu</a>
@@ -141,6 +143,101 @@ layout: generic
   </div>
 </section>
 
+<section class="groups-intro groups-intro--reverse groups-intro--full-screen">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock cafe_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573209453/vkhijqrcwsfgk8j2iqav.jpg" alt="Ocean Edge Meetings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock cafe_subheader, type:header %}
+          <h3 class="overline overline--italic dark" tabindex="0">Cafe</h3>
+          {% endregionblock %}
+          {% regionblock cafe_header, type:header %}
+          <h4 class="h3" tabindex="0">Light Bites All Day</h4>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock cafe_text1, type:text %}
+            <p>Grab a coffee and light breakfast on your way to the dock before getting your kayaks or take a little something out to the pool.</p>
+            {% endregionblock %}
+            {% regionblock cafe_text2, type:text %}
+            <ul>
+              <li>Starbucks coffee</li>
+              <li>Bagels, pastries, muffins</li>
+              <li>Sandwiches and light lunches</li>
+              <li>Soft drinks, juices, and smoothies</li>
+            </ul>
+            {% endregionblock %}
+            {% regionblock cafe_text3, type:text %}
+            <p class="small">Hours: 6:30am to 5pm daily</p>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--full-screen groups-weddings">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock inroom_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573199329/wdqgnnrvfn1bcwxs1yc6.jpg" alt="Ocean Edge Weddings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock inroom_subheader, type:header %}
+          <h3 class="overline overline--italic dark" tabindex="0">In-Room Dining at Oceans Edge</h3>
+          {% endregionblock %}
+          {% regionblock inroom_header, type:header %}
+          <h4 class="h3" tabindex="0">Your Own Key West Fine Dining Scene</h4>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock inroom_text1, type:text %}
+            <p>Our in-room menu choices allow for excellent meals that you can enjoy on your balcony. Delivered right to your day and available all day.</p>
+            {% endregionblock %}
+            {% regionblock inroom_text2, type:text %}
+            <p class="small">Breakfast: 7am to 11am<br>All Day Dining: 11:30am to 10pm</p>
+            {% endregionblock %}
+          </div>
+          <div class="btn-holder">
+            {% regionblock inroom_btn, type:text %}
+            <a class="btn" href="/amenities/">View Room Service Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta d-inline-block">
+  <div class="common-cta__img">
+    {% regionblock resort_img, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+      {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock resort_subheading, type:header %}
+    <h4 class="h4 light">The Resort</h4>
+    {% endregionblock %}
+    {% regionblock resort_heading, type:header %}
+    <h5 class="h3 light">an exhilarating Key West escape</h5>
+    {% endregionblock %}
+    {% regionblock resort_btn, type:text %}
+    <a href="/resort/" class="btn btn--light">Discover More</a>
+    {% endregionblock %}
+  </div>
+</section>
 
 {% if site.data._models.dining %}
   {% assign dinings = site.data._models.dining | sort:"order" %}
