@@ -57,15 +57,15 @@ layout: generic
         <div class="collage__content t-order">
           <div class="collage__content__wrap">
             {% regionblock breakfast_title, type:header %}
-            <h4 class="h4" tabindex="0">Breakfast</h4>
+            <h4 class="h4" tabindex="0">Lunch</h4>
             {% endregionblock %}
             <div tabindex="0">
               {% regionblock breakfast_description, type:text %}
-              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
+              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
               {% endregionblock %}
             </div>
             {% regionblock breakfast_url, type:header %}
-            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
             {% endregionblock %}
           </div>
         </div>
@@ -77,15 +77,15 @@ layout: generic
         <div class="collage__content t-order">
           <div class="collage__content__wrap">
             {% regionblock lunch_title, type:header %}
-            <h4 class="h4" tabindex="0">Lunch</h4>
+            <h4 class="h4" tabindex="0">Breakfast</h4>
             {% endregionblock %}
             <div tabindex="0">
               {% regionblock lunch_description, type:text %}
-              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
+              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
               {% endregionblock %}
             </div>
             {% regionblock lunch_url, type:header %}
-            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
             {% endregionblock %}
           </div>
         </div>
@@ -114,6 +114,33 @@ layout: generic
   </div>
 </section>
 
+<section class="common-cta d-inline-block">
+  <div class="common-cta__img">
+    {% regionblock marina_cta_img, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+      {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock bar_cta_subheading, type:header %}
+    <h3 class="h4 light">Bar Service</h3>
+    {% endregionblock %}
+    {% regionblock bar_cta_heading, type:header %}
+    <h4 class="h3 light">Refresh by the pool or at our cozy, social patio overlooking the marina</h4>
+    {% endregionblock %}
+    {% regionblock bar_cta_content, type:text %}
+    <p>Bar Hours: 10am to 11pm    |    Happy Hour: 4:30pm to 6:30pm (only at the bar)</p>
+    {% endregionblock %}
+    <div class="d-flex justify-content-center">
+      {% regionblock bar_cta_btn, type:text %}
+      <a href="#" class="btn btn--light mx-0 mx-md-2">View Happy Hour Menu</a>
+      {% endregionblock %}
+      {% regionblock bar_cta_btn2, type:text %}
+      <a href="#" class="btn btn--light mx-0 mx-md-2">View Pool Side Menu</a>
+      {% endregionblock %}
+    </div>
+
+  </div>
+</section>
 
 
 {% if site.data._models.dining %}
