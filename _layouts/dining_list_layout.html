@@ -21,19 +21,13 @@ layout: generic
     {% regionblock carousel_intro_heading, type:header %}
     <h2 class="h1" tabindex="0">Light Lunches to Indulgent Dinners: Dining at Oceans Edge Is Just Right</h2>
     {% endregionblock %}
-    <div class="description" tabindex="0">
-      {% regionblock carousel_intro_description, type:text %}
-      <p>Seafood sourced right from our marina or your own catch cooked right here? Yellowfin Bar & Grill serves dishes that impress in a lovely setting amongst our pools and overlooking the marina. Celebrating flavors native to the Florida Keys while seamlessly blending them with the cultural influences and cooking styles of East Asia has made the Yellowfin Bar and Grill a dining destination.</p>
-      <p>Vibrant island flavors paired with complex umami touches allow freshly caught fish to shine. Our cocktails and wines pair well with the menu choices, and you’ll enjoy all this in an atmosphere that layers style over the casual Key West vibe for a unique and elevated experience.</p>
-      {% endregionblock %}
-    </div>
   </div>
 </section>
 
 <section class="experience experience--light">
   <div class="experience__wrap">
     <div class="description" tabindex="0">
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-md-6">
           {% regionblock dining_description1, type:text %}
           <p>The Yellowfin Bar and Grill introduces the new concept for island cooking. Celebrating flavors native to the Florida Keys while seamlessly blending them with the cultural influences and cooking styles of East Asia has made the Yellowfin Bar and Grill a dining destination.</p>
@@ -211,7 +205,7 @@ layout: generic
           </div>
           <div class="btn-holder">
             {% regionblock inroom_btn, type:text %}
-            <a class="btn" href="/amenities/">View Room Service Menu</a>
+            <a class="btn btn--light" href="/amenities/">View Room Service Menu</a>
             {% endregionblock %}
           </div>
         </div>
@@ -238,18 +232,3 @@ layout: generic
     {% endregionblock %}
   </div>
 </section>
-
-{% if site.data._models.dining %}
-  {% assign dinings = site.data._models.dining | sort:"order" %}
-  <div class="dining-list">
-    {% for dining in dinings %}
-      {% include components/dining %}
-    {% endfor %}
-  </div>
-{% else %}
-  {% regionblock no_list_items, type:html %}
-    {% t 'dining.none' %}
-  {% endregionblock %}
-{% endif %}
-
-{{ content }}
