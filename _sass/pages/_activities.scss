@@ -116,6 +116,10 @@
   }
 
   &--more {
+    @media (max-width: 1253px) {
+      padding: 0;
+    }
+
     .asset-list__header {
       margin-bottom: 45px;
       padding: 0;
@@ -127,6 +131,7 @@
 
     .activities-listing__item {
       flex: none;
+      margin-bottom: 48px;
     }
 
     .carousel-controls {

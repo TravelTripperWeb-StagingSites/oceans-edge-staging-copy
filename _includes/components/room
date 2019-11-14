@@ -9,8 +9,8 @@
         <h3 class="h4"><a class="arrow-link" href="/stay/{{ room.url_friendly_name }}">{{ room.name }}</a></h3>
         <div class="row">
           <div class="col-6">
-            <div class="bed-type {% if room.room_bed_types.name contains 'Queen' %}queen{% endif %}">
-              <p>Beds<span class="d-block">{{ room.room_bed_types.name }}</span></p>
+            <div class="bed-type">
+              <p>Room Type<span class="d-block">{{ room.room_type.name }}</span></p>
             </div>
           </div>
           <div class="col-6">
