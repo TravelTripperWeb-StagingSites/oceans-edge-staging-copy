@@ -276,7 +276,7 @@ readyDoc(function () {
         nextButton: "#happeningsListCarouselNav .iconbtn--right", // next button
         responsive: {
           767: {
-            items: 3
+            items: 2
           },
           1199: {
             items: 4
