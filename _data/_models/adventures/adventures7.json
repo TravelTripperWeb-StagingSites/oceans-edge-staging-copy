@@ -25,8 +25,9 @@
     "git_file_name": "_assets/image_data/Key-West-aerial-s.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573733123/rikwpqdsezzjvdh8mk9a.jpg",
     "file_size": null,
-    "alt": "Helicopter Tours",
+    "alt": "Helicopter Tours of Key West",
     "caption": "",
     "description": ""
-  }
+  },
+  "tours_hours": "Contact concierge"
 }

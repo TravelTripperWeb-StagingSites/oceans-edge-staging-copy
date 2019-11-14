@@ -3,7 +3,7 @@
   "name": "Breakfast by the Water",
   "url_friendly_name": "breakfast-by-the-water",
   "short_description": "Book this offer to start each day of your stay with a full breakfast and spectacular ocean views! ",
-  "description": "<p>Book this offer and you&rsquo;ll enjoy an excellent breakfast of 2 farm-fresh eggs, home-fried potatoes, toast, bacon or sausage, and your choice of juice or coffee! If you&rsquo;re planning to paddleboard or kayak in the late morning, this is the perfect start.</p>\n<p>Book this offer and enjoy:</p>\n<ul>\n<li>Tropically inspired elegant accommodations</li>\n<li>Daily breakfast at Yellowfin Bar &amp; Grill for each adult on the reservation</li>\n<li>Shuttle service to Key West Historic Seaport (downtown)</li>\n<li>2-hour paddleboard, kayak,&nbsp;or bicycle rental</li>\n<li>Personalized in-room entertainment via 49-inch Smart TV</li>\n<li>Access to Digital Concierge services</li>\n<li>Access to complimentary resort activities, 24-hour gym, and lawn games</li>\n<li>Access to 6 heated pristine pools with poolside refreshment service</li>\n<li>Access to a deep-water full marina with a variety of water activities</li>\n</ul>",
+  "description": "<p>Book this offer and enjoy:</p>\n<ul>\n<li>Tropically inspired elegant accommodations</li>\n<li>Daily breakfast at Yellowfin Bar &amp; Grill for each adult on the reservation</li>\n<li>Shuttle service to Key West Historic Seaport (downtown)</li>\n<li>2-hour paddleboard, kayak,&nbsp;or bicycle rental</li>\n<li>Personalized in-room entertainment via 49-inch Smart TV</li>\n<li>Access to Digital Concierge services</li>\n<li>Access to complimentary resort activities, 24-hour gym, and lawn games</li>\n<li>Access to 6 heated pristine pools with poolside refreshment service</li>\n<li>Access to a deep-water full marina with a variety of water activities</li>\n</ul>",
   "image": {
     "name": "breakfast",
     "content_type": "image/jpeg",
@@ -31,5 +31,5 @@
   "terms_conditions": "<p>Breakfast vouchers will be provided based on number of adults listed on reservation. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. On-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
   "booking_url": "https://be.synxis.com/?adult=2&arrive=2019-11-14&chain=10237&child=0&currency=USD&nights=1&hotel=4091&level=hotel&locale=en-US&rate=BNB&rooms=1",
   "category": "offer_categories2",
-  "short_description_detail_page": "Start each day island-style with a scrumptious breakfast and spectacular ocean views! "
+  "short_description_detail_page": "Start each day island-style with ocean views and an excellent breakfast of 2 farm-fresh eggs, home-fried potatoes, toast, bacon or sausage, and your choice of juice or coffee! If you’re planning to paddleboard or kayak in the late morning, this is the perfect start."
 }
