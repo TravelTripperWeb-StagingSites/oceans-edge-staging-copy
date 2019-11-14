@@ -1,11 +1,47 @@
 ---
-layout: experiences_layout
-title_localized:
-  en: Experiences
-meta_description_localized:
-  en:
-permalink_localized:
-  en: /experiences/
+layout: generic
+title: Things to Do in Key West | Oceans Edge Resort & Marina
+meta_description: There are so many things to do in Key West, and a stay at Oceans Edge Resort & Marina offers our guests easy access to the best activities and adventures.
+permalink: /experiences/
 meta_tags:
   robots:
 ---
+
+<section class="dark-theme">
+  <div class="hero-static hero-dark">
+    <div class="hero-static__wrap">
+      {% regionblock carousel_intro_hero, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+      {% endregionblock %}
+    </div>
+    <div class="hero-static__intro">
+      {% regionblock carousel_intro_tagline, type:text %}
+      <h1 class="overline overline--italic text-center light" tabindex="0">Why Is Oceans Edge the Best Hotel in Key West?</h1>
+      {% endregionblock %}
+      {% regionblock carousel_intro_heading, type:header %}
+      <h2 class="h1 light" tabindex="0">Upscale Amenities for Every Guest</h2>
+      {% endregionblock %}
+      <div class="description" tabindex="0">
+        {% regionblock carousel_intro_description, type:text %}
+        <p class="light">Oceans Edge Resort & Marina has been carefully designed as a self-contained haven while providing the means for our guests to easily experience the natural beauty and culture of Stock Island and Key West. Your first stop will likely be one of our six saltwater swimming pools—all at the perfect temperature, all the time. Discover our offerings in the list below, and learn more about <b><a href="/stay/">our luxurious accommodations</a></b>.</p>
+        {% endregionblock %}
+      </div>
+    </div>
+  </div>
+  <div class="common-cta common-cta--small">
+    <div class="common-cta__img">
+      {% regionblock common-cta-img, type:image %}
+        <img src="" alt="">
+      {% endregionblock %}
+    </div>
+    <div class="common-cta__text text-center">
+      {% regionblock common-cta-header, type:text %}
+        <p class="h5 light">Resort Dining</p>
+      {% endregionblock %}
+      {% regionblock common-cta-text, type:text %}
+        <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+        <a href="/dining/" class="btn btn--light">Discover Dining</a>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>

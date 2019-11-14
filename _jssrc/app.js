@@ -64,6 +64,17 @@ var filterRooms = function(roomType) {
   resetInnerFilters();
 }
 
+var filterAmenities = function(amenityType) {
+  let allAmenityTabs = document.querySelectorAll(".amenities-content");
+  let allAmenityTabsToShow = document.querySelectorAll("." + amenityType);
+  for (let i = 0; i < allAmenityTabs.length; i++) {
+    allAmenityTabs[i].classList.add("hidden");
+  }
+  for (let i = 0; i < allAmenityTabsToShow.length; i++) {
+    allAmenityTabsToShow[i].classList.remove("hidden");
+  }
+}
+
 var displayNoRoomsMessage = function() {
   setTimeout(function() {
     let allRooms = document.querySelectorAll(".room-list-item");
@@ -116,6 +127,21 @@ readyDoc(function() {
         }
         currentElement.classList.add("active");
         filterRooms(currentElement.getAttribute("data-filter"));
+      });
+    }
+  }
+
+  //Amenities main Filter
+  if (document.querySelectorAll(".amenities-filter li a").length > 1) {
+    var amenitiesFilterItems = document.querySelectorAll(".amenities-filter li a");
+    for (let i = 0; i < amenitiesFilterItems.length; i++) {
+      amenitiesFilterItems[i].addEventListener("click", function(e) {
+        let currentElement = e.currentTarget;
+        for (let j = 0; j < amenitiesFilterItems.length; j++) {
+          amenitiesFilterItems[j].classList.remove("active");
+        }
+        currentElement.classList.add("active");
+        filterAmenities(currentElement.getAttribute("data-filter"));
       });
     }
   }
@@ -630,7 +656,9 @@ readyDoc(function() {
   }
 
   var slidemax = Math.ceil(slidelen/3);
-  sliderangele.setAttribute('max', slidemax);
+  if(sliderangele) {
+    sliderangele.setAttribute('max', slidemax);
+  }
 
   console.log("a "+ slidelen + " slidemax "+slidemax)
 

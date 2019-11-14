@@ -66,6 +66,17 @@ var filterRooms = function filterRooms(roomType) {
   resetInnerFilters();
 };
 
+var filterAmenities = function filterAmenities(amenityType) {
+  var allAmenityTabs = document.querySelectorAll(".amenities-content");
+  var allAmenityTabsToShow = document.querySelectorAll("." + amenityType);
+  for (var i = 0; i < allAmenityTabs.length; i++) {
+    allAmenityTabs[i].classList.add("hidden");
+  }
+  for (var _i5 = 0; _i5 < allAmenityTabsToShow.length; _i5++) {
+    allAmenityTabsToShow[_i5].classList.remove("hidden");
+  }
+};
+
 var displayNoRoomsMessage = function displayNoRoomsMessage() {
   setTimeout(function () {
     var allRooms = document.querySelectorAll(".room-list-item");
@@ -110,14 +121,29 @@ readyDoc(function () {
   //Rooms main Filter
   if (document.querySelectorAll(".rooms-filter li a").length > 1) {
     var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-    for (var _i5 = 0; _i5 < roomsFilterItems.length; _i5++) {
-      roomsFilterItems[_i5].addEventListener("click", function (e) {
+    for (var _i6 = 0; _i6 < roomsFilterItems.length; _i6++) {
+      roomsFilterItems[_i6].addEventListener("click", function (e) {
         var currentElement = e.currentTarget;
         for (var j = 0; j < roomsFilterItems.length; j++) {
           roomsFilterItems[j].classList.remove("active");
         }
         currentElement.classList.add("active");
         filterRooms(currentElement.getAttribute("data-filter"));
+      });
+    }
+  }
+
+  //Amenities main Filter
+  if (document.querySelectorAll(".amenities-filter li a").length > 1) {
+    var amenitiesFilterItems = document.querySelectorAll(".amenities-filter li a");
+    for (var _i7 = 0; _i7 < amenitiesFilterItems.length; _i7++) {
+      amenitiesFilterItems[_i7].addEventListener("click", function (e) {
+        var currentElement = e.currentTarget;
+        for (var j = 0; j < amenitiesFilterItems.length; j++) {
+          amenitiesFilterItems[j].classList.remove("active");
+        }
+        currentElement.classList.add("active");
+        filterAmenities(currentElement.getAttribute("data-filter"));
       });
     }
   }
@@ -132,25 +158,25 @@ readyDoc(function () {
 
       var allRooms = document.querySelectorAll(".room-list-item");
       var accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
-      for (var _i6 = 0; _i6 < bedTypeFilters.length; _i6++) {
-        bedTypeFilters[_i6].onchange = function () {
+      for (var _i8 = 0; _i8 < bedTypeFilters.length; _i8++) {
+        bedTypeFilters[_i8].onchange = function () {
           var bedTypeVal = this.value;
           if (bedTypeVal == "Accessible") {
-            for (var _i7 = 0; _i7 < allRooms.length; _i7++) {
-              allRooms[_i7].classList.remove("hidden-by-bedtype");
-              allRooms[_i7].classList.add("hidden-by-accessibility");
+            for (var _i9 = 0; _i9 < allRooms.length; _i9++) {
+              allRooms[_i9].classList.remove("hidden-by-bedtype");
+              allRooms[_i9].classList.add("hidden-by-accessibility");
             }
-            for (var _i8 = 0; _i8 < accessibleRooms.length; _i8++) {
-              accessibleRooms[_i8].classList.remove("hidden-by-accessibility");
+            for (var _i10 = 0; _i10 < accessibleRooms.length; _i10++) {
+              accessibleRooms[_i10].classList.remove("hidden-by-accessibility");
             }
           } else {
-            for (var _i9 = 0; _i9 < allRooms.length; _i9++) {
-              var bedType = allRooms[_i9].getAttribute("data-bed-type");
-              allRooms[_i9].classList.remove("hidden-by-accessibility");
+            for (var _i11 = 0; _i11 < allRooms.length; _i11++) {
+              var bedType = allRooms[_i11].getAttribute("data-bed-type");
+              allRooms[_i11].classList.remove("hidden-by-accessibility");
               if (bedType == bedTypeVal || bedTypeVal == "all") {
-                allRooms[_i9].classList.remove("hidden-by-bedtype");
+                allRooms[_i11].classList.remove("hidden-by-bedtype");
               } else {
-                allRooms[_i9].classList.add("hidden-by-bedtype");
+                allRooms[_i11].classList.add("hidden-by-bedtype");
               }
             }
           }
@@ -166,15 +192,15 @@ readyDoc(function () {
       viewTypeFilters = document.querySelectorAll(".room-view-filter");
 
       var allRooms = document.querySelectorAll(".room-list-item");
-      for (var _i10 = 0; _i10 < bedTypeFilters.length; _i10++) {
-        viewTypeFilters[_i10].onchange = function () {
+      for (var _i12 = 0; _i12 < bedTypeFilters.length; _i12++) {
+        viewTypeFilters[_i12].onchange = function () {
           var viewTypeVal = this.value;
-          for (var _i11 = 0; _i11 < allRooms.length; _i11++) {
-            var viewType = allRooms[_i11].getAttribute("data-view-type");
+          for (var _i13 = 0; _i13 < allRooms.length; _i13++) {
+            var viewType = allRooms[_i13].getAttribute("data-view-type");
             if (viewType == viewTypeVal || viewTypeVal == "all") {
-              allRooms[_i11].classList.remove("hidden-by-viewtype");
+              allRooms[_i13].classList.remove("hidden-by-viewtype");
             } else {
-              allRooms[_i11].classList.add("hidden-by-viewtype");
+              allRooms[_i13].classList.add("hidden-by-viewtype");
             }
           }
           displayNoRoomsMessage();
@@ -462,8 +488,8 @@ readyDoc(function () {
   if (document.getElementsByClassName("filter-items")[0]) {
     setTimeout(function () {
       var catItems = document.querySelectorAll(".filter-items li a");
-      for (var _i12 = 0; _i12 < catItems.length; _i12++) {
-        catItems[_i12].addEventListener('click', function (e) {
+      for (var _i14 = 0; _i14 < catItems.length; _i14++) {
+        catItems[_i14].addEventListener('click', function (e) {
           for (var j = 0; j < catItems.length; j++) {
             catItems[j].classList.remove("active");
           }
@@ -472,15 +498,15 @@ readyDoc(function () {
           var tabItems = document.getElementsByClassName("asset-item");
           var currentTabItems = document.getElementsByClassName(filterItem);
           if (filterItem == "all") {
-            for (var _i13 = 0; _i13 < tabItems.length; _i13++) {
-              tabItems[_i13].style.display = "flex";
+            for (var _i15 = 0; _i15 < tabItems.length; _i15++) {
+              tabItems[_i15].style.display = "flex";
             }
           } else {
-            for (var _i14 = 0; _i14 < tabItems.length; _i14++) {
-              tabItems[_i14].style.display = "none";
+            for (var _i16 = 0; _i16 < tabItems.length; _i16++) {
+              tabItems[_i16].style.display = "none";
             }
-            for (var _i15 = 0; _i15 < currentTabItems.length; _i15++) {
-              currentTabItems[_i15].style.display = "flex";
+            for (var _i17 = 0; _i17 < currentTabItems.length; _i17++) {
+              currentTabItems[_i17].style.display = "flex";
             }
           }
         });
@@ -634,7 +660,9 @@ readyDoc(function () {
   }
 
   var slidemax = Math.ceil(slidelen / 3);
-  sliderangele.setAttribute('max', slidemax);
+  if (sliderangele) {
+    sliderangele.setAttribute('max', slidemax);
+  }
 
   console.log("a " + slidelen + " slidemax " + slidemax);
 
@@ -644,8 +672,8 @@ readyDoc(function () {
 
   //rooms filter
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
-  for (var _i16 = 0; _i16 < roomsFilterItems.length; _i16++) {
-    roomsFilterItems[_i16].addEventListener("click", function (e) {
+  for (var _i18 = 0; _i18 < roomsFilterItems.length; _i18++) {
+    roomsFilterItems[_i18].addEventListener("click", function (e) {
       var currentElement = e.currentTarget;
       for (var j = 0; j < roomsFilterItems.length; j++) {
         roomsFilterItems[j].classList.remove("active");
