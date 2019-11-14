@@ -29,7 +29,7 @@
 <div class="asset-list-carousel__controls" id="offersCarouselNav">
   <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
     <style data="offerslistyle"></style>
-     <div class="slidecontainer">
+    <div class="slidecontainer">
       <input type="range" min="1" data-max = "{{offers.size}}" max="" value="1" class="slider" id="sliderRange">
     </div>
   <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
