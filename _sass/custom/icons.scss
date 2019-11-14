@@ -147,6 +147,18 @@
 .icon-queen-bed {
   &:before {
     font-family: $oceansedge-font-family;
-    content: $icon-queen-bed; 
+    content: $icon-queen-bed;
+  }
+}
+.icon-info {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-info;
+  }
+}
+.icon-time {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-time;
   }
 }

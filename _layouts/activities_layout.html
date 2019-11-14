@@ -20,11 +20,13 @@ layout: default
           <h1 class="h3" tabindex="0">{{ item.name }}</h1>
           <hr class="mb-3">
           <div tabindex="0">{{ item.description }}</div>
-          <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
-          <div tabindex="0"><p>{{ item.price }}</p></div>
+          <!-- <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
+          <div tabindex="0"><p>{{ item.price }}</p></div> -->
+          {% if item.book_now_btn == true %}
           <div class="btn-holder mb-0">
-            <a class="btn btn--book" href="#" target="_blank">Book Now</a>
+            <a class="btn btn--book" href="{{ item.book_now_btn_link }}" target="_blank">Book Now</a>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -54,8 +56,8 @@ layout: default
           </h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
-              <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
-              <p class="price mb-0" tabindex="0">{{ item.price }}</p>
+              <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
             </div>
             <div class="right">
               <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
