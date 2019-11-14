@@ -27,5 +27,7 @@
     "alt": "Sightseeing Tours",
     "caption": "",
     "description": ""
-  }
+  },
+  "book_tickets_button": true,
+  "book_tickets_link": "https://fareharbor.com/embeds/book/upthekeys/?asn=oceansedgekeywest&full-items=yes/"
 }
