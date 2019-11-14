@@ -622,7 +622,7 @@
 
   .slider {
     width: 80%;
-    height: 8px;
+    height: 8px !important;
     margin: 21px auto;
     -webkit-appearance: none;
     border-radius: 4px;
@@ -635,11 +635,11 @@
       cursor: pointer;
       background-color: $dark;
       border-radius: 6px;
-      height: 14px;
+      height: 10px !important;
     }
 
     &::-moz-range-thumb {
-      height: 14px;
+      height: 10px !important;
       cursor: pointer;
       background: $dark;
       border-radius: 6px;
