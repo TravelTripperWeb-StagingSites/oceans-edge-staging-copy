@@ -4,5 +4,29 @@
   "category": "adventures_categories1",
   "url_friendly_name": "key-west-food-tours",
   "description": "<p>Unique guided small group experiences designed to introduce you to authentic Key West flavors. Step off Duval Street and into local restaurants on this 3 hour culinary adventure through the historic district of Key West.</p>",
-  "booking_phone": "786-862-6303"
+  "booking_phone": "786-862-6303",
+  "image": {
+    "name": "key-west-food-tours",
+    "content_type": "image/jpeg",
+    "date_added": "2019-11-14-073142",
+    "url_thumb": "//res.cloudinary.com/traveltripperweb/image/upload/c_fill,g_faces,h_140,w_140/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url_xsmall": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_300,w_300/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url_small": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_768,w_768/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url_medium": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_992,w_992/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url_large": "//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_1200,w_1200/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url_xlarge": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_1920,w_1920/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "url": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "width": 864,
+    "height": 576,
+    "format": "jpg",
+    "url_raw": "//res.cloudinary.com/traveltripperweb/image/upload/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "resource_type": "image",
+    "size": 686725,
+    "git_file_name": "_assets/image_data/key-west-food-tours.jpg.json",
+    "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573734702/dxcdza3oyhyl6yjbazng.jpg",
+    "file_size": null,
+    "alt": "Key West Food Tour",
+    "caption": "",
+    "description": ""
+  }
 }
