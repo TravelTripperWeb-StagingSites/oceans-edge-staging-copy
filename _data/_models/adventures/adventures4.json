@@ -4,9 +4,9 @@
   "category": "adventures_categories1",
   "our-concierge-recommends": false,
   "url_friendly_name": "key-west-eco-tours",
-  "description": "<p>Eco Tour &bull; Snorkel &bull; Kayak &bull; Paddleboard</p>\n<p><strong>Blu Chi Charters</strong></p>\n<p>Begin your adventure by cruising away from the Island of Key West into the crystal blue waters of The Gulf of Mexico. Once underway to our island destination you should be on the look-out for dolphins, manatees, sea turtles, stingrays and more.</p>\n<p>After arriving you and your family or friends can simply relax or engage in a number of activities including eco-tours, kayaking, paddleboarding and snorkeling.</p>\n<p>For additional information contact our concierge at <a href=\"tel: 786-862-6203\">786-862-6203</a> or visit <a href=\"http://www.bluchicharters.com/charter-options\" target=\"_blank\" rel=\"noopener noreferrer\">www.bluchicharters.com/charter-options</a>.</p>",
+  "description": "<p>Eco Tour &bull; Snorkel &bull; Kayak &bull; Paddleboard</p>\n<p><strong>Blu Chi Charters</strong></p>\n<p>Begin your adventure by cruising away from the Island of Key West into the crystal blue waters of The Gulf of Mexico. Once underway to our island destination you should be on the look-out for dolphins, manatees, sea turtles, stingrays and more.</p>\n<p>After arriving you and your family or friends can simply relax or engage in a number of activities including eco-tours, kayaking, paddleboarding and snorkeling.</p>\n<p>For additional information contact our concierge at <a href=\"tel: 786-862-6203\">786-862-6203</a> or visit <a href=\"http://www.bluchicharters.com/charter-options\" target=\"_blank\" rel=\"noopener noreferrer\">www.bluchicharters.com/charter-options</a>.</p>\n<p><strong>Fury Water Adventures</strong></p>\n<p>Discover a different side of Key West as you explore a secluded paradise in the Florida Keys backcountry on an Island Adventure. Tucked away between mangrove islands, shallow sandbars and clear, calm turquoise waters, Fury Key West will transport you to a remote sanctuary normally reserved for Key West locals.</p>\n<p>Book online: <br /><a href=\"https://fareharbor.com/embeds/book/furycat/?sheet=18636&amp;amp;asn=oceansedgekeywest&amp;amp;full-items=yes/\" target=\"_blank\" rel=\"noopener noreferrer\">https://fareharbor.com/embeds/book/furycat/?sheet=18636&amp;asn=oceansedgekeywest&amp;full-items=yes/</a></p>",
   "booking_phone": "786-862-6203",
-  "booking_website": "www.bluchicharters.com",
+  "booking_website": "",
   "book_tickets_button": false,
   "image": {
     "name": "gardens-s",
@@ -32,5 +32,5 @@
     "caption": "",
     "description": ""
   },
-  "booking_website_url": "www.bluchicharters.com/charter-options"
+  "booking_website_url": ""
 }
