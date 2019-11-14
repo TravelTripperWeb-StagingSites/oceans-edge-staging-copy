@@ -73,11 +73,11 @@ meta_tags:
 <section class="activities-listing">
   <hr></hr>
   <div class="filters-block">
-    <div class="filters-block__room-type">
+    <div class="filters-block__room-type px-0">
       <h3 class="h4" tabindex="0">Oceans Edge Marina Activities You Can Book On Site</h3>
       <p class="dark" tabindex="0">Our full-service marina offers a wealth of ways to discover the beauty and excitement of Key West.</p>
     </div>
-    <div class="filters-block__form">
+    <div class="filters-block__form px-0">
       <form>
         <div class="form-group">
           <label for="">Sort By:</label>
@@ -109,8 +109,8 @@ meta_tags:
           </h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
-              <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
-              <p class="price mb-0" tabindex="0">{{ item.price }}</p>
+              <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
             </div>
             <div class="right">
               <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
@@ -161,7 +161,7 @@ meta_tags:
           <h4 class="h3 light">Join us for holiday meals, concerts, and more</h4>
           {% endregionblock %}
           {% regionblock twocol_cross_sell_right_button, type:text %}
-          <a href="/happenings/" class="btn btn--light">View All Rooms</a>
+          <a href="/happenings/" class="btn btn--light">View All</a>
           {% endregionblock %}
         </div>
       </div>

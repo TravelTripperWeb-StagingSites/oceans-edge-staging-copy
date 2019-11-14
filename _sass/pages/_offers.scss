@@ -106,6 +106,7 @@
         height: 100%;
         border-radius: 16px;
         object-fit: cover;
+        object-position: top;
       }
     }
 
@@ -248,6 +249,34 @@
   .asset-list-carousel {
     .asset-item {
       flex: none;
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+
+  .happenings-list-carousel {
+    .asset-item {
+      flex: none;
+      &__text-group {
+        &__wrap {
+          min-height: 280px;
+
+          .row {
+            border-color: $quartenary;
+          }
+          p {
+            border: 0;
+          }
+          .btn {
+            height: 32px;
+          }
+        }
+      }
     }
 
     &__controls {

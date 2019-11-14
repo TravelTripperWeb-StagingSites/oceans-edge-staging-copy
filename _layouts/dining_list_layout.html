@@ -214,6 +214,23 @@ layout: generic
   </div>
 </section>
 
+<section class="offers-cross-sell__no-nav">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header">
+      <div class="content">
+        {% regionblock dinging_bar_heading, type:header %}
+        <h2 class="h4 mb-2">Dining & Bar Happenings</h2>
+        {% endregionblock %}
+        {% regionblock dinging_bar_text, type:text %}
+        <p>Special events and holiday dining done the Key West way—on the water and with panache.</p>
+        {% endregionblock %}
+      </div>
+      <a href="/happenings/" class="btn mb-auto">View all</a>
+    </div>
+    {% include components/happenings-cross-sell %}
+  </div>
+</section>
+
 <section class="common-cta d-inline-block">
   <div class="common-cta__img">
     {% regionblock resort_img, type:image %}
