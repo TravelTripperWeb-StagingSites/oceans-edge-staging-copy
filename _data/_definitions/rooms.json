@@ -35,12 +35,6 @@
     "model_name": "room_view",
     "can_create": true
   },
-  "room_location": {
-    "type": "model",
-    "display_field": "name",
-    "model_name": "room_location",
-    "can_create": true
-  },
   "amenities": {
     "type": "model",
     "multiple": true,
