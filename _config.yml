@@ -85,6 +85,10 @@ page_gen:
   template: activities_layout
   dir: activities
   title_field: name
+- data: adventures
+  template: adventures_layout
+  dir: adventures
+  title_field: name
 plugins_dir:
 - _plugins-38
 - _plugins
