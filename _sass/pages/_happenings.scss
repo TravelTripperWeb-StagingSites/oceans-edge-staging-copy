@@ -23,5 +23,10 @@
         color: $dark;
       }
     }
+    .bed-type {
+      &:before {
+        display: none;
+      }
+    }
   }
 }

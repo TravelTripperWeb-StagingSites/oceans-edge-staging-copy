@@ -262,6 +262,21 @@
   .happenings-list-carousel {
     .asset-item {
       flex: none;
+      &__text-group {
+        &__wrap {
+          min-height: 280px;
+
+          .row {
+            border-color: $quartenary;
+          }
+          p {
+            border: 0;
+          }
+          .btn {
+            height: 32px;
+          }
+        }
+      }
     }
 
     &__controls {
