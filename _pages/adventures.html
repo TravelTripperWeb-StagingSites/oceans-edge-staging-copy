@@ -99,13 +99,13 @@ meta_tags:
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
-          <a href="{{ item.url_friendly_name }}">
+          <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">
             <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
           </a>
         </div>
         <div class="activities-listing__item__content">
           <h4 class="h5" tabindex="0">
-            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">{{ item.name }}</a>
           </h4>
           <div class="activities-listing__item__content__info">
             <div class="left">
@@ -113,7 +113,7 @@ meta_tags:
               <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
             </div>
             <div class="right">
-              <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
+              <a class="btn btn--secondary" href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">View</a>
             </div>
           </div>
         </div>
