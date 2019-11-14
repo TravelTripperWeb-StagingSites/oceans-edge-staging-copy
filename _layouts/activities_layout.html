@@ -20,8 +20,8 @@ layout: default
           <h1 class="h3" tabindex="0">{{ item.name }}</h1>
           <hr class="mb-3">
           <div tabindex="0">{{ item.description }}</div>
-          <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
-          <div tabindex="0"><p>{{ item.price }}</p></div>
+          <!-- <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
+          <div tabindex="0"><p>{{ item.price }}</p></div> -->
           {% if item.book_now_btn == true %}
           <div class="btn-holder mb-0">
             <a class="btn btn--book" href="{{ item.book_now_btn_link }}" target="_blank">Book Now</a>
