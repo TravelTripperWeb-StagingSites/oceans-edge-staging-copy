@@ -2,8 +2,8 @@
   "order": 1,
   "name": "Dry Tortugas",
   "url_friendly_name": "dry-tortugas",
-  "description": "<p>Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands. Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life, and the vast assortment of bird life that frequent the area.</p>\n<p><strong>Key West Seaplane Adventures</strong></p>\n<p>Seaplane Tours to The Dry Tortugas and Fort Jefferson.</p>\n<p>Call <a href=\"tel:786-862-6303\">786-862-6303</a> or email <a href=\"mailto:concierge@oceansedgekeywest.com\">concierge@oceansedgekeywest.com</a> to book now.</p>\n<p><strong>Yankee Freedom</strong></p>\n<p>The only boat that goes to Dry Tortugas, Yankee Freedom provides food, beverages, and a comfortable ride to and from this jewel in the National Park system crown.</p>\n<p>Call <a href=\"tel:786-862-6303\">786-862-6303</a> or email <a href=\"mailto:concierge@oceansedgekeywest.com\">concierge@oceansedgekeywest.com</a> to book now.</p>",
-  "terms_conditions": "High speed ferry times:",
+  "description": "<p>Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands. Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life, and the vast assortment of bird life that frequent the area.</p>\n<p><strong>Key West Seaplane Adventures<br /></strong>Seaplane Tours to The Dry Tortugas and Fort Jefferson.</p>\n<p>Call <a href=\"tel:786-862-6303\">786-862-6303</a> or email <a href=\"mailto:concierge@oceansedgekeywest.com\">concierge@oceansedgekeywest.com</a> to book now.</p>\n<p><strong>Yankee Freedom<br /></strong>The only boat that goes to Dry Tortugas, Yankee Freedom provides food, beverages, and a comfortable ride to and from this jewel in the National Park system crown.</p>\n<p>Call <a href=\"tel:786-862-6303\">786-862-6303</a> or email <a href=\"mailto:concierge@oceansedgekeywest.com\">concierge@oceansedgekeywest.com</a> to book now.</p>",
+  "terms_conditions": "High speed ferry times",
   "price": "Departs Terminal: 8:00 am, Returns: 3pm",
   "image": {
     "name": "dry-tortugas-s",
@@ -32,6 +32,6 @@
   "our-concierge-recommends": true,
   "category": "adventures_categories1",
   "timing": "Departs Terminal: 8:00 am, Returns: 3pm",
-  "tours_hours": "Departs Terminal: 8:00 am, Returns: 3pm",
+  "tours_hours": "Departs terminal: 8am, returns: 3pm",
   "booking_phone": "786-862-6303"
 }
