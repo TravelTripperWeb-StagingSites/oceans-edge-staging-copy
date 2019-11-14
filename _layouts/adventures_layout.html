@@ -15,7 +15,7 @@ layout: default
       <div class="offers-cross-sell__content">
         <div class="offers-cross-sell__content__detail">
           <div class="d-inline-block mb-2">
-            <a class="btn btn--tertiary btn--reverse" href="/activities/">back</a>
+            <a class="btn btn--tertiary btn--reverse" href="/adventures/">back</a>
           </div>
           <p class="overline overline--italic">{{ item.category.name }}</p>
           <h1 class="h3" tabindex="0">{{ item.name }}</h1>
@@ -40,7 +40,7 @@ layout: default
             <div class="hours-booking__right">
               <p class="h6">Booking Details:</p>
               <div class="hours-booking__details">
-                <p>{% if item.booking_phone %}Enquiries: {{ item.booking_phone }}{% endif %}<br>{% if item.booking_website %}Website: <a href="{{ item.booking_website }}" target="_blank">{{ item.booking_website }}</a>	{% endif %}</p>
+                <p>{% if item.booking_phone %}Enquiries: {{ item.booking_phone }}{% endif %}{% if item.booking_website and item.booking_website != '' %}<br>Website: <a href="{{ item.booking_website }}" target="_blank">{{ item.booking_website }}</a>	{% endif %}</p>
               </div>
               {% if item.book_tickets_button == true %}
               <a href="{{ item.book_tickets_link }}" class="btn btn--book-small mt-3" target="_blank">Book Tickets</a>

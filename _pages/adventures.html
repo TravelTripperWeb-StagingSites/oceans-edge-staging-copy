@@ -82,8 +82,8 @@ meta_tags:
         <div class="form-group">
           <label for="">Sort By:</label>
           <select class="form-control">
-            <option>All On-site Marina Activities</option>
-            {% assign items = site.data._models.activities_categories | order: 'sort' %}
+            <option>All Key West Adventures</option>
+            {% assign items = site.data._models.adventures_categories | order: 'sort' %}
             {% for item in items %}
             <option>{{ item.name }}</option>
             {% endfor %}
