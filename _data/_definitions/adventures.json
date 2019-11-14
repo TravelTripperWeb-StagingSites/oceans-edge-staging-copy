@@ -32,6 +32,8 @@
   },
   "booking_website": {
   },
+  "booking_website_url": {
+  },
   "book_tickets_button": {
     "type": "boolean"
   },

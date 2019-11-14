@@ -64,13 +64,13 @@ layout: default
 <section class="activities-listing activities-listing--more mt-55">
   <hr class="mb-3">
   <div class="asset-list__header">
-    <h2 class="h4">More Activities</h2>
-    <a href="/activities/" class="btn">View all Activities</a>
+    <h2 class="h4">More Guided Tours</h2>
+    <a href="/activities/" class="btn">View all Adventures</a>
   </div>
   <div class="activities-listing__row activities-list-carousel">
-  {% assign activities = site.data._models.activities | sort: 'order' %}
-  {% for item in activities %}
-  {% if item.complimentary-resort-activities != true %}
+  {% assign adventures = site.data._models.adventures | sort: 'order' %}
+  {% for item in adventures %}
+  {% if item.our-concierge-recommends != true %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
