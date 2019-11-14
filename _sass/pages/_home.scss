@@ -32,6 +32,21 @@
     }
   }
 
+  &.hero-dark {
+    .hero-static {
+      &__wrap {
+        position: relative;
+        z-index: 1;
+        &:after {
+          @include linearGradient(top, transparent, $quartenary);
+        }
+      }
+      &__intro {
+        z-index: 2;
+      }
+    }
+  }
+
   &__controls {
     display: flex;
     justify-content: space-between;

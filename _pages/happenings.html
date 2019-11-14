@@ -86,8 +86,13 @@ meta_tags:
                 <div class="row">
                   <div class="col-9">
                     <div class="bed-type">
-                      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/i6ehqcthm35czejvh9az.png" width="15px" height="15px" alt="happening date">
-                      <p>Date<span class="d-block">{{ happening.date | date:"%a, %b %-d, %Y" }}</span></p>
+                      {% if happening.tickets and happening.tickets != "" %}
+                        <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/lgwclct1idqqb1xhirja.png"width="15px" height="15px" alt="Ticket Price">
+                        <p>Tickets:<span class="d-block">{{happening.tickets}}</span></p>
+                      {% else %}
+                        <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/i6ehqcthm35czejvh9az.png" width="15px" height="15px" alt="happening date">
+                        <p>Date<span class="d-block">{{ happening.date | date:"%a, %b %-d, %Y" }}</span></p>
+                      {% endif %}
                     </div>
                   </div>
                   <div class="col-3">
