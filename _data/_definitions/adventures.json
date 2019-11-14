@@ -21,12 +21,19 @@
   "description": {
     "type": "richtext"
   },
-  "terms_conditions": {
-  },
-  "price": {
-  },
   "image": {
     "type": "image"
+  },
+  "terms_conditions": {
+  },
+  "timing": {
+  },
+  "tours_hours": {
+    "type": "richtext"
+  },
+  "booking_phone": {
+  },
+  "booking_website": {
   },
   "book_tickets": {
     "type": "boolean"

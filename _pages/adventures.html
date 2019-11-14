@@ -47,7 +47,7 @@ meta_tags:
         </div>
         <div class="large-card__item__wrap">
           <h4 class="h4 light">
-            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">{{ item.name }}</a>
           </h4>
           <div class="large-card__item__content">
             <div class="mb-3 mb-md-0">
@@ -55,7 +55,7 @@ meta_tags:
               <span class="price mw-100 border-0">{{ item.price }}<span></p>
             </div>
             <div class="large-card__item__button">
-              <a href="{{ item.url_friendly_name }}" class="btn btn--light" target="_blank">View</a>
+              <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}" class="btn btn--light" target="_blank">View</a>
             </div>
           </div>
         </div>
