@@ -1,6 +1,6 @@
 {
   "order": 2,
-  "name": "Swimming Pool 6 pristine heated pools",
+  "name": "6 pristine heated swimming pools",
   "image": {
     "name": "Six temp controlled swimming pools",
     "content_type": "image/png",
@@ -20,7 +20,7 @@
     "size": 6768,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572484642/kvorqtsx0qj2rwrro2di.png",
     "file_size": null,
-    "alt": "Six temp controlled swimming pools",
+    "alt": "Six temperature controlled swimming pools",
     "caption": "",
     "description": ""
   }
