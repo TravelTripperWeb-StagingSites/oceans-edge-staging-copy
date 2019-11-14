@@ -20,7 +20,7 @@ layout: default
             <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
             <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
           </div>
-          <div class="zoom"></div>
+          <a class="zoom" href="javascript:void(0);"><i class="icon-maximize"></i></a>
         </div>
         <div class="rooms-cross-sell__content">
           <div class="rooms-cross-sell__content__detail">
@@ -112,6 +112,10 @@ layout: default
     </div>
     <div class="large-card__controls" id="roomsCarouselNavSuites">
       <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+      <style data="offerslistyle"></style>
+      <div class="slidecontainer">
+        <input type="range" min="1" data-max = "{{rooms.size}}" max="" value="1" class="slider" id="sliderRange">
+      </div>
       <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
     </div>
   </section>

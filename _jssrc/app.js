@@ -454,7 +454,7 @@ readyDoc(function() {
   }
 
   if (document.getElementsByClassName('rooms-cross-carousel__handle-suites').length > 0) {
-    var slider = tns({
+    var suitesSlider = tns({
       container: '.rooms-cross-carousel__handle-suites',
       items: 1,
       nav: false,
@@ -473,6 +473,17 @@ readyDoc(function() {
           edgePadding: 85
         }
       }
+    });
+    document.querySelector("#sliderRange").addEventListener('change' , () => {
+      var ele = document.getElementById("sliderRange");
+      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
+      + 'color-stop(' + val + ', #6f6f6f)'
+      + ')';
+      var sliderindex = document.getElementById('sliderRange').value;
+      var sliderindex2 = ((sliderindex - 1) * 3);
+      console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
+      suitesSlider.goTo(sliderindex2);
     });
   }
 
