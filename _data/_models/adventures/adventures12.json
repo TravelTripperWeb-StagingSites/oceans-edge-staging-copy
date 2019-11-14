@@ -1,9 +1,9 @@
 {
   "order": 12,
   "name": "Scooter Rentals",
-  "category": "adventures_categories1",
+  "category": "adventures_categories2",
   "url_friendly_name": "scooter-rentals",
-  "description": "<p><strong>Papa Scooters</strong></p>\n<p>Papa Scooters have a reputation as being the best choice for scooter and bicycle rentals on the island. As a small family business they deliver anywhere on Stock Island or Key West for free, making them convenient and the most affordable choice.</p>\n<p><a href=\"https://fareharbor.com/embeds/book/papascootersinc/items/?asn=oceansedgekeywest\" target=\"_blank\" rel=\"noopener noreferrer\">https://fareharbor.com/embeds/book/papascootersinc/items/?asn=oceansedgekeywest</a></p>",
+  "description": "<p><strong>Papa Scooters<br /></strong>Papa Scooters have a reputation as being the best choice for scooter and bicycle rentals on the island. As a small family business they deliver anywhere on Stock Island or Key West for free, making them convenient and the most affordable choice.</p>",
   "book_tickets_button": true,
   "book_tickets_link": "https://fareharbor.com/embeds/book/papascootersinc/items/?asn=oceansedgekeywest",
   "image": {
@@ -26,7 +26,7 @@
     "git_file_name": "_assets/image_data/gardens-s.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573734074/lwkrnsr5b5iehxz5sn6y.jpg",
     "file_size": null,
-    "alt": "Scooter Rentals",
+    "alt": "Scooter Rentals on Key West",
     "caption": "",
     "description": ""
   }

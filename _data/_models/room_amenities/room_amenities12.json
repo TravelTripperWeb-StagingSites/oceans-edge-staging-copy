@@ -1,6 +1,6 @@
 {
   "order": 12,
-  "name": "Living Room",
+  "name": "Living room",
   "description": "Living Room",
   "image": {
     "name": "Living-room",
@@ -21,7 +21,7 @@
     "size": 15957,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573551480/zgumne8npyh7dc1xysoq.png",
     "file_size": null,
-    "alt": "Living Room",
+    "alt": "Living Room Oceans Edge Resort",
     "caption": "",
     "description": ""
   }
