@@ -28,10 +28,10 @@
   "image": {
     "type": "image"
   },
-  "booknow_btn": {
+  "book_now_btn": {
     "type": "boolean"
   },
-  "booknow_btn_link": {
+  "book_now_btn_link": {
   },
   "order": {
     "type": "order",
