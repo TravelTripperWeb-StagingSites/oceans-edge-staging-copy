@@ -475,6 +475,16 @@
 
         a {
           color: $primary;
+
+          &.btn {
+            color: $light;
+          }
+
+          &:hover {
+            &.btn {
+              color: $primary;
+            }
+          }
         }
 
         strong {
