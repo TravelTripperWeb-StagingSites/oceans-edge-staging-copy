@@ -123,19 +123,19 @@ mega:
         en: Overview
       items:
     - folder: false
-      url_localized: ''
+      url_localized: '/dining/yellofin-bar-grill/'
       page_id: _pages/yellofin-bar-grill.html
       label_localized:
         en: Yellowfin Bar & Grill
       items:
     - folder: false
-      url_localized: ''
+      url_localized: '/dining/ocean-edge-cafe/'
       page_id: _pages/ocean-edge-cafe.html
       label_localized:
         en: Oceans Edge Cafe
       items:
     - folder: false
-      url_localized: ''
+      url_localized: '/dining/in-room-dining/'
       page_id: _pages/in-room-dining.html
       label_localized:
         en: In-room Dining
