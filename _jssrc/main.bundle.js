@@ -376,6 +376,28 @@ readyDoc(function () {
       nextButton: "#heroNav .iconbtn--right" // next button
     });
   }
+  if (document.getElementsByClassName('activities-slider').length > 0) {
+    var slider = tns({
+      container: '.activities-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#activitiesSlider .iconbtn--left", // previous button
+      nextButton: "#activitiesSlider .iconbtn--right" // next button
+    });
+  }
+  if (document.getElementsByClassName('adventures-slider').length > 0) {
+    var slider = tns({
+      container: '.adventures-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#adventuresSlider .iconbtn--left", // previous button
+      nextButton: "#adventuresSlider .iconbtn--right" // next button
+    });
+  }
 
   if (document.getElementsByClassName('rooms-cross-sell__image__wrap').length > 0) {
     var slider = tns({
