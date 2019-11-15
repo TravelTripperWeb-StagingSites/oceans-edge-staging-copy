@@ -14,7 +14,7 @@ meta_tags:
         <div class="rooms-cross-sell__image__wrap">
           {% assign slides = site.data._models.yellowfin_carousel %}
           {% for slide in slides %}
-            <img src="{{ slide.url_medium }}" alt= "{{ slide.alt }}" />
+            <img src="{{ slide.image.url_medium }}" alt= "{{ slide.alt }}" />
           {% endfor %}
         </div>
         <div class="rooms-cross-sell__controls" id="roomsNav">
