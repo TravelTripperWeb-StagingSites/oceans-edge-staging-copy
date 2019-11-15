@@ -472,6 +472,17 @@
 
       p {
         color: $dark;
+
+        a {
+          color: $primary;
+        }
+
+        strong {
+          font-family: $family-primary;
+          font-size: $base-font-size;
+          font-weight: normal;
+          color: $primary;
+        }
       }
 
       ul {
