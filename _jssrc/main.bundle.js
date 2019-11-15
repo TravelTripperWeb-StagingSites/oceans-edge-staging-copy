@@ -331,24 +331,25 @@ readyDoc(function () {
           }
         }
       });
-
-      var num_items = assetSlider.getInfo().items;
-      document.querySelector("#sliderRange").addEventListener('change', function () {
-        var ele = document.getElementById("sliderRange");
-        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-        var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = (sliderindex - 1) * num_items;
-        assetSlider.goTo(sliderindex2);
-      });
-      var style = document.querySelector('[data="offerslistyle"]');
-      var sliderangele = document.getElementById("sliderRange");
-      var slidelen = sliderangele.getAttribute('data-max');
-      var slidemax = Math.ceil(slidelen / num_items);
-      sliderangele.setAttribute('max', slidemax);
-      var x = 100 / slidemax + '%';
-      var y = '10';
-      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+      if (document.querySelector("#sliderRange")) {
+        var num_items = assetSlider.getInfo().items;
+        document.querySelector("#sliderRange").addEventListener('change', function () {
+          var ele = document.getElementById("sliderRange");
+          var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+          ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+          var sliderindex = document.getElementById('sliderRange').value;
+          var sliderindex2 = (sliderindex - 1) * num_items;
+          assetSlider.goTo(sliderindex2);
+        });
+        var style = document.querySelector('[data="offerslistyle"]');
+        var sliderangele = document.getElementById("sliderRange");
+        var slidelen = sliderangele.getAttribute('data-max');
+        var slidemax = Math.ceil(slidelen / num_items);
+        sliderangele.setAttribute('max', slidemax);
+        var x = 100 / slidemax + '%';
+        var y = '10';
+        style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+      }
     }
   }, 3000);
 
@@ -373,23 +374,25 @@ readyDoc(function () {
       }
     });
 
-    var num_items = assetSlider.getInfo().items;
-    document.querySelector("#sliderRange").addEventListener('change', function () {
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = (sliderindex - 1) * num_items;
-      assetSlider.goTo(sliderindex2);
-    });
-    var style = document.querySelector('[data="offerslistyle"]');
-    var sliderangele = document.getElementById("sliderRange");
-    var slidelen = sliderangele.getAttribute('data-max');
-    var slidemax = Math.ceil(slidelen / num_items);
-    sliderangele.setAttribute('max', slidemax);
-    var x = 100 / slidemax + '%';
-    var y = '10';
-    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    if (document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        var ele = document.getElementById("sliderRange");
+        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+        var sliderindex = document.getElementById('sliderRange').value;
+        var sliderindex2 = (sliderindex - 1) * num_items;
+        assetSlider.goTo(sliderindex2);
+      });
+      var style = document.querySelector('[data="offerslistyle"]');
+      var sliderangele = document.getElementById("sliderRange");
+      var slidelen = sliderangele.getAttribute('data-max');
+      var slidemax = Math.ceil(slidelen / num_items);
+      sliderangele.setAttribute('max', slidemax);
+      var x = 100 / slidemax + '%';
+      var y = '10';
+      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    }
   }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
@@ -476,24 +479,25 @@ readyDoc(function () {
         }
       }
     });
-
-    var num_items = roomsSlider.getInfo().items;
-    document.querySelector("#sliderRange").addEventListener('change', function () {
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = (sliderindex - 1) * num_items;
-      roomsSlider.goTo(sliderindex2);
-    });
-    var style = document.querySelector('[data="offerslistyle"]');
-    var sliderangele = document.getElementById("sliderRange");
-    var slidelen = sliderangele.getAttribute('data-max');
-    var slidemax = Math.ceil(slidelen / num_items);
-    sliderangele.setAttribute('max', slidemax);
-    var x = 100 / slidemax + '%';
-    var y = '10';
-    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    if (document.querySelector("#sliderRange")) {
+      var num_items = roomsSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        var ele = document.getElementById("sliderRange");
+        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+        var sliderindex = document.getElementById('sliderRange').value;
+        var sliderindex2 = (sliderindex - 1) * num_items;
+        roomsSlider.goTo(sliderindex2);
+      });
+      var style = document.querySelector('[data="offerslistyle"]');
+      var sliderangele = document.getElementById("sliderRange");
+      var slidelen = sliderangele.getAttribute('data-max');
+      var slidemax = Math.ceil(slidelen / num_items);
+      sliderangele.setAttribute('max', slidemax);
+      var x = 100 / slidemax + '%';
+      var y = '10';
+      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    }
   }
 
   if (document.getElementsByClassName('rooms-cross-carousel__handle-suites').length > 0) {
@@ -517,24 +521,25 @@ readyDoc(function () {
         }
       }
     });
-
-    var num_items = assetSlider.getInfo().items;
-    document.querySelector("#sliderRange").addEventListener('change', function () {
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = (sliderindex - 1) * num_items;
-      assetSlider.goTo(sliderindex2);
-    });
-    var style = document.querySelector('[data="offerslistyle"]');
-    var sliderangele = document.getElementById("sliderRange");
-    var slidelen = sliderangele.getAttribute('data-max');
-    var slidemax = Math.ceil(slidelen / num_items);
-    sliderangele.setAttribute('max', slidemax);
-    var x = 100 / slidemax + '%';
-    var y = '10';
-    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    if (document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        var ele = document.getElementById("sliderRange");
+        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+        var sliderindex = document.getElementById('sliderRange').value;
+        var sliderindex2 = (sliderindex - 1) * num_items;
+        assetSlider.goTo(sliderindex2);
+      });
+      var style = document.querySelector('[data="offerslistyle"]');
+      var sliderangele = document.getElementById("sliderRange");
+      var slidelen = sliderangele.getAttribute('data-max');
+      var slidemax = Math.ceil(slidelen / num_items);
+      sliderangele.setAttribute('max', slidemax);
+      var x = 100 / slidemax + '%';
+      var y = '10';
+      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+    }
   }
 
   // Tabs Script Start ======================================
