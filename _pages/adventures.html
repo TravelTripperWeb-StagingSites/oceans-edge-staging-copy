@@ -81,8 +81,8 @@ meta_tags:
       <form>
         <div class="form-group">
           <label for="">Sort By:</label>
-          <select class="form-control">
-            <option>All Key West Adventures</option>
+          <select class="form-control activities-filter">
+            <option value="all">All Key West Adventures</option>
             {% assign items = site.data._models.adventures_categories | order: 'sort' %}
             {% for item in items %}
             <option>{{ item.name }}</option>
@@ -96,7 +96,7 @@ meta_tags:
     {% assign activities = site.data._models.adventures | sort: 'order' %}
     {% for item in activities %}
     {% if item.our-concierge-recommends != true %}
-    <div class="activities-listing__item">
+    <div class="activities-listing__item" data-cat-filter="{{ item.category.name }}">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
           <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">
