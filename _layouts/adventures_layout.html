@@ -30,17 +30,17 @@ layout: default
           {% endif %}
           <div class="hours-booking">
             <div class="hours-booking__left">
-              <p class="h6">Tours Hours:</p>
+              <p class="h6">Tour Hours:</p>
               <div class="hours-booking__details">
-                {% if item.tours_hours %}
-                  <p>{{ item.tours_hours }}</p>
+                {% if item.tour_hours %}
+                  <p>{{ item.tour_hours }}</p>
                 {% endif %}
               </div>
             </div>
             <div class="hours-booking__right">
               <p class="h6">Booking Details:</p>
               <div class="hours-booking__details">
-                <p>{% if item.booking_phone %}Enquiries: {{ item.booking_phone }}{% endif %}{% if item.booking_website and item.booking_website != '' %}<br>Website: <a href="{{ item.booking_website }}" target="_blank">{{ item.booking_website }}</a>	{% endif %}</p>
+                <p>{% if item.booking_phone %}Inquiries: {{ item.booking_phone }}{% endif %}{% if item.booking_website and item.booking_website != '' %}<br>Website: <a href="{{ item.booking_website }}" target="_blank">{{ item.booking_website }}</a>	{% endif %}</p>
               </div>
               {% if item.book_tickets_button == true %}
               <a href="{{ item.book_tickets_link }}" class="btn btn--book-small mt-3" target="_blank">Book Tickets</a>
@@ -50,9 +50,9 @@ layout: default
           <div class="social-share">
             <p class="h5" tabindex="0"><span>Share</span></p>
             <div class="social-media">
-              <a href="https://www.facebook.com/OceansEdgeKeyWest/" target="_blank" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.twitter.com/oceansedgekeywest/" target="_blank" title="follow us on twitter"><i class="fab fa-twitter"></i></a>
-              <a href="" target="_blank" title=""><i class="far fa-envelope"></i></a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}/adventures/{{ item.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ item.name }}&url={{ site.url }}/adventures/{{ item.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ item.name }}&amp;Body={{ item.name }} {{ site.url }}/adventures/{{ item.url_friendly_name }}/" title="Share via Email"><i class="far fa-envelope"></i></a>
             </div>
           </div>
         </div>
@@ -64,36 +64,38 @@ layout: default
 <section class="activities-listing activities-listing--more mt-55">
   <hr class="mb-3">
   <div class="asset-list__header">
-    <h2 class="h4">More Guided Tours</h2>
-    <a href="/activities/" class="btn">View all Adventures</a>
+    <h2 class="h4">More {{ item.category.name }}</h2>
+    <a href="/adventures/" class="btn">View all Adventures</a>
   </div>
   <div class="activities-listing__row activities-list-carousel">
   {% assign adventures = site.data._models.adventures | sort: 'order' %}
-  {% for item in adventures %}
-  {% if item.our-concierge-recommends != true %}
+  {% for adventure in adventures %}
+  {% if adventure.our-concierge-recommends != true %}
+  {% if item.category.name == adventure.category.name %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
-          <a href="{{ item.url_friendly_name }}">
-            <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          <a href="{{ adventure.url_friendly_name }}">
+            <img src="{{ adventure.image.url_medium }}" alt="{{ adventure.image.alt }}">
           </a>
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5" tabindex="0">
-            <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
-          </h4>
+          <h3 class="h5" tabindex="0">
+            <a href="{{ adventure.url_friendly_name | permalink: model_dir: 'adventures' }}">{{ item.name }}</a>
+          </h3>
           <div class="activities-listing__item__content__info">
             <div class="left">
               <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
               <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
             </div>
             <div class="right">
-              <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
+              <a class="btn btn--secondary" href="{{ adventure.url_friendly_name }}">View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  {% endif %}
   {% endif %}
   {% endfor %}
   </div>
@@ -111,6 +113,6 @@ layout: default
   <div class="common-cta__text text-center">
       <p class="h4 light">The Resort</p>
       <p class="h3 light">an exhilarating Key West escape</p>
-      <a href="/dining/" class="btn btn--light">Discover More</a>
+      <a href="/resort/" class="btn btn--light">Discover More</a>
   </div>
 </section>

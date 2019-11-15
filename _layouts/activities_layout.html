@@ -27,6 +27,14 @@ layout: default
             <a class="btn btn--book" href="{{ item.book_now_btn_link }}" target="_blank">Book Now</a>
           </div>
           {% endif %}
+          <div class="social-share">
+            <p class="h5" tabindex="0"><span>Share</span></p>
+            <div class="social-media">
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}/activities/{{ item.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ item.name }}&url={{ site.url }}/activities/{{ item.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ item.name }}&amp;Body={{ item.name }} {{ site.url }}/activities/{{ item.url_friendly_name }}/" title="Share via Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
