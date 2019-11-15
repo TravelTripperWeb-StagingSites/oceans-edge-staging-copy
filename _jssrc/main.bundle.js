@@ -363,6 +363,16 @@ readyDoc(function () {
         }
       }
     });
+
+    document.querySelector("#sliderRange").addEventListener('change', function () {
+      var ele = document.getElementById("sliderRange");
+      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+      var sliderindex = document.getElementById('sliderRange').value;
+      var sliderindex2 = (sliderindex - 1) * 4;
+      console.log("sliderindex " + sliderindex + " sliderindex2 " + sliderindex2);
+      assetSlider.goTo(sliderindex2);
+    });
   }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
@@ -667,13 +677,13 @@ readyDoc(function () {
   if (sliderangele) {
     var slidelen = sliderangele.getAttribute('data-max');
   }
-
-  var slidemax = Math.ceil(slidelen / 3);
+  var num_items = document.querySelectorAll('.tns-slide-active').length;
+  var slidemax = Math.ceil(slidelen / num_items);
   if (sliderangele) {
     sliderangele.setAttribute('max', slidemax);
   }
 
-  console.log("a " + slidelen + " slidemax " + slidemax);
+  console.log("a " + slidelen + " slidemax " + slidemax + "num_items " + num_items);
 
   var x = 100 / slidemax + '%';
   var y = '10';
