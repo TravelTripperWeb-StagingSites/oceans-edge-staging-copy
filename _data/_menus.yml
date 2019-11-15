@@ -130,8 +130,8 @@ mega:
         en: Yellowfin Bar & Grill
       items:
     - folder: false
-      url_localized: "/dining/ocean-edge-cafe/"
-      page_id: _pages/ocean-edge-cafe.html
+      url_localized: "/dining/oceans-edge-cafe/"
+      page_id: _pages/oceans-edge-cafe.html
       label_localized:
         en: Oceans Edge Cafe
       items:
@@ -325,17 +325,10 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#1-bedrooms/"
+        en: "/stay/#accessible"
       page_id: _pages/stay.html
       label_localized:
-        en: 1 Bedrooms
-      items:
-    - folder: false
-      url_localized:
-        en: "/stay/#accessible-rooms"
-      page_id: _pages/stay.html
-      label_localized:
-        en: Accessible Rooms
+        en: Accessible Rooms & Suites
       items:
     expanded: false
   - folder: false
