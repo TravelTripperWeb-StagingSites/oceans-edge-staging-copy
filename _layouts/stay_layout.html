@@ -20,6 +20,7 @@ layout: default
             <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
             <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
           </div>
+          <a class="zoom" href="javascript:void(0);"><i class="icon-maximize"></i></a>
         </div>
         <div class="rooms-cross-sell__content">
           <div class="rooms-cross-sell__content__detail">
@@ -31,7 +32,7 @@ layout: default
             <div tabindex="0">{{ room.description }}</div>
             <h2 class="h5" tabindex="0"><span>Suite Features</span></h2>
             <div class="amenities amenities--room" tabindex="0">
-              <ul class="amenities__listing">
+              <ul class="amenities__listing room-amenities">
                 {% assign items = room.amenities %}
                 {% for item in items %}
                 <li>
@@ -43,7 +44,7 @@ layout: default
             </div>
             <div class="row mx-0 location align-items-start">
               <hr>
-              <div class="col-6 pl-0 pt-2">
+              <!-- <div class="col-6 pl-0 pt-2">
                 <div class="flex-column align-start py-2 pr-2">
                   <p class="h6 mb-3 ml-0">Suite Location</p>
                   <div class="location">
@@ -54,8 +55,8 @@ layout: default
                   <a class="btn btn--tertiary mt-3" href="{{ room.resort_map_url }}">resort map</a>
                   {% endif %}
                 </div>
-              </div>
-              <div class="col-6 pt-2 brdr-left">
+              </div> -->
+              <div class="col-12 pt-2 brdr-left">
                 <div class="flex-column align-start p-2">
                   <p class="h6 mb-3 ml-0">Suite Video</p>
                   <div class="video">
@@ -111,6 +112,10 @@ layout: default
     </div>
     <div class="large-card__controls" id="roomsCarouselNavSuites">
       <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+      <style data="offerslistyle"></style>
+      <div class="slidecontainer">
+        <input type="range" min="1" data-max = "{{rooms.size}}" max="" value="1" class="slider" id="sliderRange">
+      </div>
       <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
     </div>
   </section>
@@ -143,7 +148,7 @@ layout: default
           <div tabindex="0">{{ room.description }}</div>
           <h2 class="h5" tabindex="0"><span>Room Features</span></h2>
           <div class="amenities amenities--room" tabindex="0">
-            <ul class="amenities__listing">
+            <ul class="amenities__listing room-amenities">
               {% assign items = room.amenities %}
               {% for item in items %}
               <li>
@@ -155,7 +160,7 @@ layout: default
           </div>
           <div class="row mx-0 location align-items-start">
             <hr>
-            <div class="col-6 pl-0 pt-2">
+            <!-- <div class="col-6 pl-0 pt-2">
               <div class="flex-column align-start py-2 pr-2">
                 <p class="h6 mb-3 ml-0">Room Location</p>
                 <div class="location">
@@ -166,8 +171,8 @@ layout: default
                 <a class="btn btn--tertiary mt-3" href="{{ room.resort_map_url }}">resort map</a>
                 {% endif %}
               </div>
-            </div>
-            <div class="col-6 pt-2 brdr-left">
+            </div> -->
+            <div class="col-12 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
                 <p class="h6 mb-3 ml-0">Room Video</p>
                 <div class="video">
@@ -221,6 +226,10 @@ layout: default
   </div>
   <div class="large-card__controls" id="roomsCarouselNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <style data="offerslistyle"></style>
+    <div class="slidecontainer">
+      <input type="range" min="1" data-max = "{{rooms.size}}" max="" value="1" class="slider" id="sliderRange">
+    </div>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>

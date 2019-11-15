@@ -389,14 +389,34 @@ readyDoc(function () {
     });
   }
 
-  if (document.getElementsByClassName('amenities__listing').length > 0) {
+  if (document.getElementsByClassName('hotel-amenities').length > 0) {
     var slider = tns({
-      container: '.amenities__listing',
+      container: '.hotel-amenities',
       items: 2,
       nav: false,
       mouseDrag: true,
       loop: true,
+      prevButton: "#amenitiesNav .iconbtn--left", // previous button
+      nextButton: "#amenitiesNav .iconbtn--right", // next button
+      responsive: {
+        900: {
+          items: 4
+        },
+        1200: {
+          items: 5
+        }
+      }
+    });
+  }
 
+  if (document.getElementsByClassName('room-amenities').length > 0) {
+    var slider = tns({
+      container: '.room-amenities',
+      items: 2.2,
+      controls: false,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
       responsive: {
         900: {
           items: 4
@@ -409,7 +429,7 @@ readyDoc(function () {
   }
 
   if (document.getElementsByClassName('rooms-cross-carousel__handle').length > 0) {
-    var slider = tns({
+    var roomsSlider = tns({
       container: '.rooms-cross-carousel__handle',
       items: 1,
       nav: false,
@@ -429,10 +449,19 @@ readyDoc(function () {
         }
       }
     });
+    document.querySelector("#sliderRange").addEventListener('change', function () {
+      var ele = document.getElementById("sliderRange");
+      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+      var sliderindex = document.getElementById('sliderRange').value;
+      var sliderindex2 = (sliderindex - 1) * 3;
+      console.log("sliderindex " + sliderindex + " sliderindex2 " + sliderindex2);
+      roomsSlider.goTo(sliderindex2);
+    });
   }
 
   if (document.getElementsByClassName('rooms-cross-carousel__handle-suites').length > 0) {
-    var slider = tns({
+    var suitesSlider = tns({
       container: '.rooms-cross-carousel__handle-suites',
       items: 1,
       nav: false,
@@ -451,6 +480,15 @@ readyDoc(function () {
           edgePadding: 85
         }
       }
+    });
+    document.querySelector("#sliderRange").addEventListener('change', function () {
+      var ele = document.getElementById("sliderRange");
+      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+      var sliderindex = document.getElementById('sliderRange').value;
+      var sliderindex2 = (sliderindex - 1) * 3;
+      console.log("sliderindex " + sliderindex + " sliderindex2 " + sliderindex2);
+      suitesSlider.goTo(sliderindex2);
     });
   }
 
@@ -638,10 +676,8 @@ readyDoc(function () {
   console.log("a " + slidelen + " slidemax " + slidemax);
 
   var x = 100 / slidemax + '%';
-  var y = '15';
-  if (style) {
-    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
-  }
+  var y = '10';
+  style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
 
   //rooms filter
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");

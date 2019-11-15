@@ -564,3 +564,30 @@ hr {
     margin-bottom: 48px !important;
   }
 }
+
+.zoom {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: $light;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px rgba(0,0,0,.1);
+  @include transition(all .3s);
+
+  i {
+    font-size: $display7-size;
+    font-style: normal;
+    color: $dark;
+    @include transition(all .3s);
+  }
+
+  &:hover, &:focus, &:visited {
+    text-decoration: none;
+    box-shadow: 0 1px 10px rgba(0,0,0,.3);
+  }
+}
