@@ -1,7 +1,6 @@
 .two-col-carousels {
   @include make-container;
   max-width: 1224px;
-  margin-bottom: 64px;
   &__wrap {
     @include make-row;
     margin: 0;
