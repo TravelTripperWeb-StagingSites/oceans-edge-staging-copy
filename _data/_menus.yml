@@ -325,17 +325,10 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#1-bedrooms/"
+        en: "/stay/#accessible"
       page_id: _pages/stay.html
       label_localized:
-        en: 1 Bedrooms
-      items:
-    - folder: false
-      url_localized:
-        en: "/stay/#accessible-rooms"
-      page_id: _pages/stay.html
-      label_localized:
-        en: Accessible Rooms
+        en: Accessible Rooms & Suites
       items:
     expanded: false
   - folder: false
