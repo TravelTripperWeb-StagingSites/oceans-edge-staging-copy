@@ -723,4 +723,26 @@ readyDoc(function () {
       filterRooms(currentElement.getAttribute("data-filter"));
     });
   }
+
+  //activities and adventures filter
+  if (document.querySelectorAll(".activities-filter").length > 0) {
+    var activitiesFilter = document.querySelector(".activities-filter");
+    var allActivities = document.querySelectorAll(".activities-listing__item");
+    activitiesFilter.onchange = function () {
+      var currentFilter = activitiesFilter.value;
+      var activitiesToShow = document.querySelectorAll(".activities-listing__item[data-cat-filter='" + currentFilter + "']");
+      if (currentFilter == "all") {
+        for (var _i19 = 0; _i19 < allActivities.length; _i19++) {
+          allActivities[_i19].classList.remove("hidden");
+        }
+      } else {
+        for (var _i20 = 0; _i20 < allActivities.length; _i20++) {
+          allActivities[_i20].classList.add("hidden");
+        }
+        for (var _i21 = 0; _i21 < activitiesToShow.length; _i21++) {
+          activitiesToShow[_i21].classList.remove("hidden");
+        }
+      }
+    };
+  }
 });

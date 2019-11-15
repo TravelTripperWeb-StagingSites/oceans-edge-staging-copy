@@ -729,4 +729,26 @@ readyDoc(function() {
     });
   }
 
+  //activities and adventures filter
+  if (document.querySelectorAll(".activities-filter").length > 0) {
+    var activitiesFilter = document.querySelector(".activities-filter");
+    let allActivities = document.querySelectorAll(".activities-listing__item");
+    activitiesFilter.onchange = function() {
+      let currentFilter = activitiesFilter.value;
+      let activitiesToShow =  document.querySelectorAll(".activities-listing__item[data-cat-filter='"+currentFilter+"']");
+      if(currentFilter == "all") {
+        for (let i = 0; i < allActivities.length; i++) {
+          allActivities[i].classList.remove("hidden");
+        }
+      } else {
+        for (let i = 0; i < allActivities.length; i++) {
+          allActivities[i].classList.add("hidden");
+        }
+        for (let i = 0; i < activitiesToShow.length; i++) {
+          activitiesToShow[i].classList.remove("hidden");
+        }
+      }
+    }
+  }
+
 });
