@@ -712,7 +712,7 @@ readyDoc(function () {
     });
   }
 
-  //activities filter
+  //activities and adventures filter
   if (document.querySelectorAll(".activities-filter").length > 0) {
     var activitiesFilter = document.querySelector(".activities-filter");
     var allActivities = document.querySelectorAll(".activities-listing__item");
