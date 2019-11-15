@@ -416,9 +416,25 @@ hr {
     max-width: 1224px;
     height: 250px;
     margin-right: auto;
+    margin-bottom: 64px;
     margin-left: auto;
     @include media-breakpoint-up(md) {
       height: 480px;
+    }
+    &.common-cta {
+      &:before {
+        border-radius: 16px;
+      }
+    }
+    .common-cta {
+      &__img {
+        img {
+          border-radius: 16px;
+        }
+      }
+    }
+    .h3 {
+      font-size: $display5-size;
     }
   }
 }
