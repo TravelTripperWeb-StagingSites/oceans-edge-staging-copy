@@ -65,10 +65,11 @@ mega:
       en: Stay
     items:
     - folder: false
-      url_localized: ''
-      page_id: _pages/stay.html
+      url_localized:
+        en: dining/yellofin-bar-grill/
+      page_id: _pages/yellofin-bar-grill.html
       label_localized:
-        en: All Rooms & Suites
+        en: Yellowfin Bar & Grill
       items:
     - folder: false
       url_localized:
@@ -123,24 +124,24 @@ mega:
         en: Overview
       items:
     - folder: false
-      url_localized: ''
-      page_id: _pages/yellofin-bar-grill.html
+      url_localized: "/dining/yellowfin-bar-grill/"
+      page_id: _pages/yellowfin-restaurant.html
       label_localized:
         en: Yellowfin Bar & Grill
       items:
     - folder: false
-      url_localized: ''
+      url_localized: "/dining/ocean-edge-cafe/"
       page_id: _pages/ocean-edge-cafe.html
       label_localized:
         en: Oceans Edge Cafe
       items:
     - folder: false
-      url_localized: ''
+      url_localized: "/dining/in-room-dining/"
       page_id: _pages/in-room-dining.html
       label_localized:
         en: In-room Dining
       items:
-    expanded: false
+    expanded: true
   - folder: true
     label_localized:
       en: Marina
