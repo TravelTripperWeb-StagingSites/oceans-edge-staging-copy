@@ -69,9 +69,11 @@ layout: default
   </div>
   <div class="activities-listing__row activities-list-carousel">
   {% assign adventures = site.data._models.adventures | sort: 'order' %}
+  {% assign counter = 0 %}
   {% for adventure in adventures %}
-  {% if adventure.our-concierge-recommends != true %}
   {% if item.category.name == adventure.category.name %}
+  {% capture count %} {{ counter | plus:1 }} {% endcapture %}
+  {% assign counter = count %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
@@ -96,7 +98,6 @@ layout: default
       </div>
     </div>
   {% endif %}
-  {% endif %}
   {% endfor %}
   </div>
 
@@ -104,7 +105,7 @@ layout: default
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Slide"></a>
     <div class="slidecontainer">
       <style data="offerslistyle"></style>
-      <input type="range" min="1" data-max = "8" max="" value="1" class="slider" id="sliderRange">
+      <input type="range" min="1" data-max="{{ counter }}" max="" value="1" class="slider" id="sliderRange">
     </div>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Slide"></a>
   </div>
