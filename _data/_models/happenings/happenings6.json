@@ -1,8 +1,8 @@
 {
   "featured_happening": true,
-  "name": "Bring in the 2020 in Key West!",
+  "name": "Ring in 2020 in Key West!",
   "category": "happenings_categories2",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "description": "To help you celebrate, our New Year's Eve menu includes a split of house champagne.",
   "date": "2019-12-31T00:00:00.000Z",
   "image": {
     "name": "happenings-cross-sell",
@@ -27,6 +27,6 @@
     "caption": "",
     "description": ""
   },
-  "cta_label": "",
+  "cta_label": "VIEW",
   "cta_link": ""
 }
