@@ -30,9 +30,9 @@ layout: default
           <div class="social-share">
             <p class="h5" tabindex="0"><span>Share</span></p>
             <div class="social-media">
-              <a href="https://facebook.com/sharer.php?u={{ site.url }}/activities/{{ item.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://twitter.com/intent/tweet?text={{ item.name }}&url={{ site.url }}/activities/{{ item.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="mailto:?Subject={{ item.name }}&amp;Body={{ item.name }} {{ site.url }}/activities/{{ item.url_friendly_name }}/" title="Share via Email"><i class="far fa-envelope"></i></a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ item.name }}&url={{ site.url }}{{ page.url }}&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ item.name }}&amp;Body={{ item.name }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
             </div>
           </div>
         </div>
@@ -59,9 +59,9 @@ layout: default
           </a>
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5" tabindex="0">
+          <h3 class="h5" tabindex="0">
             <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
-          </h4>
+          </h3>
           <div class="activities-listing__item__content__info">
             <div class="left">
               <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
