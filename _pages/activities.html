@@ -38,8 +38,11 @@ meta_tags:
   </div>
   <div class="large-card__row rooms-cross-carousel__handle">
     {% assign activities = site.data._models.activities | sort: 'order' %}
+    {% assign counter = 0 %}
     {% for item in activities %}
     {% if item.complimentary-resort-activities == true %}
+    {% capture count %} {{ counter | plus:1 }} {% endcapture %}
+    {% assign counter = count %}
     <div class="large-card__item">
       <div class="large-card__item__inner">
         <div class="large-card__item__image">
@@ -66,6 +69,10 @@ meta_tags:
   </div>
   <div class="large-card__controls" id="roomsCarouselNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <div class="slidecontainer">
+      <style data="offerslistyle"></style>
+      <input type="range" min="1" data-max="{{ counter }}" max="" value="1" class="slider" id="sliderRange">
+    </div>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>
