@@ -1,0 +1,15 @@
+{
+  "name": {
+    "required": true
+  },
+  "link": {
+    "type": "text"
+  },
+  "short_description": {
+    "type": "text"
+  },
+  "order": {
+    "type": "order",
+    "required": false
+  }
+}
