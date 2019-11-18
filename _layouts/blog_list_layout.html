@@ -1,0 +1,74 @@
+---
+layout: generic
+---
+<!-- <div class="preloader">
+  <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1569308486/bgwovfggfuxkqlbt8xsb.gif" alt="Loading">
+</div> -->
+<section class="blog">
+  <!-- Blog Categories and Search Mobile -->
+  {% include blog-mobile-cat-search.html %}
+  <!-- End Blog Categories and Search Mobile -->
+  <div class="blog__container">
+    <div class="blog__row">
+      <div class="blog__list">
+        <div class="blog__category-heading">
+          {% assign categories = site.data._models.blog_category %}
+          {% for category in categories %}
+          <div class="category-description" id="catDes_{{ category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}" style="display: none">
+            <h2 class="h2" tabindex="0">{{category.category_title}}</h2>
+            <!-- <p tabindex="0">{{category.category_description}}</p> -->
+          </div>
+          {% endfor %}
+        </div>
+        {% assign blog-posts = site.data._models.posts | sort: 'date' | reverse %}
+        {% for post in blog-posts %}
+        <div class="blog__item filter-item" data-filter="{{ post.blog_category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">
+          {% if post.image.url_medium %}
+          <figure class="blog__image">
+            <a href="/blog/{{ post.url_friendly_name }}" tabindex="-1">
+              <img src="{{ post.image.url_medium }}" alt="{{ post.title }}">
+            </a>
+          </figure>
+          {% endif %}
+          <div class="blog__item__body">
+            <h3 class="h3">
+              <a href="/blog/{{ post.url_friendly_name }}/">{{ post.title }}</a>
+            </h3>
+            <div class="blog__info">
+              <span class="blog__date" tabindex="0">
+                {{ post.date | date: '%B %d, %Y' }}
+              </span>
+              <a class="blog__category" href="/blog/?c={{ post.blog_category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ post.blog_category.category_title }}</a>
+            </div>
+            <div tabindex="0">
+              {% assign excerpt = post.post_excerpt %}
+              {% if excerpt == '' or excerpt == nil %}
+              {% assign excerpt = post.post_content | strip_html | truncatewords: 40 %}
+              {% endif %}
+              {% if excerpt and excerpt != '' %}
+              <p>{{ excerpt }}</p>
+              {% endif %}
+            </div>
+            <div class="cta-block">
+              <!-- <div class="social-links">
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/blog/{{ post.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/sharer.php?u={{ site.url }}/blog/{{ post.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                      </div> -->
+              <div class="button">
+                <a class="btn btn--secondary" href="/blog/{{ post.url_friendly_name }}">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="blog__aside">
+        {% include blog-sidebar.html %}
+      </div>
+    </div>
+  </div>
+</section>
