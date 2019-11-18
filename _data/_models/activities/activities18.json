@@ -2,7 +2,7 @@
   "order": 18,
   "name": "Jet Ski Guided Tour",
   "url_friendly_name": "jet-ski-guided-tour",
-  "description": "<p>Want to see more of Key West than just Duval Street? What better way than to join a 26 mile, 90 minute guided tour around Key West and neighboring islands.</p>\n<p>Along the way the guides will be stopping at several spots such as the Southernmost Point, the historic Key West Harbor, and the submarine pits and will give a little history of Key West.</p>\n<p>For the nature lovers our knowledgeable guides will be taking you through a mangrove creek and the shallow water ecosystem of the Gulf of Mexico and the Atlantic Ocean.</p>\n<p>You&rsquo;ll also have the opportunity to see native wildlife along the way such as jellyfish, urchins, stingrays, turtles, herons, egrets, cormorants, and the occasional dolphin and manatee!</p>\n<p>For the adrenaline junkies there will be plenty of play time in both the Gulf of Mexico and the Atlantic Ocean!</p>\n<p><strong><a href=\"https://fareharbor.com/embeds/book/oceansedgepowersports/items/39320/calendar/2017/03/?full-items=yes\">BOOK ONLINE</a></strong></p>\n<p>&nbsp;</p>",
+  "description": "<p>Want to see more of Key West than just Duval Street? What better way than to join a 26 mile, 90 minute guided tour around Key West and neighboring islands.</p>\n<p>Along the way the guides will be stopping at several spots such as the Southernmost Point, the historic Key West Harbor, and the submarine pits and will give a little history of Key West.</p>\n<p>For the nature lovers our knowledgeable guides will be taking you through a mangrove creek and the shallow water ecosystem of the Gulf of Mexico and the Atlantic Ocean.</p>\n<p>You&rsquo;ll also have the opportunity to see native wildlife along the way such as jellyfish, urchins, stingrays, turtles, herons, egrets, cormorants, and the occasional dolphin and manatee!</p>\n<p>For the adrenaline junkies there will be plenty of play time in both the Gulf of Mexico and the Atlantic Ocean!</p>\n<p>&nbsp;</p>",
   "terms_conditions": "Cost ",
   "price": "Please inquire",
   "image": {
@@ -29,5 +29,7 @@
     "caption": "",
     "description": ""
   },
-  "category": "activities_categories4"
+  "category": "activities_categories4",
+  "book_online_button": true,
+  "book_online_button_link": "https://oceansedgecs.com/jet-ski-tours/"
 }
