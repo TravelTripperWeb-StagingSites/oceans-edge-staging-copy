@@ -79,7 +79,7 @@ mega:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible-rooms"
+        en: "/stay/#accessible"
       label_localized:
         en: Accessible Rooms & Suites
       items:
@@ -284,8 +284,7 @@ mega_mobile:
   name: Mobile Full Menu
   items:
   - folder: true
-    label_localized:
-      en: Resort
+    label: Resort
     items:
     - folder: false
       url_localized: ''
@@ -311,22 +310,21 @@ mega_mobile:
       en: Stay
     items:
     - folder: false
-      url_localized: ''
-      page_id: _pages/stay.html
+      url_localized:
+        en: dining/yellofin-bar-grill/
+      page_id: _pages/yellofin-bar-grill.html
       label_localized:
-        en: All Rooms & Suites
+        en: Yellowfin Bar & Grill
       items:
     - folder: false
       url_localized:
         en: "/stay/#guestrooms"
-      page_id: _pages/stay.html
       label_localized:
         en: Guestrooms
       items:
     - folder: false
       url_localized:
         en: "/stay/#accessible"
-      page_id: _pages/stay.html
       label_localized:
         en: Accessible Rooms & Suites
       items:
