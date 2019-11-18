@@ -1,11 +1,11 @@
 {
-  "category_title":{
+  "name":{
     "type": "text"
   },
-  "category_description": {
+  "description": {
     "type": "text"
   },
-  "category_image": {
+  "image": {
     "type": "image"
   },
   "url_friendly_name": {
