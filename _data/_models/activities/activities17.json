@@ -30,5 +30,7 @@
     "description": ""
   },
   "complimentary-resort-activities": false,
-  "category": "activities_categories4"
+  "category": "activities_categories4",
+  "book_online_button": true,
+  "book_online_button_link": "https://oceansedgecs.com/?page_id=658&preview=true"
 }
