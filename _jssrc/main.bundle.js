@@ -717,4 +717,27 @@ readyDoc(function () {
       }
     };
   }
+
+  if (document.getElementById('activitiesSlider')) {
+    var slider = tns({
+      container: '#activitiesSlider .activities-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#activitiesSlider .iconbtn--left", // previous button
+      nextButton: "#activitiesSlider .iconbtn--right" // next button
+    });
+  }
+  if (document.getElementById('adventuresSlider')) {
+    var slider = tns({
+      container: '#adventuresSlider .adventures-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#adventuresSlider .iconbtn--left", // previous button
+      nextButton: "#adventuresSlider .iconbtn--right" // next button
+    });
+  }
 });
