@@ -28,7 +28,7 @@
   "image": {
     "type": "image"
   },
-  "book_now_btn": {
+  "book_online_btn": {
     "type": "boolean"
   },
   "book_now_btn_link": {
