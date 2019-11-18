@@ -89,6 +89,9 @@ page_gen:
   template: adventures_layout
   dir: adventures
   title_field: name
+- data: posts
+  template: blog_layout
+  dir: blog  
 plugins_dir:
 - _plugins-38
 - _plugins
