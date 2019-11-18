@@ -22,9 +22,9 @@ layout: default
           <div tabindex="0">{{ item.description }}</div>
           <!-- <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
           <div tabindex="0"><p>{{ item.price }}</p></div> -->
-          {% if item.book_online_btn == true %}
-          <div class="btn-holder mb-0">
-            <a class="btn btn--book" href="{{ item.book_now_btn_link }}" target="_blank">Book Online</a>
+          {% if item.book_online_button == true %}
+          <div class="btn-holder mb-4">
+            <a class="btn btn--book-small" href="{{ item.book_online_button_link }}" target="_blank">Book Online</a>
           </div>
           {% endif %}
           <div class="social-share">
