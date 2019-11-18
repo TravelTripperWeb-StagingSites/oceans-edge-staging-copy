@@ -9,7 +9,7 @@
     "type": "image"
   },
   "url_friendly_name": {
-    "type": "slug"
+    "type": "url_slug"
   },
   "order": {
     "type": "integer"
