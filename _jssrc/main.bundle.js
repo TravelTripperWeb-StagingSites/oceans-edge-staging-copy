@@ -332,23 +332,10 @@ readyDoc(function () {
         }
       });
       if (document.querySelector("#sliderRange")) {
-        var num_items = assetSlider.getInfo().items;
         document.querySelector("#sliderRange").addEventListener('change', function () {
-          var ele = document.getElementById("sliderRange");
-          var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-          ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-          var sliderindex = document.getElementById('sliderRange').value;
-          var sliderindex2 = (sliderindex - 1) * num_items;
-          assetSlider.goTo(sliderindex2);
+          sliderrangefunc(assetSlider);
         });
-        var style = document.querySelector('[data="offerslistyle"]');
-        var sliderangele = document.getElementById("sliderRange");
-        var slidelen = sliderangele.getAttribute('data-max');
-        var slidemax = Math.ceil(slidelen / num_items);
-        sliderangele.setAttribute('max', slidemax);
-        var x = 100 / slidemax + '%';
-        var y = '10';
-        style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+        rangethumb(assetSlider);
       }
     }
   }, 3000);
@@ -377,21 +364,9 @@ readyDoc(function () {
     if (document.querySelector("#sliderRange")) {
       var num_items = assetSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', function () {
-        var ele = document.getElementById("sliderRange");
-        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-        var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = (sliderindex - 1) * num_items;
-        assetSlider.goTo(sliderindex2);
+        sliderrangefunc(assetSlider);
       });
-      var style = document.querySelector('[data="offerslistyle"]');
-      var sliderangele = document.getElementById("sliderRange");
-      var slidelen = sliderangele.getAttribute('data-max');
-      var slidemax = Math.ceil(slidelen / num_items);
-      sliderangele.setAttribute('max', slidemax);
-      var x = 100 / slidemax + '%';
-      var y = '10';
-      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+      rangethumb(assetSlider);
     }
   }
 
@@ -482,21 +457,9 @@ readyDoc(function () {
     if (document.querySelector("#sliderRange")) {
       var num_items = roomsSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', function () {
-        var ele = document.getElementById("sliderRange");
-        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-        var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = (sliderindex - 1) * num_items;
-        roomsSlider.goTo(sliderindex2);
+        sliderrangefunc(roomsSlider);
       });
-      var style = document.querySelector('[data="offerslistyle"]');
-      var sliderangele = document.getElementById("sliderRange");
-      var slidelen = sliderangele.getAttribute('data-max');
-      var slidemax = Math.ceil(slidelen / num_items);
-      sliderangele.setAttribute('max', slidemax);
-      var x = 100 / slidemax + '%';
-      var y = '10';
-      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+      rangethumb(roomsSlider);
     }
   }
 
@@ -522,23 +485,10 @@ readyDoc(function () {
       }
     });
     if (document.querySelector("#sliderRange")) {
-      var num_items = assetSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', function () {
-        var ele = document.getElementById("sliderRange");
-        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
-        var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = (sliderindex - 1) * num_items;
-        assetSlider.goTo(sliderindex2);
+        sliderrangefunc(suitesSlider);
       });
-      var style = document.querySelector('[data="offerslistyle"]');
-      var sliderangele = document.getElementById("sliderRange");
-      var slidelen = sliderangele.getAttribute('data-max');
-      var slidemax = Math.ceil(slidelen / num_items);
-      sliderangele.setAttribute('max', slidemax);
-      var x = 100 / slidemax + '%';
-      var y = '10';
-      style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+      rangethumb(suitesSlider);
     }
   }
 
@@ -709,6 +659,28 @@ readyDoc(function () {
       }
     }
     return "";
+  }
+
+  function rangethumb(assetSlider) {
+    var num_items = assetSlider.getInfo().items;
+    var style = document.querySelector('[data="offerslistyle"]');
+    var sliderangele = document.getElementById("sliderRange");
+    var slidelen = sliderangele.getAttribute('data-max');
+    var slidemax = Math.ceil(slidelen / num_items);
+    sliderangele.setAttribute('max', slidemax);
+    var x = 100 / slidemax + '%';
+    var y = '10';
+    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
+  }
+
+  function sliderrangefunc(assetSlider) {
+    var num_items = assetSlider.getInfo().items;
+    var ele = document.getElementById("sliderRange");
+    var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+    ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' + 'color-stop(' + val + ', #6f6f6f)' + ')';
+    var sliderindex = document.getElementById('sliderRange').value;
+    var sliderindex2 = (sliderindex - 1) * num_items;
+    assetSlider.goTo(sliderindex2);
   }
 
   //rooms filter

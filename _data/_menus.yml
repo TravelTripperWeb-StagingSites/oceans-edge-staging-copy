@@ -69,7 +69,7 @@ mega:
         en: dining/yellofin-bar-grill/
       page_id: _pages/yellofin-bar-grill.html
       label_localized:
-        en: Yellowfin Bar & Grill
+        en: Yellowfin Bar & Kitchen
       items:
     - folder: false
       url_localized:
@@ -175,21 +175,21 @@ mega:
       label_localized:
         en: Overview
       items:
-    - folder: false
-      url_localized:
-        en: "/groups#weddings"
-      page_id: _pages/groups.html
-      label_localized:
-        en: Weddings
-      items:
-    - folder: false
-      url_localized:
-        en: "/groups#meetings-events"
-      page_id: _pages/groups.html
-      label_localized:
-        en: Meetings & Events
-      items:
-    expanded: false
+#    - folder: false
+#      url_localized:
+#        en: "/groups#weddings"
+#      page_id: _pages/groups.html
+#      label_localized:
+#        en: Weddings
+#      items:
+#    - folder: false
+#      url_localized:
+#        en: "/groups#meetings-events"
+#      page_id: _pages/groups.html
+#      label_localized:
+#        en: Meetings & Events
+#      items:
+#    expanded: false
   - folder: true
     label_localized:
       en: More
@@ -386,13 +386,13 @@ mega_mobile:
       label_localized:
         en: Oceans Edge Cafe
       items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/in-room-dining.html
-      label_localized:
-        en: In-room Dining
-      items:
-    expanded: false
+#    - folder: false
+#      url_localized: ''
+#      page_id: _pages/in-room-dining.html
+#      label_localized:
+#        en: In-room Dining
+#      items:
+#    expanded: false
   - folder: true
     label_localized:
       en: Marina
