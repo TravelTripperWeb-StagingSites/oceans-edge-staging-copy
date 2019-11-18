@@ -1,0 +1,8 @@
+{
+  "category_title":{
+    "type": "text"
+  },
+  "category_description": {
+    "type": "text"
+  }
+}
