@@ -408,4 +408,10 @@
       display: none;
     }
   }
+  &.dark-theme {
+    background-color: $primary;
+    .h4 {
+      color: $s2;
+    }
+  }
 }
