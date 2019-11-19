@@ -780,6 +780,16 @@
 .social-media {
   display: flex;
 
+  &__label {
+    display: inline-block;
+    margin-right: 24px;
+    font-family: $family-primary;
+    font-size: $display10-size;
+    color: $dark;
+    text-transform: uppercase;
+    letter-spacing: .83px;
+  }
+
   a {
     display: flex;
     align-items: center;

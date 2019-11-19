@@ -178,6 +178,11 @@
           .h4 {
             font-size: $base-font-size;
             line-height: 1.5rem;
+
+            a {
+              color: $primary;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -277,7 +282,6 @@
   &__item {
     margin-bottom: 40px;
     background-color: $white;
-    border-bottom: 1px dashed $gray-400;
 
     &:last-child {
       margin-bottom: 0;
@@ -389,7 +393,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 24px;
+    margin-top: 48px;
     align-content: center;
 
     .button {
@@ -466,7 +470,7 @@
     }
 
     &__inner {
-      padding: 32px 24px;
+      padding: 32px 24px 48px;
       background-color: $tertiary;
       border-radius: 16px;
     }
@@ -474,11 +478,7 @@
 
   &__search-wrap {
     position: relative;
-    padding: 30px 15px 0;
-    @include media-breakpoint-up(md) {
-      margin-bottom: 30px;
-      padding: 0;
-    }
+    margin-bottom: 40px;
   }
 
   &__search {
@@ -665,22 +665,6 @@
 
   &__subscribe {
     position: relative;
-    padding: 40px 24px 50px;
-    background-color: $primary;
-
-    &:after {
-      position: absolute;
-      top: 0;
-      right: -1000%;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      content: '';
-      background-color: $primary;
-    }
-    @include media-breakpoint-up(lg) {
-      padding: 40px 24px 50px;
-    }
 
     p {
       margin-bottom: 10px;
@@ -690,13 +674,8 @@
       letter-spacing: 1.75px;
     }
 
-    .form-group {
-      position: relative;
-      padding-right: 60px;
-    }
-
     .form-control {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .btn-arrow {
@@ -708,26 +687,39 @@
       background-color: transparent;
       border: solid 1px $primary;
       border-radius: 0;
-      transition: all 0.3s;
-
-      i {
-        color: $primary;
-      }
+      transition: all .3s;
 
       &:hover {
         background-color: $primary;
+      }
+    }
 
-        i {
-          color: $white;
+    .form-check {
+      margin-bottom: 24px;
+      padding-left: 0;
+
+      .cstm-checkbox {
+        margin-left: 0;
+      }
+
+      label {
+        font-family: $family-secondary !important;
+        font-size: $display8-size;
+        color: $primary;
+
+        a {
+          color: $primary;
+          text-decoration: underline;
         }
       }
     }
   }
 
   &--single {
-    margin-top: 60px;
+    margin-top: 32px;
 
     .blog__item {
+      margin-bottom: 48px;
       background-color: transparent;
 
       .h3 {
@@ -792,7 +784,7 @@
       }
 
       img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
       }
 
