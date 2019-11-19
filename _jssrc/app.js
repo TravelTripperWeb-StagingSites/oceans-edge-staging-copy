@@ -109,6 +109,7 @@ readyDoc(function() {
 
   window.onhashchange = function() {
     filterThroughURL();
+    document.querySelector('[data-target="navMenu"]').click();
   }
 
   //if url contains hash
@@ -739,14 +740,14 @@ readyDoc(function() {
 
 });
 
-if(document.querySelector('.videothumbnail')){
- document.querySelector('.videothumbnail').addEventListener('click', lightbox_open, false);
-}
-
-function lightbox_open() {
-  document.querySelector('.lightbox2').style.display = 'flex';
-  document.querySelector('.lightbox2').style.opacity = '1';
-  document.querySelector('.VisaChipCardVideo').play();
+function lightbox_open(video) {
+  console.log(video.getAttribute('data-video'));
+  document.querySelector('.VisaChipCardVideo source').setAttribute('src', video.getAttribute('data-video'));
+  setTimeout(function(){
+    document.querySelector('.lightbox2').style.display = 'flex';
+    document.querySelector('.lightbox2').style.opacity = '1';
+    document.querySelector('.VisaChipCardVideo').play();
+  }, 100);
 }
 
 function lightbox_close() {
