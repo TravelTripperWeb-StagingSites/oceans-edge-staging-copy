@@ -818,12 +818,12 @@ readyDoc(function() {
     });
   }
 
-  document.querySelector('.rooms-cross-sell .icon-maximize').addEventListener('click', () => {
-    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.add('fullscreen-carousel');
+  document.querySelector('.fullscreen-cross-sell .icon-maximize').addEventListener('click', () => {
+    document.querySelector('.fullscreen-cross-sell').classList.add('fullscreen-carousel');
   });
 
-  document.querySelector('.rooms-cross-sell .zoomout').addEventListener('click', () => {
-    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.remove('fullscreen-carousel');
+  document.querySelector('.fullscreen-cross-sell .zoomout').addEventListener('click', () => {
+    document.querySelector('.fullscreen-cross-sell').classList.remove('fullscreen-carousel');
   });
 
 });
