@@ -571,7 +571,7 @@ hr {
   position: absolute;
   right: 40px;
   bottom: 40px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -580,6 +580,10 @@ hr {
   border-radius: 50%;
   box-shadow: 0 1px 5px rgba(0,0,0,.1);
   @include transition(all .3s);
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
 
   i {
     font-size: $display7-size;
@@ -599,7 +603,7 @@ hr {
 }
 
 .fullscreen-carousel {
-  position: fixed;
+  position: fixed !important;
   z-index: 99;
   display: block !important;
   flex: inherit !important;
@@ -608,11 +612,17 @@ hr {
   height: calc(100vh - 150.42px);
 
   .zoomout {
-    display: block;
+    display: flex;
   }
 
   .zoom {
     display: none;
+  }
+}
+
+.is-fixed-top+.main {
+  .fullscreen-carousel {
+    height: calc(100vh - 96px);
   }
 }
 
