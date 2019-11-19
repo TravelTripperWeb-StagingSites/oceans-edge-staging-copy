@@ -633,12 +633,12 @@ hr {
   line-height: 0;
   color: $white;
   cursor: pointer;
-  background: $white;
-  border: 1px solid $video-close;
-  border-radius: 3px;
   opacity: .9;
   &:before {
-    content: '×';
+    font-family: $oceansedge-font-family;
+    font-size: $display6-size;
+    color: $light;
+    content: $icon-menu-close;
   }
 }
 .VisaChipCardVideo {
