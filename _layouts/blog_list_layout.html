@@ -54,7 +54,7 @@ layout: generic
 <section class="asset-list asset-list--happenings-list asset-list--blog-list asset-list--blog-list--latest">
   <div class="happening-category">
     <h2 class="h4">Latest Stories</h2>
-    <p class="cat-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+    <p class="cat-desc">What’s up right now in Key West?</p>
   </div>
   {% assign latestposts = site.data._models.posts | sort: "date" | reverse %}
   <div class="asset-list__items">
@@ -103,7 +103,7 @@ layout: generic
           <p class="cat-desc">{{blog_cat.description}}</p>
         </div>
         <div class="">
-          <a class="btn btn--secondary" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>          
+          <a class="btn btn--secondary" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>
         </div>
       </div>
       <div class="asset-list__items">
