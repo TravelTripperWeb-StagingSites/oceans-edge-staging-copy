@@ -93,7 +93,7 @@
         }
 
         .btn {
-          &:not(.btn--secondary) {
+          &:not(.btn--secondary), &:not(.btn--light) {
             color: $primary;
             background: $secondary;
 
@@ -472,6 +472,27 @@
 
       p {
         color: $dark;
+
+        a {
+          color: $primary;
+
+          &.btn {
+            color: $light;
+          }
+
+          &:hover {
+            &.btn {
+              color: $primary;
+            }
+          }
+        }
+
+        strong {
+          font-family: $family-primary;
+          font-size: $base-font-size;
+          font-weight: normal;
+          color: $primary;
+        }
       }
 
       ul {
@@ -642,31 +663,6 @@
     .btn-holder {
       margin-bottom: 38px;
     }
-
-    .social-media {
-      display: flex;
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        margin-right: 16px;
-        font-size: 13px;
-        color: $dark;
-        text-align: center;
-        background-color: $tertiary;
-        border-radius: 50%;
-        @include transition(.3s);
-
-        &:hover {
-          color: $tertiary;
-          text-decoration: none;
-          background-color: $dark;
-        }
-      }
-    }
   }
 }
 
@@ -777,6 +773,31 @@
       @include media-breakpoint-up(md) {
         @include make-col(3);
       }
+    }
+  }
+}
+
+.social-media {
+  display: flex;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    font-size: 13px;
+    color: $dark;
+    text-align: center;
+    background-color: $tertiary;
+    border-radius: 50%;
+    @include transition(.3s);
+
+    &:hover {
+      color: $tertiary;
+      text-decoration: none;
+      background-color: $dark;
     }
   }
 }

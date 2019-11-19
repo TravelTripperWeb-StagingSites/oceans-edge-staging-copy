@@ -106,7 +106,6 @@
         height: 100%;
         border-radius: 16px;
         object-fit: cover;
-        object-position: top;
       }
     }
 
@@ -407,6 +406,12 @@
   .bed-type {
     &:before {
       display: none;
+    }
+  }
+  &.dark-theme {
+    background-color: $primary;
+    .h4 {
+      color: $s2;
     }
   }
 }

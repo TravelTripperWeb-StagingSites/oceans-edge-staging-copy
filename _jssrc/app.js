@@ -320,17 +320,12 @@ readyDoc(function() {
           }
         }
       });
-      document.querySelector("#sliderRange").addEventListener('change' , () => {
-        var ele = document.getElementById("sliderRange");
-        var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-        ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
-        + 'color-stop(' + val + ', #6f6f6f)'
-        + ')';
-        var sliderindex = document.getElementById('sliderRange').value;
-        var sliderindex2 = ((sliderindex - 1) * 3);
-        console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
-        assetSlider.goTo(sliderindex2);
-      });
+      if(document.querySelector("#sliderRange")) {
+        document.querySelector("#sliderRange").addEventListener('change', () => {
+          sliderrangefunc(assetSlider);
+        });
+        rangethumb(assetSlider);
+      }
     }
   }, 3000);
 
@@ -354,6 +349,15 @@ readyDoc(function() {
         }
       }
     });
+
+    if(document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', () => {
+          sliderrangefunc(assetSlider);
+      });
+          rangethumb(assetSlider);
+    }
+
   }
 
   if (document.getElementsByClassName('hero-carousel__wrap').length > 0) {
@@ -440,17 +444,13 @@ readyDoc(function() {
         }
       }
     });
-    document.querySelector("#sliderRange").addEventListener('change' , () => {
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
-      + 'color-stop(' + val + ', #6f6f6f)'
-      + ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = ((sliderindex - 1) * 3);
-      console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
-      roomsSlider.goTo(sliderindex2);
-    });
+    if(document.querySelector("#sliderRange")) {
+      var num_items = roomsSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', () => {
+          sliderrangefunc(roomsSlider);
+      });
+          rangethumb(roomsSlider);
+    }
   }
 
   if (document.getElementsByClassName('rooms-cross-carousel__handle-suites').length > 0) {
@@ -474,17 +474,12 @@ readyDoc(function() {
         }
       }
     });
-    document.querySelector("#sliderRange").addEventListener('change' , () => {
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '+ 'color-stop(' + val + ', #434343), '
-      + 'color-stop(' + val + ', #6f6f6f)'
-      + ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = ((sliderindex - 1) * 3);
-      console.log("sliderindex "+ sliderindex + " sliderindex2 "+ sliderindex2);
-      suitesSlider.goTo(sliderindex2);
-    });
+    if(document.querySelector("#sliderRange")) {
+      document.querySelector("#sliderRange").addEventListener('change', () => {
+        sliderrangefunc(suitesSlider);
+      });
+        rangethumb(suitesSlider);
+    }
   }
 
   // Tabs Script Start ======================================
@@ -659,24 +654,30 @@ readyDoc(function() {
     return "";
   }
 
-  //ofr slider range-thumb dynamic width
-  var style = document.querySelector('[data="offerslistyle"]');
-  var sliderangele = document.getElementById("sliderRange");
-  if(sliderangele) {
+
+  function rangethumb(assetSlider){
+    var num_items = assetSlider.getInfo().items;
+    var style = document.querySelector('[data="offerslistyle"]');
+    var sliderangele = document.getElementById("sliderRange");
     var slidelen = sliderangele.getAttribute('data-max');
-  }
-
-  var slidemax = Math.ceil(slidelen/3);
-  if(sliderangele) {
+    var slidemax = Math.ceil(slidelen / num_items);
     sliderangele.setAttribute('max', slidemax);
+    var x = (100 / slidemax) + '%';
+    var y = '10';
+    style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
   }
 
-  console.log("a "+ slidelen + " slidemax "+slidemax)
-
-  var x = (100/slidemax) + '%';
-  var y = '10';
-  style.innerHTML = ".slider::-moz-range-thumb {width: " + x + " !important; height: " + y + "px !important;} .slider::-webkit-slider-thumb {width: " + x + " !important; height: " + y + "px !important;}";
-
+  function sliderrangefunc(assetSlider) {
+      var num_items = assetSlider.getInfo().items;
+      var ele = document.getElementById("sliderRange");
+      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' +
+        'color-stop(' + val + ', #6f6f6f)' +
+        ')';
+      var sliderindex = document.getElementById('sliderRange').value;
+      var sliderindex2 = ((sliderindex - 1) * num_items);
+      assetSlider.goTo(sliderindex2);
+  }
 
   //rooms filter
   var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
@@ -688,6 +689,51 @@ readyDoc(function() {
       }
       currentElement.classList.add("active");
       filterRooms(currentElement.getAttribute("data-filter"));
+    });
+  }
+
+  //activities and adventures filter
+  if (document.querySelectorAll(".activities-filter").length > 0) {
+    var activitiesFilter = document.querySelector(".activities-filter");
+    let allActivities = document.querySelectorAll(".activities-listing__item");
+    activitiesFilter.onchange = function() {
+      let currentFilter = activitiesFilter.value;
+      let activitiesToShow =  document.querySelectorAll(".activities-listing__item[data-cat-filter='"+currentFilter+"']");
+      if(currentFilter == "all") {
+        for (let i = 0; i < allActivities.length; i++) {
+          allActivities[i].classList.remove("hidden");
+        }
+      } else {
+        for (let i = 0; i < allActivities.length; i++) {
+          allActivities[i].classList.add("hidden");
+        }
+        for (let i = 0; i < activitiesToShow.length; i++) {
+          activitiesToShow[i].classList.remove("hidden");
+        }
+      }
+    }
+  }
+
+  if (document.getElementById('activitiesSlider')) {
+    var slider = tns({
+      container: '#activitiesSlider .activities-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#activitiesSlider .iconbtn--left", // previous button
+      nextButton: "#activitiesSlider .iconbtn--right" // next button
+    });
+  }
+  if (document.getElementById('adventuresSlider')) {
+    var slider = tns({
+      container: '#adventuresSlider .adventures-slider',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: true,
+      prevButton: "#adventuresSlider .iconbtn--left", // previous button
+      nextButton: "#adventuresSlider .iconbtn--right" // next button
     });
   }
 

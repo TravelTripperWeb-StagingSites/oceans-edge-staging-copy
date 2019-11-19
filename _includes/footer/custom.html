@@ -19,7 +19,7 @@
     </div>
     <div class="footer__contact">
       <title class="h5">Contact</title>
-      <p>A - {{site.data.hotel_settings.address.street1}} {{site.data.hotel_settings.address.city}} {{site.data.hotel_settings.address.state}} {{site.data.hotel_settings.address.zipcode}}</p>
+      <p>A - {{site.data.hotel_settings.address.street1}},<br> {{site.data.hotel_settings.address.city}} {{site.data.hotel_settings.address.state}} {{site.data.hotel_settings.address.zip_code}}</p>
       <p>T - <a href="tel:{{site.data.hotel_settings.phone_number}}">{{site.data.hotel_settings.phone_number}}</a></p>
     </div>
     <div class="footer__reservations">
@@ -35,7 +35,7 @@
         {% endif %}
         {% if socialLinks.twitter.username %}
         <li>
-          <a class="twitter" href="https://www.twitter.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on twitter"></a>
+          <a class="twitter" href="https://www.twitter.com/{{socialLinks.twitter.username}}/" target="_blank" title="follow us on twitter"></a>
         </li>
         {% endif %}
         {% if socialLinks.instagram.username %}

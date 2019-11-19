@@ -9,7 +9,7 @@
         "gallery": "the_resort"
       },
       {
-        "gallery": "resort_map"
+        "gallery": "dining"
       },
       {
         "gallery": "rooms_suites"
@@ -25,6 +25,9 @@
       },
       {
         "gallery": "live_webcam"
+      },
+      {
+        "gallery": "activities"
       }
     ],
     "_template": "galleries"

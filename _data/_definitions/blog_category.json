@@ -1,0 +1,17 @@
+{
+  "name":{
+    "type": "text"
+  },
+  "description": {
+    "type": "text"
+  },
+  "image": {
+    "type": "image"
+  },
+  "url_friendly_name": {
+    "type": "url_slug"
+  },
+  "order": {
+    "type": "integer"
+  }
+}

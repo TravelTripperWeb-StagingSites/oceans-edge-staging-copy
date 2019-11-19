@@ -1,0 +1,157 @@
+---
+layout: generic
+---
+<section class="hero-static">
+  <div class="hero-static__wrap">
+    {% regionblock carousel_intro_hero, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+    {% endregionblock %}
+  </div>
+  <div class="hero-static__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+      <h1 class="overline overline--italic text-center dark" tabindex="0">Why Is Oceans Edge the Best Hotel in Key West?</h1>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+      <h2 class="h1" tabindex="0">Upscale Amenities for Every Guest</h2>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+        <p>Oceans Edge Resort & Marina has been carefully designed as a self-contained haven while providing the means for our guests to easily experience the natural beauty and culture of Stock Island and Key West. Your first stop will likely be one of our six saltwater swimming pools—all at the perfect temperature, all the time. Discover our offerings in the list below, and learn more about <b><a href="/stay/">our luxurious accommodations</a></b>.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+{% assign blog_categories = site.data._models.blog_category | sort: "order" %}
+
+<section class="blog-filter">
+  <div class="blog-filter__wrap">
+    <div class="blog-filter__left">
+      <p class="heading">Select a story category:</p>
+      <ul class="blog-cat">
+        <li>
+          <a href="/blog/" class="active">All</a>
+        </li>
+        {% for blog_category in blog_categories %}
+          <li>
+            <a href="/blog/category/{{blog_category.url_friendly_name}}/">{{blog_category.name}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="blog-filter__right">
+      <p class="heading">Search:</p>
+      <form class="search-from" action="/search/" method="get">
+        <input type="text" name="" value="" placeholder="Type search words here">
+        <button type="submit" name="button" class="search-btn">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1574131490/kvnjmvsusxdvwolfdla4.png" alt="Search">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="asset-list asset-list--happenings-list asset-list--blog-list asset-list--blog-list--latest">
+  <div class="happening-category">
+    <h2 class="h4">Latest Stories</h2>
+    <p class="cat-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+  </div>
+  {% assign latestposts = site.data._models.posts | sort: "date" | reverse %}
+  <div class="asset-list__items">
+    {% for post in latestposts limit: "2" %}
+      <div class="asset-item">
+        <div class="asset-item__wrap">
+          <div class="asset-item__featured-image">
+            <img class="objectfit" src="{{post.image.url_medium}}" alt="{{post.name}}">
+          </div>
+          <div class="asset-item__text-group">
+            <div class="asset-item__text-group__wrap">
+              <div class="post-info">
+                <span class="cat">
+                  {{ post.blog_category.name }}
+                </span>
+                <span class="blog-date">
+                  {{ post.date | date: "%B %d, %Y" }}
+                </span>
+              </div>
+              <h3 class="h4">{{ post.title }}</h3>
+              <p class="description">{{ post.post_content | strip_html | truncate: 130 }}</p>
+              <div class="row">
+                <div class="col-9">
+                  <a href="/blog/{{ post.url_friendly_name }}/" class="btn btn--light">Read More</a>
+                </div>
+                <div class="col-3">
+                  <!-- <a class="btn btn--secondary" href="{{ happening.cta_link }}" target="_blank">{{ happening.cta_label }}</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="asset-list asset-list--happenings-list asset-list--blog-list">
+  {% assign blog_categories = site.data._models.blog_category | sort: "order" %}
+  {% for blog_cat in blog_categories %}
+    {% assign posts = site.data._models.posts | where: "blog_category.name", blog_cat.name | sort: "date" | reverse %}
+    {% if posts.size > 0 %}
+      <div class="happening-category">
+        <h2 class="h4">{{blog_cat.name}}</h2>
+        <p class="cat-desc">{{blog_cat.description}}</p>
+        <a class="btn btn--secondary cat-link" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>
+      </div>
+      <div class="asset-list__items">
+        {% for post in posts limit: "3" %}
+          <div class="asset-item">
+          <div class="asset-item__wrap">
+            <div class="asset-item__featured-image">
+              <img class="objectfit" src="{{ post.image.url_medium }}" alt="{{post.name}}">
+            </div>
+            <div class="asset-item__text-group">
+              <div class="asset-item__text-group__wrap">
+                <div class="post-info">
+                  <span class="cat">
+                    {{ post.blog_category.name }}
+                  </span>
+                  <span class="blog-date">
+                    {{ post.date | date: "%B %d, %Y" }}
+                  </span>
+                </div>
+                <h3 class="h4">{{ post.title }}</h3>
+                <p class="description">{{ post.post_content | strip_html | truncate: 80 }}</p>
+                <div class="row">
+                  <div class="col-9">
+                    <a href="/blog/{{post.url_friendly_name}}/" class="btn btn--light">Read More</a>
+                  </div>
+                  <div class="col-3">
+                    <!-- <a class="btn btn--secondary" href="{{ happening.cta_link }}" target="_blank">{{ happening.cta_label }}</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+      <a href="/dining/" class="btn btn--light">Discover Dining</a>
+    {% endregionblock %}
+  </div>
+</section>

@@ -52,10 +52,10 @@ meta_tags:
           <div class="large-card__item__content">
             <div class="mb-3 mb-md-0">
               <p class="mb-1 mw-100 border-0">{{ item.terms_conditions }}<br>
-              <span class="price mw-100 border-0">{{ item.price }}<span></p>
+              <span class="price mw-100 border-0">{{ item.tour_hours }}<span></p>
             </div>
             <div class="large-card__item__button">
-              <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}" class="btn btn--light" target="_blank">View</a>
+              <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}" class="btn btn--light">View</a>
             </div>
           </div>
         </div>
@@ -75,14 +75,14 @@ meta_tags:
   <div class="filters-block">
     <div class="filters-block__room-type px-0">
       <h3 class="h4" tabindex="0">Key West Adventures</h3>
-      <p class="dark" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+      <p class="dark" tabindex="0">Discover the Florida Keys from every angle.</p>
     </div>
     <div class="filters-block__form px-0">
       <form>
         <div class="form-group">
           <label for="">Sort By:</label>
-          <select class="form-control">
-            <option>All Key West Adventures</option>
+          <select class="form-control activities-filter">
+            <option value="all">All Key West Adventures</option>
             {% assign items = site.data._models.adventures_categories | order: 'sort' %}
             {% for item in items %}
             <option>{{ item.name }}</option>
@@ -96,7 +96,7 @@ meta_tags:
     {% assign activities = site.data._models.adventures | sort: 'order' %}
     {% for item in activities %}
     {% if item.our-concierge-recommends != true %}
-    <div class="activities-listing__item">
+    <div class="activities-listing__item" data-cat-filter="{{ item.category.name }}">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
           <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">

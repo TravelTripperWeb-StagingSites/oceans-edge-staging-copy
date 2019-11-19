@@ -44,4 +44,102 @@ meta_tags:
       {% endregionblock %}
     </div>
   </div>
+  <div class="two-col-carousels">
+    <div class="two-col-carousels__wrap">
+      <div class="two-col-carousels__left">
+        <div class="two-col-carousels__intro">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <p class="h4">Marina Activities</p>
+              <p class="light">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
+            </div>
+            <div class="col-4 text-right">
+              <a class="btn btn--secondary-s2" href="/activities/">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-carousels__slider-wrap" id="activitiesSlider">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573812042/lxp2ygvinbhltrajetbz.jpg" class="slider-bg" alt="Marina Activities">
+          <div class="two-col-carousels__content">
+            <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
+            <div class="two-col-carousels__slider activities-slider">
+              {% assign marina_activities = site.data._models.marina_activities %}
+              {% for marina_activity in marina_activities %}
+              <div class="two-col-carousels__slider__item">
+                <p class="overline overline--italic light">{{marina_activity.name}}</p>
+                <p class="light h4">{{marina_activity.short_description}}</p>
+                <p><a class="btn btn--light" href="{{marina_activity.link}}">View</a></p>
+              </div>
+              {% endfor %}
+            </div>
+            <a class="iconbtn iconbtn--light iconbtn--right" href="javascript:void(0);"></a>
+          </div>
+        </div>
+      </div>
+      <div class="two-col-carousels__right">
+        <div class="two-col-carousels__intro">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <p class="h4">Marina Activities</p>
+              <p class="light">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
+            </div>
+            <div class="col-4 text-right">
+              <a class="btn btn--secondary-s2" href="/activities/">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-carousels__slider-wrap" id="adventuresSlider">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573812068/xkevwyb7e3prcerjrezs.jpg" class="slider-bg" alt="Marina Adventures">
+          <div class="two-col-carousels__content">
+            <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
+            <div class="two-col-carousels__slider adventures-slider">
+              {% assign marina_adventures = site.data._models.marina_adventures %}
+              {% for marina_adventure in marina_adventures %}
+              <div class="two-col-carousels__slider__item">
+                <p class="overline overline--italic light">{{marina_adventure.name}}</p>
+                <p class="light h4">{{marina_adventure.short_description}}</p>
+                <p><a class="btn btn--light" href="{{marina_adventure.link}}">View</a></p>
+              </div>
+              {% endfor %}
+            </div>
+            <a class="iconbtn iconbtn--light iconbtn--right" href="javascript:void(0);"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img2, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header2, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text2, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+      <a href="/dining/" class="btn btn--light">Discover Dining</a>
+    {% endregionblock %}
+  </div>
+</section>
+
+<section class="offers-cross-sell__no-nav dark-theme">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header align-items-center">
+      <div class="content">
+        {% regionblock happenings_heading, type:header %}
+        <h2 class="h4 mb-2">Happenings</h2>
+        {% endregionblock %}
+        {% regionblock happenings_text, type:text %}
+        <p class="light">Special events and holiday dining done the Key West way—on the water and with panache.</p>
+        {% endregionblock %}
+      </div>
+      <a href="/happenings/" class="btn btn--secondary-s2">View all</a>
+    </div>
+    {% include components/happenings-cross-sell %}
+  </div>
 </section>

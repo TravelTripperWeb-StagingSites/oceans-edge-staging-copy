@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+{% assign blogpost = page.data %}
+{% assign post = site.data._models.posts  %}
+{% assign blog = page %}
+{% assign seo_title = blog.seo_title %}
+{% assign seo_description = blog.seo_description %}
+
+{% for p in post %}
+  {% if p.url_friendly_name == blog.url_friendly_name %}
+    {% assign pInd = forloop.index0 | minus: 1 %}
+    {% assign nInd = forloop.index0 | plus: 1 %}
+    {% if forloop.first != true %}
+      {% assign prevPostTitle = post[pInd].title %}
+      {% assign prevPostUrl = post[pInd].url_friendly_name %}
+    {% endif %}
+    {% if forloop.last != true %}
+      {% assign nextPostTitle = post[nInd].title %}
+      {% assign nextPostUrl = post[nInd].url_friendly_name %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<div class="blog-hero">
+  <img src="{{ blogpost.image.url_large }}" alt="{{ blogpost.title }}">
+</div>
+
+<section class="blog blog--single">
+  <div class="blog__container">
+    <div class="blog__row">
+      <div class="blog__list">
+        <div class="blog__item">
+          <div class="blog__info">
+            {% if blogpost.blog_category.name %}
+              <a class="blog__category" href="/blog/?c={{ blogpost.blog_category.name | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ blogpost.blog_category.name }}</a>
+            {% endif %}
+            <span class="blog__date" tabindex="0">
+              {% assign d = blogpost.date | date: "%-d" %}
+              {{ blogpost.date | date: "%B" }}
+              {% case d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{% when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %},
+              {{ blogpost.date | date: "%Y" }}
+            </span>
+          </div>
+          <h1 class="h3" tabindex="0">{{ blogpost.title }}</h1>
+          <!-- <figure class="blog__image">
+            <img src="{{ blogpost.image.url_large }}" alt="{{ blogpost.title }}">
+          </figure> -->
+          <div tabindex="0">
+            {{ blogpost.post_content }}
+          </div>
+          <div class="cta-block">
+            <div class="social-links">
+              <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/blog/{{ blogpost.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}/blog/{{ blogpost.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+            <div class="blog-prev-next">
+              {% if prevPostUrl %}
+                <a aria-label="Previous blog post" class="primary-btn inverse previous" href="/blog/{{prevPostUrl}}/" title="Previous blog post">
+                  <i aria-hidden="true" aria-label="Previous post" class="fas fa-angle-left"></i>
+                  <span>Prev</span>
+                </a>
+              {% endif %}
+              {% if nextPostUrl %}
+                <a aria-label="Next blog post" class="primary-btn inverse pushleft" href="/blog/{{nextPostUrl}}/" title="Next blog post">
+                  <span>Next</span>
+                  <i aria-hidden="true" class="fas fa-angle-right"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% comment %}
+        <!-- Related Posts -->
+        {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
+        {% assign count = 0 %}
+        <div class="blog__related">
+          <p class="h4 dark" tabindex="0">Related Posts</p>
+          <div class="blog__related__row">
+            {% for relatedblog in relatedblogs %}
+              <!-- Related blog items -->
+              {% if relatedblog.blog_category == blogpost.blog_category and count < 3 %}
+                <!-- Skip current blog -->
+                {% if relatedblog.url_friendly_name != blogpost.url_friendly_name %}
+                  {% assign count = count | plus: 1 %}
+                  <div class="blog__related__item">
+                    <a class="blog__related__image" href="/blog/{{ relatedblog.url_friendly_name }}/" tabindex="-1">
+                      {% assign featured_image = relatedblog.image %}
+                      {% include components/image image=featured_image max_width=600 %}
+                    </a>
+                    <p class="h6">
+                      <a href="/blog/{{ relatedblog.url_friendly_name }}/">{{ relatedblog.title }}</a>
+                    </p>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endcomment %}
+      </div>
+      <div class="blog__aside">
+        <div class="blog__aside__inner">
+          {% include blog-sidebar.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-layout: dining_list_layout
+layout: generic
 title: Key West Restaurants on the Water | Oceans Edge Resort
 meta_description: Oceans Edge Resort has one of the loveliest Key West restaurants on the water. Overlooking our marina and serving the freshest seafood and delicious cocktails.
 permalink_localized:
@@ -7,3 +7,252 @@ permalink_localized:
 meta_tags:
   robots:
 ---
+
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.dining_hero_carousel | sort: order %}
+    {% for item in items %}
+    <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
+    {% endfor %}
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+    <h1 class="overline overline--italic text-center dark" tabindex="0">Key West Restaurants on the Water</h1>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+    <h2 class="h1" tabindex="0">Light Lunches to Indulgent Dinners: Dining at Oceans Edge Is Just Right</h2>
+    {% endregionblock %}
+  </div>
+</section>
+
+<section class="experience experience--light">
+  <div class="experience__wrap">
+    <div class="description" tabindex="0">
+      <div class="row mt-3">
+        <div class="col-md-6">
+          {% regionblock dining_description1, type:text %}
+          <p>The Yellowfin Bar and Grill introduces the new concept for island cooking. Celebrating flavors native to the Florida Keys while seamlessly blending them with the cultural influences and cooking styles of East Asia has made the Yellowfin Bar and Grill a dining destination.</p>
+          {% endregionblock %}
+        </div>
+        <div class="col-md-6">
+          {% regionblock dining_description2, type:text %}
+          <p>We’ve refreshed our restaurant from the dock up. Expect explosive island flavors paired with the complex umami of something from another ocean, fresh caught fish right from the waters of Key West, and a refreshed atmosphere blending the stylish yet casual Key West vibe with a unique and elevated al fresco dining experience.</p>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="row">
+        <div class="collage__image t-order">
+          {% regionblock breakfast_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock breakfast_title, type:header %}
+            <h4 class="h4" tabindex="0">Lunch</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock breakfast_description, type:text %}
+              <p>From crab wontons to the jerk chicken sandwich, our kitchen serves delectable lunch fare right up until cocktail hour. Perfect after paddleboarding or kayaking.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock breakfast_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642583/hi3lfzzxk8w8ydvaopar.pdf" target="_blank">View Lunch Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock lunch_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock lunch_title, type:header %}
+            <h4 class="h4" tabindex="0">Breakfast</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock lunch_description, type:text %}
+              <p>Substantial or feather-light, you’ll find fresh and wholesome breakfasts, including eggs, waffles, fruit parfaits, and more.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock lunch_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/b7sdm2ylpix7vr1vix09.pdf" target="_blank">View Breakfast Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock dinner_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock dinner_title, type:header %}
+            <p class="h4" tabindex="0">Dinner</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock dinner_description, type:text %}
+              <p>This is where our kitchen really dazzles. A vacation evening doesn’t get better than innovative flavors enjoyed while watching the sunset.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock dinner_url, type:header %}
+            <a class="btn btn--secondary" href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573642582/jgduv8vvi09df6w5hgtb.pdf" target="_blank">View Dinner Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta d-inline-block">
+  <div class="common-cta__img">
+    {% regionblock marina_cta_img, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+      {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock bar_cta_subheading, type:header %}
+    <h3 class="h4 light" tabindex="0">Bar Service</h3>
+    {% endregionblock %}
+    {% regionblock bar_cta_heading, type:header %}
+    <h4 class="h3 light" tabindex="0">Refresh by the pool or at our cozy, social patio overlooking the marina</h4>
+    {% endregionblock %}
+    <div class="para" tabindex="0">
+      {% regionblock bar_cta_content, type:text %}
+      <p>Bar Hours: 10am to 11pm    |    Happy Hour: 4:30pm to 6:30pm (only at the bar)</p>
+      {% endregionblock %}
+    </div>
+    <div class="d-flex justify-content-center">
+      {% regionblock bar_cta_btn, type:text %}
+      <a href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573817377/ehxhorakqhjjslmfskns.pdf" class="btn btn--light mx-0 mx-md-2" target="_blank">View Happy Hour Menu</a>
+      {% endregionblock %}
+      {% regionblock bar_cta_btn2, type:text %}
+      <a href="https://res.cloudinary.com/traveltripperweb/raw/upload/v1573817377/yozitobrl1gio7lnjiui.pdf" class="btn btn--light mx-0 mx-md-2" target="_blank">View Pool Side Menu</a>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--reverse groups-intro--full-screen">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock cafe_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573209453/vkhijqrcwsfgk8j2iqav.jpg" alt="Ocean Edge Meetings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock cafe_subheader, type:header %}
+          <h3 class="overline overline--italic dark" tabindex="0">Cafe</h3>
+          {% endregionblock %}
+          {% regionblock cafe_header, type:header %}
+          <h4 class="h3" tabindex="0">Light Bites All Day</h4>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock cafe_text1, type:text %}
+            <p>Grab a coffee and light breakfast on your way to the dock before getting your kayaks or take a little something out to the pool.</p>
+            {% endregionblock %}
+            {% regionblock cafe_text2, type:text %}
+            <ul>
+              <li>Starbucks coffee</li>
+              <li>Bagels, pastries, muffins</li>
+              <li>Sandwiches and light lunches</li>
+              <li>Soft drinks, juices, and smoothies</li>
+            </ul>
+            {% endregionblock %}
+            {% regionblock cafe_text3, type:text %}
+            <p class="small">Hours: 6:30am to 5pm daily</p>
+            {% endregionblock %}
+          </div>
+          {% regionblock cafe_cta_btn, type:text %}
+          <a href="/dining/oceans-edge-cafe/" class="btn btn--light">Read More</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--full-screen groups-weddings">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock inroom_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573199329/wdqgnnrvfn1bcwxs1yc6.jpg" alt="Ocean Edge Weddings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock inroom_subheader, type:header %}
+          <h3 class="overline overline--italic dark" tabindex="0">In-Room Dining at Oceans Edge</h3>
+          {% endregionblock %}
+          {% regionblock inroom_header, type:header %}
+          <h4 class="h3" tabindex="0">Your Own Key West Fine Dining Scene</h4>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock inroom_text1, type:text %}
+            <p>Our in-room menu choices allow for excellent meals that you can enjoy on your balcony. Delivered right to your day and available all day.</p>
+            {% endregionblock %}
+            {% regionblock inroom_text2, type:text %}
+            <p class="small">Breakfast: 7am to 11am<br>All Day Dining: 11:30am to 10pm</p>
+            {% endregionblock %}
+          </div>
+          <div class="btn-holder">
+            {% regionblock inroom_btn, type:text %}
+            <a class="btn btn--light" href="//res.cloudinary.com/traveltripperweb/raw/upload/v1573642580/vcaihjpqcjea3byqbmha.pdf" target="_blank">View Room Service Menu</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offers-cross-sell__no-nav">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header">
+      <div class="content">
+        {% regionblock dinging_bar_heading, type:header %}
+        <h2 class="h4 mb-2">Dining & Bar Happenings</h2>
+        {% endregionblock %}
+        {% regionblock dinging_bar_text, type:text %}
+        <p>Special events and holiday dining done the Key West way—on the water and with panache.</p>
+        {% endregionblock %}
+      </div>
+      <a href="/happenings/" class="btn mb-auto">View all</a>
+    </div>
+    {% include components/happenings-cross-sell %}
+  </div>
+</section>
+
+<section class="common-cta d-inline-block">
+  <div class="common-cta__img">
+    {% regionblock resort_img, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+      {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock resort_subheading, type:header %}
+    <h4 class="h4 light">The Resort</h4>
+    {% endregionblock %}
+    {% regionblock resort_heading, type:header %}
+    <h5 class="h3 light">an exhilarating Key West escape</h5>
+    {% endregionblock %}
+    {% regionblock resort_btn, type:text %}
+    <a href="/resort/" class="btn btn--light">Discover More</a>
+    {% endregionblock %}
+  </div>
+</section>

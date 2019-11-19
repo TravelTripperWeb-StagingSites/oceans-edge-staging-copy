@@ -9,7 +9,7 @@ meta_tags:
 
 <section class="hero-static hero-inner">
   <div class="hero-static__wrap">
-    {% regionblock hero_image, type:text %}
+    {% regionblock hero_image, type:image %}
     <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573124216/mtvawxp9kszjz3aljuqe.jpg" alt= "Family on Sups" />
     {% endregionblock %}
   </div>
@@ -38,8 +38,11 @@ meta_tags:
   </div>
   <div class="large-card__row rooms-cross-carousel__handle">
     {% assign activities = site.data._models.activities | sort: 'order' %}
+    {% assign counter = 0 %}
     {% for item in activities %}
     {% if item.complimentary-resort-activities == true %}
+    {% capture count %} {{ counter | plus:1 }} {% endcapture %}
+    {% assign counter = count %}
     <div class="large-card__item">
       <div class="large-card__item__inner">
         <div class="large-card__item__image">
@@ -55,7 +58,7 @@ meta_tags:
               <span class="price mw-100 border-0">{{ item.price }}<span></p>
             </div>
             <div class="large-card__item__button">
-              <a href="{{ item.url_friendly_name }}" class="btn btn--light" target="_blank">View</a>
+              <a href="{{ item.url_friendly_name }}" class="btn btn--light">View</a>
             </div>
           </div>
         </div>
@@ -66,6 +69,10 @@ meta_tags:
   </div>
   <div class="large-card__controls" id="roomsCarouselNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <div class="slidecontainer">
+      <style data="offerslistyle"></style>
+      <input type="range" min="1" data-max="{{ counter }}" max="" value="1" class="slider" id="sliderRange">
+    </div>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>
@@ -80,9 +87,9 @@ meta_tags:
     <div class="filters-block__form px-0">
       <form>
         <div class="form-group">
-          <label for="">Sort By:</label>
-          <select class="form-control">
-            <option>All On-site Marina Activities</option>
+          <label for="">Filter By:</label>
+          <select class="form-control activities-filter">
+            <option value="all">All On-site Marina Activities</option>
             {% assign items = site.data._models.activities_categories | order: 'sort' %}
             {% for item in items %}
             <option>{{ item.name }}</option>
@@ -96,7 +103,7 @@ meta_tags:
     {% assign activities = site.data._models.activities | sort: 'order' %}
     {% for item in activities %}
     {% if item.complimentary-resort-activities != true %}
-    <div class="activities-listing__item">
+    <div class="activities-listing__item" data-cat-filter="{{ item.category.name }}">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
           <a href="{{ item.url_friendly_name }}">

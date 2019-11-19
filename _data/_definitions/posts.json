@@ -1,0 +1,30 @@
+{
+  "title": {
+    "label": "Post Title",
+    "required": true
+  },
+  "image": {
+    "label": "Featured Image",
+    "type": "image",
+    "required": false
+  },
+  "url_friendly_name": {
+    "label": "URL Friendly Name",
+    "type": "url_slug"
+  },
+  "date": {
+    "label": "Date Posted",
+    "type": "date",
+    "required": true
+  },
+  "post_content": {
+    "label": "Post Content",
+    "type": "richtext",
+    "required": true
+  },
+  "blog_category": {
+    "type": "model",
+    "display_field": "category_title",
+    "model_name": "blog_category"
+  }
+}
