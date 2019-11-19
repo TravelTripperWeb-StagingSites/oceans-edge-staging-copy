@@ -199,6 +199,22 @@
   }
 }
 
+.blog-cat-listing {
+  @include make-container;
+  max-width: 1224px;
+  &__row {
+    @include make-row;
+    margin: 0;
+    overflow: hidden;
+  }
+  &__list {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
+  }
+}
+
 .category-selection {
   position: relative;
   width: 194px;
