@@ -135,20 +135,22 @@ readyDoc(function() {
   }
 
   // cendyn newsletter blog post data
-  document.getElementById('newsletterFormBlog').onsubmit = function(e) {
-    e.preventDefault();
-    let formId = document.getElementById('formIDBlog').value;
-    let url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
-    let data = JSON.stringify({
-      "PostData": {
-        "emailAddress": document.getElementById('emailAddressBlog').value,
-        "firstName": document.getElementById('firstNameBlog').value
-      }
-    });
-    makeRESTCall(url, data, function() {
-      window.location = '/thankyou/';
-    })
-    return false;
+  if(document.getElementById('newsletterFormBlog')) {
+    document.getElementById('newsletterFormBlog').onsubmit = function(e) {
+      e.preventDefault();
+      let formId = document.getElementById('formIDBlog').value;
+      let url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
+      let data = JSON.stringify({
+        "PostData": {
+          "emailAddress": document.getElementById('emailAddressBlog').value,
+          "firstName": document.getElementById('firstNameBlog').value
+        }
+      });
+      makeRESTCall(url, data, function() {
+        window.location = '/thankyou/';
+      })
+      return false;
+    }    
   }
 
   function makeRESTCall(url, data, callback) {
