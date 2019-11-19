@@ -23,33 +23,30 @@ layout: default
   {% endif %}
 {% endfor %}
 
-<section class="hero inner-hero" style="background-image:url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_1920,w_1920/v1571915083/ii9lrwfkggrkmww3ssfd.jpg');">
-  <div class="hero__body">
-    <h1 class="h1 light" tabindex="0" tabindex="0">Blog</h1>
-    <!-- <p class="light">Whether you’re seeking an art-filled escape, a day on the white sands of South Beach, or a night out at the trendiest new eatery, Miami has plenty to offer. Stay up to date with all the happenings in South Beach with The Sagamore Hotel South Beach Blog.</p> -->
-  </div>
-</section>
+<div class="blog-hero">
+  <img src="{{ blogpost.image.url_large }}" alt="{{ blogpost.title }}">
+</div>
 
 <section class="blog blog--single">
   <div class="blog__container">
     <div class="blog__row">
       <div class="blog__list">
         <div class="blog__item">
-          <h1 class="h3" tabindex="0">{{ blogpost.title }}</h1>
           <div class="blog__info">
+            {% if blogpost.blog_category.name %}
+              <a class="blog__category" href="/blog/?c={{ blogpost.blog_category.name | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ blogpost.blog_category.name }}</a>
+            {% endif %}
             <span class="blog__date" tabindex="0">
               {% assign d = blogpost.date | date: "%-d" %}
               {{ blogpost.date | date: "%B" }}
               {% case d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{% when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %},
               {{ blogpost.date | date: "%Y" }}
             </span>
-            {% if blogpost.blog_category.category_title %}
-              <a class="blog__category" href="/blog/?c={{ blogpost.blog_category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ blogpost.blog_category.category_title }}</a>
-            {% endif %}
           </div>
-          <figure class="blog__image">
+          <h1 class="h3" tabindex="0">{{ blogpost.title }}</h1>
+          <!-- <figure class="blog__image">
             <img src="{{ blogpost.image.url_large }}" alt="{{ blogpost.title }}">
-          </figure>
+          </figure> -->
           <div tabindex="0">
             {{ blogpost.post_content }}
           </div>
@@ -108,7 +105,9 @@ layout: default
         {% endcomment %}
       </div>
       <div class="blog__aside">
-        {% include blog-sidebar.html %}
+        <div class="blog__aside__inner">
+          {% include blog-sidebar.html %}
+        </div>
       </div>
     </div>
   </div>
