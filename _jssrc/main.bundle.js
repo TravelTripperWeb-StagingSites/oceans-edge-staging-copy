@@ -742,7 +742,7 @@ readyDoc(function () {
   }
 });
 
-if (document.querySelector('#videothumbnail')) {
+if (document.querySelector('.videothumbnail')) {
   document.querySelector('.videothumbnail').addEventListener('click', lightbox_open, false);
 }
 

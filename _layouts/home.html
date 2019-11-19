@@ -31,7 +31,7 @@ layout: default
 <section class="amenities">
   <h2 class="h4"><span>As Our Guest, You’ll Enjoy These Amenities</span></h2>
   <ul class="amenities__listing hotel-amenities">
-    {% assign items = site.data._models.amenities %}
+    {% assign items = site.data._models.amenities | sort: "order" %}
     {% for item in items %}
     <li>
       <div class="amenities__icon">
@@ -139,8 +139,8 @@ layout: default
     <h5 class="h3" tabindex="0">things to do & see in Key west</h5>
     {% endregionblock %}
     <div class="description" tabindex="0">
-      {% regionblock carousel_intro_description, type:text %}
-      <p>As a Ocean’s Edge guest, you have access to an <b>exceptional variety</b> of activities and things to do in Key West. Fishing, paddleboarding, yoga, kayaking & scuba diving are some of the many activities available immediately in our resort. <b>We provide everything you need</b> for rentals, equipment, and accessories for your exploration. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      {% regionblock experience_intro_description, type:text %}
+      <p>As an Oceans Edge guest, you have easy ways to experience this unique corner of the world up close. From complimentary activities like paddleboarding and kayaking to trips out to Dry Tortugas, we can help show you all that’s special about the Keys. Plus, our full-service marina is home to world-renowned fishing boat captains who know the best spots to cast your line.</p>
       {% endregionblock %}
     </div>
     <div class="collage">

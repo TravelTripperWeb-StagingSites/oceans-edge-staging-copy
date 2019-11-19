@@ -91,7 +91,10 @@ page_gen:
   title_field: name
 - data: posts
   template: blog_layout
-  dir: blog  
+  dir: blog
+- data: blog_category
+  template: blog_category_layout
+  dir: blog/category
 plugins_dir:
 - _plugins-38
 - _plugins
