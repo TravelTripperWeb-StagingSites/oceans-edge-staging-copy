@@ -264,6 +264,10 @@
       line-height: $base-font-size;
       text-transform: uppercase;
       letter-spacing: .83;
+
+      &.active {
+        background-color: transparent;
+      }
     }
 
     @include media-breakpoint-up(sm) {

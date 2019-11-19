@@ -135,12 +135,6 @@ mega:
       label_localized:
         en: Oceans Edge Cafe
       items:
-    - folder: false
-      url_localized: "/dining/in-room-dining/"
-      page_id: _pages/in-room-dining.html
-      label_localized:
-        en: In-room Dining
-      items:
     expanded: true
   - folder: true
     label_localized:
@@ -315,6 +309,12 @@ mega_mobile:
       page_id: _pages/yellofin-bar-grill.html
       label_localized:
         en: Yellowfin Bar & Grill
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/"
+      label_localized:
+        en: Overview
       items:
     - folder: false
       url_localized:

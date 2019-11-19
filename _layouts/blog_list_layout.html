@@ -30,7 +30,7 @@ layout: generic
       <p class="heading">Select a story category:</p>
       <ul class="blog-cat">
         <li>
-          <a href="/blog/">All</a>
+          <a href="/blog/" class="active">All</a>
         </li>
         {% for blog_category in blog_categories %}
           <li>
@@ -51,17 +51,58 @@ layout: generic
   </div>
 </section>
 
+<section class="asset-list asset-list--happenings-list asset-list--blog-list asset-list--blog-list--latest">
+  <div class="happening-category">
+    <h2 class="h4">Latest Stories</h2>
+    <p class="cat-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+  </div>
+  {% assign latestposts = site.data._models.posts | sort: "date" | reverse %}
+  <div class="asset-list__items">
+    {% for post in latestposts limit: "2" %}
+      <div class="asset-item">
+        <div class="asset-item__wrap">
+          <div class="asset-item__featured-image">
+            <img class="objectfit" src="{{post.image.url_medium}}" alt="{{post.name}}">
+          </div>
+          <div class="asset-item__text-group">
+            <div class="asset-item__text-group__wrap">
+              <div class="post-info">
+                <span class="cat">
+                  {{ post.blog_category.name }}
+                </span>
+                <span class="blog-date">
+                  {{ post.date | date: "%B %d, %Y" }}
+                </span>
+              </div>
+              <h3 class="h4">{{ post.title }}</h3>
+              <p class="description">{{ post.post_content | strip_html | truncate: 130 }}</p>
+              <div class="row">
+                <div class="col-9">
+                  <a href="/blog/{{post.url_friendly_name}}" class="btn btn--light">Read More</a>
+                </div>
+                <div class="col-3">
+                  <!-- <a class="btn btn--secondary" href="{{ happening.cta_link }}" target="_blank">{{ happening.cta_label }}</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="asset-list asset-list--happenings-list asset-list--blog-list">
   {% assign blog_categories = site.data._models.blog_category | sort: "order" %}
   {% for blog_cat in blog_categories %}
-    {% assign posts = site.data._models.posts | where: "blog_category.name", blog_cat.name | sort: "date" %}
+    {% assign posts = site.data._models.posts | where: "blog_category.name", blog_cat.name | sort: "date" | reverse %}
     {% if posts.size > 0 %}
       <div class="happening-category">
         <h2 class="h4">{{blog_cat.name}}</h2>
         <p class="cat-desc">{{blog_cat.description}}</p>
       </div>
       <div class="asset-list__items">
-        {% for post in posts | limit: "3" %}
+        {% for post in posts limit: "3" %}
           <div class="asset-item">
           <div class="asset-item__wrap">
             <div class="asset-item__featured-image">
@@ -69,8 +110,16 @@ layout: generic
             </div>
             <div class="asset-item__text-group">
               <div class="asset-item__text-group__wrap">
+                <div class="post-info">
+                  <span class="cat">
+                    {{ post.blog_category.name }}
+                  </span>
+                  <span class="blog-date">
+                    {{ post.date | date: "%B %d, %Y" }}
+                  </span>
+                </div>
                 <h3 class="h4">{{ post.title }}</h3>
-                <p class="description">{{post.post_excerpt}}</p>
+                <p class="description">{{post.post_content | strip_html | truncate: 80}}</p>
                 <div class="row">
                   <div class="col-9">
                     <a href="/blog/{{post.url_friendly_name}}" class="btn btn--light">Read More</a>
@@ -87,73 +136,4 @@ layout: generic
       </div>
     {% endif %}
   {% endfor %}
-</section>
-
-<section class="blog">
-  <!-- Blog Categories and Search Mobile -->
-  {% include blog-mobile-cat-search.html %}
-  <!-- End Blog Categories and Search Mobile -->
-  <div class="blog__container">
-    <div class="blog__row">
-      <div class="blog__list">
-        <div class="blog__category-heading">
-          {% assign categories = site.data._models.blog_category %}
-          {% for category in categories %}
-          <div class="category-description" id="catDes_{{ category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}" style="display: none">
-            <h2 class="h2" tabindex="0">{{category.category_title}}</h2>
-            <!-- <p tabindex="0">{{category.category_description}}</p> -->
-          </div>
-          {% endfor %}
-        </div>
-        {% assign blog-posts = site.data._models.posts | sort: 'date' | reverse %}
-        {% for post in blog-posts %}
-        <div class="blog__item filter-item" data-filter="{{ post.blog_category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">
-          {% if post.image.url_medium %}
-          <figure class="blog__image">
-            <a href="/blog/{{ post.url_friendly_name }}" tabindex="-1">
-              <img src="{{ post.image.url_medium }}" alt="{{ post.title }}">
-            </a>
-          </figure>
-          {% endif %}
-          <div class="blog__item__body">
-            <h3 class="h3">
-              <a href="/blog/{{ post.url_friendly_name }}/">{{ post.title }}</a>
-            </h3>
-            <div class="blog__info">
-              <span class="blog__date" tabindex="0">
-                {{ post.date | date: '%B %d, %Y' }}
-              </span>
-              <a class="blog__category" href="/blog/?c={{ post.blog_category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ post.blog_category.category_title }}</a>
-            </div>
-            <div tabindex="0">
-              {% assign excerpt = post.post_excerpt %}
-              {% if excerpt == '' or excerpt == nil %}
-              {% assign excerpt = post.post_content | strip_html | truncatewords: 40 %}
-              {% endif %}
-              {% if excerpt and excerpt != '' %}
-              <p>{{ excerpt }}</p>
-              {% endif %}
-            </div>
-            <div class="cta-block">
-              <!-- <div class="social-links">
-                        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/blog/{{ post.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">
-                          <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://facebook.com/sharer.php?u={{ site.url }}/blog/{{ post.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </div> -->
-              <div class="button">
-                <a class="btn btn--secondary" href="/blog/{{ post.url_friendly_name }}">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="blog__aside">
-        {% include blog-sidebar.html %}
-      </div>
-    </div>
-  </div>
 </section>
