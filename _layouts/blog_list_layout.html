@@ -21,6 +21,36 @@ layout: generic
     </div>
   </div>
 </section>
+
+{% assign blog_categories = site.data._models.blog_category | sort: "order" %}
+
+<section class="blog-filter">
+  <div class="blog-filter__wrap">
+    <div class="blog-filter__left">
+      <p class="heading">Select a story category:</p>
+      <ul class="blog-cat">
+        <li>
+          <a href="/blog/">All</a>
+        </li>
+        {% for blog_category in blog_categories %}
+          <li>
+            <a href="/blog/category/{{blog_category.url_friendly_name}}/">{{blog_category.name}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="blog-filter__right">
+      <p class="heading">Search:</p>
+      <form class="search-from" action="/search/" method="get">
+        <input type="text" name="" value="" placeholder="Type search words here">
+        <button type="submit" name="button" class="search-btn">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1574131490/kvnjmvsusxdvwolfdla4.png" alt="Search">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="blog">
   <!-- Blog Categories and Search Mobile -->
   {% include blog-mobile-cat-search.html %}

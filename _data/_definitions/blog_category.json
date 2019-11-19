@@ -1,8 +1,17 @@
 {
-  "category_title":{
+  "name":{
     "type": "text"
   },
-  "category_description": {
+  "description": {
     "type": "text"
+  },
+  "image": {
+    "type": "image"
+  },
+  "url_friendly_name": {
+    "type": "url_slug"
+  },
+  "order": {
+    "type": "integer"
   }
 }
