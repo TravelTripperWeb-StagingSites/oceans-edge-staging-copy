@@ -24,11 +24,14 @@
     .blog-cat {
       margin: 0;
       padding: 0;
+      text-align: center;
       list-style: none;
-
+      @include media-breakpoint-up(md) {
+        text-align: left;
+      }
       li {
         display: inline-block;
-        margin: 2px 8px;
+        margin: 8px;
 
         &:first-child {
           margin-left: 0;
@@ -101,6 +104,14 @@
 
 .asset-list {
   &--blog-list {
+    .happening-category {
+      position: relative;
+    }
+    .cat-link {
+      position: absolute;
+      top: 30px;
+      right: 10px;
+    }
     .asset-list {
       &__items {
         margin: 30px -15px;
