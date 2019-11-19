@@ -199,7 +199,6 @@
   &__row {
     @include make-row;
     margin: 0;
-    overflow: hidden;
   }
   &__list {
     @include make-col-ready;
