@@ -5,7 +5,7 @@
   "description": "<p class=\"overline\">A luxurious option for <span class=\"overline overline--italic\">our guests with accessibility needs</span></p>\n<p>Combining hearing and mobility-accessible features with aesthetically appealing furnishings and amenities, this two-bedroom suite welcomes up to 8 guests with two queen beds, 1 king, and a sofa bed.</p>",
   "size": "1140",
   "accessible": true,
-  "guest_size_max": 6,
+  "guest_size_max": 8,
   "room_type": "room_type4",
   "room_bed_types": "room_bed_types6",
   "view": "room_view2",
