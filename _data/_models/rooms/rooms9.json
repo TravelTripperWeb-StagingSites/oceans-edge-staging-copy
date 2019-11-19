@@ -5,7 +5,7 @@
   "description": "<p class=\"overline\">A luxurious option for <span class=\"overline overline--italic\">our guests with accessibility needs</span></p>\n<p>Combining hearing and mobility-accessible features with aesthetically appealing furnishings and amenities, this two-bedroom suite welcomes up to 8 guests with two queen beds, 1 king, and a sofa bed.</p>",
   "size": "1140",
   "accessible": true,
-  "guest_size_max": 6,
+  "guest_size_max": 8,
   "room_type": "room_type4",
   "room_bed_types": "room_bed_types6",
   "view": "room_view2",
@@ -141,7 +141,7 @@
     "caption": "",
     "description": ""
   },
-  "video_url": "#",
+  
   "booking_url": "https://be.synxis.com/?adult=1&arrive=2019-10-02&chain=10237&child=0&currency=USD&depart=2019-10-03&hotel=4091&level=hotel&locale=en-US&rooms=1",
   "resort_map_url": "#"
 }

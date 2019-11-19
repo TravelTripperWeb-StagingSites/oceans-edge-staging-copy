@@ -34,7 +34,7 @@ layout: default
         <div class="blog__item">
           <div class="blog__info">
             {% if blogpost.blog_category.name %}
-              <a class="blog__category" href="/blog/?c={{ blogpost.blog_category.name | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ blogpost.blog_category.name }}</a>
+              <a class="blog__category" href="/blog/category/{{ blogpost.blog_category.url_friendly_name }}/">{{ blogpost.blog_category.name }}</a>
             {% endif %}
             <span class="blog__date" tabindex="0">
               {% assign d = blogpost.date | date: "%-d" %}
