@@ -22,7 +22,7 @@ var resetInnerFilters = function() {
 
 var updateGuestsSlider = function(guestsSliderOutput, val) {
   guestsSliderOutput.innerHTML = val;
-  guestsSliderOutput.style.left = 59 + (12 * val) + "px";
+  guestsSliderOutput.style.left = 62 + (7 * val) + "px";
   let allRooms = document.querySelectorAll(".room-list-item");
   for (let i = 0; i < allRooms.length; i++) {
     let guestsNum = Number(allRooms[i].getAttribute("data-guests"));
