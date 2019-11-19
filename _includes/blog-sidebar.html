@@ -49,7 +49,20 @@
   <!-- Blog Subscription -->
   <div class="blog__subscribe d-none d-md-block">
     <h5 tabindex="0" class="overline"><span class="overline overline--italic">Subscribe</span> to our Blog</h5>
-    {% include forms/jotform/blog-subscribe.html %}
+    <form id="newsletterFormBlog" action="" method="post" accept-charset="utf-8">
+      <input type="hidden" name="formIDBlog" id="formIDBlog" value="1523a0c3-bc2e-4e6c-98db-7f230d77ab66">
+      <div class="form-group">
+        <input type="text" id="firstNameBlog" class="form-control" name="name" placeholder="Name" aria-label="Enter your name" required>
+        <input type="email" id="emailAddressBlog" class="form-control" name="email" placeholder="Email Address" aria-label="Enter your email address" required>
+      </div>
+      <div class="form-check">
+        <label class="cstm-checkbox" for="agree_terms_blog" tabindex="0">I agree to the <a href="/terms/">Terms of Use</a> & <a href="/privacy/">Privacy Policy</a>
+          <input type="checkbox" name="" id="agree_terms_blog" required>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <button class="btn btn--primary" title="Submit">Subscribe</button>
+    </form>
   </div>
 
 </div>
