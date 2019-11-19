@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% assign blog_category = page %}
+
+<section class="hero-static">
+  <div class="hero-static__wrap">
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+  </div>
+  <div class="hero-static__intro">
+    <h1 class="overline overline--italic text-center dark" tabindex="0">Oceans Edge Key West Blog</h1>
+    <h2 class="h1" tabindex="0">{{blog_category.name}}</h2>
+    <div class="description" tabindex="0">
+      <p>{{blog_category.description}}</p>
+    </div>
+  </div>
+</section>
