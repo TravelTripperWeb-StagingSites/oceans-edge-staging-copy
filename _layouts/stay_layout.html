@@ -56,14 +56,16 @@ layout: default
                   {% endif %}
                 </div>
               </div> -->
+              {% if room.video_url and room.video_url != "" %}
               <div class="col-12 pt-2 brdr-left">
                 <div class="flex-column align-start p-2">
                   <p class="h6 mb-3 ml-0">Suite Video</p>
-                  <div class="video">
+                  <div class="video videothumbnail" data-video="{{ room.video_url }}" onclick="lightbox_open(this)">
                     <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                   </div>
                 </div>
               </div>
+              {% endif %}
             </div>
             <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book suite</a>
           </div>
@@ -121,6 +123,13 @@ layout: default
   </section>
 </div>
 
+<div class="lightbox2">
+  <a class="boxclose" onclick="lightbox_close();"></a>
+    <video class="VisaChipCardVideo" controls>
+      <source src="{{room.video_url}}" type="video/mp4">
+    </video>
+</div>
+
 {% else %}
 
 <section class="rooms-cross-sell rooms-cross-sell--full-screen">
@@ -172,14 +181,16 @@ layout: default
                 {% endif %}
               </div>
             </div> -->
+            {% if room.video_url  and room.video_url != "" %}
             <div class="col-12 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
                 <p class="h6 mb-3 ml-0">Room Video</p>
-                <div class="video">
+                <div class="video videothumbnail" data-video="{{ room.video_url }}" onclick="lightbox_open(this)">
                   <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                 </div>
               </div>
             </div>
+            {% endif %}
           </div>
           <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book room</a>
         </div>
@@ -233,6 +244,13 @@ layout: default
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
   </div>
 </section>
+
+<div class="lightbox2">
+  <a class="boxclose" onclick="lightbox_close();"></a>
+    <video class="VisaChipCardVideo" controls>
+      <source src="{{room.video_url}}" type="video/mp4">
+    </video>
+</div>
 
 {% endif %}
 
