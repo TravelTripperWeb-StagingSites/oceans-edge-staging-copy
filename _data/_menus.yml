@@ -53,12 +53,6 @@ mega:
       label_localized:
         en: Amenities
       items:
-    # - folder: false
-    #   url_localized:
-    #     en: "#"
-    #   label_localized:
-    #     en: Resort Map
-    #   items:
     expanded: false
   - folder: true
     label_localized:
@@ -73,13 +67,19 @@ mega:
       items:
     - folder: false
       url_localized:
+        en: "/stay/"
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized:
         en: "/stay/#guestrooms"
       label_localized:
         en: Guestrooms
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible"
+        en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms & Suites
       items:
@@ -169,21 +169,6 @@ mega:
       label_localized:
         en: Overview
       items:
-#    - folder: false
-#      url_localized:
-#        en: "/groups#weddings"
-#      page_id: _pages/groups.html
-#      label_localized:
-#        en: Weddings
-#      items:
-#    - folder: false
-#      url_localized:
-#        en: "/groups#meetings-events"
-#      page_id: _pages/groups.html
-#      label_localized:
-#        en: Meetings & Events
-#      items:
-#    expanded: false
   - folder: true
     label_localized:
       en: More
@@ -213,19 +198,13 @@ mega:
     items:
     - folder: false
       url_localized:
-        en: 'tel:8779350862'
+        en: tel:8779350862
       label_localized:
         en: 'Res: 877 935 0862'
       items:
-    # - folder: false
-    #   url_localized:
-    #     en: "#"
-    #   label_localized:
-    #     en: Have us call you
-    #   items:
     - folder: false
       url_localized:
-        en: "mailto:info@oceansedgekeywest.com"
+        en: mailto:info@oceansedgekeywest.com
       label_localized:
         en: Email us
       items:
@@ -260,19 +239,28 @@ footer:
   items:
   - folder: false
     url_localized: ''
+    page_id: _pages/accessiblity.html
+    label_localized:
+      en: Accessibility Statement
+    items:
+  - folder: false
+    url_localized: ''
     page_id: _pages/privacy.html
     label_localized:
       en: Privacy Policy
+    items:
   - folder: false
     url_localized: ''
     page_id: _pages/sitemap.html
     label_localized:
       en: Site Map
+    items:
   - folder: false
     url_localized: ''
     page_id: _pages/contact.html
     label_localized:
       en: Contact Us
+    items:
 mega_mobile:
   depth: 2
   name: Mobile Full Menu
@@ -292,12 +280,6 @@ mega_mobile:
       label_localized:
         en: Amenities
       items:
-    # - folder: false
-    #   url_localized:
-    #     en: "#"
-    #   label_localized:
-    #     en: Resort Map
-    #   items:
     expanded: false
   - folder: true
     label_localized:
@@ -324,7 +306,7 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible"
+        en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms & Suites
       items:
@@ -375,7 +357,7 @@ mega_mobile:
         en: Overview
       items:
     - folder: false
-      url_localized: ''
+      url_localized: "/dining/yellowfin-bar-kitchen/"
       page_id: _pages/yellofin-bar-kitchen.html
       label_localized:
         en: Yellowfin Bar & Kitchen
@@ -386,12 +368,6 @@ mega_mobile:
       label_localized:
         en: Oceans Edge Cafe
       items:
-#    - folder: false
-#      url_localized: ''
-#      page_id: _pages/in-room-dining.html
-#      label_localized:
-#        en: In-room Dining
-#      items:
     expanded: false
   - folder: true
     label_localized:
@@ -470,19 +446,13 @@ mega_mobile:
     items:
     - folder: false
       url_localized:
-        en: 'tel:8779350862'
+        en: tel:8779350862
       label_localized:
         en: 'Res: 877 935 0862'
       items:
-    # - folder: false
-    #   url_localized:
-    #     en: "#"
-    #   label_localized:
-    #     en: Have us call you
-    #   items:
     - folder: false
       url_localized:
-        en: "mailto:info@oceansedgekeywest.com"
+        en: mailto:info@oceansedgekeywest.com
       label_localized:
         en: Email us
       items:
