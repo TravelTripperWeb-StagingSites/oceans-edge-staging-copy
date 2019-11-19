@@ -745,8 +745,17 @@
   }
 }
 
-.nav__link {
-  &.active {
-    background: $tertiary;
+.navbar__group {
+  .nav__link {
+    &.active {
+      background: $tertiary;
+    }
+  }
+  .nav--device {
+    .nav__link {
+      &.active {
+        background: inherit;
+      }
+    }
   }
 }
