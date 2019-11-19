@@ -42,7 +42,9 @@ meta_tags:
           <div class="amenities-list__item__text">
             <h3 class="h4">{{amenity.name}}</h3>
             <p class="description">{{amenity.description}}</p>
+            {% if amenity.cta_link and amenity.cta_link != "" %}
             <a class="btn btn--light" href="{{amenity.cta_link}}">{{amenity.cta_label}}</a>
+            {% endif %}
           </div>
         </div>
       </div>
