@@ -120,9 +120,9 @@ readyDoc(function() {
   // cendyn newsletter post data
   document.getElementById('newsletterForm').onsubmit = function(e) {
     e.preventDefault();
-    var formId = document.getElementById('formID').value;
-    var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
-    var data = JSON.stringify({
+    let formId = document.getElementById('formID').value;
+    let url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
+    let data = JSON.stringify({
       "PostData": {
         "emailAddress": document.getElementById('emailAddress').value,
         "firstName": document.getElementById('firstName').value
@@ -130,6 +130,23 @@ readyDoc(function() {
     });
     makeRESTCall(url, data, function() {
       window.location = '/thankyou';
+    })
+    return false;
+  }
+
+  // cendyn newsletter blog post data
+  document.getElementById('newsletterFormBlog').onsubmit = function(e) {
+    e.preventDefault();
+    let formId = document.getElementById('formIDBlog').value;
+    let url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
+    let data = JSON.stringify({
+      "PostData": {
+        "emailAddress": document.getElementById('emailAddressBlog').value,
+        "firstName": document.getElementById('firstNameBlog').value
+      }
+    });
+    makeRESTCall(url, data, function() {
+      window.location = '/thankyou/';
     })
     return false;
   }
@@ -800,6 +817,14 @@ readyDoc(function() {
       nextButton: "#adventuresSlider .iconbtn--right" // next button
     });
   }
+
+  document.querySelector('.rooms-cross-sell .icon-maximize').addEventListener('click', () => {
+    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.add('fullscreen-carousel');
+  });
+
+  document.querySelector('.rooms-cross-sell .zoomout').addEventListener('click', () => {
+    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.remove('fullscreen-carousel');
+  });
 
 });
 

@@ -567,7 +567,7 @@ hr {
   }
 }
 
-.zoom {
+.zoom, .zoomout {
   position: absolute;
   right: 40px;
   bottom: 40px;
@@ -591,6 +591,28 @@ hr {
   &:hover, &:focus, &:visited {
     text-decoration: none;
     box-shadow: 0 1px 10px rgba(0,0,0,.3);
+  }
+}
+
+.zoomout {
+  display: none;
+}
+
+.fullscreen-carousel {
+  position: fixed;
+  z-index: 99;
+  display: block !important;
+  flex: inherit !important;
+  width: 100vh;
+  max-width: 100% !important;
+  height: calc(100vh - 150.42px);
+
+  .zoomout {
+    display: block;
+  }
+
+  .zoom {
+    display: none;
   }
 }
 
