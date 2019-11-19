@@ -53,12 +53,12 @@ mega:
       label_localized:
         en: Amenities
       items:
-    - folder: false
-      url_localized:
-        en: "#"
-      label_localized:
-        en: Resort Map
-      items:
+    # - folder: false
+    #   url_localized:
+    #     en: "#"
+    #   label_localized:
+    #     en: Resort Map
+    #   items:
     expanded: false
   - folder: true
     label_localized:
@@ -213,19 +213,19 @@ mega:
     items:
     - folder: false
       url_localized:
-        en: 'mailto: 8779350862'
+        en: 'tel:8779350862'
       label_localized:
         en: 'Res: 877 935 0862'
       items:
+    # - folder: false
+    #   url_localized:
+    #     en: "#"
+    #   label_localized:
+    #     en: Have us call you
+    #   items:
     - folder: false
       url_localized:
-        en: "#"
-      label_localized:
-        en: Have us call you
-      items:
-    - folder: false
-      url_localized:
-        en: "#"
+        en: "mailto:info@oceansedgekeywest.com"
       label_localized:
         en: Email us
       items:
@@ -292,12 +292,12 @@ mega_mobile:
       label_localized:
         en: Amenities
       items:
-    - folder: false
-      url_localized:
-        en: "#"
-      label_localized:
-        en: Resort Map
-      items:
+    # - folder: false
+    #   url_localized:
+    #     en: "#"
+    #   label_localized:
+    #     en: Resort Map
+    #   items:
     expanded: false
   - folder: true
     label_localized:
@@ -392,7 +392,7 @@ mega_mobile:
 #      label_localized:
 #        en: In-room Dining
 #      items:
-#    expanded: false
+    expanded: false
   - folder: true
     label_localized:
       en: Marina
@@ -470,19 +470,19 @@ mega_mobile:
     items:
     - folder: false
       url_localized:
-        en: 'mailto: 8779350862'
+        en: 'tel:8779350862'
       label_localized:
         en: 'Res: 877 935 0862'
       items:
+    # - folder: false
+    #   url_localized:
+    #     en: "#"
+    #   label_localized:
+    #     en: Have us call you
+    #   items:
     - folder: false
       url_localized:
-        en: "#"
-      label_localized:
-        en: Have us call you
-      items:
-    - folder: false
-      url_localized:
-        en: "#"
+        en: "mailto:info@oceansedgekeywest.com"
       label_localized:
         en: Email us
       items:
