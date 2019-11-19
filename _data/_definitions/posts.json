@@ -24,7 +24,7 @@
   },
   "blog_category": {
     "type": "model",
-    "display_field": "category_title",
+    "display_field": "name",
     "model_name": "blog_category"
   }
 }

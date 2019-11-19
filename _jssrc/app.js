@@ -118,12 +118,14 @@ readyDoc(function() {
   }, 500);
 
   // cendyn newsletter post data
-  document.getElementById('newsletterForm').onsubmit = function() {
-    var formId = document.getElementById('formID').value
+  document.getElementById('newsletterForm').onsubmit = function(e) {
+    e.preventDefault();
+    var formId = document.getElementById('formID').value;
     var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
     var data = JSON.stringify({
       "PostData": {
-        "emailAddress": document.getElementById('emailAddress').value
+        "emailAddress": document.getElementById('emailAddress').value,
+        "firstName": document.getElementById('firstName').value
       }
     });
     makeRESTCall(url, data, function() {
@@ -513,6 +515,35 @@ readyDoc(function() {
       });
         rangethumb(suitesSlider);
     }
+  }
+
+  // Blog related posts carousel
+
+  if (document.getElementsByClassName('related-blogs-carousel').length > 0) {
+    var assetSlider = tns({
+      container: '.related-blogs-carousel',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 0,
+      prevButton: "#relatedBlogCarouselNav .iconbtn--left", // previous button
+      nextButton: "#relatedBlogCarouselNav .iconbtn--right", // next button
+      responsive: {
+        992: {
+          items: 2
+        }
+      }
+    });
+
+    if(document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', () => {
+          sliderrangefunc(assetSlider);
+      });
+          rangethumb(assetSlider);
+    }
+
   }
 
   // Tabs Script Start ======================================
