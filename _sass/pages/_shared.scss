@@ -604,3 +604,13 @@ hr {
     text-align: left;
   }
 }
+
+.webcame-wrap {
+  @include make-container;
+  max-width: 960px;
+  margin: 50px auto;
+
+  iframe {
+    width: 100%;
+  }
+}
