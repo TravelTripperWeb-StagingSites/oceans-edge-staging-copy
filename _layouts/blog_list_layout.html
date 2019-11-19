@@ -100,7 +100,7 @@ layout: generic
       <div class="happening-category">
         <h2 class="h4">{{blog_cat.name}}</h2>
         <p class="cat-desc">{{blog_cat.description}}</p>
-        <a class="btn btn--secondary cat-link" href="/blog/category/{{ blog_cat.url_friendly_name }}">View All</a>
+        <a class="btn btn--secondary cat-link" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>
       </div>
       <div class="asset-list__items">
         {% for post in posts limit: "3" %}
