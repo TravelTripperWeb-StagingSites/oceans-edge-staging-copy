@@ -73,7 +73,7 @@ layout: default
           </div>
           {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
           {% assign count = 0 %}
-          <div class="asset-list__items">
+          <div class="asset-list__items related-blogs-carousel">
             {% for relatedblog in relatedblogs %}
               <!-- Related blog items -->
               {% if relatedblog.blog_category.name == blogpost.blog_category.name %}
@@ -115,33 +115,16 @@ layout: default
             {% endif %}
           {% endfor %}
           </div>
-        </div>
 
-        <!-- Related Posts -->
-        {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
-        {% assign count = 0 %}
-        <div class="blog__related">
-          <p class="h4 dark" tabindex="0">Related Posts</p>
-          <div class="blog__related__row">
-            {% for relatedblog in relatedblogs %}
-              <!-- Related blog items -->
-              {% if relatedblog.blog_category == blogpost.blog_category and count < 3 %}
-                <!-- Skip current blog -->
-                {% if relatedblog.url_friendly_name != blogpost.url_friendly_name %}
-                  {% assign count = count | plus: 1 %}
-                  <div class="blog__related__item">
-                    <a class="blog__related__image" href="/blog/{{ relatedblog.url_friendly_name }}/" tabindex="-1">
-                      {% assign featured_image = relatedblog.image %}
-                      {% include components/image image=featured_image max_width=600 %}
-                    </a>
-                    <p class="h6">
-                      <a href="/blog/{{ relatedblog.url_friendly_name }}/">{{ relatedblog.title }}</a>
-                    </p>
-                  </div>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
+          <div class="large-card__controls" id="relatedBlogCarouselNav">
+            <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Slide"></a>
+            <div class="slidecontainer">
+              <style data="offerslistyle"></style>
+              <input type="range" min="1" data-max = "{{ count }}" max="" value="1" class="slider" id="sliderRange">
+            </div>
+            <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Slide"></a>
           </div>
+
         </div>
       </div>
 

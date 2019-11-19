@@ -728,22 +728,6 @@
     }
   }
 
-  .large-card__controls {
-    display: flex;
-    justify-content: space-between;
-    max-width: 888px;
-    margin: 0 auto;
-    padding: 0 25px 25px;
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 50px 50px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      padding: 0 0 50px;
-    }
-  }
-
   &__handle {
     .large-card__item {
       flex: inherit;
@@ -756,6 +740,22 @@
       flex: inherit;
       max-width: 100%;
     }
+  }
+}
+
+.large-card__controls {
+  display: flex;
+  justify-content: space-between;
+  max-width: 888px;
+  margin: 0 auto;
+  padding: 0 25px 25px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 50px 50px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 0 0 50px;
   }
 }
 

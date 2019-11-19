@@ -492,6 +492,34 @@ readyDoc(function () {
     }
   }
 
+  // Blog related posts carousel
+
+  if (document.getElementsByClassName('related-blogs-carousel').length > 0) {
+    var assetSlider = tns({
+      container: '.related-blogs-carousel',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 15,
+      prevButton: "#relatedBlogCarouselNav .iconbtn--left", // previous button
+      nextButton: "#relatedBlogCarouselNav .iconbtn--right", // next button
+      responsive: {
+        992: {
+          items: 2
+        }
+      }
+    });
+
+    if (document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        sliderrangefunc(assetSlider);
+      });
+      rangethumb(assetSlider);
+    }
+  }
+
   // Tabs Script Start ======================================
 
   if (document.getElementsByClassName("filter-items")[0]) {
