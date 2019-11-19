@@ -56,6 +56,7 @@ layout: default
                   {% endif %}
                 </div>
               </div> -->
+              {% if room.video_url and room.video_url != "" %}
               <div class="col-12 pt-2 brdr-left">
                 <div class="flex-column align-start p-2">
                   <p class="h6 mb-3 ml-0">Suite Video</p>
@@ -64,6 +65,7 @@ layout: default
                   </div>
                 </div>
               </div>
+              {% endif %}
             </div>
             <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book suite</a>
           </div>
@@ -179,6 +181,7 @@ layout: default
                 {% endif %}
               </div>
             </div> -->
+            {% if room.video_url  and room.video_url != "" %}
             <div class="col-12 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
                 <p class="h6 mb-3 ml-0">Room Video</p>
@@ -187,6 +190,7 @@ layout: default
                 </div>
               </div>
             </div>
+            {% endif %}
           </div>
           <a class="btn btn--book mr-auto mt-4" href="{{ room.booking_url }}">book room</a>
         </div>
