@@ -118,12 +118,14 @@ readyDoc(function() {
   }, 500);
 
   // cendyn newsletter post data
-  document.getElementById('newsletterForm').onsubmit = function() {
-    var formId = document.getElementById('formID').value
+  document.getElementById('newsletterForm').onsubmit = function(e) {
+    e.preventDefault();
+    var formId = document.getElementById('formID').value;
     var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
     var data = JSON.stringify({
       "PostData": {
-        "emailAddress": document.getElementById('emailAddress').value
+        "emailAddress": document.getElementById('emailAddress').value,
+        "firstName": document.getElementById('firstName').value
       }
     });
     makeRESTCall(url, data, function() {
