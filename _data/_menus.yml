@@ -375,7 +375,7 @@ mega_mobile:
         en: Overview
       items:
     - folder: false
-      url_localized: ''
+      url_localized: '/dining/yellowfin-bar-kitchen/'
       page_id: _pages/yellofin-bar-kitchen.html
       label_localized:
         en: Yellowfin Bar & Kitchen
