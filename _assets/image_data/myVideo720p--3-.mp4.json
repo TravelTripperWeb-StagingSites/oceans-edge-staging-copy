@@ -1,0 +1,28 @@
+{
+  "name": "ocean view king balcony myVideo720p",
+  "content_type": "video/mp4",
+  "date_added": "2019-11-19-045310",
+  "audio": {
+    "codec": "aac",
+    "bit_rate": "189375",
+    "frequency": 48000,
+    "channels": 2,
+    "channel_layout": "stereo"
+  },
+  "video": {
+    "pix_format": "yuv420p",
+    "codec": "h264",
+    "level": 30,
+    "profile": "High",
+    "bit_rate": "2356107",
+    "dar": "16:9"
+  },
+  "url": "//res.cloudinary.com/traveltripperweb/video/upload/c_limit,h_2500,vc_auto,w_2500/v1574157190/xjkzpch2egfvcwrjt9ws.mp4",
+  "bit_rate": 2531938,
+  "frame_rate": 29.97,
+  "duration": 29.056,
+  "format": "mp4",
+  "url_raw": "//res.cloudinary.com/traveltripperweb/video/upload/v1574157190/xjkzpch2egfvcwrjt9ws.mp4",
+  "resource_type": "video",
+  "size": 9196001
+}
