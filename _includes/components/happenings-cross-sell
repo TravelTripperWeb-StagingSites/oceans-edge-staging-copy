@@ -21,7 +21,9 @@
                 <p>Date<span>{{ item.date }}</span></p>
               </div>
               {% endif %}
+              {% if item.cta_link and item.cta_link != "" %}
               <a class="btn btn--secondary d-inline-block" href="{{ item.cta_link }}">{{ item.cta_label }}</a>
+              {% endif %}
             </div>
           </div>
         </div>
