@@ -69,7 +69,7 @@ layout: default
         <div class="asset-list asset-list--happenings-list asset-list--blog-list asset-list--blog-list--latest px-0">
           <div class="happening-category d-flex justify-content-between">
             <h2 class="h4">Related Posts</h2>
-            <a href="/blog/" class="btn btn--secondary-s2">View all posts</a>
+            <a href="/blog/" class="btn btn--secondary">View all posts</a>
           </div>
           {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
           {% assign count = 0 %}
