@@ -803,6 +803,11 @@ readyDoc(function () {
       nextButton: "#adventuresSlider .iconbtn--right" // next button
     });
   }
+
+  document.querySelector('.rooms-cross-sell .icon-maximize').addEventListener('click', function () {
+    alert();
+    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.add('fullscreen-carousel');
+  });
 });
 
 function lightbox_open(video) {
