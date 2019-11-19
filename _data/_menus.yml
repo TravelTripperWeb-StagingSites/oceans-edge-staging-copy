@@ -66,8 +66,8 @@ mega:
     items:
     - folder: false
       url_localized:
-        en: dining/yellofin-bar-grill/
-      page_id: _pages/yellofin-bar-grill.html
+        en: dining/yellofin-bar-kitchen/
+      page_id: _pages/yellofin-bar-kitchen.html
       label_localized:
         en: Yellowfin Bar & Kitchen
       items:
@@ -124,10 +124,10 @@ mega:
         en: Overview
       items:
     - folder: false
-      url_localized: "/dining/yellowfin-bar-grill/"
-      page_id: _pages/yellowfin-restaurant.html
+      url_localized: "/dining/yellowfin-bar-kitchen/"
+      page_id: _pages/yellowfin-bar-kitchen.html
       label_localized:
-        en: Yellowfin Bar & Grill
+        en: Yellowfin Bar & kitchen
       items:
     - folder: false
       url_localized: "/dining/oceans-edge-cafe/"
@@ -305,10 +305,10 @@ mega_mobile:
     items:
     - folder: false
       url_localized:
-        en: dining/yellofin-bar-grill/
-      page_id: _pages/yellofin-bar-grill.html
+        en: dining/yellofin-bar-kitchen/
+      page_id: _pages/yellofin-bar-kitchen.html
       label_localized:
-        en: Yellowfin Bar & Grill
+        en: Yellowfin Bar & Kitchen
       items:
     - folder: false
       url_localized:
@@ -376,9 +376,9 @@ mega_mobile:
       items:
     - folder: false
       url_localized: ''
-      page_id: _pages/yellofin-bar-grill.html
+      page_id: _pages/yellofin-bar-kitchen.html
       label_localized:
-        en: Yellowfin Bar & Grill
+        en: Yellowfin Bar & Kitchen
       items:
     - folder: false
       url_localized: ''

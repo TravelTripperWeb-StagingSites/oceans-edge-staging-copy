@@ -751,4 +751,11 @@
       background: $tertiary;
     }
   }
+  .nav--device {
+    .nav__link {
+      &.active {
+        background: inherit;
+      }
+    }
+  }
 }
