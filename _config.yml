@@ -4,7 +4,7 @@ title_separator: "|"
 name: Hotel Property Name
 description: Site default description.
 url: https://www.oceansedgekeywest.com
-repository: 
+repository:
 default_lang: en
 languages:
 - en
@@ -71,7 +71,7 @@ sass:
   - _sass
   style: compressed
 permalink: pretty
-timezone: 
+timezone:
 page_gen:
 - data: offers
   template: offer_layout
@@ -92,6 +92,9 @@ page_gen:
 - data: posts
   template: blog_layout
   dir: blog
+- data: blog_category
+  template: blog_category_layout
+  dir: blog/category
 plugins_dir:
 - _plugins-38
 - _plugins

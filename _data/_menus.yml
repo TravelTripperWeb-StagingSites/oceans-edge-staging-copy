@@ -79,7 +79,7 @@ mega:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible"
+        en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms & Suites
       items:
@@ -329,7 +329,7 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible"
+        en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms & Suites
       items:
