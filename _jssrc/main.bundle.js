@@ -120,12 +120,14 @@ readyDoc(function () {
   }, 500);
 
   // cendyn newsletter post data
-  document.getElementById('newsletterForm').onsubmit = function () {
+  document.getElementById('newsletterForm').onsubmit = function (e) {
+    e.preventDefault();
     var formId = document.getElementById('formID').value;
     var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
     var data = JSON.stringify({
       "PostData": {
-        "emailAddress": document.getElementById('emailAddress').value
+        "emailAddress": document.getElementById('emailAddress').value,
+        "firstName": document.getElementById('firstName').value
       }
     });
     makeRESTCall(url, data, function () {
@@ -525,6 +527,34 @@ readyDoc(function () {
     }
   }
 
+  // Blog related posts carousel
+
+  if (document.getElementsByClassName('related-blogs-carousel').length > 0) {
+    var assetSlider = tns({
+      container: '.related-blogs-carousel',
+      items: 1,
+      nav: false,
+      mouseDrag: true,
+      loop: false,
+      edgePadding: 0,
+      prevButton: "#relatedBlogCarouselNav .iconbtn--left", // previous button
+      nextButton: "#relatedBlogCarouselNav .iconbtn--right", // next button
+      responsive: {
+        992: {
+          items: 2
+        }
+      }
+    });
+
+    if (document.querySelector("#sliderRange")) {
+      var num_items = assetSlider.getInfo().items;
+      document.querySelector("#sliderRange").addEventListener('change', function () {
+        sliderrangefunc(assetSlider);
+      });
+      rangethumb(assetSlider);
+    }
+  }
+
   // Tabs Script Start ======================================
 
   if (document.getElementsByClassName("filter-items")[0]) {
@@ -774,3 +804,19 @@ readyDoc(function () {
     });
   }
 });
+
+function lightbox_open(video) {
+  console.log(video.getAttribute('data-video'));
+  document.querySelector('.VisaChipCardVideo source').setAttribute('src', video.getAttribute('data-video'));
+  setTimeout(function () {
+    document.querySelector('.lightbox2').style.display = 'flex';
+    document.querySelector('.lightbox2').style.opacity = '1';
+    document.querySelector('.VisaChipCardVideo').play();
+  }, 100);
+}
+
+function lightbox_close() {
+  document.querySelector('.lightbox2').style.display = 'none';
+  document.querySelector('.lightbox2').style.opacity = '0';
+  document.querySelector('.VisaChipCardVideo').pause();
+}

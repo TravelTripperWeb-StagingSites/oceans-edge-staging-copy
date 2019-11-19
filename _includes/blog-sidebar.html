@@ -10,7 +10,7 @@
       <form class="search-form" action="/blog/search/" method="get">
         <input type="text" class="blog__search__box" name="query" id="search-box" placeholder="Type search words here" aria-label="Search blogs">
         <button type="submit" class="blog__search__btn" aria-label="Click to search">
-          <i class="fas fa-search"></i>
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1574131490/kvnjmvsusxdvwolfdla4.png" alt="Search Button">
         </button>
     </form>
     </div>
@@ -23,7 +23,7 @@
       {% assign categories = site.data._models.blog_category %}
       {% for category in categories %}
       <li>
-        <a href="/blog/?c={{ category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ category.name }}</a>
+        <a href="/blog/category/{{ category.url_friendly_name }}/">{{ category.name }}</a>
       </li>
       {% endfor %}
     </ul>
@@ -50,11 +50,10 @@
     {% endfor %}
   </div>
 
-  <!-- <select class="custom-select form-control" id="js-categoryfilter">
-    <option selected value="all">Choose a Category</option>
-    {% for category in site.data._models.blog_category %}
-    <option value="{{ category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{category.category_title}}</option>
-    {% endfor %}
-  </select> -->
+  <!-- Blog Subscription -->
+  <div class="blog__subscribe d-none d-md-block">
+    <h5 tabindex="0" class="overline"><span class="overline overline--italic">Subscribe</span> to our Blog</h5>
+    {% include forms/jotform/blog-subscribe.html %}
+  </div>
 
 </div>

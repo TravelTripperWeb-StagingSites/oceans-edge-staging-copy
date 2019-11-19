@@ -41,8 +41,8 @@ layout: generic
     </div>
     <div class="blog-filter__right">
       <p class="heading">Search:</p>
-      <form class="search-from" action="/search/" method="get">
-        <input type="text" name="" value="" placeholder="Type search words here">
+      <form class="search-from" action="/blog/search/" method="get">
+        <input type="text" name="query" id="search-box" placeholder="Type search words here">
         <button type="submit" name="button" class="search-btn">
           <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1574131490/kvnjmvsusxdvwolfdla4.png" alt="Search">
         </button>
@@ -97,10 +97,14 @@ layout: generic
   {% for blog_cat in blog_categories %}
     {% assign posts = site.data._models.posts | where: "blog_category.name", blog_cat.name | sort: "date" | reverse %}
     {% if posts.size > 0 %}
-      <div class="happening-category">
-        <h2 class="h4">{{blog_cat.name}}</h2>
-        <p class="cat-desc">{{blog_cat.description}}</p>
-        <a class="btn btn--secondary cat-link" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>
+      <div class="happening-category d-flex justify-content-between">
+        <div class="">
+          <h2 class="h4">{{blog_cat.name}}</h2>
+          <p class="cat-desc">{{blog_cat.description}}</p>
+        </div>
+        <div class="">
+          <a class="btn btn--secondary" href="/blog/category/{{ blog_cat.url_friendly_name }}/">View All</a>          
+        </div>
       </div>
       <div class="asset-list__items">
         {% for post in posts limit: "3" %}

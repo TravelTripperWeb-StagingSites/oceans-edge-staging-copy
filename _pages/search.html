@@ -1,0 +1,74 @@
+---
+layout: generic
+title: Search Results | Oceans Edge Key West
+permalink: /blog/search/
+---
+<!-- Blog banner here -->
+
+<section class="hero-static">
+  <div class="hero-static__wrap">
+    {% regionblock carousel_intro_hero, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+    {% endregionblock %}
+  </div>
+  <div class="hero-static__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+      <h1 class="overline overline--italic text-center dark" tabindex="0">Why Is Oceans Edge the Best Hotel in Key West?</h1>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+      <h2 class="h1" tabindex="0">Upscale Amenities for Every Guest</h2>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+        <p>Oceans Edge Resort & Marina has been carefully designed as a self-contained haven while providing the means for our guests to easily experience the natural beauty and culture of Stock Island and Key West. Your first stop will likely be one of our six saltwater swimming pools—all at the perfect temperature, all the time. Discover our offerings in the list below, and learn more about <b><a href="/stay/">our luxurious accommodations</a></b>.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+
+<section class="blog blog-cat-listing">
+  <div class="blog-cat-listing__row">
+    <div class="blog-cat-listing__list p-0">
+      {% regionblock search_heading, type:header %}
+        <p class="h3 text-left mb-3">Search Results:</p>
+      {% endregionblock %}
+      <ul class="blog__results" id="search-results"></ul>
+    </div>
+    <div class="blog__aside">
+      <div class="blog__aside__inner">
+        {% include blog-sidebar.html %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_1200,w_1200/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="">
+  </div>
+  <div class="common-cta__text text-center">
+    <p class="h4 light">The Resort</p>
+    <p class="h3 light">an exhilarating Key West escape</p>
+    <a href="/resort/" class="btn btn--light">Discover More</a>
+  </div>
+</section>
+
+<script>
+  window.store = {
+      {% for post in site.data._models.posts %}
+      "{{ post.url_friendly_name_localized.en }}": {
+          "title": "{{ post.title | xml_escape }}",
+          "date" : "{{ post.date | date: '%b %d, %Y' }}",
+          "image": "{{ post.image.url_small }}",
+          "category": "{{ post.blog_category.category_title | xml_escape }}",
+          "content": {{ post.post_content | strip_html | strip_newlines | jsonify }},
+          "excerpt": {{ post.post_excerpt_localized.en | strip_html | strip_newlines | jsonify }},
+          "url": "{{ post.url_friendly_name | xml_escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+  };
+</script>
+<script src="/assets/js/lunr.js"></script>
+<script src="/assets/js/search.js"></script>
