@@ -1,21 +1,15 @@
 <p class="overline">Subscribe & <span>Stay Connected</span></p>
-<form action="https://submit.jotform.me/submit/{{ site.data.forms.jotform.newsletter-id }}/" method="post" name="form_{{ site.data.forms.jotform.newsletter-id }}"
-    id="{{ site.data.forms.jotform.newsletter-id }}" accept-charset="utf-8">
-    <input type="hidden" name="formID" value="{{ site.data.forms.jotform.newsletter-id }}">
-    <input type="text" class="form-control" name="q3_firstName" placeholder="Name" required aria-label="Enter first name">
-    <input type="email" class="form-control" id="input_3" name="q3_email" placeholder="Email Address" required>
+<form name="newsletterForm" id="newsletterForm">
+    <input type="hidden" name="formID" id="formID" value="1523a0c3-bc2e-4e6c-98db-7f230d77ab66">
+    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Name" required aria-label="Enter name">
+    <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="Email Address" aria-label="Enter your email address" required>
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="terms-service" name="q4_iAgree[]" value="Agree" required>
-        <label class="form-check-label" for="terms-service">
+        <input class="form-check-input" type="checkbox" id="agree_terms" name="q4_iAgree[]" value="Agree" required>
+        <label class="form-check-label" for="agree_terms">
           I agree to the <a href="/privacy/" title="Privacy Policy">Privacy Policy</a>
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn--book" id="input_2">Subscribe</button>
-    <input type="hidden" id="simple_spc" name="simple_spc" value="{{ site.data.forms.jotform.newsletter-id }}">
-
-    <script type="text/javascript">
-        document.getElementById("si" + "mple" + "_spc").value = "{{ site.data.forms.jotform.newsletter-id }}-{{ site.data.forms.jotform.newsletter-id }}";
-    </script>
+    <button type="submit" class="btn btn--book">Subscribe</button>
 </form>

@@ -117,6 +117,40 @@ readyDoc(function() {
     filterThroughURL();
   }, 500);
 
+  // cendyn newsletter post data
+  document.getElementById('newsletterForm').onsubmit = function(e) {
+    e.preventDefault();
+    var formId = document.getElementById('formID').value;
+    var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
+    var data = JSON.stringify({
+      "PostData": {
+        "emailAddress": document.getElementById('emailAddress').value,
+        "firstName": document.getElementById('firstName').value
+      }
+    });
+    makeRESTCall(url, data, function() {
+      window.location = '/thankyou';
+    })
+    return false;
+  }
+
+  function makeRESTCall(url, data, callback) {
+    var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+    request.onreadystatechange = function() {
+      if (request.readyState == 4 && request.status == 200) {
+        console.log(request.responseText);
+        if (callback) {
+          callback(request.responseText);
+        }
+      }
+    }
+    request.open('post', url, true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(data);
+  }
+  // cendyn newsletter post data ends here
+
   //Rooms main Filter
   if (document.querySelectorAll(".rooms-filter li a").length > 1) {
     var roomsFilterItems = document.querySelectorAll(".rooms-filter li a");
