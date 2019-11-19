@@ -164,6 +164,7 @@
   &__date {
     font-size: $display9-size;
     color: $gray-600;
+    border-left: solid 1px $gray-600;
   }
 
   &__category {
@@ -174,12 +175,13 @@
     color: $gray-600;
     text-decoration: none;
     letter-spacing: 1px;
-    transition: all 0.3s;
+    border: solid 1px $t2;
+    border-radius: 16px;
+    @include transition(.3s);
     @include media-breakpoint-up(md) {
       display: inline-block;
-      margin-left: 8px;
       padding: 0 15px;
-      border-left: solid 1px $gray-600;
+      border-radius: 50%;
     }
 
     &:hover {
@@ -511,6 +513,7 @@
       .h3 {
         margin-bottom: 20px;
         color: $primary;
+        text-align: left;
       }
 
       .blog__image {
