@@ -616,7 +616,7 @@ hr {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0,0,0,.8);
+  background-color: $lightbox-bg;
   opacity: 0;
   transition: opacity .6s ease-in-out;
 }
@@ -631,7 +631,7 @@ hr {
   font-size: 31px;
   font-weight: bold;
   line-height: 0;
-  color: #fff;
+  color: $white;
   cursor: pointer;
   opacity: .9;
   &:before {
