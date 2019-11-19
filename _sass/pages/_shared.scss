@@ -605,7 +605,7 @@ hr {
   flex: inherit !important;
   width: 100vh;
   max-width: 100% !important;
-  height: 100vh;
+  height: calc(100vh - 150.42px);
 
   .zoomout {
     display: block;
