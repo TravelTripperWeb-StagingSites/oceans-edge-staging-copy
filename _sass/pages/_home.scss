@@ -117,14 +117,22 @@
           font-family: $family-secondary-italic;
         }
 
-        // a {
-        //   font-weight: normal;
-        //   color: inherit;
-        //
-        //   &:hover {
-        //     text-decoration: none;
-        //   }
-        // }
+        a {
+          font-weight: normal;
+          color: inherit;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &.btn {
+            color: $white;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
       }
     }
   }
