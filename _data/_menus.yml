@@ -233,24 +233,28 @@ footer:
   items:
   - folder: false
     url_localized: ''
+    page_id: _pages/accessiblity.html
+    label_localized:
+      en: Accessibility Statement
+    items: 
+  - folder: false
+    url_localized: ''
     page_id: _pages/privacy.html
     label_localized:
       en: Privacy Policy
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/sitemap.html
     label_localized:
       en: Site Map
+    items: 
   - folder: false
     url_localized: ''
     page_id: _pages/contact.html
     label_localized:
       en: Contact Us
-  - folder: false
-    url_localized: ''
-    page_id: _pages/accessiblity.html
-    label_localized:
-      en: Accessibility Statement
+    items: 
 mega_mobile:
   depth: 2
   name: Mobile Full Menu
