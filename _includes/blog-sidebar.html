@@ -23,7 +23,7 @@
       {% assign categories = site.data._models.blog_category %}
       {% for category in categories %}
       <li>
-        <a href="/blog/?c={{ category.category_title | replace: ' ', '-' | replace: '&', 'and' | downcase }}">{{ category.name }}</a>
+        <a href="/blog/category/{{ category.url_friendly_name }}/">{{ category.name }}</a>
       </li>
       {% endfor %}
     </ul>
