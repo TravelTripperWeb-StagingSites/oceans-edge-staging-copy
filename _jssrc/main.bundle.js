@@ -501,7 +501,7 @@ readyDoc(function () {
       nav: false,
       mouseDrag: true,
       loop: false,
-      edgePadding: 15,
+      edgePadding: 0,
       prevButton: "#relatedBlogCarouselNav .iconbtn--left", // previous button
       nextButton: "#relatedBlogCarouselNav .iconbtn--right", // next button
       responsive: {
