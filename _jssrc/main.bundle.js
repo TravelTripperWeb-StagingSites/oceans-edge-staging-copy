@@ -136,6 +136,23 @@ readyDoc(function () {
     return false;
   };
 
+  // cendyn newsletter blog post data
+  document.getElementById('newsletterFormBlog').onsubmit = function (e) {
+    e.preventDefault();
+    var formId = document.getElementById('formIDBlog').value;
+    var url = 'https://web2.cendynhub.com/FormsRest/submit/' + formId + '?format=json';
+    var data = JSON.stringify({
+      "PostData": {
+        "emailAddress": document.getElementById('emailAddressBlog').value,
+        "firstName": document.getElementById('firstNameBlog').value
+      }
+    });
+    makeRESTCall(url, data, function () {
+      window.location = '/thankyou/';
+    });
+    return false;
+  };
+
   function makeRESTCall(url, data, callback) {
     var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
