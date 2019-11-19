@@ -9,3 +9,83 @@ permalink_localized:
 meta_tags:
   robots:
 ---
+
+<section class="amenities-cross-sell amenities-cross-sell--full-screen">
+  <div class="amenities-cross-sell__wrap">
+    <div class="amenities-cross-sell__content-wrap">
+      <div class="amenities-cross-sell__image">
+        <div class="amenities-cross-sell__image__wrap">
+          {% regionblock cross-sell-image, type:image %}
+            <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_992,w_992/v1572864308/wgmndiyiwsz25stic35y.jpg" alt="marina" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="amenities-cross-sell__content">
+        <div class="amenities-cross-sell__content__detail">
+          <!-- <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/amenities/">back to all amenities</a>
+          </div> -->
+          {% regionblock cross-sell-overline, type:text %}
+            <p class="overline">The Marina</p>
+          {% endregionblock %}
+          {% regionblock cross-sell-heading, type:text %}
+            <h1 class="h3" tabindex="0">World-Class Fishing at the Edge of Two Oceans</h1>
+          {% endregionblock %}
+          <hr class="mb-3">
+
+          <ul class="amenities-filter tabs mb-3">
+            <li class="tab" id="tab1">
+              <a class="btn btn--tertiary " href="/marina/">Overview</a>
+            </li>
+            <li class="tab">
+              <a class="btn btn--tertiary" href="/marina-services/">Services</a>
+            </li>
+            <li class="tab">
+              <a class="btn btn--tertiary active" href="/marina-fishing-records-charters/">Fishing Records & Charters</a>
+            </li>
+          </ul>
+          <div class="amenities-content fishing">
+            {% regionblock cross-sell-main-tab3-heading, type:text %}
+              <p class="h5">Fishing Charters Key West</p>
+            {% endregionblock %}
+            {% regionblock cross-sell-main-tab3-content, type:text %}
+              <p>Oceans Edge Key West invites you to experience the best fishing in the Florida Keys from our Oceanside Marina. The history of the marina spans an impressive 35 years and in that time we have been host to over 400 International Game Fish Association (IGFA) world records, which is more than any other marina in the United States. Our historic marina offers anglers of all skill levels fast access to a variety of fishing experiences, from flats to deep water, and even spearfishing. We've got the gear and the guides to get you in the water fast.</p>
+            {% endregionblock %}
+            {% regionblock cross-sell-main-tab3-heading2, type:text %}
+              <p class="h5">A few of the organizations that have hosted tournaments from our marina include:</p>
+            {% endregionblock %}
+            <div class="more-amenities">
+              {% regionblock cross-sell-main-amenities-tab3-2, type:text %}
+                <ul>
+                  <li> <a href="http://www.fishska.com/" target="_blank"> Southern Kingfish Association </a> </li>
+                  <li> <a href="https://www.igfa.org/" target="_blank"> IGFA </a> </li>
+                  <li> <a href="https://www.facebook.com/keywestgatorclub/" target="_blank"> Gator Club Dolphin Derby </a> </li>
+                  <li> <a href="http://www.keywestfishingtournament.com/" target="_blank"> Key West Tournament </a> </li>
+                  <li> <a href="http://www.drambuie.com/uk/age?return=%2Fuk&" target="_blank"> Drambuie </a> </li>
+                  <li> <a href="http://www.marinalife.com/" target="_blank"> Marina Life </a> </li>
+                </ul>
+              {% endregionblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+      <a href="/dining/" class="btn btn--light">Discover Dining</a>
+    {% endregionblock %}
+  </div>
+</section>
