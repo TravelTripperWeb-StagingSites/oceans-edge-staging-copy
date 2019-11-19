@@ -260,6 +260,11 @@ footer:
   items:
   - folder: false
     url_localized: ''
+    page_id: _pages/accessibility.html
+    label_localized:
+      en: Accessibility Statement
+  - folder: false
+    url_localized: ''
     page_id: _pages/privacy.html
     label_localized:
       en: Privacy Policy
