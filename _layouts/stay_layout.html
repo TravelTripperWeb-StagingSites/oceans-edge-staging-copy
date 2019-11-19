@@ -59,7 +59,7 @@ layout: default
               <div class="col-12 pt-2 brdr-left">
                 <div class="flex-column align-start p-2">
                   <p class="h6 mb-3 ml-0">Suite Video</p>
-                  <div class="video">
+                  <div class="video videothumbnail" onclick="lightbox_open()">
                     <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                   </div>
                 </div>
@@ -175,7 +175,7 @@ layout: default
             <div class="col-12 pt-2 brdr-left">
               <div class="flex-column align-start p-2">
                 <p class="h6 mb-3 ml-0">Room Video</p>
-                <div class="video">
+                <div class="video videothumbnail" onclick="lightbox_open()">
                   <img src="{{ room.video_thumbnail.url }}" alt="{{ room.video_thumbnail.alt }}" />
                 </div>
               </div>
@@ -261,3 +261,9 @@ layout: default
   </div>
 </section>
 {% endif %}
+<div class="lightbox2">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+    <video class="VisaChipCardVideo" controls>
+      <source src="//res.cloudinary.com/traveltripperweb/video/upload/c_limit,h_2500,vc_auto,w_2500/v1574145451/k9iovmbnybrn6c5pripv.mp4" type="video/mp4">
+    </video>
+</div>

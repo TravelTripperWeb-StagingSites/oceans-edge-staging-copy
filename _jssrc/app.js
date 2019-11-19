@@ -738,3 +738,19 @@ readyDoc(function() {
   }
 
 });
+
+if(document.querySelector('.videothumbnail')){
+ document.querySelector('.videothumbnail').addEventListener('click', lightbox_open, false);
+}
+
+function lightbox_open() {
+  document.querySelector('.lightbox2').style.display = 'flex';
+  document.querySelector('.lightbox2').style.opacity = '1';
+  document.querySelector('.VisaChipCardVideo').play();
+}
+
+function lightbox_close() {
+  document.querySelector('.lightbox2').style.display = 'none';
+  document.querySelector('.lightbox2').style.opacity = '0';
+  document.querySelector('.VisaChipCardVideo').pause();
+}
