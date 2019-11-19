@@ -776,3 +776,19 @@ readyDoc(function () {
     });
   }
 });
+
+function lightbox_open(video) {
+  console.log(video.getAttribute('data-video'));
+  document.querySelector('.VisaChipCardVideo source').setAttribute('src', video.getAttribute('data-video'));
+  setTimeout(function () {
+    document.querySelector('.lightbox2').style.display = 'flex';
+    document.querySelector('.lightbox2').style.opacity = '1';
+    document.querySelector('.VisaChipCardVideo').play();
+  }, 100);
+}
+
+function lightbox_close() {
+  document.querySelector('.lightbox2').style.display = 'none';
+  document.querySelector('.lightbox2').style.opacity = '0';
+  document.querySelector('.VisaChipCardVideo').pause();
+}
