@@ -805,8 +805,11 @@ readyDoc(function () {
   }
 
   document.querySelector('.rooms-cross-sell .icon-maximize').addEventListener('click', function () {
-    alert();
     document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.add('fullscreen-carousel');
+  });
+
+  document.querySelector('.rooms-cross-sell .zoomout').addEventListener('click', function () {
+    document.querySelector('.rooms-cross-sell .rooms-cross-sell__image').classList.remove('fullscreen-carousel');
   });
 });
 
