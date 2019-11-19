@@ -4,13 +4,11 @@
 .blog-filter {
   @include make-container;
   max-width: 1224px;
-  padding: 30px 0 48px;
-  border-top: 1px solid $t2;
-  border-bottom: 1px solid $t2;
-
   &__wrap {
     @include make-row;
     margin: 0;
+    padding: 30px 0 48px;
+    border-top: 1px solid $t2;
   }
 
   .heading {
@@ -20,9 +18,9 @@
   &__left {
     @include make-col-ready;
     @include media-breakpoint-up(md) {
-      @include make-col(8);
+      @include make-col(8.5);
     }
-
+    padding: 0;
     .blog-cat {
       margin: 0;
       padding: 0;
@@ -64,9 +62,9 @@
   &__right {
     @include make-col-ready;
     @include media-breakpoint-up(md) {
-      @include make-col(4);
+      @include make-col(3.5);
     }
-
+    padding: 0;
     .search-from {
       position: relative;
 
@@ -101,17 +99,48 @@
   }
 }
 
-.blog-listing {
-  @include make-container;
-  max-width: 1224px;
-}
-
 .asset-list {
   &--blog-list {
+    .asset-list {
+      &__items {
+        margin: 30px -15px;
+      }
+    }
+    &--latest {
+      .asset-item {
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+        }
+      }
+    }
     .asset-item {
       &__text-group {
         background-image: linear-gradient(180deg, $white 0%, $tertiary 100%);
         &__wrap {
+          min-height: 250px;
+          .post-info {
+            margin-bottom: 15px;
+            font-family: $family-primary;
+            font-size: $display10-size;
+            line-height: .875rem;
+            color: $medium;
+            letter-spacing: .83px;
+            .cat {
+              padding: 4px 10px;
+              border: 1px solid rgba($t2, .9);
+              border-radius: 16px;
+            }
+            .blog-date {
+              margin-left: 15px;
+              padding-left: 15px;
+              border-left: 1px solid $t2;
+            }
+            span {
+              display: inline-block;
+              width: auto;
+              text-transform: uppercase;
+            }
+          }
           .row {
             .btn {
               width: fit-content;
@@ -134,9 +163,13 @@
           }
           .h4 {
             font-size: $base-font-size;
+            line-height: 1.5rem;
           }
         }
       }
+    }
+    .happening-category {
+      margin: 0;
     }
   }
 }
