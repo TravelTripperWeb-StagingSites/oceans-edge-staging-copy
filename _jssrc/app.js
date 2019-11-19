@@ -109,6 +109,7 @@ readyDoc(function() {
 
   window.onhashchange = function() {
     filterThroughURL();
+    document.querySelector('[data-target="navMenu"]').click();
   }
 
   //if url contains hash
