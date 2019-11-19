@@ -124,6 +124,14 @@
           &:hover {
             text-decoration: none;
           }
+
+          &.btn {
+            color: $white;
+
+            &:hover {
+              color: $primary;
+            }
+          }
         }
       }
     }
