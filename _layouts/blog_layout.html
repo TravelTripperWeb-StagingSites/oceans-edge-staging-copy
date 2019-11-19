@@ -51,64 +51,99 @@ layout: default
             {{ blogpost.post_content }}
           </div>
           <div class="cta-block">
-            <div class="social-links">
-              <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/blog/{{ blogpost.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
+            <div class="social-media">
+              <span class="social-media__label">Share</span>
               <a href="https://facebook.com/sharer.php?u={{ site.url }}/blog/{{ blogpost.url_friendly_name }}/" rel="nofollow" target="_blank" title="Share on Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
-            </div>
-            <div class="blog-prev-next">
-              {% if prevPostUrl %}
-                <a aria-label="Previous blog post" class="primary-btn inverse previous" href="/blog/{{prevPostUrl}}/" title="Previous blog post">
-                  <i aria-hidden="true" aria-label="Previous post" class="fas fa-angle-left"></i>
-                  <span>Prev</span>
-                </a>
-              {% endif %}
-              {% if nextPostUrl %}
-                <a aria-label="Next blog post" class="primary-btn inverse pushleft" href="/blog/{{nextPostUrl}}/" title="Next blog post">
-                  <span>Next</span>
-                  <i aria-hidden="true" class="fas fa-angle-right"></i>
-                </a>
-              {% endif %}
+              <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/blog/{{ blogpost.url_friendly_name }}/&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="mailto:?Subject={{ page.title }}&amp;Body={{ page.title }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
             </div>
           </div>
         </div>
-        {% comment %}
+
         <!-- Related Posts -->
-        {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
-        {% assign count = 0 %}
-        <div class="blog__related">
-          <p class="h4 dark" tabindex="0">Related Posts</p>
-          <div class="blog__related__row">
+
+        <div class="asset-list asset-list--happenings-list asset-list--blog-list asset-list--blog-list--latest px-0">
+          <div class="happening-category d-flex justify-content-between">
+            <h2 class="h4">Related Posts</h2>
+            <a href="/blog/" class="btn btn--secondary-s2">View all posts</a>
+          </div>
+          {% assign relatedblogs = site.data._models.posts | sort: 'date' | reverse %}
+          {% assign count = 0 %}
+          <div class="asset-list__items related-blogs-carousel mx-0">
             {% for relatedblog in relatedblogs %}
               <!-- Related blog items -->
-              {% if relatedblog.blog_category == blogpost.blog_category and count < 3 %}
+              {% if relatedblog.blog_category.name == blogpost.blog_category.name %}
                 <!-- Skip current blog -->
                 {% if relatedblog.url_friendly_name != blogpost.url_friendly_name %}
-                  {% assign count = count | plus: 1 %}
-                  <div class="blog__related__item">
-                    <a class="blog__related__image" href="/blog/{{ relatedblog.url_friendly_name }}/" tabindex="-1">
-                      {% assign featured_image = relatedblog.image %}
-                      {% include components/image image=featured_image max_width=600 %}
+                {% assign count = count | plus: 1 %}
+              <div class="asset-item">
+                <div class="asset-item__wrap">
+                  <div class="asset-item__featured-image">
+                    <a href="/blog/{{ relatedblog.url_friendly_name }}/">
+                    {% assign featured_image = relatedblog.image %}
+                    {% include components/image image=featured_image max_width=600 %}
                     </a>
-                    <p class="h6">
-                      <a href="/blog/{{ relatedblog.url_friendly_name }}/">{{ relatedblog.title }}</a>
-                    </p>
                   </div>
-                {% endif %}
+                  <div class="asset-item__text-group">
+                    <div class="asset-item__text-group__wrap">
+                      <div class="post-info">
+                        <span class="cat">
+                          {{ relatedblog.blog_category.name }}
+                        </span>
+                        <span class="blog-date">
+                          {{ relatedblog.date | date: "%B %d, %Y" }}
+                        </span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="/blog/{{ relatedblog.url_friendly_name }}/">{{ relatedblog.title }}</a>
+                      </h3>
+                      <p class="description">{{ relatedblog.post_content | strip_html | truncate: 130 }}</p>
+                      <div class="row">
+                        <div class="col-9">
+                          <a href="/blog/{{relatedblog.url_friendly_name}}" class="btn btn--light">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {% endif %}
-            {% endfor %}
+            {% endif %}
+          {% endfor %}
           </div>
+
+          <div class="large-card__controls p-0" id="relatedBlogCarouselNav">
+            <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Slide"></a>
+            <div class="slidecontainer">
+              <style data="offerslistyle"></style>
+              <input type="range" min="1" data-max = "{{ count }}" max="" value="1" class="slider" id="sliderRange">
+            </div>
+            <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Slide"></a>
+          </div>
+
         </div>
-        {% endcomment %}
       </div>
+
       <div class="blog__aside">
         <div class="blog__aside__inner">
           {% include blog-sidebar.html %}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="common-cta mt-55">
+  <div class="common-cta__img">
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+  </div>
+  <div class="common-cta__text text-center">
+      <p class="h4 light">The Resort</p>
+      <p class="h3 light">an exhilarating Key West escape</p>
+      <a href="/resort/" class="btn btn--light">Discover More</a>
   </div>
 </section>
