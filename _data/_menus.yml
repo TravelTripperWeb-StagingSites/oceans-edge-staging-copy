@@ -164,7 +164,7 @@ mega:
       label_localized:
         en: Fishing Records & Charters
       items: 
-    expanded: false
+    expanded: true
   - folder: true
     label_localized:
       en: Groups
