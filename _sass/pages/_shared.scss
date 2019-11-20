@@ -710,3 +710,76 @@ hr {
     margin: auto;
   }
 }
+
+.sitemap-links {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  background-color: $quartenary;
+
+  &.desktop {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    span {
+      margin: 0;
+      padding: 0;
+      font-family: $family-primary-lc;
+      font-size: $base-font-size;
+      line-height: $display5-size;
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    ul {
+      &.subnav {
+        margin: 0 0 20px;
+        padding: 0;
+
+        li {
+          color: $white !important;
+          background-color: transparent;
+
+          &:hover {
+            background-color: transparent;
+          }
+
+          a {
+            margin: 0;
+            padding: 0;
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+}
