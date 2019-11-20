@@ -1,0 +1,43 @@
+{% comment %}
+TODO:
+  Pin states for sub-navs?
+{% endcomment %}
+
+{% assign items=include.items %}
+
+{% for item in items %}
+  {% assign show_item = true %}
+  {% if item.page_id %}
+    {% assign show_item = false %}
+    {% for page in site.pages %}
+      {% if page.path == item.page_id %}
+        {% assign show_item = true %}
+        {% assign url = page | permalink %}
+        {% assign text = item.label| default: page.title | default: page.name %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% assign url = item.url %}
+    {% assign text = item.label %}
+  {% endif %}
+  {% if show_item %}
+    <li class="navlink__not__active nav__item{% if item.items %} has-subnav {% endif %}">
+      {% if item.folder %}
+        <span class="nav__link--group nav__link{% if page.url == url %} active{% endif %}" >{{text}}
+          <!-- {% if item.items %}
+          <span class="angle-down-icon" aria-hidden="true"></span>
+          {% endif %} -->
+        </span>
+      {% else %}
+        <a class="nav__link{% if page.url == url %} active{% endif %}" href="{{url}}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{text}}{% if page.url == url %}<span class="sr-only">(current)</span>{% endif %}</a>
+      {% endif %}
+      {% if item.items %}
+        <ul class="subnav">
+          {% include nav/nav-item-list.html items=item.items %}
+        </ul>
+      {% endif %}
+
+    </li>
+  {% endif %}
+
+{% endfor %}

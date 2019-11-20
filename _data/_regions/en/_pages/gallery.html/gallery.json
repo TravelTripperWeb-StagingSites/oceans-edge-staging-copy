@@ -1,0 +1,35 @@
+[
+  {
+    "advanced_options": {
+      "custom_classes": "gallery-filter"
+    },
+    "galleries": [
+      {
+        "label": "The Resort",
+        "gallery": "the_resort"
+      },
+      {
+        "gallery": "dining"
+      },
+      {
+        "gallery": "rooms_suites"
+      },
+      {
+        "gallery": "key_west"
+      },
+      {
+        "gallery": "virtual_tours"
+      },
+      {
+        "gallery": "videos"
+      },
+      {
+        "gallery": "live_webcam"
+      },
+      {
+        "gallery": "activities"
+      }
+    ],
+    "_template": "galleries"
+  }
+]

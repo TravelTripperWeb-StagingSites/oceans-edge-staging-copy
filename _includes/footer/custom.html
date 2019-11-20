@@ -1,3 +1,63 @@
-<div class="copyright m-2">
-  &copy; {{ "now" | date: "%Y" }}
-</div>
+<section class="footer__wrapper">
+  <div class="footer__signup">
+    {% include forms/jotform/newsletter.html %}
+  </div>
+  <div class="footer__detail">
+    <div class="footer__logo">
+      <span
+        data-live-edit-settings='hotel_settings'
+        data-live-edit-settings-field='logo-footer'
+        data-live-editable-type='image'
+      >
+        {% if site.data.hotel_settings.logo-footer and site.data.hotel_settings.logo-footer.url and site.data.hotel_settings.logo-footer.url != '' %}
+          {% assign logo_url = site.data.hotel_settings.logo-footer.url_xsmall | default: site.data.hotel_settings.logo-footer.url %}
+          <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo-footer.alt | default: 'Logo Footer' }}" />
+        {% else %}
+          <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
+        {% endif %}
+      </span>
+    </div>
+    <div class="footer__contact">
+      <title class="h5">Contact</title>
+      <p>A - {{site.data.hotel_settings.address.street1}},<br> {{site.data.hotel_settings.address.city}} {{site.data.hotel_settings.address.state}} {{site.data.hotel_settings.address.zip_code}}</p>
+      <p>T - <a href="tel:{{site.data.hotel_settings.phone_number}}">{{site.data.hotel_settings.phone_number}}</a></p>
+    </div>
+    <div class="footer__reservations">
+      <title class="h5">Reservations</title>
+      <p>R - <a href="tel:{{site.data.hotel_settings.reservation}}">{{site.data.hotel_settings.reservation}}</a></p>
+      <p>E - <a href="mailto:{{site.data.hotel_settings.email}}">{{site.data.hotel_settings.email}}</a></p>
+      <ul class="social">
+        {% assign socialLinks = site.data.social %}
+        {% if socialLinks.facebook.username %}
+        <li>
+          <a class="facebook" href="https://www.facebook.com/{{socialLinks.facebook.username}}/" target="_blank" title="Follow us on Facebook"></a>
+        </li>
+        {% endif %}
+        {% if socialLinks.twitter.username %}
+        <li>
+          <a class="twitter" href="https://www.twitter.com/{{socialLinks.twitter.username}}/" target="_blank" title="follow us on twitter"></a>
+        </li>
+        {% endif %}
+        {% if socialLinks.instagram.username %}
+        <li>
+          <a class="instagram" href="https://www.instagram.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on instagram"></a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+    <ul class="footer__nav">
+      {% assign items = site.data._menus.footer.items %}
+      {% include nav/nav-item-list.html items=items %}
+    </ul>
+  </div>
+  <div class="footer__copyrights">
+    <p class="mr-lg-2">&copy; {{ "now" | date: "%Y" }} {{ site.data.hotel_settings.name }}. All Rights Reserved.</p>
+    <div class="d-flex align-items-center justify-content-between justify-content-md-start ml-md-5 mr-md-auto w-100 w-md-auto">
+      <img class="fodor mr-md-3 mr-lg-5" src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572336464/km97tl6z7msr27hzxf5t.png" alt="Fodor's Best">
+      <img class="lifestyle" src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572336464/id2z6mxtxew4yq1v03rk.png" alt="Life Style" />
+      <a href="/accessibility/" class="d-inline-block d-md-none"><img class="ada" src="//res.cloudinary.com/traveltripperweb/raw/upload/v1572336812/lede11d8euqh4y4ny2hp.svg" alt="WCAG 2.1 ADA Compliant" /></a>
+    </div>
+    <a href="/accessibility/" class="d-none d-md-block"><img class="ada" src="//res.cloudinary.com/traveltripperweb/raw/upload/v1572336812/lede11d8euqh4y4ny2hp.svg" alt="WCAG 2.1 ADA Compliant" /></a>
+  </div>
+</section>

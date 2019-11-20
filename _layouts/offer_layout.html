@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% assign offer = page.data %}
+
+<section class="offers-cross-sell offers-cross-sell--full-screen offers-cross-sell--offer-details">
+  <div class="offers-cross-sell__wrap">
+    <div class="offers-cross-sell__content-wrap">
+      <div class="offers-cross-sell__image">
+        <div class="offers-cross-sell__image__wrap">
+          <img src="{{ offer.image.url_medium }}" alt="{{ offer.image.alt }}" />
+        </div>
+      </div>
+      <div class="offers-cross-sell__content">
+        <div class="offers-cross-sell__content__detail">
+          <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/offers/">back to all offers</a>
+          </div>
+          <h1 class="h3" tabindex="0">{{ offer.name }}</h1>
+          <hr class="mb-3">
+          {% if offer.short_description_detail_page %}
+          <div tabindex="0">
+            <p class="overline">{{ offer.short_description_detail_page }}</p>
+          </div>
+          {% endif %}
+          <div tabindex="0">{{ offer.description }}</div>
+          <p>Need to know:</p>
+          <div tabindex="0">{{ offer.terms_conditions }}</div>
+          <div class="btn-holder">
+            <a class="btn btn--book" href="{{ offer.booking_url }}" target="_blank">Book Offer</a>
+          </div>
+          <div class="social-share">
+            <p class="h5" tabindex="0"><span>Share</span></p>
+            <div class="social-media">
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ offer.name }}&url={{ site.url }}{{ page.url }}&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ offer.name }}&amp;Body={{ offer.name }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="asset-list asset-list--variant mt-55">
+  <hr class="mb-3">
+  <div class="asset-list__header">
+    <h2 class="h4">More Related Offers</h2>
+    <a href="/offers/" class="btn">View all Offers</a>
+  </div>
+  {% include components/offer-cross-sell %}
+</section>
+
+<section class="common-cta mt-55">
+  <div class="common-cta__img">
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+  </div>
+  <div class="common-cta__text text-center">
+      <p class="h4 light">The Resort</p>
+      <p class="h3 light">an exhilarating Key West escape</p>
+      <a href="/dining/" class="btn btn--light">Discover More</a>
+  </div>
+</section>

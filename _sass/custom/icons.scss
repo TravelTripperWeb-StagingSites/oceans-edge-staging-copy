@@ -1,0 +1,176 @@
+@import '../variables';
+
+@font-face {
+  font-family: '#{$oceansedge-font-family}';
+  src:  url('#{$oceansedge-font-path}/#{$oceansedge-font-family}.eot?ckzaeb');
+  src:  url('#{$oceansedge-font-path}/#{$oceansedge-font-family}.eot?ckzaeb#iefix') format('embedded-opentype'),
+    url('#{$oceansedge-font-path}/#{$oceansedge-font-family}.ttf?ckzaeb') format('truetype'),
+    url('#{$oceansedge-font-path}/#{$oceansedge-font-family}.woff?ckzaeb') format('woff'),
+    url('#{$oceansedge-font-path}/#{$oceansedge-font-family}.svg?ckzaeb##{$oceansedge-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon-calendar {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-calendar;
+  }
+}
+.icon-call-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-call-icon;
+  }
+}
+.icon-call-circle-icon {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-call-circle-icon;
+  }
+}
+.icon-gallery-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-gallery-icon;
+  }
+}
+.icon-groups-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-groups-icon;
+  }
+}
+.icon-marina-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-marina-icon;
+  }
+}
+.icon-offers-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-offers-icon;
+  }
+}
+.icon-resort-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-resort-icon;
+  }
+}
+.icon-stay-icon {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-stay-icon;
+  }
+}
+.icon-webcam {
+  &:after {
+    font-family: $oceansedge-font-family;
+    content: $icon-webcam;
+  }
+}
+.icon-menu-icon-close {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-menu-close;
+  }
+}
+.icon-menu-icon-default {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-menu-default;
+  }
+}
+.icon-bed-type-stroke {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-bed-type-stroke;
+  }
+}
+.icon-2bed-type-icon {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-2bed-type-icon;
+  }
+}
+.icon-size {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-size;
+  }
+}
+.icon-sleeps {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-sleeps;
+  }
+}
+.icon-filter {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-filter;
+  }
+}
+.icon-chevron-bottom {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-bottom;
+  }
+}
+.icon-chevron-left {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-left;
+  }
+}
+.icon-chevron-right {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-right;
+  }
+}
+.icon-chevron-top {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-chevron-top;
+  }
+}
+.icon-eye-light {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-eye-light;
+  }
+}
+.icon-queen-bed {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-queen-bed;
+  }
+}
+.icon-info {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-info;
+  }
+}
+.icon-time {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-time;
+  }
+}
+.icon-maximize {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-maximize;
+  }
+}
+.icon-minimize {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-minimize;
+  }
+}

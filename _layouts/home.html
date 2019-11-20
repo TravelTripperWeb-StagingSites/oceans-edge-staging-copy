@@ -1,0 +1,211 @@
+---
+layout: default
+---
+
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.hero_carousel | sort: order %}
+    {% for item in items %}
+    <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
+    {% endfor %}
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+    <p class="overline overline--italic text-center dark" tabindex="0">Welcome to Ocean’s Edge Key West</p>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+    <h1 class="h1" tabindex="0">key west’s mosT iconic resort</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation <b>ullamco laboris nisi ut aliquip</b> ex ea commodo consequat. Lorem ipsum dolor <b>sit amet,</b> consectetur adipisicing elit.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="amenities">
+  <h2 class="h4"><span>As Our Guest, You’ll Enjoy These Amenities</span></h2>
+  <ul class="amenities__listing hotel-amenities">
+    {% assign items = site.data._models.amenities | sort: "order" %}
+    {% for item in items %}
+    <li>
+      <div class="amenities__icon">
+        <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+      </div>
+      <p>{{ item.name }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <a class="btn" href="/resort/">Discover More</a>
+  <div class="amenities__controls" id="amenitiesNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+</section>
+
+<section class="rooms-cross-sell">
+  <div class="rooms-cross-sell__wrap">
+    {% regionblock rooms_tagline, type:text %}
+    <p class="overline overline--italic text-center" tabindex="0">Rooms & Suites</p>
+    {% endregionblock %}
+    {% regionblock rooms_heading, type:header %}
+    <h5 class="h3" tabindex="0">Oceanfront Luxury</h5>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock rooms_intro_description, type:text %}
+      <p>Our brand new rooms are the <strong>most spacious in Key West.</strong> But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers <strong>unparalleled ocean views,</strong> luxury amenities and a <strong>private balcony. Our brand new rooms are the most spacious in Key West. But even better, every single room at Oceans Edge Key West Resort Hotel & Marina delivers unparalleled ocean views, luxury amenities and a private balcony.</strong></p>
+      {% endregionblock %}
+    </div>
+    <div class="rooms-cross-sell__content-wrap">
+      <div class="rooms-cross-sell__image">
+        <div class="rooms-cross-sell__image__wrap">
+          {% assign items = site.data._models.rooms %}
+          {% for item in items %}
+            <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
+          {% endfor %}
+        </div>
+        <div class="rooms-cross-sell__controls" id="roomsNav">
+          <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+          <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+        </div>
+      </div>
+      <div class="rooms-cross-sell__content">
+        <div class="rooms-cross-sell__content__detail">
+          {% regionblock rooms-cross-sell_tagline, type:text %}
+          <p class="overline overline--italic dark" tabindex="0">Oceanfront Rooms & Suites</p>
+          {% endregionblock %}
+          {% regionblock rooms-cross-sell_heading, type:header %}
+          <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock rooms-cross-sell_text, type:text %}
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            {% endregionblock %}
+          </div>
+          {% regionblock rooms-cross-sell_subheading, type:header %}
+          <p class="h5" tabindex="0">Oceanfront Accommodation Features</p>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock rooms-cross-sell_features, type:text %}
+            <ul>
+              <li>Every room is oceanfront</li>
+              <li>Sizable waterfront balconies and porches</li>
+              <li>Key West's largest guestrooms and suites</li>
+              <li>Extensive onsite watersports and boat charter facilities</li>
+              <li>A variety of Key West accommodation options, including multiple room and suite combinations</li>
+              <li>On-site parking - $20 per day</li>
+              <li>High speed Wi-Fi access</li>
+            </ul>
+            {% endregionblock %}
+          </div>
+          {% regionblock rooms-cross-sell_url, type:text %}
+          <a class="btn" href="#">Browse Accomodations</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="offers-cross-sell__no-nav bg-light">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header">
+      <div class="content">
+        <h2 class="h4 mb-2">Key West Hotel Deals</h2>
+        <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
+      </div>
+      <a href="/offers/" class="btn mb-auto">View all Offers</a>
+    </div>
+    {% include components/offer-cross-sell %}
+  </div>
+</div>
+
+{{ content }}
+
+<section class="experience">
+  {% regionblock experience_image, type:image %}
+  <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+  {% endregionblock %}
+  <div class="experience__wrap">
+    {% regionblock experience_tagline, type:text %}
+    <p class="overline overline--italic text-center" tabindex="0">Experience Key West</p>
+    {% endregionblock %}
+    {% regionblock experience_heading, type:header %}
+    <h5 class="h3" tabindex="0">things to do & see in Key west</h5>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock experience_intro_description, type:text %}
+      <p>As an Oceans Edge guest, you have easy ways to experience this unique corner of the world up close. From complimentary activities like paddleboarding and kayaking to trips out to Dry Tortugas, we can help show you all that’s special about the Keys. Plus, our full-service marina is home to world-renowned fishing boat captains who know the best spots to cast your line.</p>
+      {% endregionblock %}
+    </div>
+    <div class="collage">
+      <div class="row">
+        <div class="collage__image t-order">
+          {% regionblock collage_activities_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_activities_title, type:header %}
+            <p class="h4" tabindex="0">Activities</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_activities_description, type:text %}
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_activities_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/activities/">Discover Activities</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock collage_adventures_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_adventures_title, type:header %}
+            <p class="h4" tabindex="0">Adventures</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_adventures_description, type:text %}
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_adventures_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/adventures/">Discover Adventures</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock collage_happenings_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_happenings_title, type:header %}
+            <p class="h4" tabindex="0">Happenings</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_happenings_description, type:text %}
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_happenings_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/happenings/">Discover Happenings</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

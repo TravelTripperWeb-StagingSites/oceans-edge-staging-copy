@@ -1,0 +1,189 @@
+---
+layout: generic
+---
+
+<section class="hero-static hero-inner">
+  <div class="hero-static__wrap">
+    {% regionblock hero_image, type:text %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572857541/vwty1inbqhp9anqyxie4.jpg" alt= "Couple blowing bubbles" />
+    {% endregionblock %}
+  </div>
+  <div class="hero-static__intro">
+    {% regionblock page_intro_tagline, type:text %}
+    <p class="overline overline--italic text-center dark" tabindex="0">Exquisite Key West Vacations</p>
+    {% endregionblock %}
+    {% regionblock page_intro_heading, type:header %}
+    <h1 class="h1" tabindex="0">Oceans Edge Special Offers</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock page_intro_description, type:text %}
+      <p>At any time of year, you’ll find the best offers and packages for a stay at Oceans Edge here on our website. Time spent in one of our <b><a href="/stay/">beautifully appointed suites or rooms</a></b> can only be improved with a great deal on your nightly rate and perks like full breakfast at <b><a href="/dining/">Yellowfin Bar & Grill</a></b>. Read about our tantalizing offers below and book soon.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="large-card">
+  <div class="heading-line-through">
+    <p class="h2">
+      <span class="heading-line-through__text">Featured Offers</span>
+    </p>
+  </div>
+  <div class="large-card__row">
+    {% assign offers = site.data._models.offers | sort:"order" %}
+    {% for offer in offers %}
+    {% if offer.category.name == "Featured Offers" %}
+    <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="{{ offer.image.url_medium }}" alt="{{ offer.image.alt }}">
+        </div>
+        <div class="large-card__item__wrap">
+          <h3 class="h4 light">
+            <a href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a>
+          </h3>
+          <div class="large-card__item__content">
+            <p>{{ offer.short_description }}</p>
+            <div class="large-card__item__button">
+              <a href="{{ offer.booking_url }}" class="btn btn--book-small" target="_blank">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="asset-list asset-list--variant mt-55">
+  <div class="heading-line-through">
+    {% regionblock offer_category_heading_two, type:header %}
+    <p class="h2">
+      <span class="heading-line-through__text">Limited time, <span class="h2--italic">don’t miss out!</span></span>
+    </p>
+    {% endregionblock %}
+  </div>
+  {% assign offers = site.data._models.offers | sort:"order" %}
+  <div class="asset-list__items offer-list-carousel">
+    {% for offer in offers %}
+    {% if offer.category.name == "Limited Time Offers" %}
+    <div class="asset-item">
+      <div class="asset-item__wrap">
+        <div class="asset-item__featured-image">
+          {% assign featured_image = offer.image %}
+          {% include components/image image=featured_image max_width=800 %}
+        </div>
+        <div class="asset-item__text-group">
+          <div class="asset-item__text-group__wrap">
+            <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
+            <div class="row">
+              <div class="col-9">
+                <div class="bed-type no-icon">
+                  <p>{{ offer.short_description }}</p>
+                </div>
+              </div>
+              <div class="col-3">
+                <a class="btn" href="{{ offer.booking_url }}" target="_blank">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="asset-list-carousel__controls d-md-none" id="offersListCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+
+  {% comment %}
+  <div class="heading-line-through">
+    <p class="h2">
+      {% regionblock offer_category_heading_three, type:header %}
+      <span class="heading-line-through__text"><span class="h2--italic">Placeholder</span> category heading</span>
+      {% endregionblock %}
+    </p>
+  </div>
+
+  {% assign offers = site.data._models.offers | sort:"order" %}
+  <div class="asset-list__items asset-list-carousel">
+    {% for offer in offers %}
+    {% if offer.category.name %}
+      {% else %}
+      <div class="asset-item">
+        <div class="asset-item__wrap">
+          <div class="asset-item__featured-image">
+            {% assign featured_image = offer.image %}
+            {% include components/image image=featured_image max_width=800 %}
+          </div>
+          <div class="asset-item__text-group">
+            <div class="asset-item__text-group__wrap">
+              <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
+              <div class="row">
+                <div class="col-9">
+                  <div class="bed-type">
+                    <p>{{ offer.short_description }}</p>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <a class="btn" href="{{ offer.booking_url }}">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endcomment %}
+</section>
+
+<section class="twocol-cs mt-55">
+  <div class="twocol-cs__row">
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_left_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/ko26tx7meg3w0haxlnoq.jpg" alt="Oceanfront Suites">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_left_overline, type:header %}
+          <h3 class="overline overline--italic light">Oceanfront Suites</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_heading, type:header %}
+          <h4 class="h3 light">experience ocean views in spacious  luxury</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_button, type:text %}
+          <a href="/stay/" class="btn btn--light">View All Suites</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_right_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/w9wspvcffwusjqou3pcs.jpg" alt="Oceanfront Rooms">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_right_overline, type:header %}
+          <h3 class="overline overline--italic light">Oceanfront Rooms</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_heading, type:header %}
+          <h4 class="h3 light">Stylish comfort overlooking the marina</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_button, type:text %}
+          <a href="/stay/" class="btn btn--light">View All Rooms</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

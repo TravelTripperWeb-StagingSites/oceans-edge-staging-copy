@@ -1,2 +1,70 @@
 // Gallery Page Elements
 // ==========================================================================
+.filtered-galleries {
+  text-align: center;
+  .overline {
+    margin-bottom: 24px;
+    padding-top: 30px;
+    font-family: $family-secondary;
+    font-size: $base-font-size;
+    font-weight: 400;
+    line-height: 24px;
+    color: $dark;
+    border-top: 1px solid $t2;
+  }
+  .gallery-nav {
+    margin: 22px 0 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid $t2;
+    li {
+      margin: 0 12px 12px;
+      a {
+        padding: 6px 12px;
+        font-family: $family-primary;
+        font-size: $display10-size;
+        line-height: 14px;
+        color: $medium;
+        text-decoration: none;
+        text-transform: lowercase;
+        letter-spacing: .83px;
+        background-color: $white;
+        border: 1px solid $t2;
+        border-radius: 16px;
+        @include transition(.3s);
+        &:hover, &.active {
+          color: $white;
+          background-color: $dark;
+          border: 1px solid $dark;
+        }
+      }
+    }
+  }
+  .gallery-items {
+    li {
+      padding: 12px;
+      .gallery-item {
+        position: relative;
+        &:after {
+          @include transition(.3s);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          content: '';
+          background-color: rgba($overlay-color, .7);
+          background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573036577/qdpwidladvihhy4nj4dp.png');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 40px 40px;
+          opacity: 0;
+        }
+        &:hover {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

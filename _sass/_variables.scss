@@ -10,22 +10,34 @@
 //    $gray-900: #212529 !default;
 //
 //    // colors
-//    $primary: #007bff !default;
-//    $secondary: $gray-600;
-//    $black: #16141a;
-//    $white: #fff;
+$primary: #025172 !default;
+$secondary: #6fd4e4 !default;
+$s2: #a9e5ef !default;
+$s3: rgba(2, 81, 113, .1) !default;
+$tertiary: #f3f3ef !default;
+$t2: #dad7cb !default;
+$quartenary: #02747a !default;
+$black: #000 !default;
+$white: #fff !default;
+$primary-dark: #012433 !default;
 //
-//    $green: #28a745 !default;
+$green: #008670 !default;
 //    $cyan: #17a2b8 !default;
 //    $yellow: #ffc107 !default;
-//    $red: #dc3545 !default;
+$red: #be0808 !default;
 //
 //    $success: $green !default;
 //    $info: $cyan !default;
 //    $warning: $yellow !default;
 //    $danger: $red !default;
 //    $light: $gray-100 !default;
-//    $dark: $gray-800 !default;
+$light: $white !default;
+$medium: #6f6f6f !default;
+$dark: #434343 !default;
+$overlay: rgba(1, 36, 51, .3) !default;
+$overlay-color: #012433 !default;
+$video-close: #aeaeae !default;
+$lightbox-bg: rgba(0,0,0,.8) !default;
 //
 //    $theme-colors: () !default;
 //    $theme-colors: map-merge(
@@ -66,14 +78,58 @@
 //    $link-hover-color: $primary;
 //    $link-hover-decoration: underline !default;
 //
-//    // Fonts
-//    $family-primary: "Open Sans", sans-serif;
-//    $family-secondary: "Playfair Display", serif;
-//    $family-terciary: "Roboto", sans-serif;
-//
+// Fonts
+$family-primary: 'Code Pro W01 Regular';
+$family-primary-light: 'Code Pro W01 Light';
+$family-primary-bold: 'Code Pro W01 Bold';
+$family-primary-black: 'Code Pro W01 Black';
+$family-primary-lc: 'Code Pro W01 Lowercase';
+$family-primary-light-lc: 'Code Pro W01 Light Lowercase';
+$family-primary-bold-lc: 'Code Pro W01 Bold Lowercase';
+$family-primary-black-lc: 'Code Pro W01 Black Lowercase';
+
+$family-secondary: 'AdobeGaramondW01-Regula';
+$family-secondary-italic: 'Adobe Garamond W01 It';
+$family-secondary-semi-bold: 'Adobe Garamond W01 SmBd';
+$family-secondary-semi-bold-italic: 'AdobeGaramondW01-SmBdIt';
+$family-secondary-bold: 'Adobe Garamond W01 Bd';
+$family-secondary-bold-italic: 'AdobeGaramondW01-BdIt';
+
+$oceansedge-font-family: 'oceansedge' !default;
+$oceansedge-font-path: 'font' !default;
+$icon-calendar: '\e900';
+$icon-call-icon: '\e901';
+$icon-call-circle-icon: '\e90b';
+$icon-gallery-icon: '\e902';
+$icon-groups-icon: '\e903';
+$icon-marina-icon: '\e904';
+$icon-offers-icon: '\e905';
+$icon-resort-icon: '\e906';
+$icon-stay-icon: '\e907';
+$icon-webcam: '\e908';
+$icon-menu-close: '\e909';
+$icon-menu-default: '\e90a';
+$icon-chevron-bottom: '\e90c';
+$icon-chevron-left: '\e90d';
+$icon-chevron-right: '\e90e';
+$icon-chevron-top: '\e90f';
+$icon-size: '\e910';
+$icon-sleeps: '\e911';
+$icon-filter: '\e912';
+$icon-bed-type-stroke: '\e913';
+$icon-2bed-type-icon: '\e914';
+$icon-eye-light: '\e915';
+$icon-queen-bed: '\e916';
+$icon-info: '\e917';
+$icon-time: '\e918';
+$icon-maximize: '\e919';
+$icon-minimize: '\e91a';
+
+// $family-arrows: 'ITC Officina Disp Arrows W05';
+// $family-bullets: 'ITC Officina Disp Bullets W05';
+
 //    $base-font-color: $base-text-color;
 //    $base-body-font: $family-primary;
-//    $base-font-size: 1rem; //1rem = 16px
 //    $base-line-height: 1.5;
 //    $font-size-lg: ($base-font-size * 1.25) !default;
 //    $font-size-sm: ($base-font-size * 0.875) !default;
@@ -88,15 +144,24 @@
 //    $font-weight-bold: 700 !default;
 //    $font-weight-bolder: bolder !default;
 //
-//    $display1-size: 6rem !default;
-//    $display2-size: 5.5rem !default;
-//    $display3-size: 4.5rem !default;
-//    $display4-size: 3.5rem !default;
-//
-//    $display1-weight: 300 !default;
-//    $display2-weight: 300 !default;
-//    $display3-weight: 300 !default;
-//    $display4-weight: 300 !default;
+
+$base-font-size: 1rem; //1rem = 16px
+$display1-size: 3rem !default; //48px
+$display2-size: 2.5rem !default; //40px
+$display3-size: 2.25rem !default; //36px
+$display4-size: 2rem !default; //32px
+$display5-size: 1.5rem !default; //24px
+$display6-size: 1.25rem !default; //20px
+$display7-size: 1.125rem !default; //18px
+$display8-size: .875rem !default; //14px
+$display9-size: .75rem !default; //12px
+$display10-size: .625rem !default; //10px
+
+// $display1-weight: 300 !default;
+// $display2-weight: 300 !default;
+// $display3-weight: 300 !default;
+// $display4-weight: 300 !default;
+
 //    $display-line-height: $header-line-height !default;
 //
 //    $lead-font-size: ($base-font-size * 1.25) !default;

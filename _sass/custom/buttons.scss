@@ -1,0 +1,322 @@
+:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+//Default button/btn = Primary CTA
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  font-family: $family-primary;
+  font-size: $display9-size;
+  font-weight: normal;
+  line-height: $base-font-size;
+  color: $light;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: $primary;
+  border: 0;
+  border-radius: $base-font-size;
+
+  &:after {
+    position: relative;
+    margin-left: 8px;
+    font-family: $oceansedge-font-family;
+    font-size: 90%;
+    content: $icon-chevron-right;
+    opacity: .5;
+  }
+
+  &--reverse {
+    &:after {
+      display: none;
+    }
+    &:before {
+      position: relative;
+      margin-right: 8px;
+      font-family: $oceansedge-font-family;
+      font-size: 90%;
+      content: $icon-chevron-left;
+      opacity: .5;
+    }
+  }
+
+  &:hover, &:focus {
+    color: $primary;
+    background: $secondary;
+
+    &:after {
+      color: $primary;
+      opacity: 1;
+    }
+  }
+
+  &--light {
+    color: $primary;
+    background: $light;
+
+    &:after {
+      color: $primary;
+    }
+  }
+
+  &--book {
+    padding: 8px 16px;
+    font-size: $display9-size;
+    color: $primary;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    background: $secondary;
+    border-radius: 20px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 13px 32px;
+      font-size: $display8-size;
+      letter-spacing: 1.17px;
+    }
+
+    &:hover, &:focus {
+      color: $secondary;
+      background: $primary;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--book-small {
+    padding: 11px 16px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: $secondary;
+    border-radius: 16px;
+
+    &:after {
+      content: normal;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
+  &--secondary {
+    color: $primary;
+    background: $tertiary;
+
+    &:after {
+      color: $primary;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
+  &--secondary-s2 {
+    color: $primary;
+    background: $s2;
+
+    &:after {
+      color: $primary;
+    }
+
+    &:hover {
+      color: $primary;
+      background: $secondary;
+
+      &:after {
+        color: $primary;
+      }
+    }
+  }
+
+  &--tertiary {
+    padding: 6px 12px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $primary;
+    text-transform: lowercase;
+    letter-spacing: .83px;
+    background: $tertiary;
+    border-radius: 16px;
+
+    &:after {
+      color: $primary;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
+  &--tertiary-filter {
+    padding: 6px 12px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $light;
+    text-transform: lowercase;
+    letter-spacing: .83px;
+    background: $primary;
+    border-radius: 16px;
+
+    &:after {
+      font-size: 100%;
+      color: $light;
+      content: $icon-filter;
+      opacity: .5;
+    }
+
+    &:hover, &:focus {
+      color: $light;
+      background: $primary;
+
+      &:after {
+        color: $light;
+      }
+    }
+  }
+
+  &--tertiary-s2 {
+    padding: 6px 12px;
+    font-size: $display10-size;
+    line-height: $display10-size;
+    color: $primary;
+    text-transform: lowercase;
+    letter-spacing: .83px;
+    background: $s2;
+    border-radius: 16px;
+
+    &:after {
+      color: $primary;
+    }
+
+    &:hover {
+      color: $primary;
+      background: $secondary;
+
+      &:after {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.iconbtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: $tertiary;
+  border-radius: 50%;
+  @include transition(all .3s);
+
+  @include media-breakpoint-up(sm) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:after {
+    font-family: $oceansedge-font-family;
+    font-size: 100%;
+    color: $medium;
+    content: '';
+    @include transition(all .3s);
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+    background: $medium;
+
+    &:after {
+      color: $light;
+    }
+  }
+
+  &--left {
+    &:after {
+      content: $icon-chevron-left;
+    }
+  }
+
+  &--right {
+    &:after {
+      content: $icon-chevron-right;
+    }
+  }
+
+  &--light {
+    background: $overlay;
+
+    &:after {
+      color: $light;
+    }
+
+    &:hover {
+      background: $light;
+
+      &:after {
+        color: $dark;
+      }
+    }
+  }
+}
+
+.arrow-link {
+  color: $primary;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:after {
+    position: relative;
+    margin-left: 8px;
+    font-family: $oceansedge-font-family;
+    font-size: 80%;
+    content: $icon-chevron-right;
+    opacity: .5;
+    @include transition(all .3s);
+  }
+
+  &:hover, &:focus {
+    color: $primary;
+
+    &:after {
+      color: $primary;
+      opacity: 1;
+    }
+  }
+
+  &--light {
+    color: $primary;
+    background: $light;
+
+    &:after {
+      color: $primary;
+    }
+  }
+}

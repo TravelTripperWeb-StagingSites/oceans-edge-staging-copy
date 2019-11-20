@@ -1,0 +1,31 @@
+{% assign gallery_items = '' %}
+<div class="filtered-galleries lightbox--gallery {{item.advanced_options.custom_classes}}" {% if item.advanced_options.custom_id and item.advanced_options.custom_id != "" %}id="{{item.advanced_options.custom_id}}"{% endif %} >
+  <p class="overline">Filter By</p>
+  <ul class="gallery-nav nav--filter">
+    <li>
+      <a href="javascript:;" data-rel="all" class="filter active filter--option" data-filter="all">Show All</a>
+    </li>
+    {% for gallery in item.galleries %}
+      {% assign selected_gallery = site.data._galleries[gallery.gallery]  %}
+      {% if selected_gallery != nil %}
+        <li>
+          <a href="javascript:;" data-rel="{{gallery.gallery}}" class="filter filter--option" data-filter="{{gallery.gallery}}">{{gallery.label | default: selected_gallery.name }}</a>
+        </li>
+
+        {% capture gallery_items %}
+          {{ gallery_items }}
+          {% for photo in selected_gallery.photos %}
+            <li data-filter="{{gallery.gallery}}" class="filter-item">
+              <div class="lightbox-item gallery-item">
+                <img src="{{photo.url_small}}" alt="{{photo.alt}}" data-large="{{photo.url_large}}" data-thumb="{{photo.url_thumb}}" class="objectfit" />
+              </div>
+            </li>
+          {% endfor %}
+        {% endcapture %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul class="gallery-items">
+    {{ gallery_items }}
+  </ul>
+</div>

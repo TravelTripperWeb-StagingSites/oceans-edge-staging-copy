@@ -2,24 +2,131 @@
 layout: default
 ---
 
-{% comment %}
+<section class="hero-carousel hero-inner">
+  <div class="hero-carousel__wrap">
+    {% regionblock hero_image, type:text %}
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573215518/ctaxnszzoab6rdapzfcx.jpg" alt= "Contact Hero" />
+    {% endregionblock %}
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock page_intro_tagline, type:text %}
+    <p class="overline overline--italic text-center dark" tabindex="0"> Contact Oceans Edge Key West</p>
+    {% endregionblock %}
+    {% regionblock page_intro_heading, type:header %}
+    <h1 class="h1" tabindex="0">Experience the Luxurious Side of the Keys</h1>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock page_intro_description, type:text %}
+      <p>Oceans Edge is an idyllic retreat from the everyday world—and once you’ve experienced it, you’ll come back. Contact us by any of the means below or <a href="/faq/">visit our FAQ</a> to learn more. </p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
 
-  TODO: Optionally just change to "generic" layout?
+<section class="contact-infomap contact-infomap--reverse contact-infomap--full-screen">
+  <div class="contact-infomap__wrap">
+    <div class="contact-infomap__content-wrap">
+      <div class="contact-infomap__image">
+        <div class="contact-infomap__image__wrap">
+          {% regionblock contact_map, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573216881/w6hr4ttfka6lmwigz8sw.jpg" alt="Ocean Edge Meetings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="contact-infomap__content">
+        <div class="contact-infomap__content__detail">
+          <p class="h5">Address</p>
+          <div class="side-by">
+            <p>5950 Peninsular Avenue,<br>Key West FL 33040</p>
+            <div class="btn-holder">
+              <a class="btn" href="https://www.google.com/maps/dir/41.5137792,-71.2515584/oceans+edge+key+resort+key+west/@32.7541111,-85.5018498,5z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x88d1b143322fffff:0x5fd917da88b3eb14!2m2!1d-81.7287255!2d24.5634672" target="_blank">get directions</a>
+            </div>
+          </div>
+          <hr>
+          <p class="h5">Contact</p>
+          <p>Telephone - 305 809 8204<br>
+            Reservations - 877 935 0862<br>
+            Sales - 877 935 0862<br>
+            Email - <a href="mailto:Info@oceansedgekeywest.com">Info@oceansedgekeywest.com</a></p>
+          <hr>
+          <p class="h5">Follow Us</p>
+          <ul class="social">
+            {% assign socialLinks = site.data.social %}
+            {% if socialLinks.facebook.username %}
+            <li>
+              <a class="facebook" href="https://www.facebook.com/{{socialLinks.facebook.username}}/" target="_blank" title="Follow us on Facebook"></a>
+            </li>
+            {% endif %}
+            {% if socialLinks.twitter.username %}
+            <li>
+              <a class="twitter" href="https://www.twitter.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on twitter"></a>
+            </li>
+            {% endif %}
+            {% if socialLinks.instagram.username %}
+            <li>
+              <a class="instagram" href="https://www.instagram.com/{{socialLinks.instagram.username}}/" target="_blank" title="follow us on instagram"></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  Name:
+<section class="form-wrapper">
+  <div class="form-wrapper__inner text-center">
+    {% regionblock contact_form_inquiry, type:text %}
+    <p class="h5">Inquiry Form</p>
+    {% endregionblock %}
+    {% regionblock contact_form_required, type:text %}
+    <p><b>Required fields are marked *</b></p>
+    {% endregionblock %}
+    {% include forms/jotform/contact.html %}
+  </div>
+</section>
 
-    Contact Page
-
-  Description:
-
-    Static content that can be modified by editable regions.
-
-  Usage:
-
-    Text   - {% regionblock region_name, type:html %}{% endregionblock %}
-
-    Header - {% regionblock region_name, type:header %}{% endregionblock %}
-
-    Image  - {% regionblock region_name, type:image %}{% endregionblock %}
-
-{% endcomment %}
+<section class="twocol-cs">
+  <div class="twocol-cs__row">
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_left_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/ko26tx7meg3w0haxlnoq.jpg" alt="Oceanfront Suites">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_left_overline, type:header %}
+          <h3 class="overline overline--italic light">Group reservations</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_heading, type:header %}
+          <h4 class="h3 light">Oceans Edge is perfect for reunions and celebrations</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_button, type:text %}
+          <a href="/groups/" class="btn btn--light">Learn More</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_right_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948891/w9wspvcffwusjqou3pcs.jpg" alt="Oceanfront Rooms">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_right_overline, type:header %}
+          <h3 class="overline overline--italic light">Concierge services</h3>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_heading, type:header %}
+          <h4 class="h3 light">Our concierge unlocks amazing experiences for our guests</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_button, type:text %}
+          <a href="mailto:concierge@oceansedgekeywest.com" class="btn btn--light">E-Mail Concierge</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

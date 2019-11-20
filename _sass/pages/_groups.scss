@@ -1,0 +1,343 @@
+// Groups Page Elements
+// ==========================================================================
+
+.form-wrapper {
+  padding: 48px 0;
+  background-color: $tertiary;
+
+  @include media-breakpoint-up(md) {
+    padding: 56px 0 64px;
+  }
+
+  &__inner {
+    @include make-container;
+    max-width: 856px;
+  }
+
+  &__block {
+    margin: 0;
+    text-align: left;
+    @include make-row;
+
+    .form-group {
+      @include make-col-ready;
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+
+      &.full {
+        @include media-breakpoint-up(md) {
+          @include make-col(12);
+        }
+      }
+
+      &.third {
+        @include media-breakpoint-up(md) {
+          @include make-col(4);
+        }
+      }
+
+      &.forth {
+        @include media-breakpoint-up(md) {
+          @include make-col(3);
+        }
+      }
+
+      .text {
+        margin-right: 15px;
+        font-family: $family-primary-lc !important;
+        font-size: $display8-size;
+        line-height: 20px;
+        color: $dark;
+      }
+
+      &.chck-cstm {
+        @include media-breakpoint-up(md) {
+          padding-top: 38px;
+        }
+      }
+
+      .form-check {
+        display: inline-block;
+      }
+    }
+  }
+
+  .overline--italic {
+    color: $dark;
+  }
+
+  .h3 {
+    margin-bottom: 24px;
+    text-transform: none;
+  }
+
+  .p {
+    color: $dark;
+  }
+
+  b {
+    font-family: $family-secondary;
+    font-style: italic;
+    font-weight: 600;
+    color: $dark;
+  }
+
+  hr {
+    margin-bottom: 1.6rem;
+    background: $t2;
+  }
+
+  .h5 {
+    margin-bottom: 12px;
+  }
+}
+
+.groups-intro {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 48px;
+  padding: 32px 0;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 48px;
+    margin-bottom: 64px;
+    padding: 64px 0;
+  }
+
+  &__wrap {
+    max-width: 1254px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__content-wrap {
+    @include make-row;
+    margin: 0;
+    background: transparent;
+  }
+
+  &__image {
+    @include make-col-ready;
+    height: 272px;
+    padding: 0;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      height: 544px;
+    }
+
+    &__wrap {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      img, div {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__content {
+    @include make-col-ready;
+    padding: 0;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    &__detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 30px 12px;
+      background-image: linear-gradient(to right, $white 0%, $tertiary 100%);
+
+      @include media-breakpoint-up(md) {
+        max-width: 612px;
+        padding: 50px 36px;
+      }
+
+      .small {
+        font-family: $family-primary-lc;
+      }
+
+      .h3 {
+        margin-bottom: 20px;
+        color: $primary;
+        text-align: left;
+      }
+
+      p {
+        color: $dark;
+      }
+
+      ul {
+        padding: 0 0 10px;
+
+        li {
+          position: relative;
+          padding-left: 18px;
+          color: $dark;
+          list-style: none;
+
+          &:before {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 1px;
+            height: 10px;
+            content: '';
+            background-color: #6fd4e4;
+          }
+        }
+      }
+    }
+  }
+
+  &--full-screen {
+    padding: 0;
+
+    .groups-intro__wrap {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  &--reverse {
+    margin-bottom: 48px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 64px;
+    }
+
+    .groups-intro__image {
+      order: 1;
+
+      @include media-breakpoint-up(md) {
+        order: 2;
+      }
+    }
+
+    .groups-intro__content {
+      order: 2;
+
+      @include media-breakpoint-up(md) {
+        order: 1;
+      }
+
+      .groups-intro__content__detail {
+        margin-left: auto;
+        background-image: linear-gradient(to left, $white 0%, $tertiary 100%);
+      }
+    }
+  }
+}
+
+.text-container {
+  @include make-container;
+  position: relative;
+  max-width: 1150px;
+  padding-top: 50px;
+  padding-bottom: 96px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 64px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 41px;
+    height: 32px;
+    content: '';
+    background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573206348/l9cslnwltddxjqpfy7vn.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateX(-50%);
+
+    @include media-breakpoint-up(md) {
+      top: 50%;
+      right: 15px;
+      left: auto;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    width: 41px;
+    height: 32px;
+    content: '';
+    background-image: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573206348/l9cslnwltddxjqpfy7vn.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(180deg) translateX(50%);
+
+    @include media-breakpoint-up(md) {
+      top: 50%;
+      bottom: auto;
+      left: 15px;
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+
+    .overline {
+      max-width: 1015px;
+      margin: 0 auto;
+
+      span {
+        font-family: $family-secondary-italic;
+      }
+    }
+  }
+}
+
+.two-images-wrap {
+  margin-bottom: 48px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 64px;
+  }
+
+  &__inner {
+    @include make-row;
+    margin: 0;
+  }
+
+  .image {
+    @include make-col-ready;
+    @include make-col(6);
+    @include media-breakpoint-up(md) {
+      height: 544px;
+    }
+    height: 180px;
+    padding: 0;
+
+    div {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

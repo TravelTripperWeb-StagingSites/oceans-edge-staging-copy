@@ -1,0 +1,134 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body, p {
+  font-family: $family-secondary;
+  font-size: $base-font-size;
+  line-height: $display5-size;
+  color: $primary;
+}
+
+.cp-lc {
+  font-family: $family-primary-lc;
+  p, a {
+    font-family: $family-primary-lc;
+  }
+}
+
+//Headings
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4 {
+  font-weight: normal;
+}
+
+.h1 {
+  font-family: $family-primary;
+  font-size: $display4-size;
+  line-height: $display4-size;
+  color: $primary;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  @include media-breakpoint-up(md) {
+    font-size: $display1-size;
+    line-height: $display1-size;
+  }
+}
+
+.h2 {
+  font-family: $family-secondary;
+  font-size: $display5-size;
+  line-height: $display4-size;
+  color: $primary;
+  text-align: center;
+  text-transform: uppercase;
+
+  &--italic {
+    font-family: $family-secondary-italic;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $display2-size;
+    line-height: $display1-size;
+  }
+}
+
+.h3 {
+  font-family: $family-primary;
+  font-size: $display4-size;
+  line-height: $display4-size;
+  color: $primary;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display3-size;
+    line-height: $display2-size;
+    letter-spacing: .5px;
+  }
+}
+
+.h4 {
+  font-family: $family-primary-lc;
+  font-size: $display6-size;
+  line-height: $display5-size;
+  color: $primary;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display5-size;
+    line-height: $display4-size;
+    letter-spacing: .2px;
+  }
+}
+
+.h5 {
+  font-family: $family-primary-lc;
+  font-size: $base-font-size;
+  line-height: $display5-size;
+  color: $primary;
+}
+
+.h6 {
+  font-family: $family-secondary;
+  font-size: $display8-size;
+  line-height: $base-font-size;
+  color: $primary;
+}
+
+.overline {
+  margin-bottom: 8px;
+  font-family: $family-secondary;
+  font-size: $display7-size;
+  line-height: $display5-size;
+  color: $primary;
+
+  @include media-breakpoint-up(md) {
+    font-size: $display5-size;
+    line-height: $display4-size;
+  }
+
+  &--italic {
+    font-family: $family-secondary-italic;
+  }
+
+  &--small {
+    font-size: $base-font-size;
+    color: $dark;
+  }
+}
+
+.light {
+  color: $light !important;
+}
+
+.dark {
+  color: $dark !important;
+}
+
+.w-md-auto {
+  @include media-breakpoint-up(md) {
+    width: auto !important;
+  }
+}

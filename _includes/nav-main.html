@@ -1,0 +1,70 @@
+{% comment %}
+note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
+{% endcomment %}
+<nav class="navbar nav--main" id="js-navbar--main">
+  <div class="container-fluid">
+    <div class="wrapper">
+      <div class="col-4 d-block d-lg-none">
+        <a role="button" class="mobile-menu" href="javascript:void(0);"></a>
+      </div>
+      <a class="nav__link navbar-brand" href="/">
+        <span class="nav__logo" data-live-edit-settings='hotel_settings' data-live-edit-settings-field='logo' data-live-editable-type='image'>
+          {% if site.data.hotel_settings.logo and site.data.hotel_settings.logo.url and site.data.hotel_settings.logo.url != '' %}
+          {% assign logo_url = site.data.hotel_settings.logo.url_xsmall | default: site.data.hotel_settings.logo.url %}
+          <img src="{{logo_url}}" alt="{{site.data.hotel_settings.logo.alt | default: 'Logo' }}" />
+          {% else %}
+          <span class="condensed-hotel-name">{{site.data.hotel_settings.name}}</span>
+          {% endif %}
+        </span>
+      </a>
+      <div class="navbar__booking d-block d-lg-none col-4 text-right">
+        <a href="{{site.data.hotel_settings.booking_url}}" target="_NEW" role="button" class="btn btn--book">Book</a>
+        <a class="tel" href="tel:877-935-0862" title="Phone:877-935-0862"></a>
+      </div>
+      <div class="navbar__group">
+        <div class="navbar__offer d-none d-lg-block">
+          <p>Oceans Edge Exclusive Offer <span>Save 25%</span> <a class="btn btn--tertiary-s2" href="/offers/oceans-edge-exclusive-benefits/">find out more</a></p>
+          <span class="navbar__offer__close-btn"></span>
+        </div>
+
+        <div class="navbar__group__wrap">
+          <div class="nav__items">
+            <div class="nav--device mobileview">
+              <ul navMenu>
+                {% assign items = site.data._menus.mega_mobile.items %}
+                {% include nav/nav-item-list.html items=items %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__group__wrap d-none d-lg-flex">
+          <div class="nav__items">
+            <ul class="nav__featured">
+              {% assign items = site.data._menus.featured.items %}
+              {% include nav/nav-item-list.html items=items %}
+            </ul>
+            <ul class="nav__main">
+              {% assign items = site.data._menus.main.items %}
+              {% include nav/nav-item-list.html items=items %}
+              <li><a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">Menu</a></li>
+            </ul>
+            <div class="nav--device nav-device-lg">
+              <ul navMenu>
+                {% assign items = site.data._menus.mega.items %}
+                {% include nav/nav-item-list.html items=items %}
+              </ul>
+            </div>
+          </div>
+          <div class="navbar__booking">
+            <a class="tel" href="tel:877-935-0862">(877) 935-0862</a>
+
+            <div class="booking-widget-button">
+              {% include components/booking-widget-button %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

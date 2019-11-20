@@ -1,0 +1,94 @@
+.c-instagram-feed {
+  position: relative;
+  max-width: 1344px;
+  margin: 48px auto;
+
+  &__container {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 1224px;
+    }
+  }
+
+  .tns-ovh {
+    border-radius: $base-font-size;
+  }
+
+  .photo-list {
+    display: flex;
+    align-items: center;
+    height: 188px;
+    padding: 30px 0;
+
+    @include media-breakpoint-up(sm) {
+      height: 244px;
+    }
+  }
+
+  &__list {
+    .photo {
+      height: 128px !important;
+      margin: 0 10px;
+      background-repeat: no-repeat;
+      border-radius: $base-font-size;
+      box-shadow: 0 6px 5px rgba(0, 0, 0, .15);
+
+      @include media-breakpoint-up(sm) {
+        height: 184px !important;
+      }
+    }
+  }
+
+  .custom-control-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .iconbtn--left {
+      position: absolute;
+      top: calc(50% + 43px);
+      left: 10px;
+      z-index: 0;
+
+      @include media-breakpoint-up(sm) {
+        top: calc(50% + 36px);
+        left: 5%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        left: 0;
+      }
+    }
+
+    .iconbtn--right {
+      position: absolute;
+      top: calc(50% + 43px);
+      right: 10px;
+      z-index: 0;
+
+      @include media-breakpoint-up(sm) {
+        top: calc(50% + 36px);
+        right: 5%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        right: 0;
+      }
+    }
+  }
+}
+
+.follow-instagram {
+  .overline {
+    padding: 15px 15px 0;
+    font-family: $family-secondary-bold-italic;
+    text-align: center;
+
+    span {
+      font-family: $family-secondary;
+    }
+  }
+}

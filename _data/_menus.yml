@@ -1,28 +1,496 @@
+---
 main:
   depth: 2
-  name: Top Menu
+  name: Main Menu
   items:
-    - page_id: index.html
-    - page_id: _pages/about.html
-    - page_id: _pages/rooms.html
-    - page_id: _pages/offers.html
-    - page_id: _pages/gallery.html
-    - page_id: _pages/contact.html
-    # - url_localized:
-    #     en: https://www.google.com
-    #     es: https://www.google.es
-    #   label_localized:
-    #     en: g-US
-    #     es: g-ES
-    #   target: _NEW
-    # - label_localized:
-    #     en: Group
-    #     es: Group (ES)
-    #   folder: true
-    #   items:
-    #     - page_id: _pages/about.html
-    #     - url: /test/
-    #       label_localized:
-    #         en: Test
-    #         es: Prueba
-    
+  - folder: false
+    url_localized: ''
+    page_id: _pages/resort.html
+    label_localized:
+      en: Resort
+    items:
+  - folder: false
+    url_localized: ''
+    label_localized:
+      en: Stay
+    page_id: _pages/stay.html
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/experiences.html
+    label_localized:
+      en: Experiences
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/dining.html
+    label_localized:
+      en: Dining
+    items:
+mega:
+  depth: 2
+  name: Mega Menu
+  items:
+  - folder: true
+    label_localized:
+      en: Resort
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/resort.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/amenities.html
+      label_localized:
+        en: Amenities
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/pet-friendly.html
+      label_localized:
+        en: Pet Friendly
+      items:
+    expanded: true
+  - folder: true
+    label_localized:
+      en: Stay
+    items:
+    - folder: false
+      url_localized:
+        en: dining/yellofin-bar-kitchen/
+      page_id: _pages/yellofin-bar-kitchen.html
+      label_localized:
+        en: Yellowfin Bar & Kitchen
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/"
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#guestrooms"
+      label_localized:
+        en: Guestrooms
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#suites"
+      label_localized:
+        en: Suites
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#accessible-rooms"
+      label_localized:
+        en: Accessible Rooms
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Experiences
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/experiences.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/activities.html
+      label_localized:
+        en: Activities
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/adventures.html
+      label_localized:
+        en: Adventures
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/happenings.html
+      label_localized:
+        en: Happenings
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Dining
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/dining.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: "/dining/yellowfin-bar-kitchen/"
+      page_id: _pages/yellowfin-bar-kitchen.html
+      label_localized:
+        en: Yellowfin Bar & Kitchen
+      items:
+    - folder: false
+      url_localized: "/dining/oceans-edge-cafe/"
+      page_id: _pages/oceans-edge-cafe.html
+      label_localized:
+        en: Oceans Edge Cafe
+      items:
+    expanded: true
+  - folder: true
+    label_localized:
+      en: Marina
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/marina.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/marina-services.html
+      label_localized:
+        en: Services
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/fishing-records-charters.html
+      label_localized:
+        en: Fishing Records & Charters
+      items:
+    expanded: true
+  - folder: true
+    label_localized:
+      en: Groups
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/groups.html
+      label_localized:
+        en: Overview
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: More
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/gallery.html
+      label_localized:
+        en: Gallery
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/webcam.html
+      label_localized:
+        en: Webcam
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/blogs.html
+      label_localized:
+        en: Blog
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Connect
+    items:
+    - folder: false
+      url_localized:
+        en: tel:8779350862
+      label_localized:
+        en: 'Res: 877 935 0862'
+      items:
+    - folder: false
+      url_localized:
+        en: mailto:info@oceansedgekeywest.com
+      label_localized:
+        en: Email us
+      items:
+    expanded: false
+featured:
+  depth: 2
+  name: Featured Menu
+  items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/gallery.html
+    label_localized:
+      en: Gallery
+  - folder: false
+    url_localized: ''
+    page_id: _pages/webcam.html
+    label_localized:
+      en: Live Webcam
+  - folder: false
+    url_localized: ''
+    page_id: _pages/marina.html
+    label_localized:
+      en: The Marina
+  - folder: false
+    url_localized: ''
+    page_id: _pages/groups.html
+    label_localized:
+      en: Groups
+footer:
+  depth: 2
+  name: Footer Menu
+  items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/accessiblity.html
+    label_localized:
+      en: Accessibility Statement
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/privacy.html
+    label_localized:
+      en: Privacy Policy
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/contact.html
+    label_localized:
+      en: Contact Us
+    items:
+mega_mobile:
+  depth: 2
+  name: Mobile Full Menu
+  items:
+  - folder: true
+    label: Resort
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/resort.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/amenities.html
+      label_localized:
+        en: Amenities
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/pet-friendly.html
+      label_localized:
+        en: Pet Friendly
+      items:
+    expanded: true
+  - folder: true
+    label_localized:
+      en: Stay
+    items:
+    - folder: false
+      url_localized:
+        en: dining/yellofin-bar-kitchen/
+      page_id: _pages/yellofin-bar-kitchen.html
+      label_localized:
+        en: Yellowfin Bar & Kitchen
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/"
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#suites"
+      label_localized:
+        en: Suites
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#accessible-rooms"
+      label_localized:
+        en: Accessible Rooms
+      items:
+    expanded: true
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
+    items:
+  - folder: true
+    label_localized:
+      en: Experiences
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/experiences.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/activities.html
+      label_localized:
+        en: Activities
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/adventures.html
+      label_localized:
+        en: Adventures
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/happenings.html
+      label_localized:
+        en: Happenings
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Dining
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/dining.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: "/dining/yellowfin-bar-kitchen/"
+      page_id: _pages/yellofin-bar-kitchen.html
+      label_localized:
+        en: Yellowfin Bar & Kitchen
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/ocean-edge-cafe.html
+      label_localized:
+        en: Oceans Edge Cafe
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Marina
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/marina.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/marina-services.html
+      label_localized:
+        en: Services
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/fishing-records-charters.html
+      label_localized:
+        en: Fishing Records & Charters
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Groups
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/groups.html
+      label_localized:
+        en: Overview
+      items:
+    - folder: false
+      url_localized:
+        en: "/groups#weddings"
+      page_id: _pages/groups.html
+      label_localized:
+        en: Weddings
+      items:
+    - folder: false
+      url_localized:
+        en: "/groups#meetings-events"
+      page_id: _pages/groups.html
+      label_localized:
+        en: Meetings & Events
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: More
+    items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/gallery.html
+      label_localized:
+        en: Gallery
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/webcam.html
+      label_localized:
+        en: Webcam
+      items:
+    - folder: false
+      url_localized: ''
+      page_id: _pages/blogs.html
+      label_localized:
+        en: Blog
+      items:
+    expanded: false
+  - folder: true
+    label_localized:
+      en: Connect
+    items:
+    - folder: false
+      url_localized:
+        en: tel:8779350862
+      label_localized:
+        en: 'Res: 877 935 0862'
+      items:
+    - folder: false
+      url_localized:
+        en: mailto:info@oceansedgekeywest.com
+      label_localized:
+        en: Email us
+      items:
+    expanded: false
+mobile:
+  depth: 2
+  name: Mobile Footer Menu
+  items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/resort.html
+    label_localized:
+      en: Resort
+  - folder: false
+    url_localized: ''
+    page_id: _pages/stay.html
+    label_localized:
+      en: Stay
+  - folder: false
+    url_localized: ''
+    page_id: _pages/offers.html
+    label_localized:
+      en: Offers
+  - folder: false
+    url_localized:
+      en: 'tel: 8779350862'
+    label_localized:
+      en: Call Us

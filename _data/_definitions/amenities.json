@@ -1,0 +1,17 @@
+{
+  "name": {
+    "required": true
+  },
+  "description": {
+    "type": "text",
+    "required": true
+  },
+  "image": {
+    "type": "image",
+    "required": true
+  },
+  "order": {
+    "type": "integer",
+    "required": true
+  }
+}

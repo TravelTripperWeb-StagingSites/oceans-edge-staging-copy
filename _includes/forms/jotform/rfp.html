@@ -1,0 +1,134 @@
+
+<form action="https://submit.jotform.me/submit/{{ site.data.forms.jotform.rfp-id }}/" method="post" name="form_{{ site.data.forms.jotform.rfp-id }}" id="{{ site.data.forms.jotform.rfp-id }}"
+    accept-charset="utf-8" autocomplete="off">
+    <input type="hidden" name="formID" value="{{ site.data.forms.jotform.rfp-id }}">
+
+
+    <h5 class="h5 text-left">Your Details</h5>
+    <div class="form-wrapper__block">
+      <div class="form-group">
+        <label>First Name*</label>
+        <input type="text" class="form-control" name="q3_firstName" placeholder="" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name*</label>
+        <input type="text" class="form-control" name="q4_lastName" placeholder="" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address*</label>
+        <input type="text" class="form-control" name="q5_emailAddress" placeholder="" required>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number*</label>
+        <input type="text" class="form-control" name="q6_mobileNumber" placeholder="" required>
+      </div>
+      <div class="form-group full">
+        <label>Address</label>
+        <input type="text" class="form-control" name="q7_address" placeholder="">
+      </div>
+      <div class="form-group third">
+        <label>City</label>
+        <input type="text" class="form-control" name="q9_city" placeholder="">
+      </div>
+      <div class="form-group third">
+        <label>State</label>
+        <input type="text" class="form-control" name="q10_state" placeholder="">
+      </div>
+      <div class="form-group third">
+        <label>ZIP</label>
+        <input type="text" class="form-control" name="q11_zip" placeholder="">
+      </div>
+    </div>
+    <hr>
+    <h5 class="h5 text-left">Event Details</h5>
+    <div class="form-wrapper__block">
+      <div class="form-group">
+        <label for="">Event Type</label>
+        <select class="form-control" name="q25_eventType">
+          <option value="" selected disabled hidden>Event Type</option>
+          <option value="Weddings">Weddings</option>
+          <option value="Family Reunions">Family Reunions</option>
+          <option value="Incentive Trips">Incentive Trips</option>
+          <option value="Corporate Retreats">Corporate Retreats</option>
+          <option value="Board Meeting">Board Meeting</option>
+          <option value="Government and Military Housing">Government and Military Housing</option>
+        </select>
+      </div>
+      <div class="form-group chck-cstm">
+        <span class="text">Preferred contact method:</span>
+        <label class="cstm-checkbox">
+          <input type="checkbox" name="q12_preferredContact[]"> Email
+          <span class="checkmark"></span>
+        </label>
+        <label class="cstm-checkbox">
+          <input type="checkbox" name="q12_preferredContact[]"> Phone
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="form-group forth">
+        <label>Event Start Date</label>
+        <div class="date">
+          <input type="date" name="q21_eventStart21" class="form-control">
+        </div>
+      </div>
+      <div class="form-group forth">
+        <label>Event End Date</label>
+        <div class="date">
+          <input type="date" name="q22_eventEnd22" class="form-control">
+        </div>
+      </div>
+      <div class="form-group forth">
+        <label>Arrival Date</label>
+        <div class="date">
+          <input type="date" name="q23_arrivalDate23" class="form-control">
+        </div>
+      </div>
+      <div class="form-group forth">
+        <label>Departure Date</label>
+        <div class="date">
+          <input type="date" name="q24_departureDate24" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Estimated Number of Rooms Required</label>
+        <input type="text" class="form-control" name="q17_estimatedNumber" placeholder="">
+      </div>
+      <div class="form-group chck-cstm">
+        <span class="text">Are your dates flexible?</span>
+        <label class="cstm-checkbox">
+          <input type="checkbox" name="q18_areYour[]"> Yes
+          <span class="checkmark"></span>
+        </label>
+        <label class="cstm-checkbox">
+          <input type="checkbox" name="q18_areYour[]"> No
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="">Description of Event</label>
+        <textarea class="form-control" name="q19_descriptionOf"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="">F&B requirements</label>
+        <textarea class="form-control" name="q20_fampbRequirements"></textarea>
+      </div>
+      <div class="form-group"></div>
+      <div class="form-group d-flex justify-content-between">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="terms-service" name="q8_iAgree[]" value="Agree">
+          <label class="form-check-label" for="terms-service">
+            I agree to the <a href="/privacy/" title="Privacy Policy">Privacy Policy</a>
+          </label>
+        </div>
+        <button type="submit" class="btn m-0" id="input_2">SEND</button>
+      </div>
+    </div>
+    <input type="hidden" id="simple_spc" name="simple_spc" value="{{ site.data.forms.jotform.rfp-id }}">
+
+    <script type="text/javascript">
+        document.getElementById("si" + "mple" + "_spc").value = "{{ site.data.forms.jotform.rfp-id }}-{{ site.data.forms.jotform.rfp-id }}";
+    </script>
+</form>
+<script type="text/javascript">
+    JotForm.ownerView = true;
+</script>

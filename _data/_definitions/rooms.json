@@ -1,0 +1,81 @@
+{
+  "name": {
+    "required": true
+  },
+  "url_friendly_name": {
+    "label": "URL Friendly Name",
+    "type": "url_slug"
+  },
+  "description": {
+    "type": "richtext"
+  },
+  "size": {
+    "type": "string",
+    "instructions": "Enter room size e.g. '350sq ft'"
+  },
+  "guest_size_max": {
+    "label": "Sleeps",
+    "type": "integer"
+  },
+  "room_type": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_type",
+    "can_create": true
+  },
+  "room_bed_types": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_bed_types",
+    "can_create": true
+  },
+  "view": {
+    "type": "model",
+    "display_field": "name",
+    "model_name": "room_view",
+    "can_create": true
+  },
+  "amenities": {
+    "type": "model",
+    "multiple": true,
+    "display_field": "name",
+    "model_name": "room_amenities",
+    "can_create": true
+  },
+  "suite": {
+    "type": "boolean",
+    "instructions": "Check this if it's a Suite"
+  },
+  "accessible": {
+    "type": "boolean",
+    "instructions": "Check this if the room/suite is accessible"
+  },
+  "featured_image": {
+    "type": "image"
+  },
+  "images": {
+    "type": "image",
+    "multiple": true
+  },
+  "video_thumbnail": {
+    "type": "image"
+  },
+  "video_url": {
+    "type": "text"
+  },
+  "booking_url": {
+    "required": true
+  },
+  "resort_map_url": {
+    "required": true
+  },
+  "order": {
+    "type": "order"
+  },
+  "__META__": {
+    "remote": {
+      "type": "reztrip_rooms",
+      "key": "reztrip_room_id"
+    }
+  }
+}

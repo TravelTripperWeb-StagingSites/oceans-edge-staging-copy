@@ -1,0 +1,35 @@
+<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }} {% if room.accessible == true %} accessible {% endif %} {% if room.suite == true %} suites {% endif %}" data-bed-type="{{ room.room_bed_types.name }}" data-view-type="{{ room.view.name }}" data-guests="{{ room.guest_size_max }}">
+  <div class="asset-item__wrap">
+    <div class="asset-item__featured-image">
+      {% assign featured_image = room.featured_image %}
+      {% include components/image image=featured_image max_width=800 %}
+    </div>
+    <div class="asset-item__text-group">
+      <div class="asset-item__text-group__wrap">
+        <h3 class="h4"><a class="arrow-link" href="/stay/{{ room.url_friendly_name }}">{{ room.name }}</a></h3>
+        <div class="row">
+          <div class="col-6">
+            <div class="bed-type">
+              <p>Room Type<span class="d-block">{{ room.room_type.name }}</span></p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="sleeps">
+              <p>Sleeps<span class="d-block">{{ room.guest_size_max }}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-9">
+            <div class="view">
+              <p>View<span class="d-block">{{ room.view.name }}</span></p>
+            </div>
+          </div>
+          <div class="col-3">
+            <a class="btn" href="{{ room.booking_url }}">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

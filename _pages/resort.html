@@ -1,0 +1,256 @@
+---
+layout: generic
+title: Key West Hotels | Oceans Edge Resort & Marina
+meta_description: Key West hotels don’t get better than Oceans Edge Resort & Marina, a luxury resort where every room has a balcony and a view of the ocean.
+permalink_localized:
+  en: /resort/
+meta_tags:
+  robots:
+---
+
+<section class="hero-carousel">
+  <div class="hero-carousel__wrap">
+    {% assign items = site.data._models.resort_hero_carousel | sort: order %}
+    {% for item in items %}
+    <img src="{{ item.image.url_xlarge }}" alt= "{{ item.name }}" />
+    {% endfor %}
+
+  </div>
+  <div class="hero-carousel__controls" id="heroNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+  <div class="hero-carousel__intro">
+    {% regionblock carousel_intro_tagline, type:text %}
+    <h1 class="overline overline--italic text-center dark" tabindex="0">A Secluded Key West Hotel</h1>
+    {% endregionblock %}
+    {% regionblock carousel_intro_heading, type:header %}
+    <h2 class="h1" tabindex="0">Slip Away to Oceans Edge Resort</h2>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>For generations, the Florida Keys’ miles of narrow islands at the confluence of two oceans have enticed dreamers, adventurers, and those looking for an escape from the everyday. At Oceans Edge, we are reviving the days when the Keys felt like the edge of the Earth. Located on Stock Island, we have blended easy access to Key West’s culture and activities with a private and restful setting to craft the perfect guest experience.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--full-screen groups-weddings">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock resort_amenities_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573199329/wdqgnnrvfn1bcwxs1yc6.jpg" alt="Ocean Edge Weddings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock resort_amenities_subheader, type:header %}
+          <h2 class="overline overline--italic dark" tabindex="0">Resort Amenities</h2>
+          {% endregionblock %}
+          {% regionblock resort_amenities_header, type:header %}
+          <h3 class="h3" tabindex="0">Your Every Wish, Granted</h3>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock groups_weddings_text1, type:text %}
+            <p>From luxurious robes to a full-service marina, we don’t miss a thing.</p>
+            {% endregionblock %}
+            {% regionblock groups_weddings_text2, type:text %}
+            <ul>
+              <li>Hourly shuttle to downtown Key West</li>
+              <li>On-site restaurant and cafe, poolside bar</li>
+              <li>6 pools</li>
+              <li>A 165-slip full-service marina</li>
+              <li>Comprehensive concierge services</li>
+            </ul>
+            {% endregionblock %}
+          </div>
+          <div class="btn-holder">
+            {% regionblock resort_amenities_btn, type:text %}
+            <a class="btn" href="/amenities/">View All Amenities</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--reverse groups-intro--full-screen">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock resort_activites_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573209453/vkhijqrcwsfgk8j2iqav.jpg" alt="Ocean Edge Meetings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock resort_activites_subheader, type:header %}
+          <h2 class="overline overline--italic dark" tabindex="0">Oceans Edge Complimentary Activities</h2>
+          {% endregionblock %}
+          {% regionblock resort_activites_header, type:header %}
+          <h3 class="h3" tabindex="0">Play All Day</h3>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock resort_activites_text1, type:text %}
+            <p>We take full advantage of our expansive grounds and ocean-front setting to offer our guests an impressive variety of activities. The daily resort fee covers the following and more:</p>
+            {% endregionblock %}
+            {% regionblock resort_activites_text2, type:text %}
+            <ul>
+              <li>Use of paddleboards, bikes, and kayaks</li>
+              <li>“Dive-In Movie” nights</li>
+              <li>Special seasonal events</li>
+            </ul>
+            {% endregionblock %}
+          </div>
+          <div class="btn-holder">
+            {% regionblock resort_activites_btn, type:text %}
+            <a class="btn" href="/experiences/">View All Experiences</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta d-inline-block">
+  <div class="common-cta__img">
+    {% regionblock marina_cta_img, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+      {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock marina_cta_subheading, type:header %}
+    <p class="h4 light">Oceans Edge Resort Full-Service Marina</p>
+    {% endregionblock %}
+    {% regionblock marina_cta_heading, type:header %}
+    <p class="h3 light">The Top Key West Fishing Charters, Sunset Cruises, and More</p>
+    {% endregionblock %}
+    {% regionblock marina_cta_btn, type:text %}
+    <a href="/marina/" class="btn btn--light">Discover Our Marina</a>
+    {% endregionblock %}
+  </div>
+</section>
+
+<section class="groups-intro groups-intro--full-screen groups-weddings mt-48">
+  <div class="groups-intro__wrap">
+    <div class="groups-intro__content-wrap">
+      <div class="groups-intro__image">
+        <div class="groups-intro__image__wrap">
+          {% regionblock dining_img, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573199329/wdqgnnrvfn1bcwxs1yc6.jpg" alt="Ocean Edge Weddings" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="groups-intro__content">
+        <div class="groups-intro__content__detail">
+          {% regionblock dining_subheader, type:header %}
+          <h3 class="overline overline--italic dark" tabindex="0">Innovative and Inviting</h3>
+          {% endregionblock %}
+          {% regionblock dining_header, type:header %}
+          <h4 class="h3" tabindex="0">Waterfront Dining at Oceans Edge</h4>
+          {% endregionblock %}
+          <div tabindex="0">
+            {% regionblock dining_text1, type:text %}
+            <p>No matter the day’s agenda, you’ll have delicious dining options. Order breakfast to your room and enjoy a leisurely morning on your balcony, or grab a coffee and pastry on your way to the Tiki Hut to pick up your paddleboards. Since you’re on vacation, the chef recommends that you start the evening early at Yellowfin Bar & Grill with cocktails and finish late with dessert.</p>
+            {% endregionblock %}
+          </div>
+          <div class="btn-holder">
+            {% regionblock dining_btn, type:text %}
+            <a class="btn" href="/dining/">Discover Dining</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience">
+  {% regionblock experience_image, type:image %}
+  <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+  {% endregionblock %}
+  <div class="experience__wrap">
+    {% regionblock experience_tagline, type:text %}
+    <h2 class="overline overline--italic text-center" tabindex="0">Experience Key West</h2>
+    {% endregionblock %}
+    {% regionblock experience_heading, type:header %}
+    <h3 class="h3" tabindex="0">Life at the Edge of the Keys</h3>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock carousel_intro_description, type:text %}
+      <p>As an Oceans Edge guest, you have numerous ways to experience this unique corner of the world up close. From complimentary activities like paddleboarding and kayaking to trips out to Dry Tortugas, we can help show you all that’s special about the Keys. Plus, our full-service marina is home to world-renowned fishing boat captains who know the best spots to cast your line.</p>
+      {% endregionblock %}
+    </div>
+    <div class="collage">
+      <div class="row">
+        <div class="collage__image t-order">
+          {% regionblock collage_activities_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_activities_title, type:header %}
+            <h4 class="h4" tabindex="0">Activities</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_activities_description, type:text %}
+              <p>Paddle among the sand bars that peek out from crystalline waters, check out downtown Key West, or take a magical sunset cruise.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_activities_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/activities/">Discover Activities</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock collage_adventures_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_adventures_title, type:header %}
+            <h4 class="h4" tabindex="0">Adventures</h4>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_adventures_description, type:text %}
+              <p>Will it be Jet Skis for the adrenaline rush or a visit to Dry Tortugas for an unforgettable day of snorkeling and historical sightseeing?</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_adventures_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/adventures/">Discover Adventures</a>
+            {% endregionblock %}
+          </div>
+        </div>
+        <div class="collage__image t-order">
+          {% regionblock collage_happenings_image, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572499538/ftoiez0f1qi7zrfwktu7.jpg" alt="Oceansedge Exterior" />
+          {% endregionblock %}
+        </div>
+        <div class="collage__content t-order">
+          <div class="collage__content__wrap">
+            {% regionblock collage_happenings_title, type:header %}
+            <p class="h4" tabindex="0">Happenings</p>
+            {% endregionblock %}
+            <div tabindex="0">
+              {% regionblock collage_happenings_description, type:text %}
+              <p>With outdoor movies, events, special holiday menus, and even concerts, Oceans Edge Key West is truly a year-round destination for all.</p>
+              {% endregionblock %}
+            </div>
+            {% regionblock collage_happenings_url, type:header %}
+            <a class="btn btn--secondary-s2" href="/happenings/">Discover Happenings</a>
+            {% endregionblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

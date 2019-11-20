@@ -1,0 +1,168 @@
+.bg-grey {
+  background-color: #f3f3ef;
+}
+
+.form-group {
+  margin-bottom: 24px;
+
+  label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-family: $family-secondary;
+    font-size: $display8-size;
+    line-height: 20px;
+    color: $dark;
+  }
+}
+
+select {
+  &.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 5px 65px 5px 12px;
+    font-family: $family-primary-lc;
+    font-size: $display8-size;
+    line-height: 30px;
+    color: $dark;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572949094/ahlhpctzj9rokekguhgm.png") 100% no-repeat $white;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+input, textarea {
+  &.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 5px 12px;
+    font-family: $family-primary-lc;
+    font-size: $display8-size;
+    line-height: 30px;
+    color: $dark;
+    background: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+
+    &:focus {
+      color: $dark;
+      border: 1px solid $white;
+    }
+
+    &:-webkit-input-placeholder {
+      color: $dark;
+    }
+
+    &:-ms-input-placeholder {
+      color: $dark;
+    }
+
+    &::placeholder {
+      color: $dark;
+      opacity: 0.7;
+    }
+  }
+}
+
+.date {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+
+  &:after {
+    position: absolute;
+    top: 11px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    content: '';
+    background: url('//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572951378/wvclir3i1gk76su6ph9h.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  input {
+    background-image: none;
+  }
+}
+
+.cstm-checkbox {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  padding-left: 24px;
+  font-family: $family-primary-lc !important;
+  font-size: $display8-size;
+  line-height: 20px;
+  color: $dark;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    opacity: 0;
+
+    &:checked {
+      & ~ .checkmark {
+        background-color: $dark;
+
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    input {
+      & ~ .checkmark {
+        background-color: $dark;
+      }
+    }
+  }
+
+  .checkmark {
+    &:after {
+      top: 1px;
+      left: 5px;
+      width: 5px;
+      height: 9px;
+      border: solid $white;
+      border-width: 0 1px 1px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid $dark;
+  border-radius: 4px;
+
+  &:after {
+    position: absolute;
+    display: none;
+    content: '';
+  }
+}
+
+textarea {
+  &.form-control {
+    height: 272px !important;
+    border-radius: 0 !important;
+  }
+}
