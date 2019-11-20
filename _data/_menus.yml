@@ -300,9 +300,9 @@ mega_mobile:
       items: 
     - folder: false
       url_localized:
-        en: "/stay/#guestrooms"
+        en: "/stay/#accessible-rooms"
       label_localized:
-        en: Guestrooms
+        en: Accessible Rooms
       items: 
     - folder: false
       url_localized:
