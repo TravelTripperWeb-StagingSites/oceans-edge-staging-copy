@@ -1,6 +1,7 @@
 // Blog Page Elements
 // ==========================================================================
 .blog-hero {
+  position: relative;
   max-width: 1224px;
   height: 280px;
   margin: 0 auto;
@@ -1087,4 +1088,10 @@
   .asset-item {
     flex: none;
   }
+}
+
+.floating-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
 }
