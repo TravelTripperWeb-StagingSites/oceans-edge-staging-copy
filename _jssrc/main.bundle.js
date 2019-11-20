@@ -103,6 +103,8 @@ var filterThroughURL = function filterThroughURL() {
       document.querySelector(".rooms-filter [data-filter='guestroom']").click();
     } else if (hashValue == '1-bedrooms') {
       document.querySelector(".rooms-filter [data-filter='one-bedroom']").click();
+    } else if (hashValue == 'suites') {
+      document.querySelector(".rooms-filter [data-filter='suites']").click();
     }
   }
 };
