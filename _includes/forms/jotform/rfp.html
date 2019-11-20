@@ -42,7 +42,19 @@
     <hr>
     <h5 class="h5 text-left">Event Details</h5>
     <div class="form-wrapper__block">
-      <div class="form-group chck-cstm full pt-0">
+      <div class="form-group">
+        <label for="">Event Type</label>
+        <select class="form-control" name="q25_eventType">
+          <option value="" selected disabled hidden>Event Type</option>
+          <option value="Weddings">Weddings</option>
+          <option value="Family Reunions">Family Reunions</option>
+          <option value="Incentive Trips">Incentive Trips</option>
+          <option value="Corporate Retreats">Corporate Retreats</option>
+          <option value="Board Meeting">Board Meeting</option>
+          <option value="Government and Military Housing">Government and Military Housing</option>
+        </select>
+      </div>
+      <div class="form-group chck-cstm">
         <span class="text">Preferred contact method:</span>
         <label class="cstm-checkbox">
           <input type="checkbox" name="q12_preferredContact[]"> Email
@@ -105,7 +117,7 @@
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="terms-service" name="q8_iAgree[]" value="Agree">
           <label class="form-check-label" for="terms-service">
-            I agree to the <a href="/terms/" title="Terms of Service">Terms of use</a> &amp; <a href="/privacy/" title="Privacy Policy">Privacy Policy</a>
+            I agree to the <a href="/privacy/" title="Privacy Policy">Privacy Policy</a>
           </label>
         </div>
         <button type="submit" class="btn m-0" id="input_2">SEND</button>
