@@ -3,7 +3,7 @@
   "name": "Accessible Partial Ocean View Balcony King Suite",
   "url_friendly_name": "accessible-partial-ocean-view-balcony-king-suite",
   "description": "<p class=\"overline\">Romantic waterfront&nbsp;<span class=\"overline overline--italic\">one-bedroom with ADA features</span></p>\n<p>These suites&mdash;located on the 1st, 2nd, and 3rd floors&mdash;are perfect for spending quality time with a loved one in incredible comfort. A visual alarm and doorbell and either a roll-in shower or ADA-compliant tub in luxurious surroundings ensure a stay of the highest quality for those who require accessibility features. Our property allows all of our guests to enjoy water-facing balconies and the marina walkway.</p>",
-  "size": "570 Sq Ft",
+  "size": "570",
   "accessible": true,
   "guest_size_max": 5,
   "room_type": "room_type2",
@@ -255,6 +255,5 @@
     "caption": "",
     "description": ""
   },
-  
   "suite": true
 }
