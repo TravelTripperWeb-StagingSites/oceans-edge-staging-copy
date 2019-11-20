@@ -127,7 +127,7 @@ mega:
       url_localized: "/dining/yellowfin-bar-kitchen/"
       page_id: _pages/yellowfin-bar-kitchen.html
       label_localized:
-        en: Yellowfin Bar & kitchen
+        en: Yellowfin Bar & Kitchen
       items:
     - folder: false
       url_localized: "/dining/oceans-edge-cafe/"
@@ -248,12 +248,6 @@ footer:
     page_id: _pages/privacy.html
     label_localized:
       en: Privacy Policy
-    items:
-  - folder: false
-    url_localized: ''
-    page_id: _pages/sitemap.html
-    label_localized:
-      en: Site Map
     items:
   - folder: false
     url_localized: ''
