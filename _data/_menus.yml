@@ -45,13 +45,13 @@ mega:
       url_localized: ''
       page_id: _pages/resort.html
       label_localized:
-        en: OverviewTEST
+        en: Overview
       items:
     - folder: false
       url_localized: ''
       page_id: _pages/amenities.html
       label_localized:
-        en: AmenitiesTEST
+        en: Amenities
       items:
     - folder: false
       url_localized: ''
@@ -279,13 +279,13 @@ mega_mobile:
       url_localized: ''
       page_id: _pages/resort.html
       label_localized:
-        en: OverviewTEST
+        en: Overview
       items:
     - folder: false
       url_localized: ''
       page_id: _pages/amenities.html
       label_localized:
-        en: AmenitiesTEST
+        en: Amenities
       items:
     - folder: false
       url_localized: ''
