@@ -175,6 +175,7 @@ mega:
       label_localized:
         en: Overview
       items: 
+    expanded: false
   - folder: true
     label_localized:
       en: More
