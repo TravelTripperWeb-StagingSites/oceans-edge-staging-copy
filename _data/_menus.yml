@@ -53,7 +53,7 @@ mega:
       label_localized:
         en: Amenities
       items: 
-    expanded: false
+    expanded: true
   - folder: true
     label_localized:
       en: Stay
