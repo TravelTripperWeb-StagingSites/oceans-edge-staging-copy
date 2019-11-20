@@ -29,6 +29,7 @@ layout: generic
     {% for category in categories %}
     <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }}">{{ category.name }}</a></li>
     {% endfor %}
+    <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="suites">Suites</a></li>
   </ul>
 
 
