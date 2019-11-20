@@ -30,6 +30,6 @@
     "description": ""
   },
   "terms_conditions": "<p>Stay must include at least 5 consecutive nights. Daily rates are subject to taxes, fees, and nightly resort fee of $37 plus tax. On-site parking is available for $20 per night plus tax per vehicle and parking space required. Restrictions and blackout dates may apply.</p>",
-  "booking_url": "https://be.synxis.com/?adult=2&arrive=2019-11-14&chain=10237&child=0&currency=USD&nights=5&hotel=4091&level=hotel&locale=en-US&rate=STAY5&rooms=1",
+  "booking_url": "https://be.synxis.com/?adult=2&chain=10237&child=0&currency=USD&nights=5&hotel=4091&level=hotel&locale=en-US&rate=STAY5&rooms=1",
   "category": "offer_categories2"
 }
