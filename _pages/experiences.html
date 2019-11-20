@@ -50,8 +50,8 @@ meta_tags:
         <div class="two-col-carousels__intro">
           <div class="row align-items-center">
             <div class="col-8">
-              <p class="h4">Marina Activities</p>
-              <p class="light">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
+              <p class="h4" tabindex="0">Marina Activities</p>
+              <p class="light" tabindex="0">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
             </div>
             <div class="col-4 text-right">
               <a class="btn btn--secondary-s2" href="/activities/">View All</a>
@@ -63,7 +63,7 @@ meta_tags:
           <div class="two-col-carousels__content">
             <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
             <div class="two-col-carousels__slider activities-slider">
-              {% assign marina_activities = site.data._models.marina_activities %}
+              {% assign marina_activities = site.data._models.marina_activities | sort: 'order' %}
               {% for marina_activity in marina_activities %}
               <div class="two-col-carousels__slider__item">
                 <p class="overline overline--italic light">{{marina_activity.name}}</p>
@@ -80,11 +80,11 @@ meta_tags:
         <div class="two-col-carousels__intro">
           <div class="row align-items-center">
             <div class="col-8">
-              <p class="h4">Marina Activities</p>
-              <p class="light">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
+              <p class="h4" tabindex="0">Further adventures</p>
+              <p class="light" tabindex="0">Our concierge can direct you to the best options for learning more about the land and culture of Key West.</p>
             </div>
             <div class="col-4 text-right">
-              <a class="btn btn--secondary-s2" href="/activities/">View All</a>
+              <a class="btn btn--secondary-s2" href="/adventures/">View All</a>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ meta_tags:
           <div class="two-col-carousels__content">
             <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
             <div class="two-col-carousels__slider adventures-slider">
-              {% assign marina_adventures = site.data._models.marina_adventures %}
+              {% assign marina_adventures = site.data._models.marina_adventures  | sort: 'order' %}
               {% for marina_adventure in marina_adventures %}
               <div class="two-col-carousels__slider__item">
                 <p class="overline overline--italic light">{{marina_adventure.name}}</p>
