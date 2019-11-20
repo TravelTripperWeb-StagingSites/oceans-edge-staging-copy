@@ -111,6 +111,12 @@ var filterThroughURL = function filterThroughURL() {
 
 readyDoc(function () {
 
+  setTimeout(function () {
+    if (document.getElementById("preloader")) {
+      document.getElementById("preloader").style.display = "none";
+    }
+  }, 4000);
+
   window.onhashchange = function () {
     filterThroughURL();
     document.querySelector('[data-target="navMenu"]').click();
