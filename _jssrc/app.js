@@ -819,14 +819,21 @@ readyDoc(function() {
       nextButton: "#adventuresSlider .iconbtn--right" // next button
     });
   }
-
-  document.querySelector('.fullscreen-cross-sell .icon-maximize').addEventListener('click', () => {
-    document.querySelector('.fullscreen-cross-sell').classList.add('fullscreen-carousel');
-  });
-
-  document.querySelector('.fullscreen-cross-sell .zoomout').addEventListener('click', () => {
-    document.querySelector('.fullscreen-cross-sell').classList.remove('fullscreen-carousel');
-  });
+  if(document.querySelector('.fullscreen-cross-sell .icon-maximize')) {
+    document.querySelector('.fullscreen-cross-sell .icon-maximize').addEventListener('click', () => {
+      document.querySelector('.fullscreen-cross-sell').classList.add('fullscreen-carousel');
+    });
+  }
+  if(document.querySelector('.fullscreen-cross-sell .zoomout')) {
+    document.querySelector('.fullscreen-cross-sell .zoomout').addEventListener('click', () => {
+      document.querySelector('.fullscreen-cross-sell').classList.remove('fullscreen-carousel');
+    });
+  }
+  if(document.querySelector('[data-filter="live_webcam"]')) {
+    document.querySelector('[data-filter="live_webcam"]').addEventListener('click', () => {
+      window.location.href = '/webcam/';
+    });    
+  }
 
 });
 
