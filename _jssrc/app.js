@@ -101,11 +101,19 @@ var filterThroughURL = function() {
       document.querySelector(".rooms-filter [data-filter='guestroom']").click();
     } else if (hashValue == '1-bedrooms') {
       document.querySelector(".rooms-filter [data-filter='one-bedroom']").click();
+    } else if (hashValue == 'suites') {
+      document.querySelector(".rooms-filter [data-filter='suites']").click();
     }
   }
 }
 
 readyDoc(function() {
+
+  setTimeout(function() {
+    if (document.getElementById("preloader")) {
+      document.getElementById("preloader").style.display = "none";
+    }
+  }, 4000);
 
   window.onhashchange = function() {
     filterThroughURL();
@@ -832,7 +840,7 @@ readyDoc(function() {
   if(document.querySelector('[data-filter="live_webcam"]')) {
     document.querySelector('[data-filter="live_webcam"]').addEventListener('click', () => {
       window.location.href = '/webcam/';
-    });    
+    });
   }
 
 });
