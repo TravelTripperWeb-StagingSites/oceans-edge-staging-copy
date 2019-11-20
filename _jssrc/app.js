@@ -150,7 +150,7 @@ readyDoc(function() {
         window.location = '/thankyou/';
       })
       return false;
-    }    
+    }
   }
 
   function makeRESTCall(url, data, callback) {

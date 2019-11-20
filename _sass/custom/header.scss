@@ -291,18 +291,19 @@
   &__offer {
     padding: 15px;
     background: $quartenary;
-
-    &:after {
+    &__close-btn {
       position: absolute;
       top: 15px;
       right: 30px;
-      font-family: $oceansedge-font-family;
-      font-size: $display6-size;
-      color: $s2;
-      cursor: pointer;
-      content: $icon-menu-close;
-      opacity: 0.8;
-      @include transition(all 0.3s);
+      &:after {
+        font-family: $oceansedge-font-family;
+        font-size: $display6-size;
+        color: $s2;
+        cursor: pointer;
+        content: $icon-menu-close;
+        opacity: .8;
+        @include transition(all .3s);
+      }
     }
 
     p {
