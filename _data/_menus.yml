@@ -306,17 +306,17 @@ mega_mobile:
       items: 
     - folder: false
       url_localized:
-        en: "/stay/#accessible-rooms"
-      label_localized:
-        en: Accessible Rooms & Suites
-      items: 
-    - folder: false
-      url_localized:
         en: "/stay/#suites"
       label_localized:
         en: Suites
       items: 
-    expanded: false
+    - folder: false
+      url_localized:
+        en: "/stay/#accessible-rooms"
+      label_localized:
+        en: Accessible Rooms & Suites
+      items: 
+    expanded: true
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html
