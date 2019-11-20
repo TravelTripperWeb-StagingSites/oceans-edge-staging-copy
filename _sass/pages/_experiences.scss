@@ -1,0 +1,72 @@
+.two-col-carousels {
+  @include make-container;
+  max-width: 1224px;
+  &__wrap {
+    @include make-row;
+    margin: 0;
+  }
+  &__intro {
+    .h4 {
+      margin-bottom: 10px;
+      font-size: $display5-size;
+      line-height: $display4-size;
+      color: $s2;
+      letter-spacing: .2px;
+    }
+  }
+  &__slider-wrap {
+    position: relative;
+    .slider-bg {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    @include total-center();
+    position: absolute;
+    max-width: 100%;
+    text-align: center;
+    .iconbtn {
+      @include total-center();
+      z-index: 10;
+      width: 28px;
+      height: 28px;
+      font-size: $display9-size;
+      transform: none;
+      &--left {
+        right: auto;
+        left: 16px;
+      }
+      &--right {
+        right: 16px;
+        left: auto;
+      }
+    }
+  }
+  &__slider {
+    .h4 {
+      max-width: 300px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+  }
+  &__left {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      border-right: 1px solid rgba($white, .6);
+    }
+    padding-right: 23px;
+    padding-left: 0;
+  }
+  &__right {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    padding-right: 0;
+    padding-left: 23px;
+  }
+}

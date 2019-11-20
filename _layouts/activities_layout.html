@@ -20,10 +20,20 @@ layout: default
           <h1 class="h3" tabindex="0">{{ item.name }}</h1>
           <hr class="mb-3">
           <div tabindex="0">{{ item.description }}</div>
-          <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
-          <div tabindex="0"><p>{{ item.price }}</p></div>
-          <div class="btn-holder mb-0">
-            <a class="btn btn--book" href="#" target="_blank">Book Now</a>
+          <!-- <div tabindex="0"><p>{{ item.terms_conditions }}</p></div>
+          <div tabindex="0"><p>{{ item.price }}</p></div> -->
+          {% if item.book_online_button == true %}
+          <div class="btn-holder mb-4">
+            <a class="btn btn--book-small" href="{{ item.book_online_button_link }}" target="_blank">Book Online</a>
+          </div>
+          {% endif %}
+          <div class="social-share">
+            <p class="h5" tabindex="0"><span>Share</span></p>
+            <div class="social-media">
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ item.name }}&url={{ site.url }}{{ page.url }}&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ item.name }}&amp;Body={{ item.name }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -40,7 +50,6 @@ layout: default
   <div class="activities-listing__row activities-list-carousel">
   {% assign activities = site.data._models.activities | sort: 'order' %}
   {% for item in activities %}
-  {% if item.complimentary-resort-activities != true %}
     <div class="activities-listing__item">
       <div class="activities-listing__item__inner">
         <div class="activities-listing__item__image" tabindex="0">
@@ -49,27 +58,30 @@ layout: default
           </a>
         </div>
         <div class="activities-listing__item__content">
-          <h4 class="h5" tabindex="0">
+          <h3 class="h5" tabindex="0">
             <a href="{{ item.url_friendly_name | permalink: model_dir: 'activities' }}">{{ item.name }}</a>
-          </h4>
+          </h3>
           <div class="activities-listing__item__content__info">
             <div class="left">
-              <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
-              <p class="price mb-0" tabindex="0">{{ item.price }}</p>
+              <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
             </div>
             <div class="right">
-              <a class="btn btn--secondary" href="{{ item.url_friendly_name }}">View</a>
+              <a class="btn btn--secondary" href="/activities/{{ item.url_friendly_name }}">View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  {% endif %}
   {% endfor %}
   </div>
 
   <div class="carousel-controls" id="activitiesCarouselNav">
     <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Slide"></a>
+    <div class="slidecontainer">
+      <style data="offerslistyle"></style>
+      <input type="range" min="1" data-max = "{{ activities.size }}" max="" value="1" class="slider" id="sliderRange">
+    </div>
     <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Slide"></a>
   </div>
 </section>

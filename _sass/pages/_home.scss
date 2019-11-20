@@ -32,13 +32,28 @@
     }
   }
 
+  &.hero-dark {
+    .hero-static {
+      &__wrap {
+        position: relative;
+        z-index: 1;
+        &:after {
+          @include linearGradient(top, transparent, $quartenary);
+        }
+      }
+      &__intro {
+        z-index: 2;
+      }
+    }
+  }
+
   &__controls {
     display: flex;
     justify-content: space-between;
     width: 100%;
 
     .iconbtn {
-      background: $light;
+      background: rgba(2,81,113,.8);
       @include transition(all .3s);
 
       @include media-breakpoint-up(md) {
@@ -46,19 +61,11 @@
       }
 
       &:after {
-        color: $dark;
-
-        @include media-breakpoint-up(md) {
-          color: $light;
-        }
+        color: $light;
       }
 
       &:hover {
-        background: $light;
-
-        @include media-breakpoint-up(md) {
-          background: rgba(2,81,113,1);
-        }
+        background: rgba(2,81,113,1);
       }
     }
 
@@ -117,6 +124,14 @@
           &:hover {
             text-decoration: none;
           }
+
+          &.btn {
+            color: $white;
+
+            &:hover {
+              color: $primary;
+            }
+          }
         }
       }
     }
@@ -135,12 +150,17 @@
 
   .h4 {
     position: relative;
+    margin-bottom: 50px;
 
     span {
       position: relative;
       z-index: 0;
-      padding: 0 20px;
+      padding: 0;
       background: $light;
+
+      @include media-breakpoint-up(sm) {
+        padding: 0 20px;
+      }
     }
 
     &:before {
@@ -179,22 +199,13 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: auto;
+    width: 100%;
     margin: 0 auto;
     padding: 35px 0;
-
-    @include media-breakpoint-up(md) {
-      max-width: 1040px;
-    }
 
     li {
       padding: 0 12px;
       list-style: none;
-
-      img {
-        max-width: 104px;
-        max-height: 104px;
-      }
 
       p {
         max-width: 160px;
@@ -204,6 +215,24 @@
         line-height: $display6-size;
         color: $primary;
       }
+    }
+  }
+
+  .tns-inner {
+    max-width: 1040px;
+    margin: 0 auto !important;
+    overflow: hidden;
+  }
+
+  &__icon {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -224,6 +253,132 @@
           font-size: $display9-size;
           line-height: $base-font-size;
         }
+      }
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      width: 170px;
+    }
+
+    .iconbtn {
+      background: rgba(2,81,113,.8);
+      @include transition(all .3s);
+
+      @include media-breakpoint-up(md) {
+        background: rgba(2,81,113,.3);
+      }
+
+      &:after {
+        color: $light;
+      }
+
+      &:hover {
+        background: rgba(2,81,113,1);
+      }
+    }
+
+    .iconbtn--left {
+      position: absolute;
+      top: calc(20% + 43px);
+      left: 16px;
+      z-index: 0;
+
+      @include media-breakpoint-up(sm) {
+        top: calc(30% + 36px);
+        left: 40px;
+      }
+    }
+
+    .iconbtn--right {
+      position: absolute;
+      top: calc(20% + 43px);
+      right: 16px;
+      z-index: 0;
+
+      @include media-breakpoint-up(sm) {
+        top: calc(30% + 36px);
+        right: 40px;
+      }
+    }
+  }
+}
+
+.collage {
+  @include make-container;
+  padding: 32px 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 64px 0;
+  }
+
+  .row {
+    margin: 0 !important;
+  }
+
+  &__image {
+    @include make-col-ready;
+    max-height: 328px;
+    padding: 0;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+
+    div {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__content {
+    @include make-col-ready;
+    padding: 24px 0 40px;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 48px;
+      text-align: center;
+
+      .h4 {
+        margin-bottom: 10px;
+        color: $s2;
+      }
+
+      p {
+        color: $light;
       }
     }
   }
@@ -267,65 +422,35 @@
       }
     }
   }
-}
 
-.collage {
-  @include make-container;
-  padding: 32px 0;
+  &--light {
+    color: $dark;
+    background: $light;
 
-  @include media-breakpoint-up(md) {
-    padding: 64px 0;
-  }
-
-  .row {
-    margin: 0 !important;
-  }
-
-  &__image {
-    @include make-col-ready;
-    padding: 0;
-
-    @include media-breakpoint-up(md) {
-      @include make-col(6);
+    .h3, .overline, p {
+      color: $dark;
     }
 
-    @include media-breakpoint-up(lg) {
-      @include make-col(4);
-    }
-
-    img {
-      display: block;
-    }
-  }
-
-  &__content {
-    @include make-col-ready;
-    padding: 24px 0 40px;
-
-    @include media-breakpoint-up(md) {
-      @include make-col(6);
-      padding: 0;
-    }
-
-    @include media-breakpoint-up(lg) {
-      @include make-col(4);
-    }
-
-    &__wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 0 48px;
-      text-align: center;
-
-      .h4 {
-        color: $s2;
-      }
+    .description {
+      text-align: left;
 
       p {
-        color: $light;
+        font-size: $base-font-size;
+        line-height: $display6-size;
+        color: $dark;
+      }
+    }
+
+    .collage {
+      &__content {
+        &__wrap {
+          p {
+            color: $dark;
+          }
+          .h4 {
+            color: $primary;
+          }
+        }
       }
     }
   }

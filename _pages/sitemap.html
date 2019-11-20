@@ -1,7 +1,7 @@
 ---
-layout: sitemap_page_layout
+layout: generic
 title_localized:
-  en: Sitemap
+  en: Sitemap | Oceans Edge Resort & Marina
 meta_description_localized:
   en:
 permalink_localized:
@@ -9,3 +9,16 @@ permalink_localized:
 meta_tags:
   robots: noindex, follow
 ---
+
+<div class="static-wrap">
+  <h1 class="h1 text-center mb-2">Sitemap</h1>
+  <!-- <h2 class="h3 text-center mb-3">Review Our Website Policies</h2> -->
+  <ul class="sitemap-links desktop">
+    {% assign items = site.data._menus.mega.items %}
+    {% include nav/nav-item-list.html items=items %}
+  </ul>
+  <ul class="sitemap-links mobile">
+    {% assign items = site.data._menus.mega_mobile.items %}
+    {% include nav/nav-item-list.html items=items %}
+  </ul>
+</div>

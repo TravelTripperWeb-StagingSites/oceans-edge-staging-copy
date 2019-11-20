@@ -21,51 +21,23 @@ layout: generic
 
 {% if site.data._models.rooms %}
 <section class="asset-list">
-  <p class="overline overline--small text-center">Select your preferred accommodation type directly or via our interactive resort map:</p>
+  <p class="overline overline--small text-center">Select your preferred accommodation type directly:</p>
 
-  <ul class="filter-items rooms-filter">
+  <ul class="filter-items rooms-filter hidden">
     {% assign categories = site.data._models.room_type | sort:"order" %}
     <li><a class="btn btn--tertiary active" href="javascript:void(0);" data-filter="all">All</a></li>
     {% for category in categories %}
     <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="{{ category.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }}">{{ category.name }}</a></li>
     {% endfor %}
+    <li><a class="btn btn--tertiary" href="javascript:void(0);" data-filter="suites">Suites</a></li>
   </ul>
 
-  <div class="two-col-intro">
-    <div class="two-col-intro__image">
-      {% regionblock rooms_intro_image, type:image %}
-      <img src="" alt= "Image" />
-      {% endregionblock %}
-    </div>
-    <div class="two-col-intro__content">
-      <div class="two-col-intro__content__detail">
-        {% regionblock rooms_intro_tagline, type:text %}
-        <p class="overline overline--italic dark" tabindex="0">Rooms & Suites</p>
-        {% endregionblock %}
-        {% regionblock rooms_intro_heading, type:header %}
-        <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
-        {% endregionblock %}
-        <div tabindex="0">
-          {% regionblock rooms_intro_text, type:text %}
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <ul>
-            <li>Every room is oceanfront</li>
-            <li>Sizable waterfront balconies and porches</li>
-            <li>Key West's largest guestrooms and suites</li>
-            <li>Extensive onsite watersports and boat charter facilities</li>
-          </ul>
-          {% endregionblock %}
-      </div>
-      </div>
-    </div>
-  </div>
-  <hr>
 
   {% assign rooms = site.data._models.rooms | sort: "order" %}
 
   <div class="filters-block">
     <div class="filters-block__room-type">
-      <p class="h4">All Accomodations</p>
+      <p class="h4">All Accommodations</p>
       <p class="overline dark filtered-rooms-text">
         <span>{{rooms.size}}</span> Rooms & Suites
       </p>
@@ -96,7 +68,7 @@ layout: generic
           <label for="noOfGuests">No of Guests:</label>
           <div class="guests-slider" id="guestsSlider">
             <span class="output"></span>
-            Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider room-guests-filter" id="noOfGuests"> Sleeps 6
+            Sleeps 1 <input type="range" min="1" max="10" value="0" class="guests-slider-input room-guests-filter" id="noOfGuests"> Sleeps 10
           </div>
         </div>
       </form>
@@ -108,7 +80,40 @@ layout: generic
       {% include components/room %}
     {% endfor %}
   </div>
+  <p class="no-rooms-message text-center m-3">We can't find the room type you've requested. Please select a new configuration.</p>
 </section>
+
+
+<section class="two-col-intro">
+  <div class="two-col-intro__image">
+    {% regionblock rooms_intro_image, type:image %}
+    <img src="" alt= "Image" />
+    {% endregionblock %}
+  </div>
+  <div class="two-col-intro__content">
+    <div class="two-col-intro__content__detail">
+      {% regionblock rooms_intro_tagline, type:text %}
+      <p class="overline overline--italic dark" tabindex="0">Rooms & Suites</p>
+      {% endregionblock %}
+      {% regionblock rooms_intro_heading, type:header %}
+      <p class="h3" tabindex="0">Lorem ipsum dolor sit amet ullamco</p>
+      {% endregionblock %}
+      <div tabindex="0">
+        {% regionblock rooms_intro_text, type:text %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul>
+          <li>Every room is oceanfront</li>
+          <li>Sizable waterfront balconies and porches</li>
+          <li>Key West's largest guestrooms and suites</li>
+          <li>Extensive onsite watersports and boat charter facilities</li>
+        </ul>
+        {% endregionblock %}
+    </div>
+    </div>
+  </div>
+</section>
+<hr>
+
 <div class="mobile-filter-popup" id="jsModal">
   <a class="close jsModalClose" href="javascript:void(0);" title="Close"></a>
   <form>
@@ -137,7 +142,7 @@ layout: generic
       <label for="">No of Guests:</label>
       <div class="guests-slider" id="guestsSliderMobile">
         <span class="output"></span>
-        Sleeps 1 <input type="range" min="1" max="6" value="0" class="slider" id="noOfGuests"> Sleeps 6
+        Sleeps 1 <input type="range" min="1" max="10" value="0" class="guests-slider-input" id="noOfGuests"> Sleeps 10
       </div>
     </div>
   </form>
@@ -152,7 +157,7 @@ layout: generic
   <div class="asset-list asset-list--variant">
     <div class="asset-list__header">
       <div class="content">
-        <h2 class="h4 mb-2">Oceans Edge Key West Hotel Deals</h2>
+        <h2 class="h4 mb-2">Key West Hotel Deals</h2>
         <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
       </div>
       <a href="/offers/" class="btn mb-auto">View all Offers</a>

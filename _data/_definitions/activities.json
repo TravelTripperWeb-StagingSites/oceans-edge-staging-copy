@@ -22,13 +22,16 @@
     "type": "richtext"
   },
   "terms_conditions": {
-    "required": true
   },
   "price": {
-    "required": true
   },
   "image": {
     "type": "image"
+  },
+  "book_online_button": {
+    "type": "boolean"
+  },
+  "book_online_button_link": {
   },
   "order": {
     "type": "order",

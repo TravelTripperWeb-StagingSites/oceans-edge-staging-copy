@@ -30,16 +30,22 @@ layout: default
 
 <section class="amenities">
   <h2 class="h4"><span>As Our Guest, You’ll Enjoy These Amenities</span></h2>
-  <ul class="amenities__listing">
-    {% assign items = site.data._models.amenities %}
+  <ul class="amenities__listing hotel-amenities">
+    {% assign items = site.data._models.amenities | sort: "order" %}
     {% for item in items %}
     <li>
-      <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+      <div class="amenities__icon">
+        <img src="{{ item.image.url_medium }}" alt= "{{ item.name }}" />
+      </div>
       <p>{{ item.name }}</p>
     </li>
     {% endfor %}
   </ul>
-  <a class="btn" href="#">Discover More</a>
+  <a class="btn" href="/resort/">Discover More</a>
+  <div class="amenities__controls" id="amenitiesNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
 </section>
 
 <section class="rooms-cross-sell">
@@ -110,7 +116,7 @@ layout: default
   <div class="asset-list asset-list--variant">
     <div class="asset-list__header">
       <div class="content">
-        <h2 class="h4 mb-2">Oceans Edge Key West Hotel Deals</h2>
+        <h2 class="h4 mb-2">Key West Hotel Deals</h2>
         <p>Book directly with us and enjoy added perks, special offers, and great rates for Florida residents throughout the year. Boating enthusiasts welcome!</p>
       </div>
       <a href="/offers/" class="btn mb-auto">View all Offers</a>
@@ -133,8 +139,8 @@ layout: default
     <h5 class="h3" tabindex="0">things to do & see in Key west</h5>
     {% endregionblock %}
     <div class="description" tabindex="0">
-      {% regionblock carousel_intro_description, type:text %}
-      <p>As a Ocean’s Edge guest, you have access to an <b>exceptional variety</b> of activities and things to do in Key West. Fishing, paddleboarding, yoga, kayaking & scuba diving are some of the many activities available immediately in our resort. <b>We provide everything you need</b> for rentals, equipment, and accessories for your exploration. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      {% regionblock experience_intro_description, type:text %}
+      <p>As an Oceans Edge guest, you have easy ways to experience this unique corner of the world up close. From complimentary activities like paddleboarding and kayaking to trips out to Dry Tortugas, we can help show you all that’s special about the Keys. Plus, our full-service marina is home to world-renowned fishing boat captains who know the best spots to cast your line.</p>
       {% endregionblock %}
     </div>
     <div class="collage">
@@ -155,7 +161,7 @@ layout: default
               {% endregionblock %}
             </div>
             {% regionblock collage_activities_url, type:header %}
-            <a class="btn btn--secondary-s2" href="#">Discover Activities</a>
+            <a class="btn btn--secondary-s2" href="/activities/">Discover Activities</a>
             {% endregionblock %}
           </div>
         </div>
@@ -175,7 +181,7 @@ layout: default
               {% endregionblock %}
             </div>
             {% regionblock collage_adventures_url, type:header %}
-            <a class="btn btn--secondary-s2" href="#">Discover Adventures</a>
+            <a class="btn btn--secondary-s2" href="/adventures/">Discover Adventures</a>
             {% endregionblock %}
           </div>
         </div>
@@ -195,7 +201,7 @@ layout: default
               {% endregionblock %}
             </div>
             {% regionblock collage_happenings_url, type:header %}
-            <a class="btn btn--secondary-s2" href="#">Discover Happenings</a>
+            <a class="btn btn--secondary-s2" href="/happenings/">Discover Happenings</a>
             {% endregionblock %}
           </div>
         </div>

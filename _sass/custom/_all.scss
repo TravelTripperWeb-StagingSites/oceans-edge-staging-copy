@@ -3,9 +3,11 @@
 @import 'icons';
 @import 'buttons';
 @import 'header';
+@import 'range-slider';
 @import 'instagram';
 @import 'sticky-footer-nav';
 @import 'footer';
+@import '../components/booking-widget';
 @import '../pages/home';
 @import '../pages/shared';
 @import '../pages/rooms';
@@ -16,3 +18,6 @@
 @import '../pages/gallery';
 @import '../pages/activities';
 @import '../pages/contact';
+@import '../pages/adventures';
+@import '../pages/experiences';
+@import '../pages/blog';

@@ -1,7 +1,7 @@
 {
-  "name": "Thanksgiving in Key West 2019",
+  "name": "Thanksgiving at Oceans Edge",
   "category": "happenings_categories1",
-  "description": "Escape to Key West for Thanksgiving. Enjoy Thanksgiving dinner at The Yellowfin Bar and Grill at Oceans Edge Resort.",
+  "description": "Yellowfin Bar & Kitchen has an incredible three-course meal planned.",
   "date": "2019-11-28T00:00:00.000Z",
   "image": {
     "name": "Oceans Edge Happenings Thanks Giving",
@@ -22,9 +22,8 @@
     "size": 119328,
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572941936/m1gbtynwgbffq9zkixgx.jpg",
     "file_size": null,
-    "alt": "Oceans Edge Happenings Thanks Giving",
+    "alt": "Thanksgiving at Oceans Edge Resort in Key West",
     "caption": "",
     "description": ""
-  },
-  "cta_label": "View"
+  }
 }

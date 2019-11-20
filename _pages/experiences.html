@@ -1,11 +1,145 @@
 ---
-layout: experiences_layout
-title_localized:
-  en: Experiences
-meta_description_localized:
-  en:
-permalink_localized:
-  en: /experiences/
+layout: generic
+title: Things to Do in Key West | Oceans Edge Resort & Marina
+meta_description: There are so many things to do in Key West, and a stay at Oceans Edge Resort & Marina offers our guests easy access to the best activities and adventures.
+permalink: /experiences/
 meta_tags:
   robots:
 ---
+
+<section class="dark-theme">
+  <div class="hero-static hero-dark">
+    <div class="hero-static__wrap">
+      {% regionblock carousel_intro_hero, type:image %}
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572862857/vcfgv0zfn5w9jtap2koi.jpg" alt="Amenities Hero Image">
+      {% endregionblock %}
+    </div>
+    <div class="hero-static__intro">
+      {% regionblock carousel_intro_tagline, type:text %}
+      <h1 class="overline overline--italic text-center light" tabindex="0">Why Is Oceans Edge the Best Hotel in Key West?</h1>
+      {% endregionblock %}
+      {% regionblock carousel_intro_heading, type:header %}
+      <h2 class="h1 light" tabindex="0">Upscale Amenities for Every Guest</h2>
+      {% endregionblock %}
+      <div class="description" tabindex="0">
+        {% regionblock carousel_intro_description, type:text %}
+        <p class="light">Oceans Edge Resort & Marina has been carefully designed as a self-contained haven while providing the means for our guests to easily experience the natural beauty and culture of Stock Island and Key West. Your first stop will likely be one of our six saltwater swimming pools—all at the perfect temperature, all the time. Discover our offerings in the list below, and learn more about <b><a href="/stay/">our luxurious accommodations</a></b>.</p>
+        {% endregionblock %}
+      </div>
+    </div>
+  </div>
+  <div class="common-cta common-cta--small">
+    <div class="common-cta__img">
+      {% regionblock common-cta-img, type:image %}
+        <img src="" alt="">
+      {% endregionblock %}
+    </div>
+    <div class="common-cta__text text-center">
+      {% regionblock common-cta-header, type:text %}
+        <p class="h5 light">Resort Dining</p>
+      {% endregionblock %}
+      {% regionblock common-cta-text, type:text %}
+        <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+        <a href="/dining/" class="btn btn--light">Discover Dining</a>
+      {% endregionblock %}
+    </div>
+  </div>
+  <div class="two-col-carousels">
+    <div class="two-col-carousels__wrap">
+      <div class="two-col-carousels__left">
+        <div class="two-col-carousels__intro">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <p class="h4" tabindex="0">Marina Activities</p>
+              <p class="light" tabindex="0">Discover the Keys on the water and in the water with fishing expeditions, snorkeling, Jet Ski tours, and more.</p>
+            </div>
+            <div class="col-4 text-right">
+              <a class="btn btn--secondary-s2" href="/activities/">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-carousels__slider-wrap" id="activitiesSlider">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573812042/lxp2ygvinbhltrajetbz.jpg" class="slider-bg" alt="Marina Activities">
+          <div class="two-col-carousels__content">
+            <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
+            <div class="two-col-carousels__slider activities-slider">
+              {% assign marina_activities = site.data._models.marina_activities | sort: 'order' %}
+              {% for marina_activity in marina_activities %}
+              <div class="two-col-carousels__slider__item">
+                <p class="overline overline--italic light">{{marina_activity.name}}</p>
+                <p class="light h4">{{marina_activity.short_description}}</p>
+                <p><a class="btn btn--light" href="{{marina_activity.link}}">View</a></p>
+              </div>
+              {% endfor %}
+            </div>
+            <a class="iconbtn iconbtn--light iconbtn--right" href="javascript:void(0);"></a>
+          </div>
+        </div>
+      </div>
+      <div class="two-col-carousels__right">
+        <div class="two-col-carousels__intro">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <p class="h4" tabindex="0">Further Adventures</p>
+              <p class="light" tabindex="0">Our concierge can direct you to the best options for learning more about the land and culture of Key West.</p>
+            </div>
+            <div class="col-4 text-right">
+              <a class="btn btn--secondary-s2" href="/adventures/">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-carousels__slider-wrap" id="adventuresSlider">
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573812068/xkevwyb7e3prcerjrezs.jpg" class="slider-bg" alt="Marina Adventures">
+          <div class="two-col-carousels__content">
+            <a class="iconbtn iconbtn--light iconbtn--left" href="javascript:void(0);"></a>
+            <div class="two-col-carousels__slider adventures-slider">
+              {% assign marina_adventures = site.data._models.marina_adventures  | sort: 'order' %}
+              {% for marina_adventure in marina_adventures %}
+              <div class="two-col-carousels__slider__item">
+                <p class="overline overline--italic light">{{marina_adventure.name}}</p>
+                <p class="light h4">{{marina_adventure.short_description}}</p>
+                <p><a class="btn btn--light" href="{{marina_adventure.link}}">View</a></p>
+              </div>
+              {% endfor %}
+            </div>
+            <a class="iconbtn iconbtn--light iconbtn--right" href="javascript:void(0);"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="common-cta">
+  <div class="common-cta__img">
+    {% regionblock common-cta-img2, type:image %}
+      <img src="" alt="">
+    {% endregionblock %}
+  </div>
+  <div class="common-cta__text text-center">
+    {% regionblock common-cta-header2, type:text %}
+      <p class="h4 light">Resort Dining</p>
+    {% endregionblock %}
+    {% regionblock common-cta-text2, type:text %}
+      <p class="h3 light">The Yellowfin Bar and Grill introduces the new concept of island cooking</p>
+      <a href="/dining/" class="btn btn--light">Discover Dining</a>
+    {% endregionblock %}
+  </div>
+</section>
+
+<section class="offers-cross-sell__no-nav dark-theme">
+  <div class="asset-list asset-list--variant">
+    <div class="asset-list__header align-items-center">
+      <div class="content">
+        {% regionblock happenings_heading, type:header %}
+        <h2 class="h4 mb-2">Happenings</h2>
+        {% endregionblock %}
+        {% regionblock happenings_text, type:text %}
+        <p class="light">Special events and holiday dining done the Key West way—on the water and with panache.</p>
+        {% endregionblock %}
+      </div>
+      <a href="/happenings/" class="btn btn--secondary-s2">View all</a>
+    </div>
+    {% include components/happenings-cross-sell %}
+  </div>
+</section>

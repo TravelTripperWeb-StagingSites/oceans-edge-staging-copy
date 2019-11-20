@@ -27,8 +27,8 @@
 }
 
 .navbar {
+  width: 100%;
   padding: 0;
-
   .navbar__offer__close {
     display: none !important;
   }
@@ -41,14 +41,12 @@
 
   &.is-fixed-top {
     height: auto;
-
     @include media-breakpoint-up(lg) {
       height: 98px;
     }
 
     &+.main {
       padding-top: auto;
-
       @include media-breakpoint-up(lg) {
         padding-top: 98px;
       }
@@ -59,7 +57,7 @@
     width: auto;
     height: auto;
     background: transparent;
-    @include transition(all .3s);
+    @include transition(all 0.3s);
 
     &:after {
       margin-left: 10px;
@@ -287,71 +285,25 @@
           @include make-col(8.85);
         }
       }
-
-      .navbar__booking {
-        @include make-col-ready;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-top: solid 1px $t2;
-        @include media-breakpoint-up(sm) {
-          @include make-col(3.15);
-        }
-
-        span {
-          display: block;
-        }
-
-        .btn--book {
-          font-family: $family-primary-bold;
-          font-size: $display9-size;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .tel {
-          display: block;
-          margin-bottom: 10px;
-          font-family: $family-primary;
-          font-size: $display9-size;
-          color: $medium;
-          text-align: left;
-          letter-spacing: 1px;
-
-          &:after {
-            margin-left: 15px;
-            font-family: $oceansedge-font-family;
-            font-size: $display9-size;
-            content: $icon-call-icon;
-            //Better Font Rendering
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-          }
-
-          &:hover {
-            color: $primary;
-            text-decoration: none;
-          }
-        }
-      }
     }
   }
 
   &__offer {
     padding: 15px;
     background: $quartenary;
-
-    &:after {
+    &__close-btn {
       position: absolute;
       top: 15px;
       right: 30px;
-      font-family: $oceansedge-font-family;
-      font-size: $display6-size;
-      color: $s2;
-      cursor: pointer;
-      content: $icon-menu-close;
-      opacity: 0.8;
-      @include transition(all 0.3s);
+      &:after {
+        font-family: $oceansedge-font-family;
+        font-size: $display6-size;
+        color: $s2;
+        cursor: pointer;
+        content: $icon-menu-close;
+        opacity: .8;
+        @include transition(all .3s);
+      }
     }
 
     p {
@@ -523,9 +475,9 @@
       }
     }
 
-    .sm-d-none {
-      display: none !important;
-    }
+    // .sm-d-none {
+    //   //display: none !important;
+    // }
 
     .sm-d-block {
       display: block !important;
@@ -541,10 +493,9 @@
   }
   @include media-breakpoint-down(md) {
     .nav--device {
-
       ul {
         max-width: 100%;
-        padding: .75rem 0;
+        padding: 0.75rem 0;
 
         .subnav {
           display: none;
@@ -659,14 +610,13 @@
       font-size: 14px;
       line-height: 16px;
       color: $primary !important;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
     }
   }
 }
 
 .mobileview {
   &.nav--device {
-
     .nav__item {
       width: 100%;
       padding: 16px 20px !important;
@@ -676,6 +626,7 @@
         margin: 0;
         font-family: $family-primary-bold;
         font-size: $base-font-size;
+        color: $primary;
       }
     }
 
@@ -719,6 +670,7 @@
             content: $icon-chevron-bottom !important;
           }
         }
+
         .subnav {
           padding-left: 14px !important;
 
@@ -735,6 +687,76 @@
         }
       }
     }
+  }
+}
 
+.navbar__booking {
+  @include make-col-ready;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 0;
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(3.15);
+    flex-direction: column;
+    border-top: solid 1px $t2;
+  }
+
+  span {
+    display: block;
+  }
+
+  .btn--book {
+    font-family: $family-primary-bold;
+    font-size: $display9-size;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.tel {
+  display: inline-block;
+  margin-bottom: 0;
+  font-family: $family-primary;
+  font-size: $display9-size;
+  color: $medium;
+  text-align: left;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &:after {
+    margin-left: 5px;
+    font-family: $oceansedge-font-family;
+    font-size: $display9-size;
+    content: $icon-call-icon;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 15px;
+    }
+  }
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+.navbar__group {
+  .nav__link {
+    &.active {
+      background: $tertiary;
+    }
+  }
+  .nav--device {
+    .nav__link {
+      &.active {
+        background: inherit;
+      }
+    }
   }
 }

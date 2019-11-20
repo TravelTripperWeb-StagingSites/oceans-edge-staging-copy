@@ -1,4 +1,4 @@
-<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }} {% if room.accessible == true %} accessible {% endif %}" data-bed-type="{{ room.room_bed_types.name }}" data-view-type="{{ room.view.name }}" data-guests="{{ room.guest_size_max }}">
+<div class="room-list-item asset-item {{ room.room_type.name | downcase | replace: '&', '' | replace: '  ', ' ' | replace: ' ', '-' | replace: '1', 'one' | replace: '2', 'two' | replace: '3', 'three' }} {% if room.accessible == true %} accessible {% endif %} {% if room.suite == true %} suites {% endif %}" data-bed-type="{{ room.room_bed_types.name }}" data-view-type="{{ room.view.name }}" data-guests="{{ room.guest_size_max }}">
   <div class="asset-item__wrap">
     <div class="asset-item__featured-image">
       {% assign featured_image = room.featured_image %}
@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-6">
             <div class="bed-type">
-              <p>Beds<span class="d-block">{{ room.room_bed_types.name }}</span></p>
+              <p>Room Type<span class="d-block">{{ room.room_type.name }}</span></p>
             </div>
           </div>
           <div class="col-6">
@@ -21,9 +21,8 @@
         </div>
         <div class="row">
           <div class="col-9">
-            <div class="location">
-              <i></i>
-              <p>Resort Location<span class="d-block">{{ room.room_location.name }}</span></p>
+            <div class="view">
+              <p>View<span class="d-block">{{ room.view.name }}</span></p>
             </div>
           </div>
           <div class="col-3">

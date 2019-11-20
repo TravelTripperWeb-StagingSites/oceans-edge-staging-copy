@@ -42,7 +42,9 @@ meta_tags:
           <div class="amenities-list__item__text">
             <h3 class="h4">{{amenity.name}}</h3>
             <p class="description">{{amenity.description}}</p>
+            {% if amenity.cta_link and amenity.cta_link != "" %}
             <a class="btn btn--light" href="{{amenity.cta_link}}">{{amenity.cta_label}}</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@ meta_tags:
         <ul>
           <li> Luxurious robes in all rooms </li>
           <li> Poolside games and activities for all ages </li>
-          <li> Pets welcome </li>
+          <li><span class="d-block mb-2">Pets welcome</span><a class="btn btn--tertiary" href="/pet-friendly/">Learn More</a> </li>
           <li> Pack 'n Plays upon request </li>
           <li> $20 plus tax parking per day </li>
           <li> On-site access to excursions from our marina </li>

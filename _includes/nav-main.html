@@ -1,5 +1,5 @@
 {% comment %}
-  note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
+note the nav.is-fixed-top must immediately precede div.main for div.main top-margin to work property
 {% endcomment %}
 <nav class="navbar nav--main" id="js-navbar--main">
   <div class="container-fluid">
@@ -19,10 +19,12 @@
       </a>
       <div class="navbar__booking d-block d-lg-none col-4 text-right">
         <a href="{{site.data.hotel_settings.booking_url}}" target="_NEW" role="button" class="btn btn--book">Book</a>
+        <a class="tel" href="tel:877-935-0862" title="Phone:877-935-0862"></a>
       </div>
       <div class="navbar__group">
         <div class="navbar__offer d-none d-lg-block">
-          <p>Exclusive Member Benefits Offer: <span>Save up to 25%</span> <a class="btn btn--tertiary-s2" href="#">find out more</a></p>
+          <p>Oceans Edge Exclusive Offer <span>Save 25%</span> <a class="btn btn--tertiary-s2" href="/offers/oceans-edge-exclusive-benefits/">find out more</a></p>
+          <span class="navbar__offer__close-btn"></span>
         </div>
 
         <div class="navbar__group__wrap">
@@ -56,8 +58,9 @@
           </div>
           <div class="navbar__booking">
             <a class="tel" href="tel:877-935-0862">(877) 935-0862</a>
-            <div>
-              <a href="{{site.data.hotel_settings.booking_url}}" target="_NEW" role="button" class="btn btn--book">Book Now</a>
+
+            <div class="booking-widget-button">
+              {% include components/booking-widget-button %}
             </div>
           </div>
         </div>

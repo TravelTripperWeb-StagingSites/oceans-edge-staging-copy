@@ -53,7 +53,7 @@ meta_tags:
           <div class="large-card__item__content">
             <p>{{featured_happening.description}}</p>
             <div class="large-card__item__button">
-              <a href="{{featured_happening.cta_link}}" class="btn btn--light" target="_blank">{{featured_happening.cta_label}}</a>
+              <!-- <a href="{{featured_happening.cta_link}}" class="btn btn--light" target="_blank">{{featured_happening.cta_label}}</a> -->
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ meta_tags:
     {% if happenings.size > 0 %}
       <div class="happening-category">
         <h2 class="h4">{{happenings_category.name}}</h2>
-        <p class="cat-desc">{{happenings_category.description}}</p>
+        <!-- <p class="cat-desc">{{happenings_category.description}}</p> -->
       </div>
       <div class="asset-list__items">
         {% for happening in happenings %}
@@ -86,12 +86,17 @@ meta_tags:
                 <div class="row">
                   <div class="col-9">
                     <div class="bed-type">
-                      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/i6ehqcthm35czejvh9az.png" width="15px" height="15px" alt="happening date">
-                      <p>Date<span class="d-block">{{ happening.date | date:"%a, %b %-d, %Y" }}</span></p>
+                      {% if happening.tickets and happening.tickets != "" %}
+                        <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/lgwclct1idqqb1xhirja.png"width="15px" height="15px" alt="Ticket Price">
+                        <p>Tickets:<span class="d-block">{{happening.tickets}}</span></p>
+                      {% else %}
+                        <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1572948873/i6ehqcthm35czejvh9az.png" width="15px" height="15px" alt="happening date">
+                        <p>Date<span class="d-block">{{ happening.date | date:"%a, %b %-d, %Y" }}</span></p>
+                      {% endif %}
                     </div>
                   </div>
                   <div class="col-3">
-                    <a class="btn btn--secondary" href="{{ happening.cta_link }}" target="_blank">{{ happening.cta_label }}</a>
+                    <!-- <a class="btn btn--secondary" href="{{ happening.cta_link }}" target="_blank">{{ happening.cta_label }}</a> -->
                   </div>
                 </div>
               </div>
@@ -117,7 +122,7 @@ meta_tags:
         </div>
         <div class="two-col-cta__text text-center">
           {% regionblock two-col-cta-left, type: text %}
-            <p class="h4 light">Activities</p>
+            <p class="light overline overline--italic">Activities</p>
             <p class="h3 light">Lorem ipsum dolor sit amet, tempor incididunt</p>
             <a class="btn btn--light" href="/activities/">View All</a>
           {% endregionblock %}
@@ -135,9 +140,9 @@ meta_tags:
         </div>
         <div class="two-col-cta__text text-center">
           {% regionblock two-col-cta-right, type: text %}
-            <p class="h4 light">Adventures</p>
+            <p class="light overline overline--italic">Adventures</p>
             <p class="h3 light">Lorem ipsum dolor sit amet, tempor incididunt</p>
-            <a class="btn btn--light" href="/adventutres/">View All</a>
+            <a class="btn btn--light" href="/adventures/">View All</a>
           {% endregionblock %}
         </div>
       </div>

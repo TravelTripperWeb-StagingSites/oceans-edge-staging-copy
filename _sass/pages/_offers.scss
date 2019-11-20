@@ -85,12 +85,12 @@
 
   &__item {
     @include make-col-ready;
-    margin-bottom: 24px;
+    margin: 12px 0;
     border-radius: 16px;
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
-      margin-bottom: 0;
+      margin: 17px 0;
     }
 
     &__image {
@@ -258,6 +258,34 @@
     }
   }
 
+  .happenings-list-carousel {
+    .asset-item {
+      flex: none;
+      &__text-group {
+        &__wrap {
+          min-height: 280px;
+
+          .row {
+            border-color: $quartenary;
+          }
+          p {
+            border: 0;
+          }
+          .btn {
+            height: 32px;
+          }
+        }
+      }
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+
   .offer-list-carousel {
     .asset-item {
       flex: none;
@@ -378,6 +406,12 @@
   .bed-type {
     &:before {
       display: none;
+    }
+  }
+  &.dark-theme {
+    background-color: $primary;
+    .h4 {
+      color: $s2;
     }
   }
 }

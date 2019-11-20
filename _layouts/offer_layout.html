@@ -33,9 +33,9 @@ layout: default
           <div class="social-share">
             <p class="h5" tabindex="0"><span>Share</span></p>
             <div class="social-media">
-              <a href="https://www.facebook.com/OceansEdgeKeyWest/" target="_blank" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.twitter.com/oceansedgekeywest/" target="_blank" title="follow us on twitter"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/oceansedgekeywest/" target="_blank" title=""><i class="far fa-envelope"></i></a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ offer.name }}&url={{ site.url }}{{ page.url }}&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ offer.name }}&amp;Body={{ offer.name }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
             </div>
           </div>
         </div>

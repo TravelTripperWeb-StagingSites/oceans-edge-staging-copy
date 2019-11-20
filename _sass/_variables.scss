@@ -36,6 +36,8 @@ $medium: #6f6f6f !default;
 $dark: #434343 !default;
 $overlay: rgba(1, 36, 51, .3) !default;
 $overlay-color: #012433 !default;
+$video-close: #aeaeae !default;
+$lightbox-bg: rgba(0,0,0,.8) !default;
 //
 //    $theme-colors: () !default;
 //    $theme-colors: map-merge(
@@ -115,6 +117,13 @@ $icon-size: '\e910';
 $icon-sleeps: '\e911';
 $icon-filter: '\e912';
 $icon-bed-type-stroke: '\e913';
+$icon-2bed-type-icon: '\e914';
+$icon-eye-light: '\e915';
+$icon-queen-bed: '\e916';
+$icon-info: '\e917';
+$icon-time: '\e918';
+$icon-maximize: '\e919';
+$icon-minimize: '\e91a';
 
 // $family-arrows: 'ITC Officina Disp Arrows W05';
 // $family-bullets: 'ITC Officina Disp Bullets W05';

@@ -93,7 +93,7 @@
         }
 
         .btn {
-          &:not(.btn--secondary) {
+          &:not(.btn--secondary), &:not(.btn--light) {
             color: $primary;
             background: $secondary;
 
@@ -110,9 +110,13 @@
       }
     }
   }
-  &.hidden, &.hidden-by-guests, &.hidden-by-bedtype, &.hidden-by-viewtype {
+  &.hidden, &.hidden-by-guests, &.hidden-by-bedtype, &.hidden-by-viewtype, &.hidden-by-accessibility {
     display: none !important;
   }
+}
+
+.no-rooms-message {
+  display: none;
 }
 
 .bed-type {
@@ -126,6 +130,12 @@
     font-size: $display3-size;
     color: $medium;
     content: $icon-bed-type-stroke;
+  }
+
+  &.queen {
+    &:before {
+      content: $icon-queen-bed;
+    }
   }
 
   p {
@@ -214,6 +224,76 @@
   }
 }
 
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+
+  &:before {
+    font-family: $oceansedge-font-family;
+    font-size: $display7-size;
+    color: $quartenary;
+    content: $icon-time;
+    opacity: .8;
+  }
+
+  p {
+    margin: 0 0 0 5px !important;
+    padding-top: 0 !important;
+    color: $primary;
+
+    span {
+      display: block;
+      width: 100%;
+      font-family: $family-primary-lc;
+      font-size: $display9-size;
+      line-height: $display8-size;
+    }
+  }
+
+  &.no-icon {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+
+  &:before {
+    font-family: $oceansedge-font-family;
+    font-size: $display7-size;
+    color: $quartenary;
+    content: $icon-info;
+    opacity: .8;
+  }
+
+  p {
+    margin: 0 0 0 5px !important;
+    padding-top: 0 !important;
+    color: $primary;
+
+    span {
+      display: block;
+      width: 100%;
+      font-family: $family-primary-lc;
+      font-size: $display9-size;
+      line-height: $display8-size;
+    }
+  }
+
+  &.no-icon {
+    &:before {
+      display: none;
+    }
+  }
+}
+
 .location {
   display: flex;
   align-items: center;
@@ -255,13 +335,40 @@
   }
 }
 
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $dark;
+
+  &:before {
+    font-family:  $oceansedge-font-family;
+    font-size: $display5-size;
+    color: $medium;
+    content: $icon-eye-light;
+  }
+
+  p {
+    margin: 0 0 0 15px;
+    color: $dark;
+
+    span {
+      padding-top: 5px;
+      font-family: $family-primary-lc;
+      font-size: $display8-size;
+      line-height: $display6-size;
+      text-transform: uppercase;
+    }
+  }
+}
+
 .icon-light {
   &:after, &:before {
     color: $light;
   }
 }
 
-.rooms-cross-sell, .offers-cross-sell {
+.rooms-cross-sell, .offers-cross-sell, .amenities-cross-sell {
   width: 100%;
   padding: 32px 0;
 
@@ -365,6 +472,27 @@
 
       p {
         color: $dark;
+
+        a {
+          color: $primary;
+
+          &.btn {
+            color: $light;
+          }
+
+          &:hover {
+            &.btn {
+              color: $primary;
+            }
+          }
+        }
+
+        strong {
+          font-family: $family-primary;
+          font-size: $base-font-size;
+          font-weight: normal;
+          color: $primary;
+        }
       }
 
       ul {
@@ -379,7 +507,7 @@
     width: 100%;
 
     .iconbtn {
-      background: $light;
+      background: rgba(2,81,113,.8);
       @include transition(all .3s);
 
       @include media-breakpoint-up(md) {
@@ -387,19 +515,11 @@
       }
 
       &:after {
-        color: $dark;
-
-        @include media-breakpoint-up(md) {
-          color: $light;
-        }
+        color: $light;
       }
 
       &:hover {
-        background: $light;
-
-        @include media-breakpoint-up(md) {
-          background: rgba(2,81,113,1);
-        }
+        background: rgba(2,81,113,1);
       }
     }
 
@@ -543,31 +663,6 @@
     .btn-holder {
       margin-bottom: 38px;
     }
-
-    .social-media {
-      display: flex;
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        margin-right: 16px;
-        font-size: 13px;
-        color: $dark;
-        text-align: center;
-        background-color: $tertiary;
-        border-radius: 50%;
-        @include transition(.3s);
-
-        &:hover {
-          color: $tertiary;
-          text-decoration: none;
-          background-color: $dark;
-        }
-      }
-    }
   }
 }
 
@@ -633,22 +728,6 @@
     }
   }
 
-  .large-card__controls {
-    display: flex;
-    justify-content: space-between;
-    max-width: 888px;
-    margin: 0 auto;
-    padding: 0 25px 25px;
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 50px 50px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      padding: 0 0 50px;
-    }
-  }
-
   &__handle {
     .large-card__item {
       flex: inherit;
@@ -664,10 +743,71 @@
   }
 }
 
+.large-card__controls {
+  display: flex;
+  justify-content: space-between;
+  max-width: 888px;
+  margin: 0 auto;
+  padding: 0 25px 25px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 50px 50px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 0 0 50px;
+  }
+}
+
 .suite-bg {
   width: 100%;
   background-image: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573179173/zhdwmh7ssfsltnx3z8yg.jpg');
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
+}
+
+.asset-list {
+  &--4col {
+    .asset-item {
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+    }
+  }
+}
+
+.social-media {
+  display: flex;
+
+  &__label {
+    display: inline-block;
+    margin-right: 24px;
+    font-family: $family-primary;
+    font-size: $display10-size;
+    color: $dark;
+    text-transform: uppercase;
+    letter-spacing: .83px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    font-size: 13px;
+    color: $dark;
+    text-align: center;
+    background-color: $tertiary;
+    border-radius: 50%;
+    @include transition(.3s);
+
+    &:hover {
+      color: $tertiary;
+      text-decoration: none;
+      background-color: $dark;
+    }
+  }
 }

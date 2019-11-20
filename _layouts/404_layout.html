@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="static-wrap">
+  <h1 class="h1 text-center mb-1">Page not Found</h1>
+  <h2 class="h3 text-center mb-2">Sitemap</h2>
+  <ul class="sitemap-links desktop">
+    {% assign items = site.data._menus.mega.items %}
+    {% include nav/nav-item-list.html items=items %}
+  </ul>
+  <ul class="sitemap-links mobile">
+    {% assign items = site.data._menus.mega_mobile.items %}
+    {% include nav/nav-item-list.html items=items %}
+  </ul>
+</div>

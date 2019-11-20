@@ -90,6 +90,12 @@
     content: $icon-bed-type-stroke;
   }
 }
+.icon-2bed-type-icon {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-2bed-type-icon;
+  }
+}
 .icon-size {
   &:before {
     font-family: $oceansedge-font-family;
@@ -130,5 +136,41 @@
   &:before {
     font-family: $oceansedge-font-family;
     content: $icon-chevron-top;
+  }
+}
+.icon-eye-light {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-eye-light;
+  }
+}
+.icon-queen-bed {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-queen-bed;
+  }
+}
+.icon-info {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-info;
+  }
+}
+.icon-time {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-time;
+  }
+}
+.icon-maximize {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-maximize;
+  }
+}
+.icon-minimize {
+  &:before {
+    font-family: $oceansedge-font-family;
+    content: $icon-minimize;
   }
 }

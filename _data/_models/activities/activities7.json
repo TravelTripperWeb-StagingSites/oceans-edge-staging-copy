@@ -1,10 +1,10 @@
 {
-  "order": 7,
+  "order": 12,
   "name": "Sunset Cruises",
   "url_friendly_name": "sunset-cruises",
-  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-  "terms_conditions": "Cost (3hrs)",
-  "price": "$50 /person",
+  "description": "<p>End a beautiful day in Key West with a sunset view.</p>\n<p><strong>When and If<br /></strong>A gorgeous Key West Sunset. George S. Patton's stunning historic schooner yacht. Join them for an authentic sailing experience aboard a wooden schooner that&rsquo;s been sailing for over 75 years. Premium sunset cruises every evening, and she&rsquo;s only in Key West for the winter, so sail aboard this schooner while you have a chance.</p>\n<p><strong><a href=\"https://oceansedgecs.com/sunset-sail/\" target=\"_blank\" rel=\"noopener noreferrer\">BOOK ONLINE</a></strong></p>\n<p><strong>Captain Shannon's Custom Charters<br /></strong>Book a boat for a half day, full day or even an overnight excursion! Captain Shannon's Custom Charters have dinner cruises at night so you can eat dinner while watching the sun go down. Charters are limited to 6 people which allows for a more personal experience.</p>\n<p><strong>Blu Chi Charters<br /></strong>Begin your adventure by cruising into the crystal blue waters of The Gulf of Mexico and enjoying a memorable Key West sunset. Once underway to our island destination you should be on the look-out for dolphins, manatees, sea turtles, stingrays and more.</p>\n<p>For additional information call our concierge at 786-862-6303 or visit <a href=\"http://www.bluchicharters.com/charter-options\">www.bluchicharters.com/charter-options</a>.</p>",
+  "terms_conditions": "Cost",
+  "price": "Please inquire",
   "image": {
     "name": "sunset-yacht",
     "content_type": "image/jpeg",
@@ -25,8 +25,9 @@
     "git_file_name": "_assets/image_data/sunset-yacht.jpg.json",
     "path": "//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573207031/a6enaxvclyqe8mhpopnk.jpg",
     "file_size": null,
-    "alt": "Sunset Yacht",
+    "alt": "Sunset cruises, book with Oceans Edge Resort and Marina",
     "caption": "",
     "description": ""
-  }
+  },
+  "category": "activities_categories2"
 }

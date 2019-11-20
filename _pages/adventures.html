@@ -1,11 +1,170 @@
 ---
-layout: adventures_layout
-title_localized:
-  en: Adventures
-meta_description_localized:
-  en:
-permalink_localized:
-  en: /aventures/
+layout: default
+title: Explore Dry Tortugas and Beyond | Oceans Edge Resort
+meta_description: From Dry Tortugas to the downtown Historic Seaport, Key West is the destination for those who love adventure. Book dozens of experiences with Oceans Edge Resort.
+permalink: /adventures/
 meta_tags:
   robots:
 ---
+
+<section class="hero-static hero-inner">
+  <div class="hero-static__wrap">
+    {% regionblock hero_image, type:text %}
+    <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573722450/krwwjxgvcflkoav6kpls.jpg" />
+    {% endregionblock %}
+  </div>
+  <div class="hero-static__intro">
+    {% regionblock page_intro_tagline, type:text %}
+    <h1 class="overline overline--italic text-center dark" tabindex="0">From Dry Tortugas to the Historic Seaport</h1>
+    {% endregionblock %}
+    {% regionblock page_intro_heading, type:header %}
+    <h2 class="h1" tabindex="0">Key West Adventures for Every Interest</h2>
+    {% endregionblock %}
+    <div class="description" tabindex="0">
+      {% regionblock page_intro_description, type:text %}
+      <p>Some experiences can be had only in the Keys, and Oceans Edge concierge services work with the best operators in the area to send you on journeys near and far, by land, air, and sea.</p>
+      {% endregionblock %}
+    </div>
+  </div>
+</section>
+
+<section class="large-card activities-carousel rooms-cross-carousel">
+  <div class="heading-line-through">
+    {% regionblock offer_category_heading_two, type:header %}
+    <h3 class="h2">
+      <span class="heading-line-through__text">Our concierge <span class="h2--italic">recommends</span></span>
+    </h3>
+    {% endregionblock %}
+  </div>
+  <div class="large-card__row rooms-cross-carousel__handle">
+    {% assign activities = site.data._models.adventures | sort: 'order' %}
+    {% for item in activities %}
+    {% if item.our-concierge-recommends == true %}
+    <div class="large-card__item">
+      <div class="large-card__item__inner">
+        <div class="large-card__item__image">
+          <img src="{{ item.image.url_medium }}" alt="{{ item.alt }}">
+        </div>
+        <div class="large-card__item__wrap">
+          <h4 class="h4 light">
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">{{ item.name }}</a>
+          </h4>
+          <div class="large-card__item__content">
+            <div class="mb-3 mb-md-0">
+              <p class="mb-1 mw-100 border-0">{{ item.terms_conditions }}<br>
+              <span class="price mw-100 border-0">{{ item.tour_hours }}<span></p>
+            </div>
+            <div class="large-card__item__button">
+              <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}" class="btn btn--light">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="large-card__controls" id="roomsCarouselNav">
+    <a class="iconbtn iconbtn--left" data-controls="prev" tabindex="-1" href="javascript:void(0)" title="Previous Image"></a>
+    <a class="iconbtn iconbtn--right" data-controls="next" tabindex="-1" href="javascript:void(0)" title="Next Image"></a>
+  </div>
+</section>
+
+<section class="activities-listing">
+  <hr></hr>
+  <div class="filters-block">
+    <div class="filters-block__room-type px-0">
+      <h3 class="h4" tabindex="0">Key West Adventures</h3>
+      <p class="dark" tabindex="0">Discover the Florida Keys from every angle.</p>
+    </div>
+    <div class="filters-block__form px-0">
+      <form>
+        <div class="form-group">
+          <label for="">Sort By:</label>
+          <select class="form-control activities-filter">
+            <option value="all">All Key West Adventures</option>
+            {% assign items = site.data._models.adventures_categories | order: 'sort' %}
+            {% for item in items %}
+            <option>{{ item.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="activities-listing__row">
+    {% assign activities = site.data._models.adventures | sort: 'order' %}
+    {% for item in activities %}
+    {% if item.our-concierge-recommends != true %}
+    <div class="activities-listing__item" data-cat-filter="{{ item.category.name }}">
+      <div class="activities-listing__item__inner">
+        <div class="activities-listing__item__image" tabindex="0">
+          <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">
+            <img src="{{ item.image.url_medium }}" alt="{{ item.image.alt }}">
+          </a>
+        </div>
+        <div class="activities-listing__item__content">
+          <h4 class="h5" tabindex="0">
+            <a href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">{{ item.name }}</a>
+          </h4>
+          <div class="activities-listing__item__content__info">
+            <div class="left">
+              <!-- <p class="h6 mb-1" tabindex="0">{{ item.terms_conditions }}</p>
+              <p class="price mb-0" tabindex="0">{{ item.price }}</p> -->
+            </div>
+            <div class="right">
+              <a class="btn btn--secondary" href="{{ item.url_friendly_name | permalink: model_dir: 'adventures' }}">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="twocol-cs mt-55">
+  <div class="twocol-cs__row">
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_left_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573137650/xoqy6u4wyh3sz4wy7apk.jpg" alt="Oceanfront Suites">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_left_overline, type:header %}
+          <h4 class="overline overline--italic light">Activities</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_heading, type:header %}
+          <h5 class="h3 light">Lorem ipsum dolor sit amet, tempor incididunt</h5>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_left_button, type:text %}
+          <a href="/activities/" class="btn btn--light">View All</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+    <div class="twocol-cs__item">
+      <div class="twocol-cs__item__inner">
+        <div class="twocol-cs__item__image">
+          {% regionblock twocol_cross_sell_right_image, type:image %}
+          <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573137650/xoqy6u4wyh3sz4wy7apk.jpg" alt="Oceanfront Rooms">
+          {% endregionblock %}
+        </div>
+        <div class="twocol-cs__item__content">
+          {% regionblock twocol_cross_sell_right_overline, type:header %}
+          <h4 class="overline overline--italic light">Happenings</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_heading, type:header %}
+          <h4 class="h3 light">dolore magna aliqua enim ad minim veniam</h4>
+          {% endregionblock %}
+          {% regionblock twocol_cross_sell_right_button, type:text %}
+          <a href="/happenings/" class="btn btn--light">View All</a>
+          {% endregionblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
