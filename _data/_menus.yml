@@ -53,7 +53,13 @@ mega:
       label_localized:
         en: Amenities
       items:
-    expanded: false
+    - folder: false
+      url_localized: ''
+      page_id: _pages/pet-friendly.html
+      label_localized:
+        en: Pet Friendly
+      items:
+    expanded: true
   - folder: true
     label_localized:
       en: Stay
@@ -79,15 +85,15 @@ mega:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#accessible-rooms"
-      label_localized:
-        en: Accessible Rooms & Suites
-      items:
-    - folder: false
-      url_localized:
         en: "/stay/#suites"
       label_localized:
         en: Suites
+      items:
+    - folder: false
+      url_localized:
+        en: "/stay/#accessible-rooms"
+      label_localized:
+        en: Accessible Rooms
       items:
     expanded: false
   - folder: true
@@ -164,7 +170,7 @@ mega:
       label_localized:
         en: Fishing Records & Charters
       items:
-    expanded: false
+    expanded: true
   - folder: true
     label_localized:
       en: Groups
@@ -175,6 +181,7 @@ mega:
       label_localized:
         en: Overview
       items:
+    expanded: false
   - folder: true
     label_localized:
       en: More
@@ -280,7 +287,13 @@ mega_mobile:
       label_localized:
         en: Amenities
       items:
-    expanded: false
+    - folder: false
+      url_localized: ''
+      page_id: _pages/pet-friendly.html
+      label_localized:
+        en: Pet Friendly
+      items:
+    expanded: true
   - folder: true
     label_localized:
       en: Stay
@@ -300,23 +313,17 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#guestrooms"
+        en: "/stay/#suites"
       label_localized:
-        en: Guestrooms
+        en: Suites
       items:
     - folder: false
       url_localized:
         en: "/stay/#accessible-rooms"
       label_localized:
-        en: Accessible Rooms & Suites
+        en: Accessible Rooms
       items:
-    - folder: false
-      url_localized:
-        en: "/stay/#suites"
-      label_localized:
-        en: Suites
-      items:
-    expanded: false
+    expanded: true
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html

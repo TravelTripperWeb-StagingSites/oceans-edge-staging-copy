@@ -3,15 +3,15 @@ twitter:
   username: oceansedgekw
 facebook:
   username: OceansEdgeKeyWest
-  app_id: 
-  publisher: 
-og_image: 
+  app_id:
+  publisher:
+og_image: https://res.cloudinary.com/traveltripperweb/image/upload/v1573796328/w2raygwkqkz6y8riwxro.jpg
 instagram:
   username: oceansedgekeywest
 social:
-  type: 
-  name: 
-  links: 
+  type:
+  name:
+  links:
 __EDITABLE_FIELDS__:
   instagram:
     label: Instagram Account
