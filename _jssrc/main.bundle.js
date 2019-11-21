@@ -882,7 +882,6 @@ readyDoc(function () {
             allRooms[_i23].classList.add("hidden-by-viewtype");
           }
         }
-        // displayNoRoomsMessage();
       }
 
       for (var _i24 = 0; _i24 < bedTypeFilters.length; _i24++) {
@@ -908,7 +907,6 @@ readyDoc(function () {
         }
       }
       displayNoRoomsMessage();
-
       document.getElementById("jsModal").style.display = "none";
     });
   }
