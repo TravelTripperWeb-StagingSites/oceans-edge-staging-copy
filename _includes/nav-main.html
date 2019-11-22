@@ -18,7 +18,9 @@ note the nav.is-fixed-top must immediately precede div.main for div.main top-mar
         </span>
       </a>
       <div class="navbar__booking d-block d-lg-none col-4 text-right">
-        <a href="{{site.data.hotel_settings.booking_url}}" target="_NEW" role="button" class="btn btn--book">Book</a>
+        <div ttweb-component="BookingWidgetButton">
+          <a href="javascript:void(0);" onclick="return false" target="_NEW" role="button" class="btn btn--book">Book</a>
+        </div>
         <a class="tel" href="tel:877-935-0862" title="Phone:877-935-0862"></a>
       </div>
       <div class="navbar__group">
