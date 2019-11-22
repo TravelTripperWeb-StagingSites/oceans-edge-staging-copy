@@ -9,11 +9,11 @@ TODO:
   {% assign show_item = true %}
   {% if item.page_id %}
     {% assign show_item = false %}
-    {% assign page = site.page_map[item.page_id] %}
-    {% if page %}
+    {% assign nav_page = site.page_map[item.page_id] %}
+    {% if nav_page %}
       {% assign show_item = true %}
-      {% assign url = page | permalink %}
-      {% assign text = item.label | default: page.title | default: page.name %}
+      {% assign url = nav_page | permalink %}
+      {% assign text = item.label | default: nav_page.title | default: nav_page.name %}
     {% endif %}
   {% else %}
     {% assign url = item.url %}
