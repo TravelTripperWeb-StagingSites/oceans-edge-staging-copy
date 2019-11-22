@@ -313,6 +313,12 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
+        en: "/stay/#guestrooms"
+      label_localized:
+        en: Guestrooms
+      items:
+    - folder: false
+      url_localized:
         en: "/stay/#suites"
       label_localized:
         en: Suites
