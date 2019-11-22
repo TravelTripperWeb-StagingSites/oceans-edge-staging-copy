@@ -845,6 +845,71 @@ readyDoc(function () {
       window.location.href = '/webcam/';
     });
   }
+
+  function myFunction(x) {
+    var bedfil = document.querySelector('.bed-type-filter-mobile');
+    var viewfil = document.querySelector('.room-view-filter-mobile');
+    if (x.matches) {
+      // If media query matches
+      bedfil.classList.remove('bed-type-filter');
+      viewfil.classList.remove('room-view-filter');
+    } else {
+      bedfil.classList.add('bed-type-filter');
+      viewfil.classList.add('room-view-filter');
+    }
+  }
+
+  if (document.querySelector('.bed-type-filter-mobile')) {
+    var x = window.matchMedia("(max-width: 968px)");
+    myFunction(x); // Call listener function at run time
+    x.addListener(myFunction); // Attach listener function on state changes
+  }
+  var roomssubmit = document.querySelector('.filter-rooms-submit');
+  if (roomssubmit) {
+    roomssubmit.addEventListener('click', function () {
+      var viewTypeFilters = document.querySelectorAll(".room-view-filter");
+      var allRooms = document.querySelectorAll(".room-list-item");
+      var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+      var accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
+
+      for (var _i22 = 0; _i22 < bedTypeFilters.length; _i22++) {
+        var viewTypeVal = document.getElementById('room-view-filter-id').value;
+        for (var _i23 = 0; _i23 < allRooms.length; _i23++) {
+          var viewType = allRooms[_i23].getAttribute("data-view-type");
+          if (viewType == viewTypeVal || viewTypeVal == "all") {
+            allRooms[_i23].classList.remove("hidden-by-viewtype");
+          } else {
+            allRooms[_i23].classList.add("hidden-by-viewtype");
+          }
+        }
+      }
+
+      for (var _i24 = 0; _i24 < bedTypeFilters.length; _i24++) {
+        var bedTypeVal = document.getElementById("bed-type-filter-id").value;
+        if (bedTypeVal == "Accessible") {
+          for (var _i25 = 0; _i25 < allRooms.length; _i25++) {
+            allRooms[_i25].classList.remove("hidden-by-bedtype");
+            allRooms[_i25].classList.add("hidden-by-accessibility");
+          }
+          for (var _i26 = 0; _i26 < accessibleRooms.length; _i26++) {
+            accessibleRooms[_i26].classList.remove("hidden-by-accessibility");
+          }
+        } else {
+          for (var _i27 = 0; _i27 < allRooms.length; _i27++) {
+            var bedType = allRooms[_i27].getAttribute("data-bed-type");
+            allRooms[_i27].classList.remove("hidden-by-accessibility");
+            if (bedType == bedTypeVal || bedTypeVal == "all") {
+              allRooms[_i27].classList.remove("hidden-by-bedtype");
+            } else {
+              allRooms[_i27].classList.add("hidden-by-bedtype");
+            }
+          }
+        }
+      }
+      displayNoRoomsMessage();
+      document.getElementById("jsModal").style.display = "none";
+    });
+  }
 });
 
 function lightbox_open(video) {

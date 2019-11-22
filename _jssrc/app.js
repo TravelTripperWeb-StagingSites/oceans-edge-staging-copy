@@ -143,7 +143,7 @@ readyDoc(function() {
   }
 
   // cendyn newsletter blog post data
-  if(document.getElementById('newsletterFormBlog')) {
+  if (document.getElementById('newsletterFormBlog')) {
     document.getElementById('newsletterFormBlog').onsubmit = function(e) {
       e.preventDefault();
       let formId = document.getElementById('formIDBlog').value;
@@ -382,7 +382,7 @@ readyDoc(function() {
           }
         }
       });
-      if(document.querySelector("#sliderRange")) {
+      if (document.querySelector("#sliderRange")) {
         document.querySelector("#sliderRange").addEventListener('change', () => {
           sliderrangefunc(assetSlider);
         });
@@ -412,12 +412,12 @@ readyDoc(function() {
       }
     });
 
-    if(document.querySelector("#sliderRange")) {
+    if (document.querySelector("#sliderRange")) {
       var num_items = assetSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', () => {
-          sliderrangefunc(assetSlider);
+        sliderrangefunc(assetSlider);
       });
-          rangethumb(assetSlider);
+      rangethumb(assetSlider);
     }
 
   }
@@ -506,12 +506,12 @@ readyDoc(function() {
         }
       }
     });
-    if(document.querySelector("#sliderRange")) {
+    if (document.querySelector("#sliderRange")) {
       var num_items = roomsSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', () => {
-          sliderrangefunc(roomsSlider);
+        sliderrangefunc(roomsSlider);
       });
-          rangethumb(roomsSlider);
+      rangethumb(roomsSlider);
     }
   }
 
@@ -536,11 +536,11 @@ readyDoc(function() {
         }
       }
     });
-    if(document.querySelector("#sliderRange")) {
+    if (document.querySelector("#sliderRange")) {
       document.querySelector("#sliderRange").addEventListener('change', () => {
         sliderrangefunc(suitesSlider);
       });
-        rangethumb(suitesSlider);
+      rangethumb(suitesSlider);
     }
   }
 
@@ -563,12 +563,12 @@ readyDoc(function() {
       }
     });
 
-    if(document.querySelector("#sliderRange")) {
+    if (document.querySelector("#sliderRange")) {
       var num_items = assetSlider.getInfo().items;
       document.querySelector("#sliderRange").addEventListener('change', () => {
-          sliderrangefunc(assetSlider);
+        sliderrangefunc(assetSlider);
       });
-          rangethumb(assetSlider);
+      rangethumb(assetSlider);
     }
 
   }
@@ -746,7 +746,7 @@ readyDoc(function() {
   }
 
 
-  function rangethumb(assetSlider){
+  function rangethumb(assetSlider) {
     var num_items = assetSlider.getInfo().items;
     var style = document.querySelector('[data="offerslistyle"]');
     var sliderangele = document.getElementById("sliderRange");
@@ -759,15 +759,15 @@ readyDoc(function() {
   }
 
   function sliderrangefunc(assetSlider) {
-      var num_items = assetSlider.getInfo().items;
-      var ele = document.getElementById("sliderRange");
-      var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
-      ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' +
-        'color-stop(' + val + ', #6f6f6f)' +
-        ')';
-      var sliderindex = document.getElementById('sliderRange').value;
-      var sliderindex2 = ((sliderindex - 1) * num_items);
-      assetSlider.goTo(sliderindex2);
+    var num_items = assetSlider.getInfo().items;
+    var ele = document.getElementById("sliderRange");
+    var val = (ele.value - ele.getAttribute('min')) / (ele.getAttribute('max') - ele.getAttribute('min'));
+    ele.style.backgroundImage = '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #434343), ' +
+      'color-stop(' + val + ', #6f6f6f)' +
+      ')';
+    var sliderindex = document.getElementById('sliderRange').value;
+    var sliderindex2 = ((sliderindex - 1) * num_items);
+    assetSlider.goTo(sliderindex2);
   }
 
   //rooms filter
@@ -789,8 +789,8 @@ readyDoc(function() {
     let allActivities = document.querySelectorAll(".activities-listing__item");
     activitiesFilter.onchange = function() {
       let currentFilter = activitiesFilter.value;
-      let activitiesToShow =  document.querySelectorAll(".activities-listing__item[data-cat-filter='"+currentFilter+"']");
-      if(currentFilter == "all") {
+      let activitiesToShow = document.querySelectorAll(".activities-listing__item[data-cat-filter='" + currentFilter + "']");
+      if (currentFilter == "all") {
         for (let i = 0; i < allActivities.length; i++) {
           allActivities[i].classList.remove("hidden");
         }
@@ -827,20 +827,84 @@ readyDoc(function() {
       nextButton: "#adventuresSlider .iconbtn--right" // next button
     });
   }
-  if(document.querySelector('.fullscreen-cross-sell .icon-maximize')) {
+  if (document.querySelector('.fullscreen-cross-sell .icon-maximize')) {
     document.querySelector('.fullscreen-cross-sell .icon-maximize').addEventListener('click', () => {
       document.querySelector('.fullscreen-cross-sell').classList.add('fullscreen-carousel');
     });
   }
-  if(document.querySelector('.fullscreen-cross-sell .zoomout')) {
+  if (document.querySelector('.fullscreen-cross-sell .zoomout')) {
     document.querySelector('.fullscreen-cross-sell .zoomout').addEventListener('click', () => {
       document.querySelector('.fullscreen-cross-sell').classList.remove('fullscreen-carousel');
     });
   }
-  if(document.querySelector('[data-filter="live_webcam"]')) {
+  if (document.querySelector('[data-filter="live_webcam"]')) {
     document.querySelector('[data-filter="live_webcam"]').addEventListener('click', () => {
       window.location.href = '/webcam/';
     });
+  }
+
+  function myFunction(x) {
+    var bedfil = document.querySelector('.bed-type-filter-mobile');
+    var viewfil = document.querySelector('.room-view-filter-mobile');
+    if (x.matches) { // If media query matches
+      bedfil.classList.remove('bed-type-filter');
+      viewfil.classList.remove('room-view-filter');
+    } else {
+      bedfil.classList.add('bed-type-filter');
+      viewfil.classList.add('room-view-filter');
+    }
+  }
+
+  if (document.querySelector('.bed-type-filter-mobile')) {
+    var x = window.matchMedia("(max-width: 968px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+  }
+  var roomssubmit = document.querySelector('.filter-rooms-submit');
+  if (roomssubmit) {
+    roomssubmit.addEventListener('click', () => {
+      var viewTypeFilters = document.querySelectorAll(".room-view-filter");
+      let allRooms = document.querySelectorAll(".room-list-item");
+      var bedTypeFilters = document.querySelectorAll(".bed-type-filter");
+      let accessibleRooms = document.querySelectorAll(".room-list-item.accessible");
+
+      for (let i = 0; i < bedTypeFilters.length; i++) {
+        let viewTypeVal = document.getElementById('room-view-filter-id').value;
+        for (let i = 0; i < allRooms.length; i++) {
+          let viewType = allRooms[i].getAttribute("data-view-type");
+          if (viewType == viewTypeVal || viewTypeVal == "all") {
+            allRooms[i].classList.remove("hidden-by-viewtype");
+          } else {
+            allRooms[i].classList.add("hidden-by-viewtype");
+          }
+        }
+      }
+
+      for (let i = 0; i < bedTypeFilters.length; i++) {
+        let bedTypeVal = document.getElementById("bed-type-filter-id").value;
+        if (bedTypeVal == "Accessible") {
+          for (let i = 0; i < allRooms.length; i++) {
+            allRooms[i].classList.remove("hidden-by-bedtype");
+            allRooms[i].classList.add("hidden-by-accessibility");
+          }
+          for (let i = 0; i < accessibleRooms.length; i++) {
+            accessibleRooms[i].classList.remove("hidden-by-accessibility");
+          }
+        } else {
+          for (let i = 0; i < allRooms.length; i++) {
+            let bedType = allRooms[i].getAttribute("data-bed-type");
+            allRooms[i].classList.remove("hidden-by-accessibility");
+            if (bedType == bedTypeVal || bedTypeVal == "all") {
+              allRooms[i].classList.remove("hidden-by-bedtype");
+            } else {
+              allRooms[i].classList.add("hidden-by-bedtype");
+            }
+          }
+        }
+      }
+      displayNoRoomsMessage();
+      document.getElementById("jsModal").style.display = "none";
+    })
   }
 
 });
@@ -848,7 +912,7 @@ readyDoc(function() {
 function lightbox_open(video) {
   console.log(video.getAttribute('data-video'));
   document.querySelector('.VisaChipCardVideo source').setAttribute('src', video.getAttribute('data-video'));
-  setTimeout(function(){
+  setTimeout(function() {
     document.querySelector('.lightbox2').style.display = 'flex';
     document.querySelector('.lightbox2').style.opacity = '1';
     document.querySelector('.VisaChipCardVideo').play();

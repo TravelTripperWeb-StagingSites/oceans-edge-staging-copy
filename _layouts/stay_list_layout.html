@@ -65,7 +65,7 @@ layout: generic
           </select>
         </div>
         <div class="form-group">
-          <label for="noOfGuests">No of Guests:</label>
+          <label for="noOfGuests">Number of Guests:</label>
           <div class="guests-slider" id="guestsSlider">
             <span class="output"></span>
             Sleeps 1 <input type="range" min="1" max="10" value="0" class="guests-slider-input room-guests-filter" id="noOfGuests"> Sleeps 10
@@ -117,10 +117,10 @@ layout: generic
 <div class="mobile-filter-popup" id="jsModal">
   <a class="close jsModalClose" href="javascript:void(0);" title="Close"></a>
   <form>
-    <p class="h4">Filter accomodation by:</p>
+    <p class="h4">Filter Accommodations by:</p>
     <div class="form-group">
       <label for="">Room Type:</label>
-      <select class="form-control bed-type-filter">
+      <select id="bed-type-filter-id" class="form-control bed-type-filter bed-type-filter-mobile">
         <option value="all">All</option>
         {% assign bedtypes = site.data._models.room_bed_types | sort:"order" %}
         {% for type in bedtypes %}
@@ -130,7 +130,7 @@ layout: generic
     </div>
     <div class="form-group">
       <label for="">View:</label>
-      <select class="form-control room-view-filter">
+      <select id="room-view-filter-id" class="form-control room-view-filter room-view-filter-mobile">
         <option value="all">All</option>
         {% assign views = site.data._models.room_view | sort:"order" %}
         {% for view in views %}
@@ -139,10 +139,15 @@ layout: generic
       </select>
     </div>
     <div class="form-group">
-      <label for="">No of Guests:</label>
+      <label for="">Number of Guests:</label>
       <div class="guests-slider" id="guestsSliderMobile">
         <span class="output"></span>
         Sleeps 1 <input type="range" min="1" max="10" value="0" class="guests-slider-input" id="noOfGuests"> Sleeps 10
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <a class="btn filter-rooms-submit" href="javascript:void(0);">Submit</a>
       </div>
     </div>
   </form>
