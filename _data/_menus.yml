@@ -442,12 +442,6 @@ mega_mobile:
     items:
     - folder: false
       url_localized: ''
-      page_id: _pages/webcam.html
-      label_localized:
-        en: Webcam
-      items: 
-    - folder: false
-      url_localized: ''
       page_id: _pages/blogs.html
       label_localized:
         en: Blog
@@ -458,6 +452,12 @@ mega_mobile:
     page_id: _pages/gallery.html
     label_localized:
       en: Gallery
+    items: 
+  - folder: false
+    url_localized: ''
+    page_id: _pages/webcam.html
+    label_localized:
+      en: Webcam
     items: 
   - folder: true
     label_localized:
