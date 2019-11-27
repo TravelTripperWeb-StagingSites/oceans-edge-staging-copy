@@ -463,7 +463,7 @@ mega_mobile:
       label_localized:
         en: Email us
       items: 
-    expanded: false
+    expanded: true
 mobile:
   depth: 2
   name: Mobile Footer Menu
