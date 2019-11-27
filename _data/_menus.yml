@@ -336,6 +336,12 @@ mega_mobile:
       items:
     - folder: false
       url_localized: ''
+      page_id: _pages/activities.html
+      label_localized:
+        en: Activities
+      items:
+    - folder: false
+      url_localized: ''
       page_id: _pages/adventures.html
       label_localized:
         en: Adventures
@@ -402,20 +408,6 @@ mega_mobile:
       page_id: _pages/groups.html
       label_localized:
         en: Overview
-      items:
-    - folder: false
-      url_localized:
-        en: "/groups#weddings"
-      page_id: _pages/groups.html
-      label_localized:
-        en: Weddings
-      items:
-    - folder: false
-      url_localized:
-        en: "/groups#meetings-events"
-      page_id: _pages/groups.html
-      label_localized:
-        en: Meetings & Events
       items:
     expanded: false
   - folder: false
