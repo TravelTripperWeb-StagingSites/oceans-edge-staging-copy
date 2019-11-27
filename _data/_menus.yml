@@ -336,12 +336,6 @@ mega_mobile:
       items: 
     - folder: false
       url_localized: ''
-      page_id: _pages/activities.html
-      label_localized:
-        en: Activities
-      items: 
-    - folder: false
-      url_localized: ''
       page_id: _pages/adventures.html
       label_localized:
         en: Adventures
