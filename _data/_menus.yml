@@ -313,12 +313,6 @@ mega_mobile:
       items: 
     - folder: false
       url_localized:
-        en: "/stay/#suites"
-      label_localized:
-        en: Suites
-      items: 
-    - folder: false
-      url_localized:
         en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms
@@ -430,11 +424,6 @@ mega_mobile:
         en: Meetings & Events
       items: 
     expanded: false
-  - folder: true
-    label_localized:
-      en: More
-    items: 
-    expanded: true
   - folder: false
     url_localized: ''
     page_id: _pages/gallery.html
@@ -470,6 +459,11 @@ mega_mobile:
         en: Email us
       items: 
     expanded: false
+  - folder: true
+    label_localized:
+      en: More
+    items: 
+    expanded: true
 mobile:
   depth: 2
   name: Mobile Footer Menu
