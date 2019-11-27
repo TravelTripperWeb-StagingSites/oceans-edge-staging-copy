@@ -1,0 +1,89 @@
+---
+layout: default
+title_localized:
+  en: Oceans Edge Cyber "Sail" | Oceans Edge Key West
+meta_description_localized:
+  en: Book this special offer by Monday, December 2nd 2019 and sail away on a Sunset
+    Cruise for 2 in the tropical turquoise waters of the Florida Keys. Beat those
+    winter blues and start packing!
+permalink_localized:
+  en: "/cyber-sail/"
+meta_tags:
+  robots:
+published_localized:
+  en: true
+
+---
+
+<section class="offers-cross-sell offers-cross-sell--full-screen offers-cross-sell--offer-details">
+  <div class="offers-cross-sell__wrap">
+    <div class="offers-cross-sell__content-wrap">
+      <div class="offers-cross-sell__image">
+        <div class="offers-cross-sell__image__wrap objectfit">
+          {% regionblock cyber_sale_hero, type:image %}
+          <img src="https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_992,w_992/v1572918305/iqrdhynnjrxrvo1gqyfc.jpg" alt="Cyber Sale" />
+          {% endregionblock %}
+        </div>
+      </div>
+      <div class="offers-cross-sell__content">
+        <div class="offers-cross-sell__content__detail">
+          <div class="d-inline-block mb-2">
+            <a class="btn btn--tertiary btn--reverse" href="/offers/">back to all offers</a>
+          </div>
+          {% regionblock cyber_sale_title, type:header %}
+          <h1 class="h3">Oceans Edge Cyber "Sail"</h1>
+          {% endregionblock %}
+          <hr class="mb-3">
+          {% regionblock cyber_sale_short_description, type:text %}
+            <p class="overline">Book this special offer by Monday, December 2nd 2019 and sail away on a Sunset Cruise for 2 in the tropical turquoise waters of the Florida Keys. Beat those winter blues and start packing!</p>
+          {% endregionblock %}
+          {% regionblock cyber_sale_description, type:text %}
+          <p>This Package includes:</p>
+          <ul>
+            <li>Best rate on rooms or suites</li>
+            <li>Sunset sail for 2 ($160 value)*</li>
+            <li>2 welcome cocktails</li>
+          </ul>
+          {% endregionblock %}
+          <p tabindex="0">Terms & Conditions:</p>
+          {% regionblock cyber_sale_terms_conditions, type:text %}
+            <p>*Sunset Sail for 2 adults included in this package leave from Key West Historic Seaport near our shuttle stop. Private sunset sails leaving from our Oceanside Marina is available for an additional $285 for 2 guests.</p>
+          {% endregionblock %}
+          <div class="btn-holder">
+            {% regionblock cyber_sale_be_link, type:text %}
+            <a class="btn btn--book" href="https://be.synxis.com/?hotel=4091&chain=10237&shell=GCF3&start=availresults&arrive=2019-12-15&nights=2&&rate=SAIL&promo=SAIL&adult=1&child=0&locale=en" target="_blank">Book Now</a>
+            {% endregionblock %}
+          </div>
+          <div class="social-share">
+            <p class="h5" tabindex="0"><span>Share</span></p>
+            <div class="social-media">
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/intent/tweet?text={{ offer.name }}&url={{ site.url }}{{ page.url }}&via={{ site.data.social.twitter.username }}&related={{ site.data.social.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:?Subject={{ offer.name }}&amp;Body={{ offer.name }} {{ site.url }}{{ page.url }}" title="Share via Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="asset-list asset-list--variant mt-55">
+  <hr class="mb-3">
+  <div class="asset-list__header">
+    <h2 class="h4">More Related Offers</h2>
+    <a href="/offers/" class="btn">View all Offers</a>
+  </div>
+  {% include components/offer-cross-sell %}
+</section>
+
+<section class="common-cta mt-55">
+  <div class="common-cta__img">
+      <img src="//res.cloudinary.com/traveltripperweb/image/upload/c_limit,h_2500,w_2500/v1573123050/omvtlv1lzvkgpqad3hpq.jpg" alt="Resort Exterior">
+  </div>
+  <div class="common-cta__text text-center">
+      <p class="h4 light">The Resort</p>
+      <p class="h3 light">an exhilarating Key West escape</p>
+      <a href="/dining/" class="btn btn--light">Discover More</a>
+  </div>
+</section>
