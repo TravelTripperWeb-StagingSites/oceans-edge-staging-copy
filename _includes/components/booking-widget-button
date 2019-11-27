@@ -1,4 +1,4 @@
 <!-- <div ttweb-component="BookingWidgetButton">
   <a href="javascript:void(0);" onclick="return false" target="_NEW" role="button" class="btn btn--book">Book Now</a>
 </div> -->
-<a href="https://be.synxis.com/?hotel=4091&chain=10237&shell=GCF3&start=availresults&arrive=2019-12-15&nights=2&&rate=SAIL&promo=SAIL&adult=1&child=0&locale=en" target="_blank" class="btn btn--book">Book Now</a>
+<a href="https://be.synxis.com/?_ga=2.25366014.2141630594.1574710212-1506822388.1572439769&adult=1&arrive=2019-11-27&chain=10237&child=0&currency=USD&depart=2019-11-28&hotel=4091&level=hotel&locale=en-US&rooms=1&shell=GCF3&start=availresults" target="_blank" class="btn btn--book">Book Now</a>
