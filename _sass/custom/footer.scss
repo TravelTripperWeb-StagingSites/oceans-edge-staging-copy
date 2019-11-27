@@ -404,5 +404,12 @@
       width: 80px;
       height: 80px;
     }
+
+    .iprefer {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }

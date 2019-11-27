@@ -89,6 +89,10 @@
 
     span {
       font-family: $family-secondary;
+
+      a {
+        color: $primary;
+      }
     }
   }
 }

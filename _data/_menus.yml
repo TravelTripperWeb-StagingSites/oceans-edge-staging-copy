@@ -293,7 +293,7 @@ mega_mobile:
       label_localized:
         en: Pet Friendly
       items:
-    expanded: true
+    expanded: false
   - folder: true
     label_localized:
       en: Stay
@@ -313,23 +313,11 @@ mega_mobile:
       items:
     - folder: false
       url_localized:
-        en: "/stay/#guestrooms"
-      label_localized:
-        en: Guestrooms
-      items:
-    - folder: false
-      url_localized:
-        en: "/stay/#suites"
-      label_localized:
-        en: Suites
-      items:
-    - folder: false
-      url_localized:
         en: "/stay/#accessible-rooms"
       label_localized:
         en: Accessible Rooms
       items:
-    expanded: true
+    expanded: false
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html
@@ -345,12 +333,6 @@ mega_mobile:
       page_id: _pages/experiences.html
       label_localized:
         en: Overview
-      items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/activities.html
-      label_localized:
-        en: Activities
       items:
     - folder: false
       url_localized: ''
@@ -436,29 +418,24 @@ mega_mobile:
         en: Meetings & Events
       items:
     expanded: false
-  - folder: true
+  - folder: false
+    url_localized: ''
+    page_id: _pages/gallery.html
     label_localized:
-      en: More
+      en: Gallery
     items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/gallery.html
-      label_localized:
-        en: Gallery
-      items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/webcam.html
-      label_localized:
-        en: Webcam
-      items:
-    - folder: false
-      url_localized: ''
-      page_id: _pages/blogs.html
-      label_localized:
-        en: Blog
-      items:
-    expanded: false
+  - folder: false
+    url_localized: ''
+    page_id: _pages/webcam.html
+    label_localized:
+      en: Webcam
+    items:
+  - folder: false
+    url_localized: ''
+    page_id: _pages/blogs.html
+    label_localized:
+      en: Blog
+    items:
   - folder: true
     label_localized:
       en: Connect
@@ -482,9 +459,9 @@ mobile:
   items:
   - folder: false
     url_localized: ''
-    page_id: _pages/resort.html
+    page_id: _pages/gallery.html
     label_localized:
-      en: Resort
+      en: Gallery
   - folder: false
     url_localized: ''
     page_id: _pages/stay.html
