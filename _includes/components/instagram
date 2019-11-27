@@ -8,7 +8,7 @@
   <div class="c-instagram-feed__container">
     <div class="follow-instagram">
       <p class="h3">OEKW Moments</p>
-      <p class="overline">Follow us on Instagram <span>@{{site.data.social.instagram.username}}</span></p>
+      <p class="overline">Follow us on Instagram <span><a href="https://www.instagram.com/{{site.data.social.instagram.username}}" target="_blank">@{{site.data.social.instagram.username}}</a></span></p>
     </div>
     <div class="c-instagram-feed__list">
       <div class="photo-list insta-slider" data-instagram-user-name="{{handle}}" tabindex="-1"></div>

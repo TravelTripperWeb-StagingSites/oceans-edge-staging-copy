@@ -482,9 +482,9 @@ mobile:
   items:
   - folder: false
     url_localized: ''
-    page_id: _pages/resort.html
+    page_id: _pages/gallery.html
     label_localized:
-      en: Resort
+      en: Gallery
   - folder: false
     url_localized: ''
     page_id: _pages/stay.html
