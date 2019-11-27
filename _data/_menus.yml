@@ -293,7 +293,7 @@ mega_mobile:
       label_localized:
         en: Pet Friendly
       items: 
-    expanded: true
+    expanded: false
   - folder: true
     label_localized:
       en: Stay
