@@ -329,7 +329,7 @@ mega_mobile:
       label_localized:
         en: Accessible Rooms
       items: 
-    expanded: true
+    expanded: false
   - folder: false
     url_localized: ''
     page_id: _pages/offers.html
