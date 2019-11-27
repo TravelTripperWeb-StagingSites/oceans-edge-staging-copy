@@ -76,7 +76,13 @@ layout: generic
         </div>
         <div class="asset-item__text-group">
           <div class="asset-item__text-group__wrap">
+
+            {% if offer.url_friendly_name == "cyber-sail" %}
+            <h3 class="h4"><a class="arrow-link" href="/{{ offer.url_friendly_name }}/">{{ offer.name }}</a></h3>
+            {% else %}
             <h3 class="h4"><a class="arrow-link" href="{{ offer.url_friendly_name | permalink: model_dir: 'offers' }}">{{ offer.name }}</a></h3>
+            {% endif %}
+
             <div class="row">
               <div class="col-9">
                 <div class="bed-type no-icon">
