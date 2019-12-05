@@ -64,7 +64,7 @@ layout: default
     <div class="rooms-cross-sell__content-wrap">
       <div class="rooms-cross-sell__image">
         <div class="rooms-cross-sell__image__wrap">
-          {% assign items = site.data._models.rooms %}
+          {% assign items = site.data._models.rooms | sort: "order" %}
           {% for item in items %}
             <img src="{{ item.featured_image.url_medium }}" alt= "{{ item.name }}" />
           {% endfor %}
