@@ -6,7 +6,7 @@
 {% if page.title %}
   {% assign seo_title = page.title | normalize_whitespace | escape_once %}
 {% else %}
-  {% assign seo_title = site.data.seo.default_title | append: " " | append: site.data.seo.title_separator | append: " " | append: site.data.hotel_settings.name %}
+  {% assign seo_title = site.data.seo.default_title %}
 {% endif %}
 
 {% if site.url %}
