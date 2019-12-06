@@ -3,7 +3,9 @@
   {% assign seo_url = site.url %}
 {% endif %}
 
-{% if page.title %}
+{% if page.data.name %}
+  {% assign seo_title = page.data.name | normalize_whitespace | escape_once %}
+{% elsif page.title %}
   {% assign seo_title = page.title | normalize_whitespace | escape_once %}
 {% else %}
   {% assign seo_title = site.data.seo.default_title %}
@@ -11,6 +13,18 @@
 
 {% if site.url %}
   {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
+{% endif %}
+
+{% if page.url contains '/stay/' and page.url != '/stay/' %}
+  {% assign seo_title = seo_title | append: " | Oceans Edge Resort & Marina" %}
+{% endif %}
+
+{% if page.url contains '/offers/' and page.url != '/offers/' %}
+  {% assign seo_title = seo_title | append: " | Deals at Oceans Edge Resort" %}
+{% endif %}
+
+{% if page.url contains '/activities/' and page.url != '/activities/' %}
+  {% assign seo_title = seo_title | append: " | Oceans Edge Resort & Marina" %}
 {% endif %}
 
 {% if page.url contains '/adventures/' and page.url != '/adventures/' %}
@@ -26,6 +40,18 @@
 
 {% if page.url contains '/adventures/' and page.url != '/adventures/' %}
   {% assign seo_description = "From Dry Tortugas to the downtown Historic Seaport, Key West is the destination for those who love adventure. Book dozens of experiences with Oceans Edge Resort." %}
+{% endif %}
+
+{% if page.url contains '/stay/' and page.url != '/stay/' %}
+  {% assign seo_description = "Oceans Edge is the top tier in Key West luxury resorts. Suites are spacious enough for family and group travel, with ocean views from every room." %}
+{% endif %}
+
+{% if page.url contains '/offers/' and page.url != '/offers/' %}
+  {% assign seo_description = "Oceans Edge Resort & Marina offers the best Key West vacation packages and deals. Book a luxurious getaway today." %}
+{% endif %}
+
+{% if page.url contains '/activities/' and page.url != '/activities/' %}
+  {% assign seo_description = "Experience famed Key West sport fishing, explore by Jet Ski, or take a sunset sail among the sandbars. Oceans Edge unlocks the magic Key West. Book today!" %}
 {% endif %}
 
 <meta name="description" content="{{ seo_description }}">
