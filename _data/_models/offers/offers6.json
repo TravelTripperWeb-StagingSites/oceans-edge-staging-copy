@@ -30,6 +30,6 @@
     "caption": "",
     "description": ""
   },
-  "booking_url": "https://be.synxis.com/?adult=2&arrive=2019-11-19&chain=10237&child=0&currency=USD&depart=2019-11-20&hotel=4091&level=hotel&locale=en-US&rate=BOAT&rooms=1",
+  "booking_url": "https://be.synxis.com/?adult=2&chain=10237&child=0&currency=USD&promo=BOAT&nights=2&hotel=4091&level=hotel&locale=en-US&rate=BOAT&rooms=1",
   "category": "offer_categories2"
 }
