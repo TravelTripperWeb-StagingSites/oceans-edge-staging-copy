@@ -100,27 +100,8 @@
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 {% endif %}
 
-{% if site.data.social.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.data.social.og_image | absolute_url | jsonify }}
-    }
-  </script>
-{% endif %}
-
-{% if site.data.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.data.social.type %}{{ site.data.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.data.social.name | default: site.data.hotel_settings.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.data.social.links | jsonify }}
-    }
-  </script>
+{% if page.url == "/" %}
+  {% include schema/hotel.html %}
 {% endif %}
 
 <meta http-equiv="Content-Language" content="{{ site.active_lang }}">
