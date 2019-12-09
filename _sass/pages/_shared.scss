@@ -783,3 +783,39 @@ hr {
     }
   }
 }
+
+.c-order-1 {
+  @include media-breakpoint-down(md) {
+    order: 1;
+  }
+}
+
+.c-order-2 {
+  @include media-breakpoint-down(md) {
+    order: 2;
+  }
+}
+
+.c-order-3 {
+  @include media-breakpoint-down(md) {
+    order: 3;
+  }
+}
+
+.c-order-4 {
+  @include media-breakpoint-down(md) {
+    order: 4;
+  }
+}
+
+.c-order-5 {
+  @include media-breakpoint-down(md) {
+    order: 5;
+  }
+}
+
+.c-order-6 {
+  @include media-breakpoint-down(md) {
+    order: 6;
+  }
+}
