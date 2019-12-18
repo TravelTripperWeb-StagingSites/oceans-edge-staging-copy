@@ -1,0 +1,36 @@
+---
+show_ota: true
+show_scarcity: true
+recent_booking_min: ''
+min_rate: ''
+fallback_content: ''
+max_rooms_available: ''
+show_activity: true
+__EDITABLE_FIELDS__:
+  min_rate:
+    label: Minimum Rate $
+    instructions: Minimum Rate that is allowed to display in the BRG banner
+    type: float
+  fallback_content:
+    type: rich_text
+    instructions: Content to display in banner when price is not shown
+  show_ota:
+    label: Show OTA
+    instructions: Show OTA Rates when direct booking pricing is competitive
+    type: boolean
+  show_scarcity:
+    label: Show Scarcity Message
+    instructions: Show messages when availability is below a threshold (5 rooms unless
+      otherwise specified)
+    type: boolean
+  max_rooms_available:
+    label: Max Rooms allowed to show in the scarcity message
+    type: integer
+  show_activity:
+    label: Show Activity Message
+    instructions: Show recent bookings if above threshold (default is at least 100
+      in the last 48 hours)
+    type: boolean
+  recent_booking_min:
+    label: Min number of recent bookings in last 48 hours to show
+    type: integer
