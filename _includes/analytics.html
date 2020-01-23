@@ -1,0 +1,14 @@
+{% if site.data.analytics and page.analytics != false %}
+
+  {% if site.data.analytics.ga_tracking_id %}
+    {% include analytics/google.html %}
+  {% endif %}
+  {% if site.data.analytics.gtm_tracking_id %}
+    {% include analytics/gtm-head.html %}
+  {% endif %}
+  {% if site.data.analytics.custom_head %}
+    {% comment %}Drop the _data/analytics.yml specified code directly here {% endcomment %}
+    {{ site.data.analytics.custom_head }}
+  {% endif %}
+
+{% endif %}
