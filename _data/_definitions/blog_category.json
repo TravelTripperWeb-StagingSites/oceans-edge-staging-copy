@@ -12,6 +12,6 @@
     "type": "url_slug"
   },
   "order": {
-    "type": "integer"
+    "type": "order"
   }
 }
